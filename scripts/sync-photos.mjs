@@ -17,6 +17,7 @@ const CONCURRENCY = 4;
 const argv = new Set(process.argv.slice(2));
 const dryRun = argv.has('--dry-run');
 const force = argv.has('--force');
+const allowEmpty = argv.has('--allow-empty');
 
 const env = process.env;
 const bucket = env.R2_BUCKET;
@@ -77,6 +78,12 @@ for (const rel of await galleryDirs(SRC_DIR)) {
 }
 
 galleries.sort((a, b) => a.order - b.order || a.title.localeCompare(b.title));
+
+if (!galleries.length && previous.size && !allowEmpty) {
+  console.error(`Found no images under ${SRC_DIR}/, but the manifest currently holds ${previous.size}.`);
+  console.error('Refusing to empty it — check PHOTOS_DIR. Pass --allow-empty if you meant it.');
+  process.exit(1);
+}
 
 const manifest = {
   generatedAt: new Date().toISOString(),
