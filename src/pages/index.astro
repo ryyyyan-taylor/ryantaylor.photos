@@ -1,0 +1,31 @@
+---
+import Base from '../layouts/Base.astro';
+import GalleryCard from '../components/GalleryCard.astro';
+import { galleries } from '../lib/photos';
+---
+
+<Base>
+  <section class="page-head">
+    <h1>Ryan Taylor</h1>
+    <p class="lede">
+      Landscape and documentary photography. Selected work below — reach out for prints or commissions.
+    </p>
+  </section>
+
+  {
+    galleries.length === 0 ? (
+      <div class="empty">
+        <p>No photos yet.</p>
+        <p>
+          Drop images into <code>photos/&lt;gallery-name&gt;/</code>, then run <code>npm run photos:sync</code>.
+        </p>
+      </div>
+    ) : (
+      <div class="gallery-index">
+        {galleries.map((gallery, i) => (
+          <GalleryCard gallery={gallery} eager={i < 2} showSection />
+        ))}
+      </div>
+    )
+  }
+</Base>

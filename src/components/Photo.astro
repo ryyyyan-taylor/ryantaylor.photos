@@ -1,0 +1,30 @@
+---
+import { srcset, fallbackSrc, largestSrc, type Photo } from '../lib/photos';
+
+interface Props {
+  photo: Photo;
+  sizes: string;
+  loading?: 'lazy' | 'eager';
+  class?: string;
+}
+
+const { photo, sizes, loading = 'lazy', class: className } = Astro.props;
+---
+
+<picture>
+  <source type="image/avif" srcset={srcset(photo, 'avif')} sizes={sizes} />
+  <source type="image/webp" srcset={srcset(photo, 'webp')} sizes={sizes} />
+  <img
+    src={fallbackSrc(photo)}
+    width={photo.width}
+    height={photo.height}
+    alt={photo.alt}
+    loading={loading}
+    decoding="async"
+    fetchpriority={loading === 'eager' ? 'high' : undefined}
+    class={className}
+    style={`background-image:url(${photo.lqip})`}
+    data-full={largestSrc(photo)}
+    data-caption={photo.caption}
+  />
+</picture>

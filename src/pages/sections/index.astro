@@ -1,0 +1,42 @@
+---
+import Base from '../../layouts/Base.astro';
+import GalleryCard from '../../components/GalleryCard.astro';
+import SectionFilter from '../../components/SectionFilter.astro';
+import { sections, unsectioned } from '../../lib/photos';
+
+const groups = [...sections, ...(unsectioned.length ? [{ slug: 'other', title: 'Other', galleries: unsectioned }] : [])];
+---
+
+<Base title="Sections" description="Browse Ryan Taylor's photography by section.">
+  <section class="page-head">
+    <p class="eyebrow">Browse</p>
+    <h1>Sections</h1>
+  </section>
+
+  <SectionFilter />
+
+  {
+    groups.length === 0 ? (
+      <div class="empty">
+        <p>No sections yet.</p>
+        <p>
+          Nest a gallery one level deep — <code>photos/sports/bike-park/</code> — and <code>sports</code> becomes a
+          section.
+        </p>
+      </div>
+    ) : (
+      groups.map((group, g) => (
+        <section class="section-group">
+          <h2 class="section-heading">
+            {group.slug === 'other' ? group.title : <a href={`/sections/${group.slug}/`}>{group.title}</a>}
+          </h2>
+          <div class="gallery-index">
+            {group.galleries.map((gallery, i) => (
+              <GalleryCard gallery={gallery} eager={g === 0 && i < 2} />
+            ))}
+          </div>
+        </section>
+      ))
+    )
+  }
+</Base>

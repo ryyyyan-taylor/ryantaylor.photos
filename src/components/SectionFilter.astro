@@ -1,0 +1,24 @@
+---
+import { sections } from '../lib/photos';
+
+interface Props {
+  active?: string;
+}
+
+const { active } = Astro.props;
+---
+
+{
+  sections.length > 0 && (
+    <nav class="chips" aria-label="Filter by section">
+      <a href="/sections/" aria-current={active ? undefined : 'page'}>
+        All
+      </a>
+      {sections.map((section) => (
+        <a href={`/sections/${section.slug}/`} aria-current={active === section.slug ? 'page' : undefined}>
+          {section.title}
+        </a>
+      ))}
+    </nav>
+  )
+}

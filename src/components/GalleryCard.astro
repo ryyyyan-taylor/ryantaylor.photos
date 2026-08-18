@@ -1,0 +1,29 @@
+---
+import Photo from './Photo.astro';
+import { photoById, sections, type Gallery } from '../lib/photos';
+
+interface Props {
+  gallery: Gallery;
+  eager?: boolean;
+  showSection?: boolean;
+}
+
+const { gallery, eager = false, showSection = false } = Astro.props;
+const cover = photoById(gallery.cover) ?? gallery.photos[0];
+const section = showSection ? sections.find((s) => s.slug === gallery.section) : undefined;
+---
+
+<a class="gallery-card" href={`/${gallery.slug}/`}>
+  <figure>
+    <div class="frame">
+      <Photo photo={cover} sizes="(min-width: 60rem) 30vw, 92vw" loading={eager ? 'eager' : 'lazy'} />
+    </div>
+    <figcaption>
+      {section && <span class="section-tag">{section.title}</span>}
+      <span class="title-row">
+        <h2>{gallery.title}</h2>
+        <span class="count">{gallery.photos.length} photographs</span>
+      </span>
+    </figcaption>
+  </figure>
+</a>

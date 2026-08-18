@@ -1,0 +1,63 @@
+---
+import '../styles/global.css';
+import { IMG_BASE } from '../lib/photos';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { title, description = 'Photography by Ryan Taylor.' } = Astro.props;
+const fullTitle = title ? `${title} — Ryan Taylor` : 'Ryan Taylor — Photography';
+const path = Astro.url.pathname;
+const nav = [
+  { href: '/', label: 'Work' },
+  { href: '/sections/', label: 'Sections' },
+  { href: '/about/', label: 'About' },
+];
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <link rel="canonical" href={new URL(path, Astro.site)} />
+    <link rel="preconnect" href={IMG_BASE} crossorigin />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Newsreader:opsz,wght@6..72,300;6..72,400&display=swap"
+    />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  </head>
+  <body>
+    <div class="shell">
+      <header class="site-header">
+        <a class="wordmark" href="/">Ryan Taylor</a>
+        <nav class="site-nav">
+          {
+            nav.map(({ href, label }) => (
+              <a href={href} aria-current={(href === '/' ? path === href : path.startsWith(href)) ? 'page' : undefined}>
+                {label}
+              </a>
+            ))
+          }
+        </nav>
+      </header>
+
+      <main>
+        <slot />
+      </main>
+
+      <footer class="site-footer">
+        <span>© {new Date().getFullYear()} Ryan Taylor</span>
+        <a href="mailto:hello@ryantaylor.photos">hello@ryantaylor.photos</a>
+      </footer>
+    </div>
+  </body>
+</html>

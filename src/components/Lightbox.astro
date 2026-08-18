@@ -1,0 +1,65 @@
+---
+---
+
+<dialog class="lightbox" id="lightbox" aria-label="Photo viewer">
+  <button class="close" type="button" data-action="close" aria-label="Close">✕</button>
+  <button class="prev" type="button" data-action="prev" aria-label="Previous photo">‹</button>
+  <button class="next" type="button" data-action="next" aria-label="Next photo">›</button>
+  <div>
+    <img id="lightbox-image" alt="" />
+    <p class="lightbox-caption" id="lightbox-caption"></p>
+  </div>
+</dialog>
+
+<script>
+  const dialog = document.getElementById('lightbox') as HTMLDialogElement;
+  const image = document.getElementById('lightbox-image') as HTMLImageElement;
+  const caption = document.getElementById('lightbox-caption') as HTMLParagraphElement;
+  const tiles = [...document.querySelectorAll<HTMLButtonElement>('.tile')];
+  let index = 0;
+
+  const show = (next: number) => {
+    index = (next + tiles.length) % tiles.length;
+    const img = tiles[index].querySelector('img')!;
+    image.src = img.dataset.full ?? img.currentSrc;
+    image.alt = img.alt;
+    caption.textContent = img.dataset.caption ?? '';
+    tiles.forEach((tile, i) => {
+      if (Math.abs(i - index) !== 1) return;
+      const neighbor = tile.querySelector('img')!;
+      if (neighbor.dataset.full) new Image().src = neighbor.dataset.full;
+    });
+  };
+
+  tiles.forEach((tile, i) =>
+    tile.addEventListener('click', () => {
+      show(i);
+      dialog.showModal();
+    }),
+  );
+
+  dialog.addEventListener('click', (event) => {
+    const action = (event.target as HTMLElement).closest('[data-action]')?.getAttribute('data-action');
+    if (action === 'next') show(index + 1);
+    else if (action === 'prev') show(index - 1);
+    else if (action === 'close' || event.target === dialog) dialog.close();
+  });
+
+  dialog.addEventListener('keydown', (event) => {
+    if (event.key === 'ArrowRight') show(index + 1);
+    if (event.key === 'ArrowLeft') show(index - 1);
+  });
+
+  dialog.addEventListener('close', () => tiles[index]?.focus());
+
+  let touchStart = 0;
+  dialog.addEventListener('touchstart', (e) => (touchStart = e.changedTouches[0].clientX), { passive: true });
+  dialog.addEventListener(
+    'touchend',
+    (e) => {
+      const delta = e.changedTouches[0].clientX - touchStart;
+      if (Math.abs(delta) > 50) show(index + (delta < 0 ? 1 : -1));
+    },
+    { passive: true },
+  );
+</script>

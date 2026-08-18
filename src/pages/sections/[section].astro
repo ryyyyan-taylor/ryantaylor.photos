@@ -1,0 +1,26 @@
+---
+import Base from '../../layouts/Base.astro';
+import GalleryCard from '../../components/GalleryCard.astro';
+import SectionFilter from '../../components/SectionFilter.astro';
+import { sections, type Section } from '../../lib/photos';
+
+export function getStaticPaths() {
+  return sections.map((section) => ({ params: { section: section.slug }, props: { section } }));
+}
+
+const { section } = Astro.props as { section: Section };
+const count = section.galleries.reduce((n, g) => n + g.photos.length, 0);
+---
+
+<Base title={section.title} description={`${section.title} photography by Ryan Taylor.`}>
+  <section class="page-head">
+    <p class="eyebrow"><a href="/sections/">Sections</a> / {count} photographs</p>
+    <h1>{section.title}</h1>
+  </section>
+
+  <SectionFilter active={section.slug} />
+
+  <div class="gallery-index">
+    {section.galleries.map((gallery, i) => <GalleryCard gallery={gallery} eager={i < 2} />)}
+  </div>
+</Base>
