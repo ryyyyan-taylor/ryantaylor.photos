@@ -1,5 +1,5 @@
 ---
-import { srcset, fallbackSrc, largestSrc, type Photo } from '../lib/photos';
+import { srcset, fallbackSrc, type Photo } from '../lib/photos';
 
 interface Props {
   photo: Photo;
@@ -24,7 +24,5 @@ const { photo, sizes, loading = 'lazy', class: className } = Astro.props;
     fetchpriority={loading === 'eager' ? 'high' : undefined}
     class={className}
     style={`background-image:url(${photo.lqip})`}
-    data-full={largestSrc(photo)}
-    data-caption={photo.caption}
   />
 </picture>

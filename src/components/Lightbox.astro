@@ -1,33 +1,151 @@
 ---
+import { largestSrc, sizedSrc, type Photo } from '../lib/photos';
+
+interface Props {
+  photos: Photo[];
+}
+
+const { photos } = Astro.props;
+
+const items = photos.map((photo) => ({
+  alt: photo.alt,
+  caption: photo.caption,
+  full: largestSrc(photo),
+  thumb: sizedSrc(photo, photo.widths[0]),
+  exif: photo.exif ?? null,
+  downloads: photo.widths.map((w) => ({
+    url: sizedSrc(photo, w),
+    width: w,
+    height: Math.round((w / photo.width) * photo.height),
+  })),
+}));
 ---
 
 <dialog class="lightbox" id="lightbox" aria-label="Photo viewer">
   <button class="close" type="button" data-action="close" aria-label="Close">✕</button>
-  <button class="prev" type="button" data-action="prev" aria-label="Previous photo">‹</button>
-  <button class="next" type="button" data-action="next" aria-label="Next photo">›</button>
-  <div>
-    <img id="lightbox-image" alt="" />
-    <p class="lightbox-caption" id="lightbox-caption"></p>
+  <div class="lightbox-layout">
+    <div class="lightbox-stage">
+      <div class="lightbox-image-wrap">
+        <button class="lightbox-nav prev" type="button" data-action="prev" aria-label="Previous photo">‹</button>
+        <img id="lightbox-image" alt="" />
+        <button class="lightbox-nav next" type="button" data-action="next" aria-label="Next photo">›</button>
+      </div>
+      <div class="lightbox-thumbs" id="lightbox-thumbs"></div>
+    </div>
+    <aside class="lightbox-sidebar">
+      <p class="lightbox-caption" id="lightbox-caption"></p>
+      <dl class="lightbox-exif" id="lightbox-exif"></dl>
+      <div class="lightbox-download">
+        <button class="download-toggle" type="button" data-action="download-toggle" aria-expanded="false" aria-controls="download-menu">
+          Download
+        </button>
+        <ul class="download-menu" id="download-menu" hidden></ul>
+      </div>
+    </aside>
   </div>
 </dialog>
 
+<script type="application/json" id="lightbox-data" set:html={JSON.stringify(items)} />
+
 <script>
+  interface DownloadOption {
+    url: string;
+    width: number;
+    height: number;
+  }
+  interface PhotoExif {
+    camera: string | null;
+    lens: string | null;
+    focalLength: string | null;
+    aperture: string | null;
+    shutterSpeed: string | null;
+    iso: number | null;
+    takenAt: string | null;
+  }
+  interface LightboxItem {
+    alt: string;
+    caption: string;
+    full: string;
+    thumb: string;
+    exif: PhotoExif | null;
+    downloads: DownloadOption[];
+  }
+
   const dialog = document.getElementById('lightbox') as HTMLDialogElement;
   const image = document.getElementById('lightbox-image') as HTMLImageElement;
   const caption = document.getElementById('lightbox-caption') as HTMLParagraphElement;
+  const exifList = document.getElementById('lightbox-exif') as HTMLDListElement;
+  const thumbs = document.getElementById('lightbox-thumbs') as HTMLDivElement;
+  const downloadToggle = document.getElementById('lightbox')!.querySelector<HTMLButtonElement>('.download-toggle')!;
+  const downloadMenu = document.getElementById('download-menu') as HTMLUListElement;
   const tiles = [...document.querySelectorAll<HTMLButtonElement>('.tile')];
+  const dataEl = document.getElementById('lightbox-data');
+  const items: LightboxItem[] = dataEl ? JSON.parse(dataEl.textContent ?? '[]') : [];
   let index = 0;
 
+  const exifLabels: Record<keyof NonNullable<LightboxItem['exif']>, string> = {
+    camera: 'Camera',
+    lens: 'Lens',
+    focalLength: 'Focal length',
+    aperture: 'Aperture',
+    shutterSpeed: 'Shutter',
+    iso: 'ISO',
+    takenAt: 'Taken',
+  };
+
+  thumbs.innerHTML = items
+    .map(
+      (item, i) =>
+        `<button class="lightbox-thumb" type="button" data-index="${i}" aria-label="View photo ${i + 1}"><img src="${item.thumb}" alt="" loading="lazy" /></button>`,
+    )
+    .join('');
+  const thumbButtons = [...thumbs.querySelectorAll<HTMLButtonElement>('.lightbox-thumb')];
+
+  const renderExif = (exif: LightboxItem['exif']) => {
+    exifList.innerHTML = '';
+    if (exif) {
+      for (const key of Object.keys(exifLabels) as (keyof typeof exifLabels)[]) {
+        const value = exif[key];
+        if (!value) continue;
+        exifList.insertAdjacentHTML(
+          'beforeend',
+          `<div class="exif-row"><dt>${exifLabels[key]}</dt><dd>${key === 'iso' ? `ISO ${value}` : value}</dd></div>`,
+        );
+      }
+    }
+    exifList.hidden = !exifList.children.length;
+  };
+
+  const renderDownloads = (downloads: DownloadOption[]) => {
+    downloadMenu.innerHTML = downloads
+      .map(
+        (d) =>
+          `<li><a href="${d.url}" download target="_blank" rel="noopener">${d.width} × ${d.height}</a></li>`,
+      )
+      .join('');
+  };
+
+  const closeDownloadMenu = () => {
+    downloadMenu.hidden = true;
+    downloadToggle.setAttribute('aria-expanded', 'false');
+  };
+
   const show = (next: number) => {
-    index = (next + tiles.length) % tiles.length;
-    const img = tiles[index].querySelector('img')!;
-    image.src = img.dataset.full ?? img.currentSrc;
-    image.alt = img.alt;
-    caption.textContent = img.dataset.caption ?? '';
-    tiles.forEach((tile, i) => {
+    index = (next + items.length) % items.length;
+    const item = items[index];
+    image.src = item.full;
+    image.alt = item.alt;
+    caption.textContent = item.caption;
+    renderExif(item.exif);
+    renderDownloads(item.downloads);
+    closeDownloadMenu();
+    thumbButtons.forEach((btn, i) => {
+      btn.classList.toggle('active', i === index);
+      if (i === index) btn.scrollIntoView({ block: 'nearest', inline: 'center' });
+    });
+    items.forEach((neighbor, i) => {
       if (Math.abs(i - index) !== 1) return;
-      const neighbor = tile.querySelector('img')!;
-      if (neighbor.dataset.full) new Image().src = neighbor.dataset.full;
+      new Image().src = neighbor.full;
     });
   };
 
@@ -38,16 +156,28 @@
     }),
   );
 
+  thumbButtons.forEach((btn, i) => btn.addEventListener('click', () => show(i)));
+
   dialog.addEventListener('click', (event) => {
-    const action = (event.target as HTMLElement).closest('[data-action]')?.getAttribute('data-action');
+    const target = event.target as HTMLElement;
+    const action = target.closest('[data-action]')?.getAttribute('data-action');
     if (action === 'next') show(index + 1);
     else if (action === 'prev') show(index - 1);
-    else if (action === 'close' || event.target === dialog) dialog.close();
+    else if (action === 'close') dialog.close();
+    else if (action === 'download-toggle') {
+      const expanded = downloadToggle.getAttribute('aria-expanded') === 'true';
+      downloadMenu.hidden = expanded;
+      downloadToggle.setAttribute('aria-expanded', String(!expanded));
+    } else if (!target.closest('.lightbox-download') && !downloadMenu.hidden) {
+      closeDownloadMenu();
+    }
+    if (event.target === dialog) dialog.close();
   });
 
   dialog.addEventListener('keydown', (event) => {
     if (event.key === 'ArrowRight') show(index + 1);
     if (event.key === 'ArrowLeft') show(index - 1);
+    if (event.key === 'Escape') closeDownloadMenu();
   });
 
   dialog.addEventListener('close', () => tiles[index]?.focus());

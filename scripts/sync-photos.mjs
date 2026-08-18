@@ -2,6 +2,7 @@ import { createHash } from 'node:crypto';
 import { readdir, readFile, writeFile } from 'node:fs/promises';
 import { join, extname, basename } from 'node:path';
 import sharp from 'sharp';
+import ExifReader from 'exif-reader';
 import { S3Client, PutObjectCommand } from '@aws-sdk/client-s3';
 
 const SRC_DIR = process.env.PHOTOS_DIR || 'photos';
@@ -111,6 +112,7 @@ async function processPhoto(rel, slug, dir, file, config) {
 
   const cached = previous.get(`${rel}/${file}`);
   const reusable = cached?.hash === hash && !force;
+  const exif = await readExif(bytes);
 
   let width, height, lqip, widths;
   if (reusable) {
@@ -153,7 +155,78 @@ async function processPhoto(rel, slug, dir, file, config) {
     lqip,
     alt: meta.alt ?? '',
     caption: meta.caption ?? '',
+    exif,
   };
+}
+
+async function readExif(bytes) {
+  let raw;
+  try {
+    raw = (await sharp(bytes).metadata()).exif;
+  } catch {
+    return null;
+  }
+  if (!raw) return null;
+
+  let tags;
+  try {
+    tags = ExifReader(raw);
+  } catch {
+    return null;
+  }
+
+  const image = tags.Image ?? {};
+  const photo = tags.Photo ?? {};
+  const camera = combineCamera(image.Make, image.Model);
+  const lens = photo.LensModel?.trim() || null;
+  const focalLength = formatFocalLength(photo.FocalLength, photo.FocalLengthIn35mmFilm);
+  const aperture = formatAperture(photo.FNumber);
+  const shutterSpeed = formatShutter(photo.ExposureTime);
+  const iso = photo.ISOSpeedRatings ?? null;
+  const takenAt = formatDate(photo.DateTimeOriginal);
+
+  if (!camera && !lens && !focalLength && !aperture && !shutterSpeed && !iso && !takenAt) return null;
+  return { camera, lens, focalLength, aperture, shutterSpeed, iso, takenAt };
+}
+
+function combineCamera(make, model) {
+  make = make?.trim() || null;
+  model = model?.trim() || null;
+  if (!make) return model;
+  if (!model) return titleCaseIfShouting(make);
+  if (model.toLowerCase().startsWith(make.toLowerCase())) return model;
+  return `${titleCaseIfShouting(make)} ${model}`;
+}
+
+function titleCaseIfShouting(s) {
+  if (s !== s.toUpperCase()) return s;
+  return s.toLowerCase().replace(/\b\w/g, (c) => c.toUpperCase());
+}
+
+function formatFocalLength(focalLength, focalLength35mm) {
+  if (!focalLength) return null;
+  const base = `${Math.round(focalLength)}mm`;
+  if (focalLength35mm && Math.round(focalLength35mm) !== Math.round(focalLength)) {
+    return `${base} (${Math.round(focalLength35mm)}mm equiv.)`;
+  }
+  return base;
+}
+
+function formatAperture(fNumber) {
+  if (!fNumber) return null;
+  const rounded = Math.round(fNumber * 10) / 10;
+  return `f/${Number.isInteger(rounded) ? rounded : rounded.toFixed(1)}`;
+}
+
+function formatShutter(exposureTime) {
+  if (!exposureTime) return null;
+  if (exposureTime >= 1) return `${exposureTime}s`;
+  return `1/${Math.round(1 / exposureTime)}s`;
+}
+
+function formatDate(date) {
+  if (!(date instanceof Date) || Number.isNaN(date.getTime())) return null;
+  return date.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric', timeZone: 'UTC' });
 }
 
 async function upload(key, body, contentType, { immutable = true } = {}) {

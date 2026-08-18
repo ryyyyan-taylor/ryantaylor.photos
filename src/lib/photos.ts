@@ -1,5 +1,15 @@
 import manifest from '../data/photos.json';
 
+export interface PhotoExif {
+  camera: string | null;
+  lens: string | null;
+  focalLength: string | null;
+  aperture: string | null;
+  shutterSpeed: string | null;
+  iso: number | null;
+  takenAt: string | null;
+}
+
 export interface Photo {
   id: string;
   file: string;
@@ -11,6 +21,7 @@ export interface Photo {
   lqip: string;
   alt: string;
   caption: string;
+  exif: PhotoExif | null;
 }
 
 export interface Gallery {
@@ -63,15 +74,18 @@ export function photoById(id: string) {
   return allPhotos.find((p) => p.id === id);
 }
 
+export function sizedSrc(photo: Photo, width: number, format: 'avif' | 'webp' = 'webp') {
+  return `${IMG_BASE}/${photo.stem}-${width}.${format}`;
+}
+
 export function srcset(photo: Photo, format: 'avif' | 'webp') {
-  return photo.widths.map((w) => `${IMG_BASE}/${photo.stem}-${w}.${format} ${w}w`).join(', ');
+  return photo.widths.map((w) => `${sizedSrc(photo, w, format)} ${w}w`).join(', ');
 }
 
 export function fallbackSrc(photo: Photo) {
-  const w = photo.widths[Math.min(1, photo.widths.length - 1)];
-  return `${IMG_BASE}/${photo.stem}-${w}.webp`;
+  return sizedSrc(photo, photo.widths[Math.min(1, photo.widths.length - 1)]);
 }
 
 export function largestSrc(photo: Photo) {
-  return `${IMG_BASE}/${photo.stem}-${photo.widths.at(-1)}.webp`;
+  return sizedSrc(photo, photo.widths.at(-1)!);
 }
