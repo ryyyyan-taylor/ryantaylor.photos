@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-18T19:57:49.441Z",
+  "generatedAt": "2026-08-18T20:14:27.298Z",
   "widths": [
     480,
     960,
@@ -12,9 +12,9 @@
       "section": "sports",
       "sectionTitle": "Sports",
       "title": "McKay Bike Park",
-      "description": "",
-      "order": 999,
-      "cover": "sports/mckay-bike-park/img00010",
+      "description": "Dirt jump park in Broomfield, CO. Summer 2026",
+      "order": 10,
+      "cover": "sports/mckay-bike-park/img00024",
       "photos": [
         {
           "id": "sports/mckay-bike-park/img00010",
