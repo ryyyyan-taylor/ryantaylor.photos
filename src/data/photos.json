@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-18T20:14:27.298Z",
+  "generatedAt": "2026-08-18T20:46:29.896Z",
   "widths": [
     480,
     960,
@@ -31,7 +31,16 @@
           ],
           "lqip": "data:image/webp;base64,UklGRnYAAABXRUJQVlA4IGoAAADQAwCdASoYABIAPuVio02pJaMiMAwBIByJQBdgBDd2qgOOovBj2vAA/lIWlgM/L4WgMN6JGD2Nux5gB8oFJN11LC8F1bbix7CFOmDa7NlCC5KHoanV8hnu85iTWgxezEOnsol+PaUTQ5gA",
           "alt": "",
-          "caption": ""
+          "caption": "",
+          "exif": {
+            "camera": "Sony ILCE-6400",
+            "lens": "30mm F1.4 DC DN | Contemporary 016",
+            "focalLength": "30mm (45mm equiv.)",
+            "aperture": "f/2",
+            "shutterSpeed": "1/2000s",
+            "iso": 100,
+            "takenAt": "Aug 16, 2026"
+          }
         },
         {
           "id": "sports/mckay-bike-park/img00021",
@@ -48,7 +57,16 @@
           ],
           "lqip": "data:image/webp;base64,UklGRogAAABXRUJQVlA4IHwAAACwAwCdASoYABIAPu1qr1CppaQiqAqpMB2JQBdgAeai8mXuaavJAAD8geWwkZI+C79wuiCpBazjto460M5/PiaOgQqQX5U7dsoHLyFVO0l8sQTQ0gtC1GJu5P43Kb1bj4LirpuRfaUgSTME+IfRe0vy/xzMye2cb3RnmgAA",
           "alt": "",
-          "caption": ""
+          "caption": "",
+          "exif": {
+            "camera": "Sony ILCE-6400",
+            "lens": "30mm F1.4 DC DN | Contemporary 016",
+            "focalLength": "30mm (45mm equiv.)",
+            "aperture": "f/2",
+            "shutterSpeed": "1/4000s",
+            "iso": 100,
+            "takenAt": "Aug 16, 2026"
+          }
         },
         {
           "id": "sports/mckay-bike-park/img00024",
@@ -65,7 +83,16 @@
           ],
           "lqip": "data:image/webp;base64,UklGRoYAAABXRUJQVlA4IHoAAAAQBACdASoYABIAPu1qq1EppaOiqAqpMB2JQAADvgZ0pidD3pXKy/qLYAD8UviXNjgauXDobcrcecoQYLbQBrumDVBMMelkD4w/nZCHtJ9//gzoUdNDjMMr77ESJ0AJ1xoJe7cBvzgL+M7S2nttT81swp9VQ5la5hPgAA==",
           "alt": "",
-          "caption": ""
+          "caption": "",
+          "exif": {
+            "camera": "Sony ILCE-6400",
+            "lens": "30mm F1.4 DC DN | Contemporary 016",
+            "focalLength": "30mm (45mm equiv.)",
+            "aperture": "f/2",
+            "shutterSpeed": "1/4000s",
+            "iso": 100,
+            "takenAt": "Aug 16, 2026"
+          }
         },
         {
           "id": "sports/mckay-bike-park/img00033",
@@ -82,7 +109,16 @@
           ],
           "lqip": "data:image/webp;base64,UklGRo4AAABXRUJQVlA4IIIAAAAwBACdASoYABIAPu1irFAppSQisBgIATAdiUAX6lwFv/gC/QN/nJdHUAAA5gyviEO95de5//CmBKP+Y0Z7oyevq8AQSTCaZEpukqG+cvBsPugY4n8jN6mx1MKLlBqwtk30c1pMQkPuUcmtsZr6iJ4U5XjQfJgsaO2NSOHnOnQE1AAA",
           "alt": "",
-          "caption": ""
+          "caption": "",
+          "exif": {
+            "camera": "Sony ILCE-6400",
+            "lens": "30mm F1.4 DC DN | Contemporary 016",
+            "focalLength": "30mm (45mm equiv.)",
+            "aperture": "f/3.2",
+            "shutterSpeed": "1/2500s",
+            "iso": 100,
+            "takenAt": "Aug 16, 2026"
+          }
         },
         {
           "id": "sports/mckay-bike-park/img00037",
@@ -99,7 +135,16 @@
           ],
           "lqip": "data:image/webp;base64,UklGRogAAABXRUJQVlA4IHwAAAAwBQCdASoYABIAPu1kqU2ppaQiMBgMATAdiWIAwprgAB06y0uz07z84cwrSvIiLma/AADmDBS+gmqWm/8IUUnvy8PizBn48Bf2GoueKXbJ+MwLfg2H3PxBdDUv7xlKuZyAXpJACl4ABMOUzA9qMRWOCas+bqJ55c+1wAAA",
           "alt": "",
-          "caption": ""
+          "caption": "",
+          "exif": {
+            "camera": "Sony ILCE-6400",
+            "lens": "30mm F1.4 DC DN | Contemporary 016",
+            "focalLength": "30mm (45mm equiv.)",
+            "aperture": "f/3.2",
+            "shutterSpeed": "1/2500s",
+            "iso": 100,
+            "takenAt": "Aug 16, 2026"
+          }
         },
         {
           "id": "sports/mckay-bike-park/img00038",
@@ -116,7 +161,16 @@
           ],
           "lqip": "data:image/webp;base64,UklGRoIAAABXRUJQVlA4IHYAAAAwBACdASoYABIAPu1qr1CppaSiqAqpMB2JYgBCALf/AJv0ZJgp8DOd24AAXrR7+sFDMi3RFytt1ecQvD7Pin3QRnBl/+rSZCYPT/wZ6AjZptxLx9B0fdJf+ov4ud3TXn3yoTqX0Ur4evPPghWlY8VzVVuWKtIA",
           "alt": "",
-          "caption": ""
+          "caption": "",
+          "exif": {
+            "camera": "Sony ILCE-6400",
+            "lens": "30mm F1.4 DC DN | Contemporary 016",
+            "focalLength": "30mm (45mm equiv.)",
+            "aperture": "f/3.2",
+            "shutterSpeed": "1/2500s",
+            "iso": 100,
+            "takenAt": "Aug 16, 2026"
+          }
         },
         {
           "id": "sports/mckay-bike-park/img00043",
@@ -133,7 +187,16 @@
           ],
           "lqip": "data:image/webp;base64,UklGRn4AAABXRUJQVlA4IHIAAAAwBACdASoYABIAPu1mqk2ppaQiMAgBMB2JYgB4zgRfBpjDI+PGrTajugAA/cx/a7qy10gMG4gU6yjuBKU3lRuz+lB+zUObWczB/wRa5sr/pSw3HTt9xflC+XoqCDAI5yrLJPn7bZsrgI3q884ejdpQAAA=",
           "alt": "",
-          "caption": ""
+          "caption": "",
+          "exif": {
+            "camera": "Sony ILCE-6400",
+            "lens": "30mm F1.4 DC DN | Contemporary 016",
+            "focalLength": "30mm (45mm equiv.)",
+            "aperture": "f/2.5",
+            "shutterSpeed": "1/3200s",
+            "iso": 100,
+            "takenAt": "Aug 16, 2026"
+          }
         },
         {
           "id": "sports/mckay-bike-park/img00048",
@@ -150,7 +213,16 @@
           ],
           "lqip": "data:image/webp;base64,UklGRpAAAABXRUJQVlA4IIQAAABQBACdASoYABAAPu1iqU2ppaOiMAgBMB2JZACdACHf9dly7u14mOUXynuEAP6u/cmj26ggLOL5HmI8JcpwtLOedaa2jl5ygxgGDJxgBBBy44HsxVINdzGeleeFiQZUptHnksMQ9VuTWhq/HO2yaDamcezgEAJoNDxR4UfIJpTIDJ13AAA=",
           "alt": "",
-          "caption": ""
+          "caption": "",
+          "exif": {
+            "camera": "Sony ILCE-6400",
+            "lens": "30mm F1.4 DC DN | Contemporary 016",
+            "focalLength": "30mm (45mm equiv.)",
+            "aperture": "f/2.5",
+            "shutterSpeed": "1/3200s",
+            "iso": 100,
+            "takenAt": "Aug 16, 2026"
+          }
         },
         {
           "id": "sports/mckay-bike-park/img00055",
@@ -167,7 +239,16 @@
           ],
           "lqip": "data:image/webp;base64,UklGRogAAABXRUJQVlA4IHwAAABwBACdASoYABIAPu1or1AppaQiqAqpMB2JYgAu/8AYP1dW8QKFAPnR0rSYAAD51dqNG2PblTEhvbh/yJSYaEcafyXjpBsifXafwZQuILqB/4M/0MEOA0c3GVxKCg5+HjF9L3df/wjcJR4XgRpF63+og79a9FTRFZPSAAAA",
           "alt": "",
-          "caption": ""
+          "caption": "",
+          "exif": {
+            "camera": "Sony ILCE-6400",
+            "lens": "30mm F1.4 DC DN | Contemporary 016",
+            "focalLength": "30mm (45mm equiv.)",
+            "aperture": "f/2.8",
+            "shutterSpeed": "1/4000s",
+            "iso": 100,
+            "takenAt": "Aug 16, 2026"
+          }
         },
         {
           "id": "sports/mckay-bike-park/img00063",
@@ -184,7 +265,16 @@
           ],
           "lqip": "data:image/webp;base64,UklGRoQAAABXRUJQVlA4IHgAAACQBACdASoYABIAPulep02pJSOiN/VYASAdCWIAuy9J6gLf/AITvyiZ4/bmIyAAUk4BjiEcZg81IXri4P1L3Axh5BbrRDLoBi2pwKdFDQBSX1r9RT1g2IxMZDFOFp5oAsBSL684ivC8Ou6E0Ng4P9V3sw6y+KEAAAA=",
           "alt": "",
-          "caption": ""
+          "caption": "",
+          "exif": {
+            "camera": "Sony ILCE-6400",
+            "lens": "30mm F1.4 DC DN | Contemporary 016",
+            "focalLength": "30mm (45mm equiv.)",
+            "aperture": "f/2.8",
+            "shutterSpeed": "1/4000s",
+            "iso": 100,
+            "takenAt": "Aug 16, 2026"
+          }
         },
         {
           "id": "sports/mckay-bike-park/img00068",
@@ -201,7 +291,16 @@
           ],
           "lqip": "data:image/webp;base64,UklGRp4AAABXRUJQVlA4IJIAAACQBQCdASoYABIAPu1wsFKppiSiqAgBMB2JYgCsM1DEIBTjxHaXunA0kcTZgcaQREkUz2Cp4AD9y/cT+95DlvTtW08SjuI2uWvg4q2AQ7ecB/uLUUqH1H3oJS5lZ7nwoU9Q436YMfrrGTCbJ9Xvrfz34j/VZRplSTboWdfKGh1Z7nq3tplcUvqQcyGE0o+4sIAAAA==",
           "alt": "",
-          "caption": ""
+          "caption": "",
+          "exif": {
+            "camera": "Sony ILCE-6400",
+            "lens": "30mm F1.4 DC DN | Contemporary 016",
+            "focalLength": "30mm (45mm equiv.)",
+            "aperture": "f/4.5",
+            "shutterSpeed": "1/2000s",
+            "iso": 200,
+            "takenAt": "Aug 16, 2026"
+          }
         },
         {
           "id": "sports/mckay-bike-park/img00076",
@@ -218,7 +317,16 @@
           ],
           "lqip": "data:image/webp;base64,UklGRqYAAABXRUJQVlA4IJoAAACwBACdASoYABIAPu1qrVEppaQiqAqpMB2JZACdMtDBfDYXAWp+bq6Gru286k64APyf0R0aTCj+t4L2RQ8iC9GvNPsILPw/XYtoTtRuZqjRA2bAsmlwvo5B90zFo1oLSLtJ/5Grli691p3CPoXmytbb8Wktm/Gjl5CnXasjLJFLkm3LT0wA+O6mMkd4KGYq9g0dCEnIQdhdXAAA",
           "alt": "",
-          "caption": ""
+          "caption": "",
+          "exif": {
+            "camera": "Sony ILCE-6400",
+            "lens": "30mm F1.4 DC DN | Contemporary 016",
+            "focalLength": "30mm (45mm equiv.)",
+            "aperture": "f/4.5",
+            "shutterSpeed": "1/2000s",
+            "iso": 200,
+            "takenAt": "Aug 16, 2026"
+          }
         },
         {
           "id": "sports/mckay-bike-park/img00085",
@@ -235,7 +343,16 @@
           ],
           "lqip": "data:image/webp;base64,UklGRpQAAABXRUJQVlA4IIgAAADwBACdASoYABIAPu1kq06ppaQiKA1RMB2JZgCdMoR+J8WAp5fnXvyDfDzKiNTyLCAA1oWgMf9nAL5Z8KLjuMo2901IsVhk65v8bu/aA687SW83xks568HRujsefopXVfVRQTDyJlkY4S+RvlF2xM8+K0oIBx7nIlCj3V8lBEyftDUnC2j7QAAA",
           "alt": "",
-          "caption": ""
+          "caption": "",
+          "exif": {
+            "camera": "Sony ILCE-6400",
+            "lens": "30mm F1.4 DC DN | Contemporary 016",
+            "focalLength": "30mm (45mm equiv.)",
+            "aperture": "f/4",
+            "shutterSpeed": "1/2000s",
+            "iso": 160,
+            "takenAt": "Aug 16, 2026"
+          }
         },
         {
           "id": "sports/mckay-bike-park/img00091",
@@ -252,7 +369,16 @@
           ],
           "lqip": "data:image/webp;base64,UklGRqQAAABXRUJQVlA4IJgAAABwBQCdASoYABIAPu1qqlAppiOiqA1RMB2JZgCdMoABqgPC7jty6FGy7NlKDvVW9cwpwqrAAP3OtgPI/4RRCB8+A3keMlGLuzSblsBPXUHHZOWS18HKRKil5cr+6/McxHPmJ7C9wArWC21NO6QTLC+RYWH5mTMoRzb+MtIHI7S1bFODitnady3BjFryqyfgAHwKQJWq6CAAAA==",
           "alt": "",
-          "caption": ""
+          "caption": "",
+          "exif": {
+            "camera": "Sony ILCE-6400",
+            "lens": "30mm F1.4 DC DN | Contemporary 016",
+            "focalLength": "30mm (45mm equiv.)",
+            "aperture": "f/4",
+            "shutterSpeed": "1/2000s",
+            "iso": 160,
+            "takenAt": "Aug 16, 2026"
+          }
         },
         {
           "id": "sports/mckay-bike-park/img00096",
@@ -269,7 +395,16 @@
           ],
           "lqip": "data:image/webp;base64,UklGRqIAAABXRUJQVlA4IJYAAAAwBQCdASoYABIAPu1or1CppaQiqAqpMB2JYgC7M5Bv/gIGaLaviCyz+8h8EjhFFJKWAAD8eRL6cS96F8kJu57d+q7/JLbqH4KmZBrSJSpD1R/ODx3DFu4NgwHctzhQn/mJ7jWbvFRYfSYv8G+46h6xU6/oypihkGrcCoBQgq44H4ycJSB5RFT5fdk2P9swNOWMfgEUAAA=",
           "alt": "",
-          "caption": ""
+          "caption": "",
+          "exif": {
+            "camera": "Sony ILCE-6400",
+            "lens": "30mm F1.4 DC DN | Contemporary 016",
+            "focalLength": "30mm (45mm equiv.)",
+            "aperture": "f/4.5",
+            "shutterSpeed": "1/2000s",
+            "iso": 160,
+            "takenAt": "Aug 16, 2026"
+          }
         },
         {
           "id": "sports/mckay-bike-park/img00105",
@@ -286,7 +421,16 @@
           ],
           "lqip": "data:image/webp;base64,UklGRnwAAABXRUJQVlA4IHAAAABwBACdASoYABIAPu1qr1CppaQiqAqpMB2JQBfqXAW/+AVm00/kg1zfVo+AAAD3pC6eVqks2l5x9Xb9qnbjxbNTkqtaxjDNEaJgW14lKTg+WZK+UJX20qSUNTQOKAfnYOXAUtqZzq/wN4GcsQ3WAAAA",
           "alt": "",
-          "caption": ""
+          "caption": "",
+          "exif": {
+            "camera": "Sony ILCE-6400",
+            "lens": "30mm F1.4 DC DN | Contemporary 016",
+            "focalLength": "30mm (45mm equiv.)",
+            "aperture": "f/8",
+            "shutterSpeed": "1/3200s",
+            "iso": 1000,
+            "takenAt": "Aug 16, 2026"
+          }
         },
         {
           "id": "sports/mckay-bike-park/img00107",
@@ -303,7 +447,16 @@
           ],
           "lqip": "data:image/webp;base64,UklGRogAAABXRUJQVlA4IHwAAADwBACdASoYABIAPulepk2pJSOiN/VYASAdCWIAuyE7gOrTcd4wkK1V8fxt54SalIAAakviBu8WliVieLcr/ggASJFVowk+fem64uW+fokJAfDvSDPGxSdV1XAGEHb2DIuiV39zRYTSMrA90lDBLkUThY7rNgujt+RQpYAA",
           "alt": "",
-          "caption": ""
+          "caption": "",
+          "exif": {
+            "camera": "Sony ILCE-6400",
+            "lens": "30mm F1.4 DC DN | Contemporary 016",
+            "focalLength": "30mm (45mm equiv.)",
+            "aperture": "f/8",
+            "shutterSpeed": "1/3200s",
+            "iso": 1000,
+            "takenAt": "Aug 16, 2026"
+          }
         },
         {
           "id": "sports/mckay-bike-park/img00110",
@@ -320,7 +473,16 @@
           ],
           "lqip": "data:image/webp;base64,UklGRpoAAABXRUJQVlA4II4AAAAwBQCdASoYABIAPu1kqU2ppaOiMAgBMB2JYgCxHyX4wA8vf4b2NtLr1Z3TXyANgOuBgAD3HwzTTpzYQV8Yo03UckBFNgum3FB/lgiCO6sb79ZTT0fzXlMw0/TkpQ5WJGLaPPohCAZSeAt1IciQeI3mC8GvjpPFg7KTa42d5qXpMQU8/gLRCmcvdUiD6AAA",
           "alt": "",
-          "caption": ""
+          "caption": "",
+          "exif": {
+            "camera": "Sony ILCE-6400",
+            "lens": "30mm F1.4 DC DN | Contemporary 016",
+            "focalLength": "30mm (45mm equiv.)",
+            "aperture": "f/8",
+            "shutterSpeed": "1/3200s",
+            "iso": 1000,
+            "takenAt": "Aug 16, 2026"
+          }
         },
         {
           "id": "sports/mckay-bike-park/img00116",
@@ -337,7 +499,16 @@
           ],
           "lqip": "data:image/webp;base64,UklGRpAAAABXRUJQVlA4IIQAAAAwBQCdASoYABIAPu1krE4ppaSiKA1RMB2JZgCxHuIrZA51O2ZVgRQbboChxJGIVl8xAACDLx2+Mc7kamorfoTxfi4PIzeF7MlZ5qrR5Y5aUu8sEBwZk0S1hR3tVrSvdoIYO9uz/ghE97LugP2ZN2Q05yyJUNAdzHrEEOWUh0s4MMVbyAA=",
           "alt": "",
-          "caption": ""
+          "caption": "",
+          "exif": {
+            "camera": "Sony ILCE-6400",
+            "lens": "30mm F1.4 DC DN | Contemporary 016",
+            "focalLength": "30mm (45mm equiv.)",
+            "aperture": "f/8",
+            "shutterSpeed": "1/3200s",
+            "iso": 1000,
+            "takenAt": "Aug 16, 2026"
+          }
         },
         {
           "id": "sports/mckay-bike-park/img00137",
@@ -354,7 +525,16 @@
           ],
           "lqip": "data:image/webp;base64,UklGRowAAABXRUJQVlA4IIAAAADwAwCdASoYABIAPu1qrlCppaQiqAqpMB2JQBdgAO4GcwWM2gvjLRdYANaF3hh54Y2a6TnWrfZH+VV07vsv1d3jqZwrSaTfoga/iNjhlNrAaT7/XDKFCqpO2zTlS6w+5q0rNUcSSQiDljlOf1kAO3tKZqBsfhIVwYDepGNZpKSAAA==",
           "alt": "",
-          "caption": ""
+          "caption": "",
+          "exif": {
+            "camera": "Sony ILCE-6400",
+            "lens": "30mm F1.4 DC DN | Contemporary 016",
+            "focalLength": "30mm (45mm equiv.)",
+            "aperture": "f/8",
+            "shutterSpeed": "1/3200s",
+            "iso": 1000,
+            "takenAt": "Aug 16, 2026"
+          }
         },
         {
           "id": "sports/mckay-bike-park/img00139",
@@ -371,7 +551,16 @@
           ],
           "lqip": "data:image/webp;base64,UklGRowAAABXRUJQVlA4IIAAAAAQBQCdASoYABIAPu1krE+ppSQiMBgIATAdiUAXYAEGwRs/Zo149Xo8QoT+hgotUzcAANaF4S+Tj0XyQk1rPEWpd1e/1e88ZZgAFeRdKFiym5JoCPAn/qpFT1WOcuQJtEj7r20MnLgWIWo2wEunCRCoyDhNngTa4CKCWHVSCIkAAA==",
           "alt": "",
-          "caption": ""
+          "caption": "",
+          "exif": {
+            "camera": "Sony ILCE-6400",
+            "lens": "30mm F1.4 DC DN | Contemporary 016",
+            "focalLength": "30mm (45mm equiv.)",
+            "aperture": "f/8",
+            "shutterSpeed": "1/3200s",
+            "iso": 1000,
+            "takenAt": "Aug 16, 2026"
+          }
         },
         {
           "id": "sports/mckay-bike-park/img00143",
@@ -388,7 +577,16 @@
           ],
           "lqip": "data:image/webp;base64,UklGRoAAAABXRUJQVlA4IHQAAABQBACdASoYABIAPu1kq0+ppSOjMBgIATAdiUAX5wFaMa3AaOwARmsGhOQgANaF4Q3wvCA+jnL667fsDPGcgMOzOhlbOCauOOVYL18sgD8sMyHef0XwOufrPOsIr6M5ZYIM4sjBaz6pL/BgDFbHWyGS7QAAAA==",
           "alt": "",
-          "caption": ""
+          "caption": "",
+          "exif": {
+            "camera": "Sony ILCE-6400",
+            "lens": "30mm F1.4 DC DN | Contemporary 016",
+            "focalLength": "30mm (45mm equiv.)",
+            "aperture": "f/8",
+            "shutterSpeed": "1/3200s",
+            "iso": 1000,
+            "takenAt": "Aug 16, 2026"
+          }
         },
         {
           "id": "sports/mckay-bike-park/img00155",
@@ -405,7 +603,16 @@
           ],
           "lqip": "data:image/webp;base64,UklGRnAAAABXRUJQVlA4IGQAAAAwBACdASoYABAAPu1iqU2ppaOiMAgBMB2JbACdMoKABb/4CErC4FvBuIAA6TUImairLOYJHgT3laWNmiqnRrB4sOLHgaOsvGmL5qa3X625Z8/uZtD75k6nC1UBLigYpwGgAxgA",
           "alt": "",
-          "caption": ""
+          "caption": "",
+          "exif": {
+            "camera": "Sony ILCE-6400",
+            "lens": "30mm F1.4 DC DN | Contemporary 016",
+            "focalLength": "30mm (45mm equiv.)",
+            "aperture": "f/8",
+            "shutterSpeed": "1/4000s",
+            "iso": 1000,
+            "takenAt": "Aug 16, 2026"
+          }
         },
         {
           "id": "sports/mckay-bike-park/img00156",
@@ -422,7 +629,16 @@
           ],
           "lqip": "data:image/webp;base64,UklGRoIAAABXRUJQVlA4IHYAAADQBACdASoYABIAPu1krE+ppSQiMBgIATAdiUATpnIN/8AYRoasDSlxNZ8wpacUAABT7XQP7wLFBH4VomoixwlLRqu/ZUx63zKZMro1h1qKaStiTX7c3p4m5v8NHK7Kf7MII4RKfCI0IQ61t8y1+bGMUCX8AAAA",
           "alt": "",
-          "caption": ""
+          "caption": "",
+          "exif": {
+            "camera": "Sony ILCE-6400",
+            "lens": "30mm F1.4 DC DN | Contemporary 016",
+            "focalLength": "30mm (45mm equiv.)",
+            "aperture": "f/8",
+            "shutterSpeed": "1/4000s",
+            "iso": 1000,
+            "takenAt": "Aug 16, 2026"
+          }
         },
         {
           "id": "sports/mckay-bike-park/img00159",
@@ -439,7 +655,16 @@
           ],
           "lqip": "data:image/webp;base64,UklGRpoAAABXRUJQVlA4II4AAACQBACdASoYABIAPu1qrlCppaQiqAqpMB2JYgCw7AVqst4zGQt5KU8hPa7jsgAA+dCHDLH+RxKGxCpqp2+g0VoJDjCcN1R5z64XBKgxiJfVVNT4twaCuZ7Uwg9tWa6qWACPjvRltIm8aI5jB9bT2sI6Tz94YbhuDGgrK44BVlnOEZX9DG/+S4uaDsEnYAAA",
           "alt": "",
-          "caption": ""
+          "caption": "",
+          "exif": {
+            "camera": "Sony ILCE-6400",
+            "lens": "30mm F1.4 DC DN | Contemporary 016",
+            "focalLength": "30mm (45mm equiv.)",
+            "aperture": "f/8",
+            "shutterSpeed": "1/4000s",
+            "iso": 1000,
+            "takenAt": "Aug 16, 2026"
+          }
         },
         {
           "id": "sports/mckay-bike-park/img00161",
@@ -456,7 +681,16 @@
           ],
           "lqip": "data:image/webp;base64,UklGRpoAAABXRUJQVlA4II4AAABwBQCdASoYABIAPulep02pJSOiN/VYASAdCWQAnTMOQYAQsUrLSrvI9cGDi4N7I5TY2STQAPcGx3wMmbaomnQ7DDAg6eMj9quaWWiCfwrdu0Ec0uu7MqZ7Z+OD4d/K06aIBvg3BY9XEJeWYzMlKz2Y3KA5Kf7Z/q9yj5Q+s1cU8P9q5XYhB37gD7ukwAAA",
           "alt": "",
-          "caption": ""
+          "caption": "",
+          "exif": {
+            "camera": "Sony ILCE-6400",
+            "lens": "30mm F1.4 DC DN | Contemporary 016",
+            "focalLength": "30mm (45mm equiv.)",
+            "aperture": "f/8",
+            "shutterSpeed": "1/4000s",
+            "iso": 1000,
+            "takenAt": "Aug 16, 2026"
+          }
         },
         {
           "id": "sports/mckay-bike-park/img00169",
@@ -473,7 +707,16 @@
           ],
           "lqip": "data:image/webp;base64,UklGRpoAAABXRUJQVlA4II4AAADwBACdASoYABIAPu1arE2ppKSiMBgMATAdiWQAsOwG6267Opl5SrA/r7ahqUrsKYAA2cTQuyZJdvi5IOioQ4w57m5Bzvqy/37aDbIcrthhEgVXUmsDNpqKO36YSXnaW49roxSBhGvE31pe1K+94TCQKa+5O/NC3Xmqt62FqJdcjlwcGkWmcWAMcgCF8AAA",
           "alt": "",
-          "caption": ""
+          "caption": "",
+          "exif": {
+            "camera": "Sony ILCE-6400",
+            "lens": "30mm F1.4 DC DN | Contemporary 016",
+            "focalLength": "30mm (45mm equiv.)",
+            "aperture": "f/8",
+            "shutterSpeed": "1/4000s",
+            "iso": 1000,
+            "takenAt": "Aug 16, 2026"
+          }
         },
         {
           "id": "sports/mckay-bike-park/img00188",
@@ -490,7 +733,16 @@
           ],
           "lqip": "data:image/webp;base64,UklGRoQAAABXRUJQVlA4IHgAAACQBACdASoYABIAPu1gqU2ppSOiMBgMATAdiWgAnTKEcAAJCS0M/QK19APbRgAA/RwQyd2eewIfHh4sF+GQuPHE1zDzRaOu1VJsF8N1DTGZQoD3WZjrmYt+PnDMQN43J0VVNeN7R0poS/rSRLgeXDHxDASaLvjVkAA=",
           "alt": "",
-          "caption": ""
+          "caption": "",
+          "exif": {
+            "camera": "Sony ILCE-6400",
+            "lens": "30mm F1.4 DC DN | Contemporary 016",
+            "focalLength": "30mm (45mm equiv.)",
+            "aperture": "f/8",
+            "shutterSpeed": "1/4000s",
+            "iso": 1000,
+            "takenAt": "Aug 16, 2026"
+          }
         },
         {
           "id": "sports/mckay-bike-park/img00199",
@@ -507,7 +759,16 @@
           ],
           "lqip": "data:image/webp;base64,UklGRo4AAABXRUJQVlA4IIIAAAAQBQCdASoYABIAPu1gq1AppSOisBgIATAdiWgAnTKEcAAVFGwszUbEQiYbgfgDw4oQAP0Hgm9oXu3jqaais9GXbP3RxPZ0ZeaLR3jcWJ4mqQDAiFqtxLcH+qYp2WKKxlBY/jz9YFdowzdAs4YsXOJQkBbdZwaGTnhBHXsohGPRLAAA",
           "alt": "",
-          "caption": ""
+          "caption": "",
+          "exif": {
+            "camera": "Sony ILCE-6400",
+            "lens": "30mm F1.4 DC DN | Contemporary 016",
+            "focalLength": "30mm (45mm equiv.)",
+            "aperture": "f/8",
+            "shutterSpeed": "1/4000s",
+            "iso": 1000,
+            "takenAt": "Aug 16, 2026"
+          }
         },
         {
           "id": "sports/mckay-bike-park/img09998",
@@ -524,7 +785,16 @@
           ],
           "lqip": "data:image/webp;base64,UklGRpgAAABXRUJQVlA4IIwAAACQBACdASoYABIAPu1srFEppaQiqAqpMB2JQBYj5L/qAn8OzWvG/nw9wIvebQAA/dPu31bYA85C38YFGi6E6JYZ1Q+ov5iHMSnkEnyjNcfb+soqhh9FXYRB6DcmDLlo0oZKXoKTbcCfNnxXXFbhtp4yOV15eyzwZNuvdR8EVVZ+8sc/ggkN4Pt8fgAAAA==",
           "alt": "",
-          "caption": ""
+          "caption": "",
+          "exif": {
+            "camera": "Sony ILCE-6400",
+            "lens": "30mm F1.4 DC DN | Contemporary 016",
+            "focalLength": "30mm (45mm equiv.)",
+            "aperture": "f/2.8",
+            "shutterSpeed": "1/2000s",
+            "iso": 100,
+            "takenAt": "Aug 16, 2026"
+          }
         }
       ]
     }
