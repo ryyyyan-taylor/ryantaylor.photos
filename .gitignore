@@ -8,3 +8,4 @@ dist/
 
 photos/*
 !photos/README.md
+!photos/gallery.example.json

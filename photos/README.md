@@ -16,7 +16,23 @@ Any folder containing images is a gallery. Nest one level to group galleries int
 Sections are the first path segment, titled from the folder name, and appear under /sections/.
 Deeper nesting works too — the first segment is still the section.
 
-Optional `gallery.json` inside a gallery folder:
+## gallery.json
+
+Every gallery folder may hold a `gallery.json`. The file is optional, and so is every field in it —
+include only what you want to override. Copy `gallery.example.json` as a starting point.
+
+| Field | Default | Notes |
+|---|---|---|
+| `title` | folder name, titleized | Display name. Does not affect the URL. |
+| `description` | none | Blurb under the gallery heading. |
+| `order` | `999` | Lower sorts earlier on the home page. Ties break by title. |
+| `cover` | first photo | Exact filename **with extension**, case-sensitive. |
+| `photos` | none | Per-file `alt` and `caption`, keyed by exact filename. |
+
+`alt` is the accessibility description and is not shown. `caption` appears under the photo in the
+lightbox. Photos you omit simply have neither.
+
+Example:
 
     {
       "title": "Bike Park",
