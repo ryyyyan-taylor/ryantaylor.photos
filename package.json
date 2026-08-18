@@ -1,0 +1,27 @@
+{
+  "name": "ryantaylor-photos",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "wrangler dev",
+    "deploy": "astro build && wrangler deploy",
+    "photos:sync": "node --env-file-if-exists=.env scripts/sync-photos.mjs",
+    "photos:check": "node --env-file-if-exists=.env scripts/sync-photos.mjs --dry-run"
+  },
+  "dependencies": {
+    "@astrojs/sitemap": "^3.7.3",
+    "astro": "^7.2.3"
+  },
+  "devDependencies": {
+    "@aws-sdk/client-s3": "^3.1112.0",
+    "sharp": "^0.35.3",
+    "wrangler": "^4.124.0"
+  },
+  "allowScripts": {
+    "esbuild@0.28.2": true,
+    "esbuild@0.28.1": true,
+    "workerd@1.20260815.1": true
+  }
+}

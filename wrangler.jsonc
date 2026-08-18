@@ -1,0 +1,12 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "ryantaylor-photos",
+  "compatibility_date": "2026-08-18",
+  // After adding the custom domain in the dashboard once, you can manage it here instead:
+  // "routes": [{ "pattern": "ryantaylor.photos", "custom_domain": true }],
+  "assets": {
+    "directory": "./dist",
+    "not_found_handling": "404-page",
+    "html_handling": "auto-trailing-slash"
+  }
+}
