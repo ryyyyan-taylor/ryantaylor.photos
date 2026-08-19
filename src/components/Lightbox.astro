@@ -72,6 +72,7 @@ const items = photos.map((photo) => ({
   }
 
   const dialog = document.getElementById('lightbox') as HTMLDialogElement;
+  const imageWrap = document.querySelector('.lightbox-image-wrap') as HTMLDivElement;
   const image = document.getElementById('lightbox-image') as HTMLImageElement;
   const caption = document.getElementById('lightbox-caption') as HTMLParagraphElement;
   const exifList = document.getElementById('lightbox-exif') as HTMLDListElement;
@@ -130,11 +131,32 @@ const items = photos.map((photo) => ({
     downloadToggle.setAttribute('aria-expanded', 'false');
   };
 
+  const MIN_ZOOM = 1;
+  const MAX_ZOOM = 4;
+  let zoom = MIN_ZOOM;
+
+  const resetZoom = () => {
+    zoom = MIN_ZOOM;
+    image.style.transform = '';
+  };
+
+  imageWrap.addEventListener(
+    'wheel',
+    (event) => {
+      event.preventDefault();
+      const factor = Math.exp(-event.deltaY * 0.0015);
+      zoom = Math.min(MAX_ZOOM, Math.max(MIN_ZOOM, zoom * factor));
+      image.style.transform = zoom > MIN_ZOOM ? `scale(${zoom})` : '';
+    },
+    { passive: false },
+  );
+
   const show = (next: number) => {
     index = (next + items.length) % items.length;
     const item = items[index];
     image.src = item.full;
     image.alt = item.alt;
+    resetZoom();
     caption.textContent = item.caption;
     renderExif(item.exif);
     renderDownloads(item.downloads);
@@ -153,6 +175,7 @@ const items = photos.map((photo) => ({
     tile.addEventListener('click', () => {
       show(i);
       dialog.showModal();
+      document.documentElement.classList.add('no-scroll');
     }),
   );
 
@@ -180,16 +203,8 @@ const items = photos.map((photo) => ({
     if (event.key === 'Escape') closeDownloadMenu();
   });
 
-  dialog.addEventListener('close', () => tiles[index]?.focus());
-
-  let touchStart = 0;
-  dialog.addEventListener('touchstart', (e) => (touchStart = e.changedTouches[0].clientX), { passive: true });
-  dialog.addEventListener(
-    'touchend',
-    (e) => {
-      const delta = e.changedTouches[0].clientX - touchStart;
-      if (Math.abs(delta) > 50) show(index + (delta < 0 ? 1 : -1));
-    },
-    { passive: true },
-  );
+  dialog.addEventListener('close', () => {
+    tiles[index]?.focus();
+    document.documentElement.classList.remove('no-scroll');
+  });
 </script>
