@@ -88,6 +88,26 @@ h3 {
   letter-spacing: 0.01em;
 }
 
+.site-header--hero {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: var(--bg);
+}
+
+.site-header--hero .wordmark {
+  opacity: 0;
+  transform: translateY(-0.4rem);
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.site-header--hero.is-scrolled .wordmark {
+  opacity: 1;
+  transform: none;
+  pointer-events: auto;
+}
+
 .site-nav {
   display: flex;
   flex-wrap: wrap;

@@ -5,9 +5,10 @@ import { IMG_BASE } from '../lib/photos';
 interface Props {
   title?: string;
   description?: string;
+  heroReveal?: boolean;
 }
 
-const { title, description = 'Photography by Ryan Taylor.' } = Astro.props;
+const { title, description = 'Photography by Ryan Taylor.', heroReveal = false } = Astro.props;
 const fullTitle = title ? `${title} — Ryan Taylor` : 'Ryan Taylor — Photography';
 const path = Astro.url.pathname;
 const nav = [
@@ -36,7 +37,7 @@ const nav = [
   </head>
   <body>
     <div class="shell">
-      <header class="site-header">
+      <header id="site-header" class:list={['site-header', { 'site-header--hero': heroReveal }]}>
         <a class="wordmark" href="/">Ryan Taylor</a>
         <nav class="site-nav">
           {
@@ -58,5 +59,27 @@ const nav = [
         <a href="mailto:hello@ryantaylor.photos">hello@ryantaylor.photos</a>
       </footer>
     </div>
+
+    {
+      heroReveal && (
+        <script>
+          const header = document.getElementById('site-header')!;
+          const heroName = document.getElementById('hero-name');
+          if (heroName) {
+            let observer: IntersectionObserver;
+            const setup = () => {
+              observer?.disconnect();
+              observer = new IntersectionObserver(
+                ([entry]) => header.classList.toggle('is-scrolled', !entry.isIntersecting),
+                { rootMargin: `-${header.getBoundingClientRect().height}px 0px 0px 0px`, threshold: 0 },
+              );
+              observer.observe(heroName);
+            };
+            setup();
+            window.addEventListener('resize', setup);
+          }
+        </script>
+      )
+    }
   </body>
 </html>

@@ -7,9 +7,9 @@ import { galleries, sections, unsectioned } from '../lib/photos';
 const groups = [...sections, ...(unsectioned.length ? [{ slug: 'other', title: 'Other', galleries: unsectioned }] : [])];
 ---
 
-<Base>
+<Base heroReveal>
   <section class="page-head">
-    <h1>Ryan Taylor</h1>
+    <h1 id="hero-name">Ryan Taylor</h1>
     <p class="lede">
       Hobbyist photographer in Denver, CO. Want to work together? Feel free to reach out!
     </p>
