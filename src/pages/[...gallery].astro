@@ -2,27 +2,22 @@
 import Base from '../layouts/Base.astro';
 import Photo from '../components/Photo.astro';
 import Lightbox from '../components/Lightbox.astro';
-import { galleries, sections, type Gallery } from '../lib/photos';
+import { galleries, type Gallery } from '../lib/photos';
 
 export function getStaticPaths() {
   return galleries.map((gallery) => ({ params: { gallery: gallery.slug }, props: { gallery } }));
 }
 
 const { gallery } = Astro.props as { gallery: Gallery };
-const section = sections.find((s) => s.slug === gallery.section);
 ---
 
 <Base title={gallery.title} description={gallery.description}>
   <section class="page-head">
     <p class="eyebrow">
-      {
-        section ? (
-          <a href={`/sections/${section.slug}/`}>{section.title}</a>
-        ) : (
-          <a href="/">Work</a>
-        )
-      }
-      {' / '}{gallery.photos.length} photographs
+      <a class="back-link" href="/" aria-label="Back to all work">
+        ←
+      </a>
+      {gallery.photos.length} photographs
     </p>
     <h1>{gallery.title}</h1>
     {gallery.description && <p class="lede">{gallery.description}</p>}

@@ -163,6 +163,21 @@ h3 {
   color: var(--muted);
 }
 
+.back-link {
+  display: inline-block;
+  margin-right: 0.6em;
+  font-size: 1.2em;
+  line-height: 1;
+  vertical-align: -0.1em;
+  letter-spacing: normal;
+  color: var(--muted);
+}
+
+.back-link:hover,
+.back-link:focus-visible {
+  color: var(--fg);
+}
+
 .gallery-index {
   display: grid;
   gap: clamp(2.5rem, 6vw, 4.5rem);
