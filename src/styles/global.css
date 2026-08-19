@@ -186,15 +186,6 @@ h3 {
   gap: 1rem;
 }
 
-.gallery-card .section-tag {
-  display: block;
-  font-size: 0.72rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--muted);
-  margin-bottom: 0.25rem;
-}
-
 .chips {
   display: flex;
   flex-wrap: wrap;

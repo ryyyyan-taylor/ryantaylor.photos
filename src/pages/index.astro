@@ -1,7 +1,10 @@
 ---
 import Base from '../layouts/Base.astro';
 import GalleryCard from '../components/GalleryCard.astro';
-import { galleries } from '../lib/photos';
+import SectionFilter from '../components/SectionFilter.astro';
+import { galleries, sections, unsectioned } from '../lib/photos';
+
+const groups = [...sections, ...(unsectioned.length ? [{ slug: 'other', title: 'Other', galleries: unsectioned }] : [])];
 ---
 
 <Base>
@@ -21,11 +24,22 @@ import { galleries } from '../lib/photos';
         </p>
       </div>
     ) : (
-      <div class="gallery-index">
-        {galleries.map((gallery, i) => (
-          <GalleryCard gallery={gallery} eager={i < 2} showSection />
+      <>
+        <SectionFilter />
+
+        {groups.map((group, g) => (
+          <section class="section-group">
+            <h2 class="section-heading">
+              {group.slug === 'other' ? group.title : <a href={`/sections/${group.slug}/`}>{group.title}</a>}
+            </h2>
+            <div class="gallery-index">
+              {group.galleries.map((gallery, i) => (
+                <GalleryCard gallery={gallery} eager={g === 0 && i < 2} />
+              ))}
+            </div>
+          </section>
         ))}
-      </div>
+      </>
     )
   }
 </Base>
