@@ -10,6 +10,7 @@ const { photos } = Astro.props;
 const items = photos.map((photo) => ({
   alt: photo.alt,
   caption: photo.caption,
+  note: photo.note ?? '',
   full: largestSrc(photo),
   thumb: sizedSrc(photo, photo.widths[0]),
   exif: photo.exif ?? null,
@@ -35,6 +36,7 @@ const items = photos.map((photo) => ({
     <aside class="lightbox-sidebar">
       <p class="lightbox-caption" id="lightbox-caption"></p>
       <dl class="lightbox-exif" id="lightbox-exif"></dl>
+      <p class="lightbox-note" id="lightbox-note"></p>
       <div class="lightbox-download">
         <button class="download-toggle" type="button" data-action="download-toggle" aria-expanded="false" aria-controls="download-menu">
           Download
@@ -65,6 +67,7 @@ const items = photos.map((photo) => ({
   interface LightboxItem {
     alt: string;
     caption: string;
+    note: string;
     full: string;
     thumb: string;
     exif: PhotoExif | null;
@@ -76,6 +79,7 @@ const items = photos.map((photo) => ({
   const image = document.getElementById('lightbox-image') as HTMLImageElement;
   const caption = document.getElementById('lightbox-caption') as HTMLParagraphElement;
   const exifList = document.getElementById('lightbox-exif') as HTMLDListElement;
+  const note = document.getElementById('lightbox-note') as HTMLParagraphElement;
   const thumbs = document.getElementById('lightbox-thumbs') as HTMLDivElement;
   const downloadToggle = document.getElementById('lightbox')!.querySelector<HTMLButtonElement>('.download-toggle')!;
   const downloadMenu = document.getElementById('download-menu') as HTMLUListElement;
@@ -164,6 +168,8 @@ const items = photos.map((photo) => ({
     resetZoom();
     caption.textContent = item.caption;
     renderExif(item.exif);
+    note.textContent = item.note;
+    note.hidden = !item.note;
     renderDownloads(item.downloads);
     closeDownloadMenu();
     thumbButtons.forEach((btn, i) => {

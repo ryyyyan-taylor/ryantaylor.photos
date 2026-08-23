@@ -486,6 +486,16 @@ h3 {
   text-align: right;
 }
 
+.lightbox-note {
+  font-size: 0.85rem;
+  line-height: 1.5;
+  font-style: italic;
+  color: color-mix(in srgb, var(--overlay-fg) 75%, transparent);
+  margin: 0 0 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid color-mix(in srgb, var(--overlay-fg) 25%, transparent);
+}
+
 .lightbox-download {
   position: relative;
 }

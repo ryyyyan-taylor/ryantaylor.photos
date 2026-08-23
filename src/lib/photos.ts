@@ -21,6 +21,7 @@ export interface Photo {
   lqip: string;
   alt: string;
   caption: string;
+  note: string;
   exif: PhotoExif | null;
 }
 

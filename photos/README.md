@@ -27,10 +27,11 @@ include only what you want to override. Copy `gallery.example.json` as a startin
 | `description` | none | Blurb under the gallery heading. |
 | `order` | `999` | Lower sorts earlier on the home page. Ties break by title. |
 | `cover` | first photo | Exact filename **with extension**, case-sensitive. |
-| `photos` | none | Per-file `alt` and `caption`, keyed by exact filename. |
+| `photos` | none | Per-file `alt`, `caption`, and `note`, keyed by exact filename. |
 
 `alt` is the accessibility description and is not shown. `caption` appears under the photo in the
-lightbox. Photos you omit simply have neither.
+lightbox. `note` appears in the lightbox sidebar, below the EXIF data — use it for shooting notes or
+backstory. Photos you omit simply have none of these.
 
 Example:
 

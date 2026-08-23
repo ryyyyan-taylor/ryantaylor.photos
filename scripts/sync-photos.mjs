@@ -155,6 +155,7 @@ async function processPhoto(rel, slug, dir, file, config) {
     lqip,
     alt: meta.alt ?? '',
     caption: meta.caption ?? '',
+    note: meta.note ?? '',
     exif,
   };
 }
