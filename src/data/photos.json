@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-23T07:31:46.590Z",
+  "generatedAt": "2026-08-26T16:17:23.605Z",
   "widths": [
     480,
     960,
@@ -32,6 +32,7 @@
           "lqip": "data:image/webp;base64,UklGRogAAABXRUJQVlA4IHwAAABwBACdASoYABIAPu1or1AppaQiqAqpMB2JYgAu/8AYP1dW8QKFAPnR0rSYAAD51dqNG2PblTEhvbh/yJSYaEcafyXjpBsifXafwZQuILqB/4M/0MEOA0c3GVxKCg5+HjF9L3df/wjcJR4XgRpF63+og79a9FTRFZPSAAAA",
           "alt": "",
           "caption": "",
+          "note": "",
           "exif": {
             "camera": "Sony ILCE-6400",
             "lens": "30mm F1.4 DC DN | Contemporary 016",
@@ -58,6 +59,7 @@
           "lqip": "data:image/webp;base64,UklGRoQAAABXRUJQVlA4IHgAAACQBACdASoYABIAPulep02pJSOiN/VYASAdCWIAuy9J6gLf/AITvyiZ4/bmIyAAUk4BjiEcZg81IXri4P1L3Axh5BbrRDLoBi2pwKdFDQBSX1r9RT1g2IxMZDFOFp5oAsBSL684ivC8Ou6E0Ng4P9V3sw6y+KEAAAA=",
           "alt": "",
           "caption": "",
+          "note": "",
           "exif": {
             "camera": "Sony ILCE-6400",
             "lens": "30mm F1.4 DC DN | Contemporary 016",
@@ -84,6 +86,7 @@
           "lqip": "data:image/webp;base64,UklGRqIAAABXRUJQVlA4IJYAAAAwBQCdASoYABIAPu1or1CppaQiqAqpMB2JYgC7M5Bv/gIGaLaviCyz+8h8EjhFFJKWAAD8eRL6cS96F8kJu57d+q7/JLbqH4KmZBrSJSpD1R/ODx3DFu4NgwHctzhQn/mJ7jWbvFRYfSYv8G+46h6xU6/oypihkGrcCoBQgq44H4ycJSB5RFT5fdk2P9swNOWMfgEUAAA=",
           "alt": "",
           "caption": "",
+          "note": "",
           "exif": {
             "camera": "Sony ILCE-6400",
             "lens": "30mm F1.4 DC DN | Contemporary 016",
@@ -110,6 +113,7 @@
           "lqip": "data:image/webp;base64,UklGRoQAAABXRUJQVlA4IHgAAACQBACdASoYABIAPu1gqU2ppSOiMBgMATAdiWgAnTKEcAAJCS0M/QK19APbRgAA/RwQyd2eewIfHh4sF+GQuPHE1zDzRaOu1VJsF8N1DTGZQoD3WZjrmYt+PnDMQN43J0VVNeN7R0poS/rSRLgeXDHxDASaLvjVkAA=",
           "alt": "",
           "caption": "",
+          "note": "",
           "exif": {
             "camera": "Sony ILCE-6400",
             "lens": "30mm F1.4 DC DN | Contemporary 016",
@@ -136,6 +140,7 @@
           "lqip": "data:image/webp;base64,UklGRo4AAABXRUJQVlA4IIIAAAAQBQCdASoYABIAPu1gq1AppSOisBgIATAdiWgAnTKEcAAVFGwszUbEQiYbgfgDw4oQAP0Hgm9oXu3jqaais9GXbP3RxPZ0ZeaLR3jcWJ4mqQDAiFqtxLcH+qYp2WKKxlBY/jz9YFdowzdAs4YsXOJQkBbdZwaGTnhBHXsohGPRLAAA",
           "alt": "",
           "caption": "",
+          "note": "",
           "exif": {
             "camera": "Sony ILCE-6400",
             "lens": "30mm F1.4 DC DN | Contemporary 016",
@@ -162,6 +167,7 @@
           "lqip": "data:image/webp;base64,UklGRqYAAABXRUJQVlA4IJoAAABQBQCdASoYACAAPulep02pJSOiN/VYASAdCWoAnTMceWg6sg5Fq9XWAv73RXQOvLlIfAAA8ZddTrT0hsmQzUZCfPjo1LUOD5ko5MOC5W4bKKnXH1PXjrjdbO8YzfMve1t+YcL1pQDtoowT+y4IiVlYThP75J9ZRJupAK/sWLxx9udnw7ioNPCninu72WeuDgDmGK3N/1juzMgA",
           "alt": "",
           "caption": "",
+          "note": "",
           "exif": {
             "camera": "Sony ILCE-6400",
             "lens": "30mm F1.4 DC DN | Contemporary 016",
@@ -188,12 +194,40 @@
           "lqip": "data:image/webp;base64,UklGRpwAAABXRUJQVlA4IJAAAAAQBQCdASoYABIAPu1ur1KppiQiqAgBMB2JZgCxH1jnJBRDPwprwiNSFW8mDrvFDhXUAKgnuf3i/+8IjggXrIJTp2J46TIcpnwJTjyEDqlQf6eHrec5/vcCnWLbXkXtmT3AC0OWj4jLb7l+t7ayIYFnM8Uvh1Mngg3zwww3Vv35eraE6/dkm05sDzABU38AAAA=",
           "alt": "",
           "caption": "",
+          "note": "",
           "exif": {
             "camera": "Sony ILCE-6400",
             "lens": "30mm F1.4 DC DN | Contemporary 016",
             "focalLength": "30mm (45mm equiv.)",
             "aperture": "f/2.8",
             "shutterSpeed": "1/3200s",
+            "iso": 100,
+            "takenAt": "Aug 22, 2026"
+          }
+        },
+        {
+          "id": "sports/mckay-bike-park/img00340",
+          "file": "Sports/McKay Bike Park/IMG00340.jpg",
+          "stem": "p/sports/mckay-bike-park/img00340.9defc1b0",
+          "hash": "9defc1b0",
+          "width": 4543,
+          "height": 3406,
+          "widths": [
+            480,
+            960,
+            1440,
+            2048
+          ],
+          "lqip": "data:image/webp;base64,UklGRqgAAABXRUJQVlA4IJwAAABQBQCdASoYABIAPu1sq1GppaOiqAqpMB2JQBYj6Fg1Ptw2Ksibm45Wbr6F6n/474CXlCAA/tMaj5HbGDXDcLtzdFE7YCzCD4S9SiHajTF1+RPW6s5udZSzRavod/MkRvALOXCrbDVDuBo94fTb9pVJBVXekMG+xkFgUy8UitJ2U6UsAiLHoONZEjWEmM++YgqbZguHNcqy9hBAAAA=",
+          "alt": "",
+          "caption": "",
+          "note": "",
+          "exif": {
+            "camera": "Sony ILCE-6400",
+            "lens": "30mm F1.4 DC DN | Contemporary 016",
+            "focalLength": "30mm (45mm equiv.)",
+            "aperture": "f/2.8",
+            "shutterSpeed": "1/2500s",
             "iso": 100,
             "takenAt": "Aug 22, 2026"
           }
@@ -214,6 +248,7 @@
           "lqip": "data:image/webp;base64,UklGRooAAABXRUJQVlA4IH4AAABQBACdASoYABIAPu1mq0+ppSOiMBgIATAdiWQAvkgRTwpDH26D8fncyU/AAP7EZFpP1tHyT/lBb6CZLvnbVVsB9Ua049/64416//fyH3NFhu+WZ7PWb1NQxdmedpKoq84/4lpjmvt+fWFnS2ohJ6YMHiQDFxwQWn9WnlQAAAA=",
           "alt": "",
           "caption": "",
+          "note": "",
           "exif": {
             "camera": "Sony ILCE-6400",
             "lens": "30mm F1.4 DC DN | Contemporary 016",
@@ -240,6 +275,7 @@
           "lqip": "data:image/webp;base64,UklGRrAAAABXRUJQVlA4IKQAAACwBACdASoYABIAPu1qrVCppaQiqAqpMB2JYgC06BEV3DSjpui4P1uRSg7mCuwsAP3MVL9bmWMTXr/Zz9UNd7DqdXpx5xCBJprHw5aNUgNRZmLg1D+f5RAxu2TkFal1wlIlfDzRLZ5XjIiu7qgyMNbOfuK26bl2FmznYmgTc3UviocAsJ0TAy072u7JiwQQCteEdyTmm9jhVXc+jgj2/t3bnLAAAA==",
           "alt": "",
           "caption": "",
+          "note": "",
           "exif": {
             "camera": "Sony ILCE-6400",
             "lens": "30mm F1.4 DC DN | Contemporary 016",
@@ -266,6 +302,7 @@
           "lqip": "data:image/webp;base64,UklGRpoAAABXRUJQVlA4II4AAACwBACdASoYABIAPu1wsFKppiSiqAgBMB2JQBOmUAA1My4rqCihpCxjFHzV+qWAAP3LD/uHjVctuA0faCf210dnRaV+eN+MD2RqUwMjz6DjqSg9SHXNTrP/RGLF60cC9UJEkd3rs7c/5dRtNYVHIgjDiA/QXODwIgOgFJtwDHY3l5Rb0iyuRAua86rR6cAA",
           "alt": "",
           "caption": "",
+          "note": "",
           "exif": {
             "camera": "Sony ILCE-6400",
             "lens": "30mm F1.4 DC DN | Contemporary 016",
@@ -292,6 +329,7 @@
           "lqip": "data:image/webp;base64,UklGRo4AAABXRUJQVlA4IIIAAADwBACdASoYABIAPu1qrVCppaQiqAqpMB2JZACdMyYBZuAAGUaja/jf6HGaD8D+1AAAymgoObCMmVyXgr7a1annlCUDxBnDWMdONPyZVFHRWhidLsyVGXRLeHZ31ZAO6jq3OHB7Gjaa4QSSHdgsEjx6gheQv1iwq1vDZUdvRrxlmAAA",
           "alt": "",
           "caption": "",
+          "note": "",
           "exif": {
             "camera": "Sony ILCE-6400",
             "lens": "30mm F1.4 DC DN | Contemporary 016",
@@ -318,6 +356,7 @@
           "lqip": "data:image/webp;base64,UklGRrIAAABXRUJQVlA4IKYAAADQBACdASoYABIAPu1ur1IppiQiqAgBMB2JQBOmWhg1JmqZnHJ6Oiz9h9K5S5eSgAD+UdmN9USufwaneT1nBUXsfleTNQn82hvAEqUP7s55qZOedODwXnETBpYV8310CyBKz0IadQnk1hasAEHWlbZf1PM3DHng9e2ZS8sSbK3ovPhKamrMv6wJ1F2fhOT/t3D2NtLOrRmxwLK4xNGhn1oEjH25HAAA",
           "alt": "",
           "caption": "",
+          "note": "",
           "exif": {
             "camera": "Sony ILCE-6400",
             "lens": "30mm F1.4 DC DN | Contemporary 016",
@@ -344,6 +383,7 @@
           "lqip": "data:image/webp;base64,UklGRoAAAABXRUJQVlA4IHQAAACQBACdASoYABIAPu1mqU2ppiQiMBgMATAdiUAKzMB52Qaq+8/b0HKtwSUlLQAA/EisWs3j+WJU09J+1UI4L5nYAHqYjRkJtzSGqb7lPj3x/Yf8e+J6kV/64e6B6JaH/g+xo52sfncVT2OR7zwV9/Sd3SkAAA==",
           "alt": "",
           "caption": "",
+          "note": "",
           "exif": {
             "camera": "Sony ILCE-6400",
             "lens": "30mm F1.4 DC DN | Contemporary 016",
@@ -370,6 +410,7 @@
           "lqip": "data:image/webp;base64,UklGRq4AAABXRUJQVlA4IKIAAADQAwCdASoYABIAPu1ur1KppiQiqAgBMB2JQBadAQ5s+aUAV0hCvwAA/FpYByWTKmXMdgdJNDh1RaRKGGU9PPypB2TY5lTlw3DMrJofUllELgEgQ7Y4rJCJtGG2YBV1w8BLJLhvuH5YQ8bQ6vEBi5ibw3n3Kyao0ahtHEKLvvqv80rsQ5N5R63Y7zfv1nWPZd1dyZp6dfQ6wNIrLGCOPyC+PAA=",
           "alt": "",
           "caption": "",
+          "note": "",
           "exif": {
             "camera": "Sony ILCE-6400",
             "lens": "30mm F1.4 DC DN | Contemporary 016",
@@ -396,6 +437,7 @@
           "lqip": "data:image/webp;base64,UklGRpQAAABXRUJQVlA4IIgAAADQBACdASoYABIAPu1oqVAppaOiqA1RMB2JYgCdMxgBooWzRvP4y34LLWIb96iicAD3nHpRbJSTxBk3C4qsb5yZvW1DDyJvQ//PTmE9UArPNWmBqHnmjCKRKOqkRR6INsGTnvw3DFo0mvovpm6UXwlCWxRhLU6PenMOFcrzxcIZuK59KZ9DQAAA",
           "alt": "",
           "caption": "",
+          "note": "",
           "exif": {
             "camera": "Sony ILCE-6400",
             "lens": "30mm F1.4 DC DN | Contemporary 016",
@@ -422,6 +464,7 @@
           "lqip": "data:image/webp;base64,UklGRpgAAABXRUJQVlA4IIwAAAAwBQCdASoYABIAPu1orlCppaQiqAqpMB2JZACdMoPKGBYkQ5vcThXhaVYNrhV4vadaAADaoISGnkf7l1jDe7ORKn31Pye2sjQAgj+UkpuTwYuEKNGAyCTVRDLZ2XzL86uOAgh4OEULP0O0VOQp20FYGe0HE9XvJypnRsSGU9aiqCX+Q4fwlpJfXQAAAA==",
           "alt": "",
           "caption": "",
+          "note": "",
           "exif": {
             "camera": "Sony ILCE-6400",
             "lens": "30mm F1.4 DC DN | Contemporary 016",
@@ -448,6 +491,7 @@
           "lqip": "data:image/webp;base64,UklGRrQAAABXRUJQVlA4IKgAAAAwBQCdASoYABIAPu1ur1IppiQiqAgBMB2JQAB8nxZ0T3GXogIP2aSCNjGfxs2N1raYsAD+ANmkMsQ6AbO3Xu7SoMkR3QwSevy6Xp1moqSvyMif9QbEjT32vCr5f2idYInyf7kHsGit+4P1m0XUPvuvMnbMUVhio6xKexzhHJvKkEa93A7YdQDTZm2feXgibfyhUQeimBqU5NOTxb3lLhfjvtIlsHgAAAA=",
           "alt": "",
           "caption": "",
+          "note": "",
           "exif": {
             "camera": "Sony ILCE-6400",
             "lens": "30mm F1.4 DC DN | Contemporary 016",
@@ -474,6 +518,7 @@
           "lqip": "data:image/webp;base64,UklGRvoAAABXRUJQVlA4IO4AAABwBgCdASoYACAAPu1sq08ppqOiMBgIATAdiWwAnTMM9cPoGtzZfD9S1tX8P5hSHcGsWh1cChW25/k1eAAA/tMfcTdAUO7Y7jk1o61JaK0UoOid5+TxUaFLCpt7WYEKthaf1a8WDWydWZKREWqGzqZEBA2wLoZcmE1d8Ixp43naRn/ub+mp2SbxquVsZLqVW2Pnx7YK1qnL0FaEutdbCLTzDcv/jcHgRiMvFQlZs45RdffqxG1LCM7JFDCTF/Stq6dthyi4aDW8BWQO8mzKbQZv0mhe8pv5ymADZwpMJ6MCF3WsxjREoLqgrRmrsAAA",
           "alt": "",
           "caption": "",
+          "note": "",
           "exif": {
             "camera": "Sony ILCE-6400",
             "lens": "30mm F1.4 DC DN | Contemporary 016",
@@ -500,6 +545,7 @@
           "lqip": "data:image/webp;base64,UklGRigBAABXRUJQVlA4IBwBAAAwBwCdASoYACAAPu1oqk+ppaOiKA1RMB2JZAC32T2/Hbf54AmgJVO3hwKktie3usu6MJvk4ra2eVBu7Hp9byryZAAA/urcKUxcaNRlBRUz5H28ItW5pSljgkYMz3+76uuz/5B6KZlH0lWL787lFzq9/e8bnMpu/c6I74ECwSJKlQnY5TQdNsSth+72lW7kAa5OqVPipUiataVb4b5sjmDvQjZP7ZgdbUDTaiR1kKItA/2mkuH/a09aqS3wS4d4mM17wqX8WcXT+hpxspjpsQsxdwVOUr+OGgnA2vLK4V+R8o7HQCLIt4NxnXzyb0/9ShRQIftlwpUZgoRpVi6U1NOgCAbqNyP+RhG3A4ubjfy5C6u+eG5TH+/9+MNYAA==",
           "alt": "",
           "caption": "",
+          "note": "",
           "exif": {
             "camera": "Sony ILCE-6400",
             "lens": "30mm F1.4 DC DN | Contemporary 016",
@@ -526,6 +572,7 @@
           "lqip": "data:image/webp;base64,UklGRpgAAABXRUJQVlA4IIwAAACQBACdASoYABIAPu1srFEppaQiqAqpMB2JQBYj5L/qAn8OzWvG/nw9wIvebQAA/dPu31bYA85C38YFGi6E6JYZ1Q+ov5iHMSnkEnyjNcfb+soqhh9FXYRB6DcmDLlo0oZKXoKTbcCfNnxXXFbhtp4yOV15eyzwZNuvdR8EVVZ+8sc/ggkN4Pt8fgAAAA==",
           "alt": "",
           "caption": "",
+          "note": "",
           "exif": {
             "camera": "Sony ILCE-6400",
             "lens": "30mm F1.4 DC DN | Contemporary 016",
