@@ -136,6 +136,12 @@ h3 {
   color: var(--muted);
 }
 
+.site-footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 1.5rem;
+}
+
 .site-footer a:hover {
   color: var(--fg);
 }
@@ -337,6 +343,79 @@ h3 {
 }
 
 .prose a:hover {
+  border-color: currentColor;
+}
+
+.legal-dates {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 2rem;
+  margin: 0;
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+
+.legal-dates div {
+  display: flex;
+  gap: 0.4em;
+}
+
+.legal-dates dt::after {
+  content: ':';
+}
+
+.legal-dates dd {
+  margin: 0;
+  color: var(--fg);
+}
+
+.legal {
+  max-width: 42rem;
+  display: grid;
+  gap: 1.1rem;
+}
+
+.legal h2 {
+  font-size: clamp(1.2rem, 2.4vw, 1.5rem);
+  margin-top: 1.5rem;
+}
+
+.legal h3 {
+  font-size: 1.05rem;
+  margin-top: 0.75rem;
+}
+
+.legal p,
+.legal ul {
+  margin: 0;
+}
+
+.legal ul {
+  padding-left: 1.2em;
+  display: grid;
+  gap: 0.6rem;
+}
+
+.legal li {
+  padding-left: 0.2em;
+}
+
+.legal hr {
+  border: none;
+  border-top: 1px solid var(--line);
+  margin: 0.5rem 0;
+}
+
+.legal-note {
+  color: var(--muted);
+  font-style: italic;
+}
+
+.legal a {
+  border-bottom: 1px solid var(--line);
+}
+
+.legal a:hover {
   border-color: currentColor;
 }
 
