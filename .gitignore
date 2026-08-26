@@ -5,6 +5,7 @@ dist/
 .claude/
 .env
 .DS_Store
+CLAUDE.md
 
 photos/*
 !photos/README.md
