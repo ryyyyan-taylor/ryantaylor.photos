@@ -369,8 +369,12 @@ h3 {
   color: var(--fg);
 }
 
+.legal-page {
+  max-width: 46rem;
+  margin: 0 auto;
+}
+
 .legal {
-  max-width: var(--measure);
   display: grid;
   gap: 1.1rem;
 }
