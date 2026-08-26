@@ -370,7 +370,7 @@ h3 {
 }
 
 .legal {
-  max-width: 42rem;
+  max-width: var(--measure);
   display: grid;
   gap: 1.1rem;
 }
