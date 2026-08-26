@@ -1,10 +1,29 @@
 ---
 import Base from '../layouts/Base.astro';
-import GalleryCard from '../components/GalleryCard.astro';
+import Photo from '../components/Photo.astro';
+import Lightbox from '../components/Lightbox.astro';
 import SectionFilter from '../components/SectionFilter.astro';
-import { galleries, sections, unsectioned } from '../lib/photos';
+import { galleries, type Gallery, type Photo as PhotoType } from '../lib/photos';
 
-const groups = [...sections, ...(unsectioned.length ? [{ slug: 'other', title: 'Other', galleries: unsectioned }] : [])];
+interface Tile {
+  photo: PhotoType;
+  gallerySlug: string;
+  indexInGallery: number;
+}
+
+// Build a fresh array of wrapper objects and shuffle that — never shuffle
+// `galleries` or any gallery's `.photos` in place, they're module-level
+// singletons shared by every page in this build.
+const tiles: Tile[] = galleries.flatMap((gallery: Gallery) =>
+  gallery.photos.map((photo, indexInGallery) => ({ photo, gallerySlug: gallery.slug, indexInGallery })),
+);
+
+// Fisher-Yates. Frontmatter runs once at build time, so this order is baked
+// into the emitted HTML and stays fixed until the next build/deploy.
+for (let i = tiles.length - 1; i > 0; i--) {
+  const j = Math.floor(Math.random() * (i + 1));
+  [tiles[i], tiles[j]] = [tiles[j], tiles[i]];
+}
 ---
 
 <Base heroReveal>
@@ -27,18 +46,23 @@ const groups = [...sections, ...(unsectioned.length ? [{ slug: 'other', title: '
       <>
         <SectionFilter />
 
-        {groups.map((group, g) => (
-          <section class="section-group">
-            <h2 class="section-heading">
-              {group.slug === 'other' ? group.title : <a href={`/sections/${group.slug}/`}>{group.title}</a>}
-            </h2>
-            <div class="gallery-index">
-              {group.galleries.map((gallery, i) => (
-                <GalleryCard gallery={gallery} eager={g === 0 && i < 2} />
-              ))}
-            </div>
-          </section>
-        ))}
+        <div class="masonry">
+          {
+            tiles.map(({ photo, gallerySlug, indexInGallery }, i) => (
+              <button
+                class="tile"
+                type="button"
+                data-gallery={gallerySlug}
+                data-index={indexInGallery}
+                aria-label={photo.alt || `View photo ${i + 1}`}
+              >
+                <Photo photo={photo} sizes="(min-width: 68rem) 32vw, (min-width: 40rem) 48vw, 94vw" loading={i < 4 ? 'eager' : 'lazy'} />
+              </button>
+            ))
+          }
+        </div>
+
+        <Lightbox galleries={galleries.map((gallery: Gallery) => ({ slug: gallery.slug, photos: gallery.photos }))} />
       </>
     )
   }

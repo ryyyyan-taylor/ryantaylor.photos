@@ -2,12 +2,12 @@
 import { largestSrc, sizedSrc, type Photo } from '../lib/photos';
 
 interface Props {
-  photos: Photo[];
+  galleries: { slug: string; photos: Photo[] }[];
 }
 
-const { photos } = Astro.props;
+const { galleries } = Astro.props;
 
-const items = photos.map((photo) => ({
+const toItem = (photo: Photo) => ({
   alt: photo.alt,
   caption: photo.caption,
   note: photo.note ?? '',
@@ -19,7 +19,9 @@ const items = photos.map((photo) => ({
     width: w,
     height: Math.round((w / photo.width) * photo.height),
   })),
-}));
+});
+
+const groups = Object.fromEntries(galleries.map(({ slug, photos }) => [slug, photos.map(toItem)]));
 ---
 
 <dialog class="lightbox" id="lightbox" aria-label="Photo viewer">
@@ -47,7 +49,7 @@ const items = photos.map((photo) => ({
   </div>
 </dialog>
 
-<script type="application/json" id="lightbox-data" set:html={JSON.stringify(items)} />
+<script type="application/json" id="lightbox-data" set:html={JSON.stringify(groups)} />
 
 <script>
   interface DownloadOption {
@@ -85,7 +87,10 @@ const items = photos.map((photo) => ({
   const downloadMenu = document.getElementById('download-menu') as HTMLUListElement;
   const tiles = [...document.querySelectorAll<HTMLButtonElement>('.tile')];
   const dataEl = document.getElementById('lightbox-data');
-  const items: LightboxItem[] = dataEl ? JSON.parse(dataEl.textContent ?? '[]') : [];
+  const groups: Record<string, LightboxItem[]> = dataEl ? JSON.parse(dataEl.textContent ?? '{}') : {};
+  let activeGallery = '';
+  let items: LightboxItem[] = [];
+  let thumbButtons: HTMLButtonElement[] = [];
   let index = 0;
 
   const exifLabels: Record<keyof NonNullable<LightboxItem['exif']>, string> = {
@@ -98,13 +103,23 @@ const items = photos.map((photo) => ({
     takenAt: 'Taken',
   };
 
-  thumbs.innerHTML = items
-    .map(
-      (item, i) =>
-        `<button class="lightbox-thumb" type="button" data-index="${i}" aria-label="View photo ${i + 1}"><img src="${item.thumb}" alt="" loading="lazy" /></button>`,
-    )
-    .join('');
-  const thumbButtons = [...thumbs.querySelectorAll<HTMLButtonElement>('.lightbox-thumb')];
+  const bindThumbs = () => {
+    thumbs.innerHTML = items
+      .map(
+        (item, i) =>
+          `<button class="lightbox-thumb" type="button" data-index="${i}" aria-label="View photo ${i + 1}"><img src="${item.thumb}" alt="" loading="lazy" /></button>`,
+      )
+      .join('');
+    thumbButtons = [...thumbs.querySelectorAll<HTMLButtonElement>('.lightbox-thumb')];
+    thumbButtons.forEach((btn, i) => btn.addEventListener('click', () => show(i)));
+  };
+
+  const loadGallery = (slug: string) => {
+    if (slug === activeGallery) return;
+    activeGallery = slug;
+    items = groups[slug] ?? [];
+    bindThumbs();
+  };
 
   const renderExif = (exif: LightboxItem['exif']) => {
     exifList.innerHTML = '';
@@ -182,15 +197,17 @@ const items = photos.map((photo) => ({
     });
   };
 
-  tiles.forEach((tile, i) =>
+  tiles.forEach((tile) =>
     tile.addEventListener('click', () => {
-      show(i);
+      const slug = tile.dataset.gallery;
+      const tileIndex = Number(tile.dataset.index);
+      if (!slug || Number.isNaN(tileIndex)) return;
+      loadGallery(slug);
+      show(tileIndex);
       dialog.showModal();
       document.documentElement.classList.add('no-scroll');
     }),
   );
-
-  thumbButtons.forEach((btn, i) => btn.addEventListener('click', () => show(i)));
 
   dialog.addEventListener('click', (event) => {
     const target = event.target as HTMLElement;
@@ -215,7 +232,15 @@ const items = photos.map((photo) => ({
   });
 
   dialog.addEventListener('close', () => {
-    tiles[index]?.focus();
+    const slug = activeGallery;
+    const viewedIndex = index;
+    // Deferred: the browser's own dialog-close focus restoration runs after
+    // this event handler and would otherwise clobber our target.
+    requestAnimationFrame(() => {
+      if (slug) {
+        document.querySelector<HTMLElement>(`.tile[data-gallery="${slug}"][data-index="${viewedIndex}"]`)?.focus();
+      }
+    });
     document.documentElement.classList.remove('no-scroll');
   });
 </script>

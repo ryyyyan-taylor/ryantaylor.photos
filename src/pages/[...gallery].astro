@@ -26,12 +26,12 @@ const { gallery } = Astro.props as { gallery: Gallery };
   <div class="masonry">
     {
       gallery.photos.map((photo, i) => (
-        <button class="tile" type="button" aria-label={photo.alt || `View photo ${i + 1}`}>
+        <button class="tile" type="button" data-gallery={gallery.slug} data-index={i} aria-label={photo.alt || `View photo ${i + 1}`}>
           <Photo photo={photo} sizes="(min-width: 68rem) 32vw, (min-width: 40rem) 48vw, 94vw" loading={i < 4 ? 'eager' : 'lazy'} />
         </button>
       ))
     }
   </div>
 
-  <Lightbox photos={gallery.photos} />
+  <Lightbox galleries={[{ slug: gallery.slug, photos: gallery.photos }]} />
 </Base>
