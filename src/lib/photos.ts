@@ -90,3 +90,12 @@ export function fallbackSrc(photo: Photo) {
 export function largestSrc(photo: Photo) {
   return sizedSrc(photo, photo.widths.at(-1)!);
 }
+
+export function ogImage(photo: Photo, targetWidth = 1440) {
+  const width = photo.widths.includes(targetWidth) ? targetWidth : photo.widths.at(-1)!;
+  return {
+    url: sizedSrc(photo, width, 'webp'),
+    width,
+    height: Math.round((photo.height / photo.width) * width),
+  };
+}

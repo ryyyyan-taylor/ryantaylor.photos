@@ -2,7 +2,7 @@
 import Base from '../../layouts/Base.astro';
 import GalleryCard from '../../components/GalleryCard.astro';
 import SectionFilter from '../../components/SectionFilter.astro';
-import { sections, type Section } from '../../lib/photos';
+import { sections, ogImage, photoById, type Section } from '../../lib/photos';
 
 export function getStaticPaths() {
   return sections.map((section) => ({ params: { section: section.slug }, props: { section } }));
@@ -10,9 +10,14 @@ export function getStaticPaths() {
 
 const { section } = Astro.props as { section: Section };
 const count = section.galleries.reduce((n, g) => n + g.photos.length, 0);
+const coverPhoto = section.galleries[0] ? photoById(section.galleries[0].cover) : undefined;
 ---
 
-<Base title={section.title} description={`${section.title} photography by Ryan Taylor.`}>
+<Base
+  title={section.title}
+  description={`${section.title} photography by Ryan Taylor, based in Denver, CO.`}
+  image={coverPhoto ? ogImage(coverPhoto) : undefined}
+>
   <section class="page-head">
     <p class="eyebrow"><a href="/">Work</a> / {count} photographs</p>
     <h1>{section.title}</h1>

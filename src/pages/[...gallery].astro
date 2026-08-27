@@ -2,16 +2,21 @@
 import Base from '../layouts/Base.astro';
 import Photo from '../components/Photo.astro';
 import Lightbox from '../components/Lightbox.astro';
-import { galleries, type Gallery } from '../lib/photos';
+import { galleries, ogImage, photoById, type Gallery } from '../lib/photos';
 
 export function getStaticPaths() {
   return galleries.map((gallery) => ({ params: { gallery: gallery.slug }, props: { gallery } }));
 }
 
 const { gallery } = Astro.props as { gallery: Gallery };
+const coverPhoto = photoById(gallery.cover);
 ---
 
-<Base title={gallery.title} description={gallery.description}>
+<Base
+  title={gallery.title}
+  description={gallery.description || `${gallery.title} — photography by Ryan Taylor.`}
+  image={coverPhoto ? ogImage(coverPhoto) : undefined}
+>
   <section class="page-head">
     <p class="eyebrow">
       <a class="back-link" href="/" aria-label="Back to all work">

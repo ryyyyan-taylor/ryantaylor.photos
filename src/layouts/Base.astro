@@ -1,16 +1,37 @@
 ---
 import '../styles/global.css';
-import { IMG_BASE } from '../lib/photos';
+import { IMG_BASE, galleries, photoById, ogImage } from '../lib/photos';
 
 interface Props {
   title?: string;
   description?: string;
   heroReveal?: boolean;
+  image?: { url: string; width: number; height: number };
 }
 
-const { title, description = 'Photography by Ryan Taylor.', heroReveal = false } = Astro.props;
-const fullTitle = title ? `${title} — Ryan Taylor` : 'Ryan Taylor — Photography';
+const {
+  title,
+  description = 'Photography by Ryan Taylor, based in Denver, CO.',
+  heroReveal = false,
+  image,
+} = Astro.props;
+const fullTitle = title ? `${title} — Ryan Taylor` : 'Ryan Taylor — Denver Photography';
 const path = Astro.url.pathname;
+const pageUrl = new URL(path, Astro.site);
+
+const fallbackCover = galleries[0] ? photoById(galleries[0].cover) : undefined;
+const resolvedImage = image ?? (fallbackCover ? ogImage(fallbackCover) : undefined);
+const absoluteImage = resolvedImage ? new URL(resolvedImage.url, Astro.site) : undefined;
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Ryan Taylor',
+  url: Astro.site?.toString(),
+  description: 'Hobbyist photographer based in Denver, CO.',
+  jobTitle: 'Photographer',
+  ...(absoluteImage ? { image: absoluteImage.toString() } : {}),
+};
 const nav = [
   { href: '/', label: 'Work' },
   { href: '/about/', label: 'About' },
@@ -26,7 +47,23 @@ const nav = [
     <meta property="og:title" content={fullTitle} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
-    <link rel="canonical" href={new URL(path, Astro.site)} />
+    <meta property="og:url" content={pageUrl} />
+    <meta property="og:site_name" content="Ryan Taylor" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:description" content={description} />
+    {
+      absoluteImage && resolvedImage && (
+        <>
+          <meta property="og:image" content={absoluteImage} />
+          <meta property="og:image:width" content={String(resolvedImage.width)} />
+          <meta property="og:image:height" content={String(resolvedImage.height)} />
+          <meta name="twitter:image" content={absoluteImage} />
+        </>
+      )
+    }
+    <link rel="canonical" href={pageUrl} />
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
     <link rel="preconnect" href={IMG_BASE} crossorigin />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link

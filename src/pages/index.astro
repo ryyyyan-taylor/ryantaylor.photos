@@ -3,7 +3,9 @@ import Base from '../layouts/Base.astro';
 import Photo from '../components/Photo.astro';
 import Lightbox from '../components/Lightbox.astro';
 import SectionFilter from '../components/SectionFilter.astro';
-import { galleries, type Gallery, type Photo as PhotoType } from '../lib/photos';
+import { galleries, ogImage, photoById, type Gallery, type Photo as PhotoType } from '../lib/photos';
+
+const coverPhoto = galleries[0] ? photoById(galleries[0].cover) : undefined;
 
 interface Tile {
   photo: PhotoType;
@@ -26,7 +28,11 @@ for (let i = tiles.length - 1; i > 0; i--) {
 }
 ---
 
-<Base heroReveal>
+<Base
+  heroReveal
+  description="Hobbyist photography by Ryan Taylor, based in Denver, CO — sports and outdoor work."
+  image={coverPhoto ? ogImage(coverPhoto) : undefined}
+>
   <section class="page-head">
     <h1 id="hero-name">Ryan Taylor</h1>
     <p class="lede">
