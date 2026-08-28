@@ -7,6 +7,7 @@ interface Props {
   description?: string;
   heroReveal?: boolean;
   image?: { url: string; width: number; height: number };
+  noindex?: boolean;
 }
 
 const {
@@ -14,6 +15,7 @@ const {
   description = 'Photography by Ryan Taylor, based in Denver, CO.',
   heroReveal = false,
   image,
+  noindex = false,
 } = Astro.props;
 const fullTitle = title ? `${title} — Ryan Taylor` : 'Ryan Taylor — Denver Photography';
 const path = Astro.url.pathname;
@@ -42,6 +44,7 @@ const nav = [
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    {noindex && <meta name="robots" content="noindex,nofollow" />}
     <title>{fullTitle}</title>
     <meta name="description" content={description} />
     <meta property="og:title" content={fullTitle} />
@@ -96,6 +99,16 @@ const nav = [
         <div class="site-footer-links">
           <a href="/terms/">Terms & Conditions</a>
           <a href="mailto:contact@ryantaylor.photos">contact@ryantaylor.photos</a>
+          <a class="site-footer-gear" href="/utils/" aria-label="Utilities" title="Utilities">
+            <svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true">
+              <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+                <circle cx="12" cy="12" r="3.4" />
+                {[0, 45, 90, 135, 180, 225, 270, 315].map((deg) => (
+                  <line x1="12" y1="1.6" x2="12" y2="4.6" transform={`rotate(${deg} 12 12)`} />
+                ))}
+              </g>
+            </svg>
+          </a>
         </div>
       </footer>
     </div>

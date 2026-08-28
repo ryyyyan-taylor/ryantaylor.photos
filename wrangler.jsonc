@@ -4,9 +4,17 @@
   "compatibility_date": "2026-08-18",
   // After adding the custom domain in the dashboard once, you can manage it here instead:
   // "routes": [{ "pattern": "ryantaylor.photos", "custom_domain": true }],
+  "main": "./worker/index.ts",
   "assets": {
     "directory": "./dist",
+    "binding": "ASSETS",
     "not_found_handling": "404-page",
-    "html_handling": "auto-trailing-slash"
-  }
+    "html_handling": "auto-trailing-slash",
+    // /utils/api/* must always reach the Worker — the asset layer's 404-page
+    // fallback would otherwise swallow unmatched paths before it gets there.
+    "run_worker_first": ["/utils/api/*"]
+  },
+  "send_email": [
+    { "name": "EMAIL", "allowed_sender_addresses": ["bookings@ryantaylor.photos"] }
+  ]
 }

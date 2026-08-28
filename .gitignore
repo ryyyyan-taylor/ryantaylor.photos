@@ -6,6 +6,7 @@ dist/
 .env
 .DS_Store
 CLAUDE.md
+worker-configuration.d.ts
 
 photos/*
 !photos/README.md

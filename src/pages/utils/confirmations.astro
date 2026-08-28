@@ -1,0 +1,163 @@
+---
+import Base from '../../layouts/Base.astro';
+---
+
+<Base
+  title="Booking Confirmation"
+  description="Generate and send booking confirmations to clients."
+  noindex
+>
+  <div class="legal-page">
+    <section class="page-head">
+      <p class="eyebrow">
+        <a class="back-link" href="/utils/" aria-label="Back to utilities">←</a>
+        Utilities
+      </p>
+      <h1>Booking Confirmation</h1>
+      <p class="lede">Fill in the details, preview the email, then send it to your client.</p>
+    </section>
+
+    <form id="confirmation-form" class="confirmation-form">
+      <div class="field-row">
+        <div class="field">
+          <label for="clientName">Client name</label>
+          <input id="clientName" name="clientName" type="text" required />
+        </div>
+        <div class="field">
+          <label for="clientEmail">Client email</label>
+          <input id="clientEmail" name="clientEmail" type="email" required />
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="project">Project</label>
+        <input id="project" name="project" type="text" required />
+      </div>
+
+      <div class="field-row field-row--3">
+        <div class="field">
+          <label for="date">Date</label>
+          <input id="date" name="date" type="date" required />
+        </div>
+        <div class="field">
+          <label for="startTime">Start time</label>
+          <input id="startTime" name="startTime" type="time" required />
+        </div>
+        <div class="field">
+          <label for="endTime">End time</label>
+          <input id="endTime" name="endTime" type="time" />
+        </div>
+      </div>
+      <p class="field-hint">Leave end time blank to default to a 1-hour appointment on the calendar invite.</p>
+
+      <div class="field">
+        <label for="price">Price</label>
+        <input id="price" name="price" type="text" placeholder="e.g. $500 deposit, $1,000 on delivery" required />
+      </div>
+
+      <div class="field">
+        <label for="details">Details</label>
+        <textarea id="details" name="details" placeholder="Anything else the client should know"></textarea>
+      </div>
+
+      <div class="form-actions">
+        <button type="submit" class="btn">Preview</button>
+      </div>
+
+      <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+    </form>
+
+    <div class="confirmation-preview" id="confirmation-preview" hidden>
+      <iframe id="preview-frame" title="Email preview"></iframe>
+      <div class="form-actions">
+        <button type="button" class="btn" id="send-btn">Send to client</button>
+        <button type="button" class="btn btn--ghost" id="edit-btn">Edit</button>
+      </div>
+      <p class="form-status" id="send-status" role="status" aria-live="polite"></p>
+    </div>
+  </div>
+</Base>
+
+<script>
+  interface RenderedEmail {
+    subject: string;
+    html: string;
+    text: string;
+  }
+
+  const form = document.getElementById('confirmation-form') as HTMLFormElement;
+  const submitBtn = form.querySelector('button[type="submit"]') as HTMLButtonElement;
+  const statusEl = document.getElementById('form-status')!;
+  const previewSection = document.getElementById('confirmation-preview') as HTMLDivElement;
+  const previewFrame = document.getElementById('preview-frame') as HTMLIFrameElement;
+  const sendBtn = document.getElementById('send-btn') as HTMLButtonElement;
+  const editBtn = document.getElementById('edit-btn') as HTMLButtonElement;
+  const sendStatus = document.getElementById('send-status')!;
+
+  function readFields(): Record<string, string> {
+    return Object.fromEntries(new FormData(form).entries()) as Record<string, string>;
+  }
+
+  function setStatus(el: HTMLElement, message: string, state?: 'error') {
+    el.textContent = message;
+    if (state) {
+      el.dataset.state = state;
+    } else {
+      delete el.dataset.state;
+    }
+  }
+
+  async function postJson<T>(url: string, body: unknown): Promise<T> {
+    const response = await fetch(url, {
+      method: 'POST',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify(body),
+    });
+    const data: unknown = await response.json();
+    if (!response.ok) {
+      const message = (data as { error?: string }).error ?? 'Something went wrong';
+      throw new Error(message);
+    }
+    return data as T;
+  }
+
+  form.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    setStatus(statusEl, 'Rendering preview…');
+    submitBtn.disabled = true;
+
+    try {
+      const email = await postJson<RenderedEmail>('/utils/api/confirmation/preview', readFields());
+      previewFrame.srcdoc = email.html;
+      sendBtn.disabled = false;
+      previewSection.hidden = false;
+      setStatus(sendStatus, '');
+      setStatus(statusEl, '');
+      previewSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    } catch (err) {
+      setStatus(statusEl, err instanceof Error ? err.message : 'Something went wrong', 'error');
+    } finally {
+      submitBtn.disabled = false;
+    }
+  });
+
+  editBtn.addEventListener('click', () => {
+    previewSection.hidden = true;
+    setStatus(sendStatus, '');
+  });
+
+  sendBtn.addEventListener('click', async () => {
+    sendBtn.disabled = true;
+    setStatus(sendStatus, 'Sending…');
+
+    try {
+      await postJson('/utils/api/confirmation/send', readFields());
+      setStatus(sendStatus, 'Sent.');
+      form.reset();
+      previewSection.hidden = true;
+    } catch (err) {
+      setStatus(sendStatus, err instanceof Error ? err.message : 'Something went wrong', 'error');
+      sendBtn.disabled = false;
+    }
+  });
+</script>

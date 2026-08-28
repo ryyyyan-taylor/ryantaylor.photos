@@ -1,0 +1,34 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const utilities = [
+  {
+    title: 'Booking Confirmation',
+    description: 'Generate and send a booking confirmation email to a client.',
+    href: '/utils/confirmations/',
+  },
+];
+---
+
+<Base title="Utilities" description="Internal tools." noindex>
+  <div class="legal-page">
+    <section class="page-head">
+      <p class="eyebrow">Internal</p>
+      <h1>Utilities</h1>
+      <p class="lede">Tools for running the business — not part of the public site.</p>
+    </section>
+
+    <ul class="utility-list">
+      {
+        utilities.map((tool) => (
+          <li>
+            <a class="utility-card" href={tool.href}>
+              <span class="utility-card-title">{tool.title}</span>
+              <span class="utility-card-desc">{tool.description}</span>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</Base>

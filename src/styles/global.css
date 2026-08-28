@@ -146,6 +146,41 @@ h3 {
   color: var(--fg);
 }
 
+.site-footer-gear {
+  display: inline-flex;
+  align-items: center;
+}
+
+.utility-list {
+  display: grid;
+  gap: 1rem;
+  margin-top: clamp(1.5rem, 4vw, 2.5rem);
+  list-style: none;
+  padding: 0;
+}
+
+.utility-card {
+  display: grid;
+  gap: 0.3rem;
+  padding: 1.1rem 1.3rem;
+  border: 1px solid var(--line);
+  color: var(--fg);
+}
+
+.utility-card:hover,
+.utility-card:focus-visible {
+  border-color: var(--fg);
+}
+
+.utility-card-title {
+  font-size: 1.02rem;
+}
+
+.utility-card-desc {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
 .lede {
   max-width: var(--measure);
   color: var(--muted);
@@ -687,4 +722,123 @@ h3 {
     transition-duration: 0.01ms !important;
     animation-duration: 0.01ms !important;
   }
+}
+
+.confirmation-form {
+  display: grid;
+  gap: 1.25rem;
+  margin-top: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+.confirmation-form .field {
+  display: grid;
+  gap: 0.4rem;
+}
+
+.confirmation-form .field-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+
+.confirmation-form .field-row--3 {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.confirmation-form .field-hint {
+  margin-top: -0.6rem;
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
+.confirmation-form label {
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.confirmation-form input,
+.confirmation-form textarea {
+  border: 1px solid var(--line);
+  background: var(--bg);
+  color: var(--fg);
+  font: inherit;
+  font-size: 0.95rem;
+  padding: 0.6rem 0.7rem;
+}
+
+.confirmation-form textarea {
+  resize: vertical;
+  min-height: 8rem;
+}
+
+.confirmation-form input:focus-visible,
+.confirmation-form textarea:focus-visible {
+  outline: 1px solid var(--fg);
+  outline-offset: 1px;
+}
+
+.form-actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 0.65rem 1.4rem;
+  border: 1px solid var(--fg);
+  background: none;
+  color: var(--fg);
+  font: inherit;
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+}
+
+.btn:hover,
+.btn:focus-visible {
+  background: var(--fg);
+  color: var(--bg);
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background: none;
+  color: var(--fg);
+}
+
+.btn--ghost {
+  border-color: var(--line);
+  color: var(--muted);
+}
+
+.btn--ghost:hover,
+.btn--ghost:focus-visible {
+  background: none;
+  border-color: var(--fg);
+  color: var(--fg);
+}
+
+.confirmation-preview {
+  display: grid;
+  gap: 1rem;
+  margin-top: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+.confirmation-preview iframe {
+  width: 100%;
+  height: 32rem;
+  border: 1px solid var(--line);
+  background: #fff;
+}
+
+.form-status {
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.form-status[data-state='error'] {
+  color: #b3261e;
 }
