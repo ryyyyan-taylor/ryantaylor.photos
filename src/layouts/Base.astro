@@ -1,6 +1,6 @@
 ---
 import '../styles/global.css';
-import { IMG_BASE, galleries, photoById, ogImage } from '../lib/photos';
+import { IMG_BASE, listedGalleries, photoById, ogImage } from '../lib/photos';
 
 interface Props {
   title?: string;
@@ -21,7 +21,7 @@ const fullTitle = title ? `${title} — Ryan Taylor` : 'Ryan Taylor — Denver P
 const path = Astro.url.pathname;
 const pageUrl = new URL(path, Astro.site);
 
-const fallbackCover = galleries[0] ? photoById(galleries[0].cover) : undefined;
+const fallbackCover = listedGalleries[0] ? photoById(listedGalleries[0].cover) : undefined;
 const resolvedImage = image ?? (fallbackCover ? ogImage(fallbackCover) : undefined);
 const absoluteImage = resolvedImage ? new URL(resolvedImage.url, Astro.site) : undefined;
 

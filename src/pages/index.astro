@@ -3,9 +3,9 @@ import Base from '../layouts/Base.astro';
 import Tile from '../components/Tile.astro';
 import Lightbox from '../components/Lightbox.astro';
 import SectionFilter from '../components/SectionFilter.astro';
-import { galleries, ogImage, photoById, type Gallery, type Photo as PhotoType } from '../lib/photos';
+import { listedGalleries, ogImage, photoById, type Gallery, type Photo as PhotoType } from '../lib/photos';
 
-const coverPhoto = galleries[0] ? photoById(galleries[0].cover) : undefined;
+const coverPhoto = listedGalleries[0] ? photoById(listedGalleries[0].cover) : undefined;
 
 interface Tile {
   photo: PhotoType;
@@ -15,9 +15,9 @@ interface Tile {
 }
 
 // Build a fresh array of wrapper objects and shuffle that — never shuffle
-// `galleries` or any gallery's `.photos` in place, they're module-level
+// `listedGalleries` or any gallery's `.photos` in place, they're module-level
 // singletons shared by every page in this build.
-const tiles: Tile[] = galleries.flatMap((gallery: Gallery) =>
+const tiles: Tile[] = listedGalleries.flatMap((gallery: Gallery) =>
   gallery.photos.map((photo, indexInGallery) => ({
     photo,
     gallerySlug: gallery.slug,
@@ -47,7 +47,7 @@ for (let i = tiles.length - 1; i > 0; i--) {
   </section>
 
   {
-    galleries.length === 0 ? (
+    listedGalleries.length === 0 ? (
       <div class="empty">
         <p>No photos yet.</p>
         <p>
@@ -73,7 +73,7 @@ for (let i = tiles.length - 1; i > 0; i--) {
           }
         </div>
 
-        <Lightbox galleries={galleries.map((gallery: Gallery) => ({ slug: gallery.slug, photos: gallery.photos }))} />
+        <Lightbox galleries={listedGalleries.map((gallery: Gallery) => ({ slug: gallery.slug, photos: gallery.photos }))} />
       </>
     )
   }

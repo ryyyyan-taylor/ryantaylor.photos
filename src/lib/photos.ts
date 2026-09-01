@@ -49,6 +49,12 @@ export interface Gallery {
   order: number;
   cover: string;
   photos: Photo[];
+  // Unlisted galleries still get their own page (for direct client links)
+  // but are left out of the home grid, section nav, and the sitemap.
+  unlisted: boolean;
+  availableUntil: string | null;
+  zip: string | null;
+  zipSize: number | null;
 }
 
 export interface Section {
@@ -59,7 +65,13 @@ export interface Section {
 
 export const IMG_BASE = (import.meta.env.PUBLIC_IMG_BASE ?? 'https://img.ryantaylor.photos').replace(/\/$/, '');
 
+// The full set, including unlisted galleries — [...gallery].astro builds a
+// page for every one of these so a direct client link still works.
 export const galleries = manifest.galleries as Gallery[];
+
+// Everything that should actually appear somewhere a visitor can browse to:
+// the home grid, section pages, section chips, the sitemap.
+export const listedGalleries = galleries.filter((g) => !g.unlisted);
 
 export const allPhotos = galleries.flatMap((g) => g.photos);
 
@@ -68,15 +80,15 @@ function titleize(slug: string) {
 }
 
 const sectionTitles = new Map<string, string>();
-for (const gallery of galleries) {
+for (const gallery of listedGalleries) {
   if (gallery.section) sectionTitles.set(gallery.section, gallery.sectionTitle ?? titleize(gallery.section));
 }
 
 export const sections: Section[] = [...sectionTitles]
-  .map(([slug, title]) => ({ slug, title, galleries: galleries.filter((g) => g.section === slug) }))
+  .map(([slug, title]) => ({ slug, title, galleries: listedGalleries.filter((g) => g.section === slug) }))
   .sort((a, b) => a.title.localeCompare(b.title));
 
-export const unsectioned = galleries.filter((g) => !g.section);
+export const unsectioned = listedGalleries.filter((g) => !g.section);
 
 export function getSection(slug: string) {
   return sections.find((s) => s.slug === slug);
@@ -123,6 +135,21 @@ export function formatDuration(seconds: number) {
   const m = Math.floor(total / 60);
   const s = total % 60;
   return `${m}:${String(s).padStart(2, '0')}`;
+}
+
+export function formatBytes(bytes: number) {
+  const units = ['B', 'KB', 'MB', 'GB'];
+  let value = bytes;
+  let i = 0;
+  while (value >= 1024 && i < units.length - 1) {
+    value /= 1024;
+    i++;
+  }
+  return `${i === 0 ? value : value.toFixed(1)} ${units[i]}`;
+}
+
+export function zipSrc(gallery: Gallery) {
+  return gallery.zip ? `${IMG_BASE}/${gallery.zip}` : '';
 }
 
 export function ogImage(photo: Photo, targetWidth = 1440) {

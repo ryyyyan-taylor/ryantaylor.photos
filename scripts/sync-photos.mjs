@@ -1,11 +1,12 @@
 import { createHash, randomBytes } from 'node:crypto';
-import { createReadStream } from 'node:fs';
+import { createReadStream, createWriteStream } from 'node:fs';
 import { readdir, readFile, writeFile, stat, rm } from 'node:fs/promises';
 import { join, extname, basename } from 'node:path';
 import { tmpdir } from 'node:os';
 import { spawn } from 'node:child_process';
 import sharp from 'sharp';
 import ExifReader from 'exif-reader';
+import archiver from 'archiver';
 import { S3Client, PutObjectCommand } from '@aws-sdk/client-s3';
 
 const SRC_DIR = process.env.PHOTOS_DIR || 'photos';
@@ -48,9 +49,11 @@ function requireEnv(name) {
 if (!dryRun && !bucket) requireEnv('R2_BUCKET');
 
 const previous = new Map();
+const previousGalleries = new Map();
 try {
   const old = JSON.parse(await readFile(MANIFEST, 'utf8'));
   for (const gallery of old.galleries ?? []) {
+    previousGalleries.set(gallery.slug, gallery);
     for (const photo of gallery.photos ?? []) previous.set(photo.file, photo);
   }
 } catch {}
@@ -75,6 +78,7 @@ for (const rel of await galleryDirs(SRC_DIR)) {
   // Photos and videos run in separate pools (different concurrency, wildly
   // different cost per item) but are re-merged into the original filename
   // order below, so a gallery.json's numbering still controls display order.
+  const beforeUploaded = uploaded;
   const [imagePhotos, videoPhotos] = await Promise.all([
     mapPool(imageFiles, CONCURRENCY, (file) => processPhoto(rel, slug, dir, file, config)),
     mapPool(videoFiles, VIDEO_CONCURRENCY, (file) => processVideo(rel, slug, dir, file, config)),
@@ -83,16 +87,38 @@ for (const rel of await galleryDirs(SRC_DIR)) {
   const photos = files.map((f) => byFile.get(f)).filter(Boolean);
   if (!photos.length) continue;
 
+  const title = config?.title ?? titleize(names.at(-1));
   const coverFile = config?.cover && photos.find((p) => basename(p.file) === config.cover);
+
+  const prevGallery = previousGalleries.get(slug);
+  const prevFiles = new Set((prevGallery?.photos ?? []).map((p) => p.file));
+  const currFiles = photos.map((p) => p.file);
+  // Rebuild the zip whenever any photo actually changed, or the set of
+  // files in the gallery changed (additions/removals don't bump `uploaded`
+  // on their own — a straight count/membership diff catches those too).
+  const filesChanged = prevFiles.size !== currFiles.length || currFiles.some((f) => !prevFiles.has(f));
+  const shouldRebuildZip = !dryRun && (uploaded > beforeUploaded || filesChanged || force || !prevGallery?.zip);
+
+  let zip = prevGallery?.zip ?? null;
+  let zipSize = prevGallery?.zipSize ?? null;
+  if (shouldRebuildZip) {
+    ({ zip, zipSize } = await buildZip(dir, slug, title, photos));
+    console.log(`  zip: ${slug} (${formatBytes(zipSize)})`);
+  }
+
   galleries.push({
     slug,
     section: names.length > 1 ? slugify(names[0]) : null,
     sectionTitle: names.length > 1 ? titleize(names[0]) : null,
-    title: config?.title ?? titleize(names.at(-1)),
+    title,
     description: config?.description ?? '',
     order: config?.order ?? 999,
     cover: (coverFile ?? photos[0]).id,
     photos,
+    unlisted: !!config?.unlisted,
+    availableUntil: config?.availableUntil ?? null,
+    zip,
+    zipSize,
   });
 }
 
@@ -418,7 +444,7 @@ async function upload(key, body, contentType, { immutable = true } = {}) {
 
 // Videos skip the buffer-in-memory path above — sources can run into the
 // GBs, so this streams straight off disk with a stat()-derived Content-Length.
-async function uploadFile(key, path, contentType, { immutable = true } = {}) {
+async function uploadFile(key, path, contentType, { immutable = true, contentDisposition } = {}) {
   if (dryRun) return;
   const { size } = await stat(path);
   await s3.send(new PutObjectCommand({
@@ -428,7 +454,52 @@ async function uploadFile(key, path, contentType, { immutable = true } = {}) {
     ContentLength: size,
     ContentType: contentType,
     CacheControl: immutable ? 'public, max-age=31536000, immutable' : 'no-store',
+    ...(contentDisposition ? { ContentDisposition: contentDisposition } : {}),
   }));
+}
+
+// Zips the full-quality (original) file for every photo/video in a gallery —
+// same source bytes as originals/<rel>/<file>, just read straight off disk
+// rather than round-tripping through R2. Rebuilt whenever the gallery's
+// contents change; the key is stable (no content hash) since it's meant to
+// always serve the current set, not be cached forever like image variants.
+async function buildZip(dir, slug, title, photos) {
+  const zipPath = join(tmpdir(), `rtp-zip-${randomBytes(6).toString('hex')}.zip`);
+  await new Promise((resolve, reject) => {
+    const output = createWriteStream(zipPath);
+    const archive = archiver('zip', { zlib: { level: 6 } });
+    output.on('close', resolve);
+    output.on('error', reject);
+    archive.on('error', reject);
+    archive.pipe(output);
+    for (const photo of photos) {
+      archive.file(join(dir, basename(photo.file)), { name: basename(photo.file) });
+    }
+    archive.finalize();
+  });
+
+  const { size } = await stat(zipPath);
+  const key = `zip/${slug}.zip`;
+  try {
+    await uploadFile(key, zipPath, 'application/zip', {
+      immutable: false,
+      contentDisposition: `attachment; filename="${title.replace(/"/g, '')}.zip"`,
+    });
+  } finally {
+    await rm(zipPath, { force: true });
+  }
+  return { zip: key, zipSize: size };
+}
+
+function formatBytes(bytes) {
+  const units = ['B', 'KB', 'MB', 'GB'];
+  let value = bytes;
+  let i = 0;
+  while (value >= 1024 && i < units.length - 1) {
+    value /= 1024;
+    i++;
+  }
+  return `${i === 0 ? value : value.toFixed(1)} ${units[i]}`;
 }
 
 async function galleryDirs(root, prefix = '') {

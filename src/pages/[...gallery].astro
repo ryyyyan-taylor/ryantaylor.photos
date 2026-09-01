@@ -2,7 +2,7 @@
 import Base from '../layouts/Base.astro';
 import Tile from '../components/Tile.astro';
 import Lightbox from '../components/Lightbox.astro';
-import { describeMedia, galleries, ogImage, photoById, type Gallery } from '../lib/photos';
+import { describeMedia, formatBytes, galleries, ogImage, photoById, zipSrc, type Gallery } from '../lib/photos';
 
 export function getStaticPaths() {
   return galleries.map((gallery) => ({ params: { gallery: gallery.slug }, props: { gallery } }));
@@ -10,12 +10,21 @@ export function getStaticPaths() {
 
 const { gallery } = Astro.props as { gallery: Gallery };
 const coverPhoto = photoById(gallery.cover);
+const availableUntil = gallery.availableUntil
+  ? new Date(`${gallery.availableUntil}T00:00:00Z`).toLocaleDateString('en-US', {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+      timeZone: 'UTC',
+    })
+  : null;
 ---
 
 <Base
   title={gallery.title}
   description={gallery.description || `${gallery.title} — photography by Ryan Taylor.`}
   image={coverPhoto ? ogImage(coverPhoto) : undefined}
+  noindex={gallery.unlisted}
 >
   <section class="page-head">
     <p class="eyebrow">
@@ -26,6 +35,16 @@ const coverPhoto = photoById(gallery.cover);
     </p>
     <h1>{gallery.title}</h1>
     {gallery.description && <p class="lede">{gallery.description}</p>}
+    {availableUntil && <p class="availability-note">This gallery is available to view through {availableUntil}.</p>}
+    {
+      gallery.zip && (
+        <div class="gallery-actions">
+          <a class="download-all" href={zipSrc(gallery)} download>
+            Download all{gallery.zipSize ? ` (${formatBytes(gallery.zipSize)})` : ''}
+          </a>
+        </div>
+      )
+    }
   </section>
 
   <div class="masonry">

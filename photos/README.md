@@ -28,10 +28,15 @@ include only what you want to override. Copy `gallery.example.json` as a startin
 | `order` | `999` | Lower sorts earlier on the home page. Ties break by title. |
 | `cover` | first photo | Exact filename **with extension**, case-sensitive. |
 | `photos` | none | Per-file `alt`, `caption`, and `note`, keyed by exact filename. |
+| `unlisted` | `false` | Keeps the gallery off the home grid, section nav, and sitemap. The page still builds and is reachable by direct link — for client deliveries. |
+| `availableUntil` | none | `"YYYY-MM-DD"`. Purely a note shown on the page ("available to view through ...") — nothing is actually enforced or deleted automatically. |
 
 `alt` is the accessibility description and is not shown. `caption` appears under the photo in the
 lightbox. `note` appears in the lightbox sidebar, below the EXIF data — use it for shooting notes or
 backstory. Photos you omit simply have none of these.
+
+Every gallery also gets a "Download all" zip of its full-quality originals, built automatically by
+`photos:sync` and rebuilt whenever the gallery's files change — nothing to configure.
 
 Example:
 
