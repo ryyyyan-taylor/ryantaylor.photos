@@ -11,13 +11,19 @@ interface Tile {
   photo: PhotoType;
   gallerySlug: string;
   indexInGallery: number;
+  section: string | null;
 }
 
 // Build a fresh array of wrapper objects and shuffle that — never shuffle
 // `galleries` or any gallery's `.photos` in place, they're module-level
 // singletons shared by every page in this build.
 const tiles: Tile[] = galleries.flatMap((gallery: Gallery) =>
-  gallery.photos.map((photo, indexInGallery) => ({ photo, gallerySlug: gallery.slug, indexInGallery })),
+  gallery.photos.map((photo, indexInGallery) => ({
+    photo,
+    gallerySlug: gallery.slug,
+    indexInGallery,
+    section: gallery.section,
+  })),
 );
 
 // Fisher-Yates. Frontmatter runs once at build time, so this order is baked
@@ -54,11 +60,12 @@ for (let i = tiles.length - 1; i > 0; i--) {
 
         <div class="masonry">
           {
-            tiles.map(({ photo, gallerySlug, indexInGallery }, i) => (
+            tiles.map(({ photo, gallerySlug, indexInGallery, section }, i) => (
               <Tile
                 photo={photo}
                 gallerySlug={gallerySlug}
                 indexInGallery={indexInGallery}
+                section={section}
                 sizes="(min-width: 68rem) 32vw, (min-width: 40rem) 48vw, 94vw"
                 loading={i < 4 ? 'eager' : 'lazy'}
               />
@@ -71,3 +78,105 @@ for (let i = tiles.length - 1; i > 0; i--) {
     )
   }
 </Base>
+
+<script>
+  // The section chips are real links to /sections/<slug>/ (kept working for
+  // direct navigation — SectionFilter is shared with the section pages, and
+  // that route stays useful on its own). Here on the home page we intercept
+  // the click and filter the grid in place instead of navigating, animating
+  // the change with a FLIP: measure tiles before the DOM change, fade out
+  // what's leaving, then transform the survivors from their old position to
+  // their new one so they visibly slide into the gap.
+  const chips = document.querySelector('.chips');
+  const masonry = document.querySelector('.masonry');
+
+  if (chips && masonry) {
+    const tiles = [...masonry.querySelectorAll<HTMLElement>('.tile')];
+    const links = [...chips.querySelectorAll<HTMLAnchorElement>('a')];
+    const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const FADE_MS = 220;
+
+    const sectionOf = (link: HTMLAnchorElement) => link.getAttribute('href')?.match(/^\/sections\/([^/]+)\/?$/)?.[1] ?? null;
+
+    let active: string | null = null;
+    let pendingTimeout: number | null = null;
+
+    const applyFilter = (next: string | null) => {
+      if (next === active) return;
+      active = next;
+
+      if (pendingTimeout !== null) {
+        // A previous filter's fade-out was still in flight — drop its
+        // leftover transient state so this run starts from a clean baseline
+        // instead of layering a second transition on top of it.
+        window.clearTimeout(pendingTimeout);
+        pendingTimeout = null;
+        tiles.forEach((t) => {
+          t.classList.remove('tile-fading', 'tile-entering');
+          t.style.transition = '';
+          t.style.transform = '';
+        });
+      }
+
+      links.forEach((link) => {
+        if (sectionOf(link) === active) link.setAttribute('aria-current', 'page');
+        else link.removeAttribute('aria-current');
+      });
+
+      const shouldShow = (tile: HTMLElement) => !active || tile.dataset.section === active;
+      const staying = tiles.filter((t) => shouldShow(t) && !t.classList.contains('tile-hidden'));
+      const hiding = tiles.filter((t) => !shouldShow(t) && !t.classList.contains('tile-hidden'));
+      const showing = tiles.filter((t) => shouldShow(t) && t.classList.contains('tile-hidden'));
+
+      if (reduceMotion) {
+        hiding.forEach((t) => t.classList.add('tile-hidden'));
+        showing.forEach((t) => t.classList.remove('tile-hidden'));
+        return;
+      }
+
+      const firstRects = new Map(staying.map((t) => [t, t.getBoundingClientRect()] as const));
+      hiding.forEach((t) => t.classList.add('tile-fading'));
+
+      pendingTimeout = window.setTimeout(() => {
+        pendingTimeout = null;
+        hiding.forEach((t) => t.classList.add('tile-hidden'));
+        showing.forEach((t) => {
+          t.classList.remove('tile-hidden');
+          t.classList.add('tile-entering');
+        });
+
+        // Flush the layout changes above so the rects read below reflect
+        // the post-filter flow, then invert each survivor back to where it
+        // used to be before letting the transition play it home.
+        void (masonry as HTMLElement).offsetHeight;
+
+        staying.forEach((tile) => {
+          const first = firstRects.get(tile);
+          if (!first) return;
+          const last = tile.getBoundingClientRect();
+          const dx = first.left - last.left;
+          const dy = first.top - last.top;
+          if (!dx && !dy) return;
+          tile.style.transition = 'none';
+          tile.style.transform = `translate(${dx}px, ${dy}px)`;
+        });
+
+        requestAnimationFrame(() => {
+          staying.forEach((tile) => {
+            tile.style.transition = '';
+            tile.style.transform = '';
+          });
+          showing.forEach((t) => t.classList.remove('tile-entering'));
+          hiding.forEach((t) => t.classList.remove('tile-fading'));
+        });
+      }, FADE_MS);
+    };
+
+    links.forEach((link) =>
+      link.addEventListener('click', (event) => {
+        event.preventDefault();
+        applyFilter(sectionOf(link));
+      }),
+    );
+  }
+</script>

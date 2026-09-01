@@ -353,6 +353,26 @@ h3 {
   background: none;
   cursor: zoom-in;
   position: relative;
+  transition: opacity 0.22s ease, transform 0.32s cubic-bezier(0.2, 0.6, 0.2, 1);
+}
+
+.tile-fading {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.tile-entering {
+  opacity: 0;
+}
+
+.tile-hidden {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tile {
+    transition: none;
+  }
 }
 
 .tile img {

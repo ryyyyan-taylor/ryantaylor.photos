@@ -8,13 +8,21 @@ interface Props {
   indexInGallery: number;
   sizes: string;
   loading?: 'eager' | 'lazy';
+  section?: string | null;
 }
 
-const { photo, gallerySlug, indexInGallery, sizes, loading = 'lazy' } = Astro.props;
+const { photo, gallerySlug, indexInGallery, sizes, loading = 'lazy', section } = Astro.props;
 const label = photo.alt || (photo.kind === 'video' ? 'Play video' : 'View photo');
 ---
 
-<button class="tile" type="button" data-gallery={gallerySlug} data-index={indexInGallery} aria-label={label}>
+<button
+  class="tile"
+  type="button"
+  data-gallery={gallerySlug}
+  data-index={indexInGallery}
+  data-section={section ?? ''}
+  aria-label={label}
+>
   <Photo photo={photo} sizes={sizes} loading={loading} />
   {
     photo.kind === 'video' && (
