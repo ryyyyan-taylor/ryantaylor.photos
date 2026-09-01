@@ -2,14 +2,14 @@
 import Base from '../../layouts/Base.astro';
 import GalleryCard from '../../components/GalleryCard.astro';
 import SectionFilter from '../../components/SectionFilter.astro';
-import { sections, ogImage, photoById, type Section } from '../../lib/photos';
+import { sections, ogImage, photoById, describeMedia, type Section } from '../../lib/photos';
 
 export function getStaticPaths() {
   return sections.map((section) => ({ params: { section: section.slug }, props: { section } }));
 }
 
 const { section } = Astro.props as { section: Section };
-const count = section.galleries.reduce((n, g) => n + g.photos.length, 0);
+const count = describeMedia(section.galleries.flatMap((g) => g.photos));
 const coverPhoto = section.galleries[0] ? photoById(section.galleries[0].cover) : undefined;
 ---
 
@@ -19,7 +19,7 @@ const coverPhoto = section.galleries[0] ? photoById(section.galleries[0].cover) 
   image={coverPhoto ? ogImage(coverPhoto) : undefined}
 >
   <section class="page-head">
-    <p class="eyebrow"><a href="/">Work</a> / {count} photographs</p>
+    <p class="eyebrow"><a href="/">Work</a> / {count}</p>
     <h1>{section.title}</h1>
   </section>
 

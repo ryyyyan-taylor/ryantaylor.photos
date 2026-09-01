@@ -1,5 +1,5 @@
 ---
-import { largestSrc, sizedSrc, type Photo } from '../lib/photos';
+import { largestSrc, sizedSrc, videoSrc, type Photo } from '../lib/photos';
 
 interface Props {
   galleries: { slug: string; photos: Photo[] }[];
@@ -8,17 +8,30 @@ interface Props {
 const { galleries } = Astro.props;
 
 const toItem = (photo: Photo) => ({
+  kind: photo.kind,
   alt: photo.alt,
   caption: photo.caption,
   note: photo.note ?? '',
-  full: largestSrc(photo),
+  // For photos this is the full-size image; for videos it's the poster
+  // frame used as <video poster> and while the thumbnail strip is idle.
+  poster: largestSrc(photo),
   thumb: sizedSrc(photo, photo.widths[0]),
+  video: photo.kind === 'video' ? videoSrc(photo) : null,
+  width: photo.width,
+  height: photo.height,
+  duration: photo.duration ?? null,
+  fps: photo.videoMeta?.fps ?? null,
   exif: photo.exif ?? null,
-  downloads: photo.widths.map((w) => ({
-    url: sizedSrc(photo, w),
-    width: w,
-    height: Math.round((w / photo.width) * photo.height),
-  })),
+  downloads:
+    photo.kind === 'video'
+      ? photo.videoSources
+        ? [{ url: videoSrc(photo), label: 'Original video' }]
+        : []
+      : photo.widths.map((w) => ({
+          url: sizedSrc(photo, w),
+          width: w,
+          height: Math.round((w / photo.width) * photo.height),
+        })),
 });
 
 const groups = Object.fromEntries(galleries.map(({ slug, photos }) => [slug, photos.map(toItem)]));
@@ -31,6 +44,7 @@ const groups = Object.fromEntries(galleries.map(({ slug, photos }) => [slug, pho
       <div class="lightbox-image-wrap">
         <button class="lightbox-nav prev" type="button" data-action="prev" aria-label="Previous photo">‹</button>
         <img id="lightbox-image" alt="" />
+        <video id="lightbox-video" playsinline controls hidden></video>
         <button class="lightbox-nav next" type="button" data-action="next" aria-label="Next photo">›</button>
       </div>
       <div class="lightbox-thumbs" id="lightbox-thumbs"></div>
@@ -54,8 +68,9 @@ const groups = Object.fromEntries(galleries.map(({ slug, photos }) => [slug, pho
 <script>
   interface DownloadOption {
     url: string;
-    width: number;
-    height: number;
+    width?: number;
+    height?: number;
+    label?: string;
   }
   interface PhotoExif {
     camera: string | null;
@@ -67,11 +82,17 @@ const groups = Object.fromEntries(galleries.map(({ slug, photos }) => [slug, pho
     takenAt: string | null;
   }
   interface LightboxItem {
+    kind: 'photo' | 'video';
     alt: string;
     caption: string;
     note: string;
-    full: string;
+    poster: string;
     thumb: string;
+    video: string | null;
+    width: number;
+    height: number;
+    duration: number | null;
+    fps: number | null;
     exif: PhotoExif | null;
     downloads: DownloadOption[];
   }
@@ -79,6 +100,7 @@ const groups = Object.fromEntries(galleries.map(({ slug, photos }) => [slug, pho
   const dialog = document.getElementById('lightbox') as HTMLDialogElement;
   const imageWrap = document.querySelector('.lightbox-image-wrap') as HTMLDivElement;
   const image = document.getElementById('lightbox-image') as HTMLImageElement;
+  const video = document.getElementById('lightbox-video') as HTMLVideoElement;
   const caption = document.getElementById('lightbox-caption') as HTMLParagraphElement;
   const exifList = document.getElementById('lightbox-exif') as HTMLDListElement;
   const note = document.getElementById('lightbox-note') as HTMLParagraphElement;
@@ -107,7 +129,7 @@ const groups = Object.fromEntries(galleries.map(({ slug, photos }) => [slug, pho
     thumbs.innerHTML = items
       .map(
         (item, i) =>
-          `<button class="lightbox-thumb" type="button" data-index="${i}" aria-label="View photo ${i + 1}"><img src="${item.thumb}" alt="" loading="lazy" /></button>`,
+          `<button class="lightbox-thumb${item.kind === 'video' ? ' is-video' : ''}" type="button" data-index="${i}" aria-label="View photo ${i + 1}"><img src="${item.thumb}" alt="" loading="lazy" /></button>`,
       )
       .join('');
     thumbButtons = [...thumbs.querySelectorAll<HTMLButtonElement>('.lightbox-thumb')];
@@ -136,11 +158,30 @@ const groups = Object.fromEntries(galleries.map(({ slug, photos }) => [slug, pho
     exifList.hidden = !exifList.children.length;
   };
 
+  const formatDuration = (seconds: number) => {
+    const total = Math.max(0, Math.round(seconds));
+    const m = Math.floor(total / 60);
+    const s = total % 60;
+    return `${m}:${String(s).padStart(2, '0')}`;
+  };
+
+  const renderVideoInfo = (item: LightboxItem) => {
+    exifList.innerHTML = '';
+    const rows: [string, string][] = [];
+    if (item.duration != null) rows.push(['Duration', formatDuration(item.duration)]);
+    rows.push(['Resolution', `${item.width} × ${item.height}`]);
+    if (item.fps) rows.push(['Frame rate', `${item.fps} fps`]);
+    for (const [label, value] of rows) {
+      exifList.insertAdjacentHTML('beforeend', `<div class="exif-row"><dt>${label}</dt><dd>${value}</dd></div>`);
+    }
+    exifList.hidden = !exifList.children.length;
+  };
+
   const renderDownloads = (downloads: DownloadOption[]) => {
     downloadMenu.innerHTML = downloads
       .map(
         (d) =>
-          `<li><a href="${d.url}" download target="_blank" rel="noopener">${d.width} × ${d.height}</a></li>`,
+          `<li><a href="${d.url}" download target="_blank" rel="noopener">${d.label ?? `${d.width} × ${d.height}`}</a></li>`,
       )
       .join('');
   };
@@ -163,6 +204,7 @@ const groups = Object.fromEntries(galleries.map(({ slug, photos }) => [slug, pho
   imageWrap.addEventListener(
     'wheel',
     (event) => {
+      if (items[index]?.kind === 'video') return;
       event.preventDefault();
       const rect = image.getBoundingClientRect();
       const originX = ((event.clientX - rect.left) / rect.width) * 100;
@@ -175,14 +217,38 @@ const groups = Object.fromEntries(galleries.map(({ slug, photos }) => [slug, pho
     { passive: false },
   );
 
+  // Backgrounded video that just gets paused keeps its buffered mp4 alive —
+  // clearing src and calling load() actually detaches it.
+  const stopVideo = () => {
+    if (video.hidden) return;
+    video.pause();
+    video.removeAttribute('src');
+    video.load();
+  };
+
   const show = (next: number) => {
     index = (next + items.length) % items.length;
     const item = items[index];
-    image.src = item.full;
-    image.alt = item.alt;
+    stopVideo();
     resetZoom();
+
+    if (item.kind === 'video' && item.video) {
+      image.hidden = true;
+      video.hidden = false;
+      video.poster = item.poster;
+      video.src = item.video;
+      video.muted = true;
+      video.play().catch(() => {});
+    } else {
+      video.hidden = true;
+      image.hidden = false;
+      image.src = item.poster;
+    }
+    image.alt = item.alt;
+
     caption.textContent = item.caption;
-    renderExif(item.exif);
+    if (item.kind === 'video') renderVideoInfo(item);
+    else renderExif(item.exif);
     note.textContent = item.note;
     note.hidden = !item.note;
     renderDownloads(item.downloads);
@@ -193,7 +259,7 @@ const groups = Object.fromEntries(galleries.map(({ slug, photos }) => [slug, pho
     });
     items.forEach((neighbor, i) => {
       if (Math.abs(i - index) !== 1) return;
-      new Image().src = neighbor.full;
+      new Image().src = neighbor.poster;
     });
   };
 
@@ -232,6 +298,7 @@ const groups = Object.fromEntries(galleries.map(({ slug, photos }) => [slug, pho
   });
 
   dialog.addEventListener('close', () => {
+    stopVideo();
     const slug = activeGallery;
     const viewedIndex = index;
     // Deferred: the browser's own dialog-close focus restoration runs after

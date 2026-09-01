@@ -1,0 +1,27 @@
+---
+import Photo from './Photo.astro';
+import { formatDuration, type Photo as PhotoType } from '../lib/photos';
+
+interface Props {
+  photo: PhotoType;
+  gallerySlug: string;
+  indexInGallery: number;
+  sizes: string;
+  loading?: 'eager' | 'lazy';
+}
+
+const { photo, gallerySlug, indexInGallery, sizes, loading = 'lazy' } = Astro.props;
+const label = photo.alt || (photo.kind === 'video' ? 'Play video' : 'View photo');
+---
+
+<button class="tile" type="button" data-gallery={gallerySlug} data-index={indexInGallery} aria-label={label}>
+  <Photo photo={photo} sizes={sizes} loading={loading} />
+  {
+    photo.kind === 'video' && (
+      <span class="tile-video-badge" aria-hidden="true">
+        <svg viewBox="0 0 24 24" class="play-icon"><path d="M8 5v14l11-7z" /></svg>
+        {photo.duration != null && <span class="duration">{formatDuration(photo.duration)}</span>}
+      </span>
+    )
+  }
+</button>

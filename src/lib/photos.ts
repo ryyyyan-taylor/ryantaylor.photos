@@ -10,6 +10,17 @@ export interface PhotoExif {
   takenAt: string | null;
 }
 
+export interface VideoSources {
+  mp4: string;
+}
+
+export interface VideoMeta {
+  fps: number | null;
+}
+
+// For kind: 'video', width/height/widths/lqip/stem all describe the poster
+// frame — a video is a Photo (its poster) plus video-only fields, so every
+// existing image-only consumer (cards, covers, og:image) needs no changes.
 export interface Photo {
   id: string;
   file: string;
@@ -23,6 +34,10 @@ export interface Photo {
   caption: string;
   note: string;
   exif: PhotoExif | null;
+  kind: 'photo' | 'video';
+  duration: number | null;
+  videoSources: VideoSources | null;
+  videoMeta: VideoMeta | null;
 }
 
 export interface Gallery {
@@ -89,6 +104,25 @@ export function fallbackSrc(photo: Photo) {
 
 export function largestSrc(photo: Photo) {
   return sizedSrc(photo, photo.widths.at(-1)!);
+}
+
+export function describeMedia(photos: Photo[]) {
+  const videos = photos.filter((p) => p.kind === 'video').length;
+  const stills = photos.length - videos;
+  if (!videos) return `${stills} photograph${stills === 1 ? '' : 's'}`;
+  if (!stills) return `${videos} video${videos === 1 ? '' : 's'}`;
+  return `${stills} photo${stills === 1 ? '' : 's'}, ${videos} video${videos === 1 ? '' : 's'}`;
+}
+
+export function videoSrc(photo: Photo) {
+  return photo.videoSources ? `${IMG_BASE}/${photo.videoSources.mp4}` : '';
+}
+
+export function formatDuration(seconds: number) {
+  const total = Math.max(0, Math.round(seconds));
+  const m = Math.floor(total / 60);
+  const s = total % 60;
+  return `${m}:${String(s).padStart(2, '0')}`;
 }
 
 export function ogImage(photo: Photo, targetWidth = 1440) {

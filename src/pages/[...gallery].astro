@@ -1,8 +1,8 @@
 ---
 import Base from '../layouts/Base.astro';
-import Photo from '../components/Photo.astro';
+import Tile from '../components/Tile.astro';
 import Lightbox from '../components/Lightbox.astro';
-import { galleries, ogImage, photoById, type Gallery } from '../lib/photos';
+import { describeMedia, galleries, ogImage, photoById, type Gallery } from '../lib/photos';
 
 export function getStaticPaths() {
   return galleries.map((gallery) => ({ params: { gallery: gallery.slug }, props: { gallery } }));
@@ -22,7 +22,7 @@ const coverPhoto = photoById(gallery.cover);
       <a class="back-link" href="/" aria-label="Back to all work">
         ←
       </a>
-      {gallery.photos.length} photographs
+      {describeMedia(gallery.photos)}
     </p>
     <h1>{gallery.title}</h1>
     {gallery.description && <p class="lede">{gallery.description}</p>}
@@ -31,9 +31,13 @@ const coverPhoto = photoById(gallery.cover);
   <div class="masonry">
     {
       gallery.photos.map((photo, i) => (
-        <button class="tile" type="button" data-gallery={gallery.slug} data-index={i} aria-label={photo.alt || `View photo ${i + 1}`}>
-          <Photo photo={photo} sizes="(min-width: 68rem) 32vw, (min-width: 40rem) 48vw, 94vw" loading={i < 4 ? 'eager' : 'lazy'} />
-        </button>
+        <Tile
+          photo={photo}
+          gallerySlug={gallery.slug}
+          indexInGallery={i}
+          sizes="(min-width: 68rem) 32vw, (min-width: 40rem) 48vw, 94vw"
+          loading={i < 4 ? 'eager' : 'lazy'}
+        />
       ))
     }
   </div>

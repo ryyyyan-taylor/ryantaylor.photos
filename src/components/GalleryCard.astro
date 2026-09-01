@@ -1,6 +1,6 @@
 ---
 import Photo from './Photo.astro';
-import { photoById, type Gallery } from '../lib/photos';
+import { describeMedia, photoById, type Gallery } from '../lib/photos';
 
 interface Props {
   gallery: Gallery;
@@ -19,7 +19,7 @@ const cover = photoById(gallery.cover) ?? gallery.photos[0];
     <figcaption>
       <span class="title-row">
         <h2>{gallery.title}</h2>
-        <span class="count">{gallery.photos.length} photographs</span>
+        <span class="count">{describeMedia(gallery.photos)}</span>
       </span>
     </figcaption>
   </figure>

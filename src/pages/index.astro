@@ -1,6 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
-import Photo from '../components/Photo.astro';
+import Tile from '../components/Tile.astro';
 import Lightbox from '../components/Lightbox.astro';
 import SectionFilter from '../components/SectionFilter.astro';
 import { galleries, ogImage, photoById, type Gallery, type Photo as PhotoType } from '../lib/photos';
@@ -55,15 +55,13 @@ for (let i = tiles.length - 1; i > 0; i--) {
         <div class="masonry">
           {
             tiles.map(({ photo, gallerySlug, indexInGallery }, i) => (
-              <button
-                class="tile"
-                type="button"
-                data-gallery={gallerySlug}
-                data-index={indexInGallery}
-                aria-label={photo.alt || `View photo ${i + 1}`}
-              >
-                <Photo photo={photo} sizes="(min-width: 68rem) 32vw, (min-width: 40rem) 48vw, 94vw" loading={i < 4 ? 'eager' : 'lazy'} />
-              </button>
+              <Tile
+                photo={photo}
+                gallerySlug={gallerySlug}
+                indexInGallery={indexInGallery}
+                sizes="(min-width: 68rem) 32vw, (min-width: 40rem) 48vw, 94vw"
+                loading={i < 4 ? 'eager' : 'lazy'}
+              />
             ))
           }
         </div>
