@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-01T04:52:39.224Z",
+  "generatedAt": "2026-09-01T05:58:30.122Z",
   "widths": [
     480,
     960,
@@ -667,7 +667,11 @@
           "videoSources": null,
           "videoMeta": null
         }
-      ]
+      ],
+      "unlisted": false,
+      "availableUntil": null,
+      "zip": "zip/sports/mckay-bike-park.zip",
+      "zipSize": 237478070
     },
     {
       "slug": "architecture",
@@ -870,7 +874,11 @@
           "videoSources": null,
           "videoMeta": null
         }
-      ]
+      ],
+      "unlisted": false,
+      "availableUntil": null,
+      "zip": "zip/architecture.zip",
+      "zipSize": 16998669
     },
     {
       "slug": "nature/landscapes",
@@ -1073,7 +1081,226 @@
           "videoSources": null,
           "videoMeta": null
         }
-      ]
+      ],
+      "unlisted": false,
+      "availableUntil": null,
+      "zip": "zip/nature/landscapes.zip",
+      "zipSize": 18705339
+    },
+    {
+      "slug": "sample-client-gallery",
+      "section": null,
+      "sectionTitle": null,
+      "title": "Sample Client Gallery",
+      "description": "Demo gallery for testing the client-delivery workflow — unlisted, with a download-all zip. Stock photos (Wikimedia Commons), not Ryan's work.",
+      "order": 999,
+      "cover": "sample-client-gallery/01-roka-brand-chocolate-wafer-balls-2015-06-06",
+      "photos": [
+        {
+          "id": "sample-client-gallery/01-roka-brand-chocolate-wafer-balls-2015-06-06",
+          "file": "Sample Client Gallery/01-roka-brand-chocolate-wafer-balls-2015-06-06.jpg",
+          "stem": "p/sample-client-gallery/01-roka-brand-chocolate-wafer-balls-2015-06-06.ded586e0",
+          "hash": "ded586e0",
+          "width": 3778,
+          "height": 2519,
+          "widths": [
+            480,
+            960,
+            1440,
+            2048
+          ],
+          "lqip": "data:image/webp;base64,UklGRqQAAABXRUJQVlA4IJgAAABQBACdASoYABAAPu1iqU2ppaOiMAgBMB2JYwC7ABnSv+ruY6V8p3bpDXYAAP7x4E61eXj0xdHZ9FgvNoajjXVyLBBDiLcUd+ux9BQ+y5lffAjOu9HWJE5G7aTsb6ofUIsz0NvNjfOCuv0r02+aDVbPMkOnyqPgd1krIhsEoMCiQqZ6yas0vtjixFQSXDBmp++XgYN1CNGAAA==",
+          "alt": "",
+          "caption": "",
+          "note": "",
+          "exif": {
+            "camera": "Canon EOS 60D",
+            "lens": "EF100mm f/2.8L Macro IS USM",
+            "focalLength": "100mm",
+            "aperture": "f/9",
+            "shutterSpeed": "1/4s",
+            "iso": 100,
+            "takenAt": "Jun 6, 2015"
+          },
+          "kind": "photo",
+          "duration": null,
+          "videoSources": null,
+          "videoMeta": null
+        },
+        {
+          "id": "sample-client-gallery/02-20090726-birds-on-stick-shanghai-qibao-imgp1996",
+          "file": "Sample Client Gallery/02-20090726-birds-on-stick-shanghai-qibao-imgp1996.jpg",
+          "stem": "p/sample-client-gallery/02-20090726-birds-on-stick-shanghai-qibao-imgp1996.abf2c53b",
+          "hash": "abf2c53b",
+          "width": 2528,
+          "height": 1967,
+          "widths": [
+            480,
+            960,
+            1440,
+            2048
+          ],
+          "lqip": "data:image/webp;base64,UklGRgABAABXRUJQVlA4IPQAAAAQBgCdASoYABMAPu1sqlEppaOiqAqpMB2JbACdDiZo8AoOwpeyKgohQ2raBzyXdhPCglnEMFmTvYAA/WXpP0lsXffDSUXO4L3flT6HtdNbAl6rPp1FIjnDjL3SH0ou50JLOyaAI2bZnMwh/ozMeHqSODi9AmwBv3Mug9MpGzceB0BRAZlZaqdagD/n/xGAeBO9CSVhdBubrEY9CipUAAh47KvXCce8E9FZBr/LCesSNFtz6tuFN0WvqfOn+hfEn2gWmn3vGBnndeJpw3INwt6duJri5xdK5hSYlB1IlKTsM1K8wrQ1wGk32z9MzjTqDnDyr6AA",
+          "alt": "",
+          "caption": "",
+          "note": "",
+          "exif": {
+            "camera": "PENTAX Corporation PENTAX K100D Super",
+            "lens": null,
+            "focalLength": "55mm (82mm equiv.)",
+            "aperture": "f/9.5",
+            "shutterSpeed": "1/125s",
+            "iso": 200,
+            "takenAt": "Jul 26, 2009"
+          },
+          "kind": "photo",
+          "duration": null,
+          "videoSources": null,
+          "videoMeta": null
+        },
+        {
+          "id": "sample-client-gallery/03-2014-prowincja-kotajk-stragany-z-jedzeniem-przed-k",
+          "file": "Sample Client Gallery/03-2014-prowincja-kotajk-stragany-z-jedzeniem-przed-k.jpg",
+          "stem": "p/sample-client-gallery/03-2014-prowincja-kotajk-stragany-z-jedzeniem-przed-k.39b8d1f0",
+          "hash": "39b8d1f0",
+          "width": 3840,
+          "height": 2561,
+          "widths": [
+            480,
+            960,
+            1440,
+            2048
+          ],
+          "lqip": "data:image/webp;base64,UklGRrwAAABXRUJQVlA4ILAAAADQBACdASoYABAAPu1iqU2ppaOiMAgBMB2JbACdMoRwIsAA4C/sFFye6JtyaJcDAAD+5k1pkJGwkVP2uYNvccTYJhJNakqlnJeMX3eupqPheoVbg+tpJ8xQmI0t1mGfTv9cKAGE/KGRt5v5IH/azzcsAz6AlNRVFKJVAVoeL5/NsJWV+skl8/1q9qEbNUvO3ZlXekGv2/jjZFl3GI29R9lrnh6p/Yebbh9/RzdrrdKgAA==",
+          "alt": "",
+          "caption": "",
+          "note": "",
+          "exif": null,
+          "kind": "photo",
+          "duration": null,
+          "videoSources": null,
+          "videoMeta": null
+        },
+        {
+          "id": "sample-client-gallery/04-2016-bangkok-dystrykt-samphanthawong-ulica-yaowara",
+          "file": "Sample Client Gallery/04-2016-bangkok-dystrykt-samphanthawong-ulica-yaowara.jpg",
+          "stem": "p/sample-client-gallery/04-2016-bangkok-dystrykt-samphanthawong-ulica-yaowara.22ca8db2",
+          "hash": "22ca8db2",
+          "width": 3840,
+          "height": 2358,
+          "widths": [
+            480,
+            960,
+            1440,
+            2048
+          ],
+          "lqip": "data:image/webp;base64,UklGRtAAAABXRUJQVlA4IMQAAAAQBQCdASoYAA8APu1iqU2ppaOiMAgBMB2JbACdMoR4PoHhgAQF6gzYzPlYARHi1QYYAP6s/zHDyX8ieJsDi3YoZxnDNfS6qfg4sVjhV8eiCPsUQGnfmy1hGjq/jnaOrPCYZPTy3I3AIDeYHWIQmYizXHR+fFjRtCUvXosw00VWDwICtFq0M/Ck0oXstd+DUBWTBH9Q46saf2jAm39leVDRc+pfNPVhmNYQSKMYUytcclUhqACFgdKugM6hGIccsH/v2sAA",
+          "alt": "",
+          "caption": "",
+          "note": "",
+          "exif": null,
+          "kind": "photo",
+          "duration": null,
+          "videoSources": null,
+          "videoMeta": null
+        },
+        {
+          "id": "sample-client-gallery/05-2018-12-20-turkish-pastry-with-cream-filling-1253",
+          "file": "Sample Client Gallery/05-2018-12-20-turkish-pastry-with-cream-filling-1253.jpg",
+          "stem": "p/sample-client-gallery/05-2018-12-20-turkish-pastry-with-cream-filling-1253.9caace90",
+          "hash": "9caace90",
+          "width": 3840,
+          "height": 2560,
+          "widths": [
+            480,
+            960,
+            1440,
+            2048
+          ],
+          "lqip": "data:image/webp;base64,UklGRpAAAABXRUJQVlA4IIQAAABwBACdASoYABAAPu1iqk2ppaQiMAgBMB2JQBfnMWHY2PNfkrcQlS8G2+4xgAD+7qGN1V1c3UWOQ//ALTbNWSbDFlGHV+pqvFca/L34Styqr0qSEOIhLyKJo9/O0v92sE07FtsERjgnzhPNYGLXlxYgP3nNSK0m6XXIIlpz6uKAHNQAAAA=",
+          "alt": "",
+          "caption": "",
+          "note": "",
+          "exif": null,
+          "kind": "photo",
+          "duration": null,
+          "videoSources": null,
+          "videoMeta": null
+        },
+        {
+          "id": "sample-client-gallery/06-a-zhu-peanut-ice-cream-roll-jiufen-old-street-2024",
+          "file": "Sample Client Gallery/06-a-zhu-peanut-ice-cream-roll-jiufen-old-street-2024.jpg",
+          "stem": "p/sample-client-gallery/06-a-zhu-peanut-ice-cream-roll-jiufen-old-street-2024.9d6e9e65",
+          "hash": "9d6e9e65",
+          "width": 3840,
+          "height": 2880,
+          "widths": [
+            480,
+            960,
+            1440,
+            2048
+          ],
+          "lqip": "data:image/webp;base64,UklGRswAAABXRUJQVlA4IMAAAADQBQCdASoYABIAPu1sqlEppaOiqAqpMB2JYgCCLwSA4O1Sq2sd2aw7pbdXNusK2mrQ2EQ+lJsAAP7qJKEJlN9OHSnVmLp7CMy56Yb4GlZizxNU6pW8GdHyF+6GKeJzxszdPYRy9ATdBwgxOF9eGM7BkucdoGcdcYBw7Aj/X/mIY4uBfTr/9JeezUFmaCs1/jWcU+3XWRA4N8X7G4hY/MAJv8lcRxoUNFU6JhqX5on/m0E+RjONr4txH8D2KSoAAAA=",
+          "alt": "",
+          "caption": "",
+          "note": "",
+          "exif": null,
+          "kind": "photo",
+          "duration": null,
+          "videoSources": null,
+          "videoMeta": null
+        },
+        {
+          "id": "sample-client-gallery/07-ajiaco-in-bogota",
+          "file": "Sample Client Gallery/07-ajiaco-in-bogotá.jpg",
+          "stem": "p/sample-client-gallery/07-ajiaco-in-bogota.4da8ae0a",
+          "hash": "4da8ae0a",
+          "width": 3840,
+          "height": 2742,
+          "widths": [
+            480,
+            960,
+            1440,
+            2048
+          ],
+          "lqip": "data:image/webp;base64,UklGRuAAAABXRUJQVlA4INQAAAAwBgCdASoYABEAPu1srFEppaQiqAqpMB2JYgCdMz30t4ckA//4BndpZOXrjht4ZxT2u5jTd7qya9UAAMsHoA+P1Gazx18jcblHoxt68Nz5AEzyftagfP3kycMsBVNDmQLu5x+ec9a5S0YzP+WtgQAfm9vvgreGKqdaB4ggPG6qmaOfdyJwhKdUY7Mhh7fXZ1GCxxLoPoezmuaweSUNOTnlhkE80wTEFfNXaCu5SQfhTJzTZi9cLfNXvUuYZPbAgJKZ0q6PTkodWF4uDUA1B5T0fAAAAA==",
+          "alt": "",
+          "caption": "",
+          "note": "",
+          "exif": null,
+          "kind": "photo",
+          "duration": null,
+          "videoSources": null,
+          "videoMeta": null
+        },
+        {
+          "id": "sample-client-gallery/08-almond-tofu-june-2020",
+          "file": "Sample Client Gallery/08-almond-tofu-june-2020.jpg",
+          "stem": "p/sample-client-gallery/08-almond-tofu-june-2020.b888143c",
+          "hash": "b888143c",
+          "width": 3840,
+          "height": 2880,
+          "widths": [
+            480,
+            960,
+            1440,
+            2048
+          ],
+          "lqip": "data:image/webp;base64,UklGRogAAABXRUJQVlA4IHwAAACwBACdASoYABIAPu1mq0+ppSOiMBgIATAdiWwAsQEAADlbE5S8vcPSyQt05kwAAP7tTUr57n1QKL2Uq3xsFZ7X6I/mtAttt9HeIstDJzebNShXnEa4XBbrGvv2+tvr9MOdWVhVtaaRff6z07VFF3gPqcIfeL//FzB9gAAA",
+          "alt": "",
+          "caption": "",
+          "note": "",
+          "exif": null,
+          "kind": "photo",
+          "duration": null,
+          "videoSources": null,
+          "videoMeta": null
+        }
+      ],
+      "unlisted": true,
+      "availableUntil": "2026-10-15",
+      "zip": "zip/sample-client-gallery.zip",
+      "zipSize": 13279882
     },
     {
       "slug": "nature/wildlife",
@@ -1269,7 +1496,11 @@
             "fps": 29.97
           }
         }
-      ]
+      ],
+      "unlisted": false,
+      "availableUntil": null,
+      "zip": "zip/nature/wildlife.zip",
+      "zipSize": 18357125
     }
   ]
 }
