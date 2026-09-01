@@ -585,10 +585,23 @@ h3 {
   width: auto;
   height: auto;
   object-fit: contain;
+  /* Both share the same grid cell so only the [hidden] one is ever out of
+     flow — belt-and-suspenders alongside the [hidden] overrides below. */
+  grid-area: 1 / 1;
 }
 
 .lightbox-image-wrap img {
   cursor: zoom-in;
+}
+
+/* The base `img { display: block }` rule (and .lightbox-exif's own
+   `display: grid`) are author-origin, which beats the UA stylesheet's
+   `[hidden] { display: none }` regardless of specificity — so without this,
+   setting .hidden on these elements does nothing and they stay on screen. */
+.lightbox-image-wrap img[hidden],
+.lightbox-image-wrap video[hidden],
+.lightbox-exif[hidden] {
+  display: none;
 }
 
 .lightbox-thumbs {
