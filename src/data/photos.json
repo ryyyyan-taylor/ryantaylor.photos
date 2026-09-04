@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-01T05:58:30.122Z",
+  "generatedAt": "2026-09-04T17:30:36.896Z",
   "widths": [
     480,
     960,
@@ -670,8 +670,32 @@
       ],
       "unlisted": false,
       "availableUntil": null,
-      "zip": "zip/sports/mckay-bike-park.zip",
-      "zipSize": 237478070
+      "zips": [
+        {
+          "key": "small",
+          "label": "Small",
+          "path": "zip/sports/mckay-bike-park-small.zip",
+          "size": 3375036
+        },
+        {
+          "key": "medium",
+          "label": "Medium",
+          "path": "zip/sports/mckay-bike-park-medium.zip",
+          "size": 11603634
+        },
+        {
+          "key": "large",
+          "label": "Large",
+          "path": "zip/sports/mckay-bike-park-large.zip",
+          "size": 26454291
+        },
+        {
+          "key": "full",
+          "label": "Full quality",
+          "path": "zip/sports/mckay-bike-park-full.zip",
+          "size": 237478070
+        }
+      ]
     },
     {
       "slug": "architecture",
@@ -877,8 +901,32 @@
       ],
       "unlisted": false,
       "availableUntil": null,
-      "zip": "zip/architecture.zip",
-      "zipSize": 16998669
+      "zips": [
+        {
+          "key": "small",
+          "label": "Small",
+          "path": "zip/architecture-small.zip",
+          "size": 1617686
+        },
+        {
+          "key": "medium",
+          "label": "Medium",
+          "path": "zip/architecture-medium.zip",
+          "size": 5767506
+        },
+        {
+          "key": "large",
+          "label": "Large",
+          "path": "zip/architecture-large.zip",
+          "size": 12445940
+        },
+        {
+          "key": "full",
+          "label": "Full quality",
+          "path": "zip/architecture-full.zip",
+          "size": 16998669
+        }
+      ]
     },
     {
       "slug": "nature/landscapes",
@@ -1084,8 +1132,32 @@
       ],
       "unlisted": false,
       "availableUntil": null,
-      "zip": "zip/nature/landscapes.zip",
-      "zipSize": 18705339
+      "zips": [
+        {
+          "key": "small",
+          "label": "Small",
+          "path": "zip/nature/landscapes-small.zip",
+          "size": 1522406
+        },
+        {
+          "key": "medium",
+          "label": "Medium",
+          "path": "zip/nature/landscapes-medium.zip",
+          "size": 5948803
+        },
+        {
+          "key": "large",
+          "label": "Large",
+          "path": "zip/nature/landscapes-large.zip",
+          "size": 13737668
+        },
+        {
+          "key": "full",
+          "label": "Full quality",
+          "path": "zip/nature/landscapes-full.zip",
+          "size": 18705339
+        }
+      ]
     },
     {
       "slug": "sample-client-gallery",
@@ -1299,8 +1371,32 @@
       ],
       "unlisted": true,
       "availableUntil": "2026-10-15",
-      "zip": "zip/sample-client-gallery.zip",
-      "zipSize": 13279882
+      "zips": [
+        {
+          "key": "small",
+          "label": "Small",
+          "path": "zip/sample-client-gallery-small.zip",
+          "size": 1400111
+        },
+        {
+          "key": "medium",
+          "label": "Medium",
+          "path": "zip/sample-client-gallery-medium.zip",
+          "size": 4672268
+        },
+        {
+          "key": "large",
+          "label": "Large",
+          "path": "zip/sample-client-gallery-large.zip",
+          "size": 9611948
+        },
+        {
+          "key": "full",
+          "label": "Full quality",
+          "path": "zip/sample-client-gallery-full.zip",
+          "size": 13279882
+        }
+      ]
     },
     {
       "slug": "nature/wildlife",
@@ -1499,8 +1595,32 @@
       ],
       "unlisted": false,
       "availableUntil": null,
-      "zip": "zip/nature/wildlife.zip",
-      "zipSize": 18357125
+      "zips": [
+        {
+          "key": "small",
+          "label": "Small",
+          "path": "zip/nature/wildlife-small.zip",
+          "size": 2689607
+        },
+        {
+          "key": "medium",
+          "label": "Medium",
+          "path": "zip/nature/wildlife-medium.zip",
+          "size": 5650866
+        },
+        {
+          "key": "large",
+          "label": "Large",
+          "path": "zip/nature/wildlife-large.zip",
+          "size": 10436654
+        },
+        {
+          "key": "full",
+          "label": "Full quality",
+          "path": "zip/nature/wildlife-full.zip",
+          "size": 18357125
+        }
+      ]
     }
   ]
 }
