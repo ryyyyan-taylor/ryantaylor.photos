@@ -35,8 +35,10 @@ include only what you want to override. Copy `gallery.example.json` as a startin
 lightbox. `note` appears in the lightbox sidebar, below the EXIF data — use it for shooting notes or
 backstory. Photos you omit simply have none of these.
 
-Every gallery also gets a "Download all" zip of its full-quality originals, built automatically by
-`photos:sync` and rebuilt whenever the gallery's files change — nothing to configure.
+Every gallery also gets a "Download all" menu with four zips — Small (1024px), Medium (2048px),
+Large (3200px), and Full quality (untouched originals) — built automatically by `photos:sync` and
+rebuilt whenever the gallery's files change. Videos have no resized variant, so they're included
+as-is in every tier. Nothing to configure.
 
 Example:
 

@@ -16,6 +16,16 @@ const FORMATS = [
   { ext: 'avif', opts: { quality: 55, effort: 4 } },
   { ext: 'webp', opts: { quality: 78 } },
 ];
+// Download-all zip tiers. 'full' (no width) always ships the untouched
+// original; the rest are re-encoded JPEGs at these widths, sized for screen
+// use rather than the resized web variants (which are lossier and only
+// available as avif/webp, not the safest formats for a client to unzip).
+const ZIP_TIERS = [
+  { key: 'small', label: 'Small', width: 1024 },
+  { key: 'medium', label: 'Medium', width: 2048 },
+  { key: 'large', label: 'Large', width: 3200 },
+  { key: 'full', label: 'Full quality', width: null },
+];
 const IMAGE_EXT = new Set(['.jpg', '.jpeg', '.png', '.tif', '.tiff', '.webp']);
 const VIDEO_EXT = new Set(['.mp4', '.mov', '.m4v', '.webm']);
 const MEDIA_EXT = new Set([...IMAGE_EXT, ...VIDEO_EXT]);
@@ -97,13 +107,12 @@ for (const rel of await galleryDirs(SRC_DIR)) {
   // files in the gallery changed (additions/removals don't bump `uploaded`
   // on their own — a straight count/membership diff catches those too).
   const filesChanged = prevFiles.size !== currFiles.length || currFiles.some((f) => !prevFiles.has(f));
-  const shouldRebuildZip = !dryRun && (uploaded > beforeUploaded || filesChanged || force || !prevGallery?.zip);
+  const shouldRebuildZip = !dryRun && (uploaded > beforeUploaded || filesChanged || force || !prevGallery?.zips);
 
-  let zip = prevGallery?.zip ?? null;
-  let zipSize = prevGallery?.zipSize ?? null;
+  let zips = prevGallery?.zips ?? null;
   if (shouldRebuildZip) {
-    ({ zip, zipSize } = await buildZip(dir, slug, title, photos));
-    console.log(`  zip: ${slug} (${formatBytes(zipSize)})`);
+    zips = await buildZip(dir, slug, title, photos);
+    console.log(`  zip: ${slug} (${zips.map((z) => `${z.key}=${formatBytes(z.size)}`).join(', ')})`);
   }
 
   galleries.push({
@@ -117,8 +126,7 @@ for (const rel of await galleryDirs(SRC_DIR)) {
     photos,
     unlisted: !!config?.unlisted,
     availableUntil: config?.availableUntil ?? null,
-    zip,
-    zipSize,
+    zips,
   });
 }
 
@@ -458,37 +466,57 @@ async function uploadFile(key, path, contentType, { immutable = true, contentDis
   }));
 }
 
-// Zips the full-quality (original) file for every photo/video in a gallery —
-// same source bytes as originals/<rel>/<file>, just read straight off disk
-// rather than round-tripping through R2. Rebuilt whenever the gallery's
-// contents change; the key is stable (no content hash) since it's meant to
-// always serve the current set, not be cached forever like image variants.
+// Builds one zip per ZIP_TIERS entry. Photos are re-encoded to that tier's
+// width (skipped for 'full', which ships the untouched original — same
+// source bytes as originals/<rel>/<file>, read straight off disk rather than
+// round-tripping through R2); videos have no resized variant, so every tier
+// gets the original file. Keys are stable (no content hash) since they're
+// meant to always serve the current set, not be cached forever like image
+// variants. Rebuilt whenever the gallery's contents change.
 async function buildZip(dir, slug, title, photos) {
-  const zipPath = join(tmpdir(), `rtp-zip-${randomBytes(6).toString('hex')}.zip`);
-  await new Promise((resolve, reject) => {
-    const output = createWriteStream(zipPath);
-    const archive = archiver('zip', { zlib: { level: 6 } });
-    output.on('close', resolve);
-    output.on('error', reject);
-    archive.on('error', reject);
-    archive.pipe(output);
-    for (const photo of photos) {
-      archive.file(join(dir, basename(photo.file)), { name: basename(photo.file) });
-    }
-    archive.finalize();
-  });
-
-  const { size } = await stat(zipPath);
-  const key = `zip/${slug}.zip`;
-  try {
-    await uploadFile(key, zipPath, 'application/zip', {
-      immutable: false,
-      contentDisposition: `attachment; filename="${title.replace(/"/g, '')}.zip"`,
+  const zips = [];
+  for (const tier of ZIP_TIERS) {
+    const zipPath = join(tmpdir(), `rtp-zip-${randomBytes(6).toString('hex')}.zip`);
+    await new Promise((resolve, reject) => {
+      const output = createWriteStream(zipPath);
+      const archive = archiver('zip', { zlib: { level: 6 } });
+      output.on('close', resolve);
+      output.on('error', reject);
+      archive.on('error', reject);
+      archive.pipe(output);
+      (async () => {
+        for (const photo of photos) {
+          const srcPath = join(dir, basename(photo.file));
+          if (photo.kind === 'video' || !tier.width) {
+            archive.file(srcPath, { name: basename(photo.file) });
+            continue;
+          }
+          const bytes = await readFile(srcPath);
+          const resized = await sharp(bytes)
+            .rotate()
+            .resize({ width: tier.width, withoutEnlargement: true })
+            .withMetadata()
+            .jpeg({ quality: 90 })
+            .toBuffer();
+          archive.append(resized, { name: `${basename(photo.file, extname(photo.file))}.jpg` });
+        }
+        archive.finalize();
+      })().catch(reject);
     });
-  } finally {
-    await rm(zipPath, { force: true });
+
+    const { size } = await stat(zipPath);
+    const key = `zip/${slug}-${tier.key}.zip`;
+    try {
+      await uploadFile(key, zipPath, 'application/zip', {
+        immutable: false,
+        contentDisposition: `attachment; filename="${title.replace(/"/g, '')} (${tier.label}).zip"`,
+      });
+    } finally {
+      await rm(zipPath, { force: true });
+    }
+    zips.push({ key: tier.key, label: tier.label, path: key, size });
   }
-  return { zip: key, zipSize: size };
+  return zips;
 }
 
 function formatBytes(bytes) {

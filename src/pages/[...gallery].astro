@@ -2,7 +2,7 @@
 import Base from '../layouts/Base.astro';
 import Tile from '../components/Tile.astro';
 import Lightbox from '../components/Lightbox.astro';
-import { describeMedia, formatBytes, galleries, ogImage, photoById, zipSrc, type Gallery } from '../lib/photos';
+import { describeMedia, formatBytes, galleries, ogImage, photoById, zipHref, type Gallery } from '../lib/photos';
 
 export function getStaticPaths() {
   return galleries.map((gallery) => ({ params: { gallery: gallery.slug }, props: { gallery } }));
@@ -37,11 +37,20 @@ const availableUntil = gallery.availableUntil
     {gallery.description && <p class="lede">{gallery.description}</p>}
     {availableUntil && <p class="availability-note">This gallery is available to view through {availableUntil}.</p>}
     {
-      gallery.zip && (
+      gallery.zips && (
         <div class="gallery-actions">
-          <a class="download-all" href={zipSrc(gallery)} download>
-            Download all{gallery.zipSize ? ` (${formatBytes(gallery.zipSize)})` : ''}
-          </a>
+          <details class="zip-download">
+            <summary>Download all</summary>
+            <ul>
+              {gallery.zips.map((zip) => (
+                <li>
+                  <a href={zipHref(zip)} download>
+                    {zip.label} ({formatBytes(zip.size)})
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </details>
         </div>
       )
     }

@@ -40,6 +40,13 @@ export interface Photo {
   videoMeta: VideoMeta | null;
 }
 
+export interface GalleryZip {
+  key: 'small' | 'medium' | 'large' | 'full';
+  label: string;
+  path: string;
+  size: number;
+}
+
 export interface Gallery {
   slug: string;
   section: string | null;
@@ -53,8 +60,7 @@ export interface Gallery {
   // but are left out of the home grid, section nav, and the sitemap.
   unlisted: boolean;
   availableUntil: string | null;
-  zip: string | null;
-  zipSize: number | null;
+  zips: GalleryZip[] | null;
 }
 
 export interface Section {
@@ -148,8 +154,8 @@ export function formatBytes(bytes: number) {
   return `${i === 0 ? value : value.toFixed(1)} ${units[i]}`;
 }
 
-export function zipSrc(gallery: Gallery) {
-  return gallery.zip ? `${IMG_BASE}/${gallery.zip}` : '';
+export function zipHref(zip: GalleryZip) {
+  return `${IMG_BASE}/${zip.path}`;
 }
 
 export function ogImage(photo: Photo, targetWidth = 1440) {
