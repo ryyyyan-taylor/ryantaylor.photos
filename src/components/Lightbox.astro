@@ -7,8 +7,9 @@ interface Props {
 
 const { galleries } = Astro.props;
 
-const toItem = (photo: Photo) => ({
+const toItem = (photo: Photo, gallerySlug: string) => ({
   kind: photo.kind,
+  galleryHref: `/${gallerySlug}/`,
   alt: photo.alt,
   caption: photo.caption,
   note: photo.note ?? '',
@@ -34,7 +35,7 @@ const toItem = (photo: Photo) => ({
         })),
 });
 
-const groups = Object.fromEntries(galleries.map(({ slug, photos }) => [slug, photos.map(toItem)]));
+const groups = Object.fromEntries(galleries.map(({ slug, photos }) => [slug, photos.map((photo) => toItem(photo, slug))]));
 ---
 
 <dialog class="lightbox" id="lightbox" aria-label="Photo viewer">
@@ -59,6 +60,7 @@ const groups = Object.fromEntries(galleries.map(({ slug, photos }) => [slug, pho
         </button>
         <ul class="download-menu" id="download-menu" hidden></ul>
       </div>
+      <a class="view-gallery-link" id="lightbox-gallery-link" href="/">View Full Gallery</a>
     </aside>
   </div>
 </dialog>
@@ -83,6 +85,7 @@ const groups = Object.fromEntries(galleries.map(({ slug, photos }) => [slug, pho
   }
   interface LightboxItem {
     kind: 'photo' | 'video';
+    galleryHref: string;
     alt: string;
     caption: string;
     note: string;
@@ -107,6 +110,7 @@ const groups = Object.fromEntries(galleries.map(({ slug, photos }) => [slug, pho
   const thumbs = document.getElementById('lightbox-thumbs') as HTMLDivElement;
   const downloadToggle = document.getElementById('lightbox')!.querySelector<HTMLButtonElement>('.download-toggle')!;
   const downloadMenu = document.getElementById('download-menu') as HTMLUListElement;
+  const galleryLink = document.getElementById('lightbox-gallery-link') as HTMLAnchorElement;
   const tiles = [...document.querySelectorAll<HTMLButtonElement>('.tile')];
   const dataEl = document.getElementById('lightbox-data');
   const groups: Record<string, LightboxItem[]> = dataEl ? JSON.parse(dataEl.textContent ?? '{}') : {};
@@ -253,6 +257,7 @@ const groups = Object.fromEntries(galleries.map(({ slug, photos }) => [slug, pho
     note.hidden = !item.note;
     renderDownloads(item.downloads);
     closeDownloadMenu();
+    galleryLink.href = item.galleryHref;
     thumbButtons.forEach((btn, i) => {
       btn.classList.toggle('active', i === index);
       if (i === index) btn.scrollIntoView({ block: 'nearest', inline: 'center' });

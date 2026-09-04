@@ -799,6 +799,21 @@ h3 {
   background: var(--line);
 }
 
+.view-gallery-link {
+  display: block;
+  margin-top: 0.6rem;
+  padding: 0.25rem 0;
+  text-align: center;
+  font-size: 0.75rem;
+  letter-spacing: 0.03em;
+  color: color-mix(in srgb, var(--overlay-fg) 55%, transparent);
+}
+
+.view-gallery-link:hover,
+.view-gallery-link:focus-visible {
+  color: var(--overlay-fg);
+}
+
 .close,
 .lightbox-nav {
   background: none;
