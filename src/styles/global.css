@@ -657,6 +657,17 @@ h3 {
 
 .lightbox-image-wrap img {
   cursor: zoom-in;
+  touch-action: none;
+  -webkit-user-drag: none;
+  user-select: none;
+}
+
+.lightbox-image-wrap img.is-zoomed {
+  cursor: grab;
+}
+
+.lightbox-image-wrap img.is-dragging {
+  cursor: grabbing;
 }
 
 /* The base `img { display: block }` rule (and .lightbox-exif's own
