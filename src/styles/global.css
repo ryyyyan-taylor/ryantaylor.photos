@@ -666,7 +666,6 @@ h3 {
 
 .lightbox-image-wrap img {
   cursor: zoom-in;
-  touch-action: none;
   -webkit-user-drag: none;
   user-select: none;
 }
@@ -1024,7 +1023,7 @@ h3 {
    the real header/grid/footer; .lock-scrim sits outside .shell (see the
    `overlay` slot in Base.astro) so the card itself stays sharp. */
 .shell.is-locked {
-  filter: blur(2.5rem) saturate(1.1) brightness(0.92);
+  filter: blur(1.4rem) saturate(1.1) brightness(0.92);
   transform: scale(1.03);
   pointer-events: none;
   user-select: none;
