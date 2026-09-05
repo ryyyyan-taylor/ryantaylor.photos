@@ -1018,3 +1018,74 @@ h3 {
 .form-status[data-state='error'] {
   color: #b3261e;
 }
+
+/* Password-protected gallery preview (worker/gallery-auth.ts serves this as
+   the `__locked` static page while unauthenticated). .shell.is-locked blurs
+   the real header/grid/footer; .lock-scrim sits outside .shell (see the
+   `overlay` slot in Base.astro) so the card itself stays sharp. */
+.shell.is-locked {
+  filter: blur(2.5rem) saturate(1.1) brightness(0.92);
+  transform: scale(1.03);
+  pointer-events: none;
+  user-select: none;
+}
+
+.lock-scrim {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  background: var(--overlay);
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.lock-scrim.is-dismissing {
+  opacity: 0;
+  transform: scale(1.02);
+  pointer-events: none;
+}
+
+.lock-card {
+  width: 100%;
+  max-width: 22rem;
+  text-align: center;
+  background: var(--bg);
+  color: var(--fg);
+  border-radius: 0.5rem;
+  padding: 2rem 1.75rem;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.35);
+}
+
+.lock-card p {
+  color: var(--muted);
+  margin: 0 0 1.5rem;
+  font-size: 0.9rem;
+}
+
+.lock-card form {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.lock-card input {
+  border: 1px solid var(--line);
+  background: var(--bg);
+  color: var(--fg);
+  font: inherit;
+  font-size: 0.95rem;
+  padding: 0.6rem 0.7rem;
+}
+
+.lock-card input:focus-visible {
+  outline: 1px solid var(--fg);
+  outline-offset: 1px;
+}
+
+.lock-error {
+  color: #b3261e;
+  font-size: 0.85rem;
+  margin: -0.4rem 0 0;
+}

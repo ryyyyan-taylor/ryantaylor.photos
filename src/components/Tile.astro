@@ -9,27 +9,38 @@ interface Props {
   sizes: string;
   loading?: 'eager' | 'lazy';
   section?: string | null;
+  // See Photo.astro — renders a blurred placeholder tile with no lightbox
+  // wiring, for the `__locked` preview of a password-protected gallery.
+  placeholder?: boolean;
 }
 
-const { photo, gallerySlug, indexInGallery, sizes, loading = 'lazy', section } = Astro.props;
+const { photo, gallerySlug, indexInGallery, sizes, loading = 'lazy', section, placeholder = false } = Astro.props;
 const label = photo.alt || (photo.kind === 'video' ? 'Play video' : 'View photo');
 ---
 
-<button
-  class="tile"
-  type="button"
-  data-gallery={gallerySlug}
-  data-index={indexInGallery}
-  data-section={section ?? ''}
-  aria-label={label}
->
-  <Photo photo={photo} sizes={sizes} loading={loading} />
-  {
-    photo.kind === 'video' && (
-      <span class="tile-video-badge" aria-hidden="true">
-        <svg viewBox="0 0 24 24" class="play-icon"><path d="M8 5v14l11-7z" /></svg>
-        {photo.duration != null && <span class="duration">{formatDuration(photo.duration)}</span>}
-      </span>
-    )
-  }
-</button>
+{
+  placeholder ? (
+    <div class="tile" aria-hidden="true">
+      <Photo photo={photo} sizes={sizes} loading={loading} placeholder />
+    </div>
+  ) : (
+    <button
+      class="tile"
+      type="button"
+      data-gallery={gallerySlug}
+      data-index={indexInGallery}
+      data-section={section ?? ''}
+      aria-label={label}
+    >
+      <Photo photo={photo} sizes={sizes} loading={loading} />
+      {
+        photo.kind === 'video' && (
+          <span class="tile-video-badge" aria-hidden="true">
+            <svg viewBox="0 0 24 24" class="play-icon"><path d="M8 5v14l11-7z" /></svg>
+            {photo.duration != null && <span class="duration">{formatDuration(photo.duration)}</span>}
+          </span>
+        )
+      }
+    </button>
+  )
+}

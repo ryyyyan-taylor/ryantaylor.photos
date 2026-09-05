@@ -2,8 +2,7 @@ import { buildConfirmationEmail, buildIcsAttachment, type ConfirmationFields } f
 import {
   hasValidSession,
   issueSessionCookie,
-  protectedGallery,
-  renderLockPage,
+  protectedGalleryPasswordHash,
   verifyGalleryPassword,
 } from './gallery-auth';
 
@@ -24,6 +23,13 @@ export default {
   async fetch(request: Request, env: GalleryEnv): Promise<Response> {
     const url = new URL(request.url);
 
+    // The __locked variant is only ever meant to be served internally, by
+    // gateProtectedGallery below (a direct env.ASSETS.fetch call, which
+    // never re-enters this fetch handler) — never as a page of its own.
+    if (url.pathname.includes('/__locked')) {
+      return new Response('Not Found', { status: 404 });
+    }
+
     if (url.pathname.startsWith('/utils/api/')) {
       return handleApi(request, env, url);
     }
@@ -41,15 +47,16 @@ export default {
 
 async function gateProtectedGallery(request: Request, env: GalleryEnv, url: URL): Promise<Response | null> {
   const slug = url.pathname.replace(/^\/|\/$/g, '');
-  const gallery = protectedGallery(slug);
-  if (!gallery) return null;
+  const passwordHash = protectedGalleryPasswordHash(slug);
+  if (!passwordHash) return null;
 
   if (await hasValidSession(request, slug, env.GALLERY_AUTH_SECRET)) return null;
 
-  return new Response(renderLockPage(slug, gallery.title, gallery.tiles, url.searchParams.get('e') === '1'), {
-    status: 401,
-    headers: { 'content-type': 'text/html; charset=utf-8' },
-  });
+  // The real page, statically built with only blur-up placeholders and no
+  // real photo/zip URL anywhere in it — see [...gallery].astro's `locked`
+  // branch. Serve it as a 401 so it can't be mistaken for the real thing.
+  const locked = await env.ASSETS.fetch(new Request(new URL(`/${slug}/__locked/`, request.url), request));
+  return new Response(locked.body, { status: 401, headers: locked.headers });
 }
 
 async function handleGalleryAuth(request: Request, env: GalleryEnv): Promise<Response> {
@@ -60,9 +67,9 @@ async function handleGalleryAuth(request: Request, env: GalleryEnv): Promise<Res
   const form = await request.formData().catch(() => null);
   const slug = form?.get('slug')?.toString() ?? '';
   const password = form?.get('password')?.toString() ?? '';
-  const gallery = protectedGallery(slug);
+  const passwordHash = protectedGalleryPasswordHash(slug);
 
-  if (!gallery || !(await verifyGalleryPassword(gallery.passwordHash, password))) {
+  if (!passwordHash || !(await verifyGalleryPassword(passwordHash, password))) {
     return Response.redirect(new URL(`/${slug}/?e=1`, request.url), 303);
   }
 

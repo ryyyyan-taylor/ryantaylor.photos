@@ -5,10 +5,23 @@ import Lightbox from '../components/Lightbox.astro';
 import { describeMedia, formatBytes, galleries, ogImage, photoById, zipHref, type Gallery } from '../lib/photos';
 
 export function getStaticPaths() {
-  return galleries.map((gallery) => ({ params: { gallery: gallery.slug }, props: { gallery } }));
+  const pages = galleries.map((gallery) => ({ params: { gallery: gallery.slug }, props: { gallery, locked: false } }));
+
+  // Every password-protected gallery also gets a `__locked` sibling route —
+  // the same page, rendered with only blur-up placeholders and no real
+  // photo/zip URLs anywhere in it (no <Lightbox/>, dead download hrefs).
+  // worker/gallery-auth.ts serves this instead of the real page (as a 401)
+  // until the password cookie checks out — see that file and Base.astro's
+  // `locked`/`overlay` slot for how the two halves fit together. `__locked`
+  // can't collide with a real slug: slugify() never produces underscores.
+  const lockedPages = galleries
+    .filter((gallery) => gallery.passwordHash)
+    .map((gallery) => ({ params: { gallery: `${gallery.slug}/__locked` }, props: { gallery, locked: true } }));
+
+  return [...pages, ...lockedPages];
 }
 
-const { gallery } = Astro.props as { gallery: Gallery };
+const { gallery, locked } = Astro.props as { gallery: Gallery; locked: boolean };
 const coverPhoto = photoById(gallery.cover);
 const availableUntil = gallery.availableUntil
   ? new Date(`${gallery.availableUntil}T00:00:00Z`).toLocaleDateString('en-US', {
@@ -23,8 +36,9 @@ const availableUntil = gallery.availableUntil
 <Base
   title={gallery.title}
   description={gallery.description || `${gallery.title} — photography by Ryan Taylor.`}
-  image={coverPhoto ? ogImage(coverPhoto) : undefined}
-  noindex={gallery.unlisted}
+  image={locked ? undefined : coverPhoto ? ogImage(coverPhoto) : undefined}
+  noindex={locked || gallery.unlisted}
+  locked={locked}
 >
   <section class="page-head">
     <p class="eyebrow">
@@ -44,7 +58,7 @@ const availableUntil = gallery.availableUntil
             <ul>
               {gallery.zips.map((zip) => (
                 <li>
-                  <a href={zipHref(zip)} download>
+                  <a href={locked ? '#' : zipHref(zip)} download={!locked}>
                     {zip.label} ({formatBytes(zip.size)})
                   </a>
                 </li>
@@ -65,10 +79,67 @@ const availableUntil = gallery.availableUntil
           indexInGallery={i}
           sizes="(min-width: 68rem) 32vw, (min-width: 40rem) 48vw, 94vw"
           loading={i < 4 ? 'eager' : 'lazy'}
+          placeholder={locked}
         />
       ))
     }
   </div>
 
-  <Lightbox galleries={[{ slug: gallery.slug, photos: gallery.photos }]} />
+  {!locked && <Lightbox galleries={[{ slug: gallery.slug, photos: gallery.photos }]} />}
+
+  {
+    locked && (
+      <Fragment slot="overlay">
+        <div class="lock-scrim" id="lock-scrim">
+          <div class="lock-card">
+            <h1>{gallery.title}</h1>
+            <p>This gallery is password protected.</p>
+            <form id="lock-form" method="post" action="/api/gallery-auth">
+              <input type="hidden" name="slug" value={gallery.slug} />
+              <input type="password" name="password" placeholder="Password" required autofocus />
+              <p class="lock-error" id="lock-error" hidden>
+                Wrong password — try again.
+              </p>
+              <button class="btn" type="submit">
+                View gallery
+              </button>
+            </form>
+          </div>
+        </div>
+        <script>
+          // Progressive enhancement: without JS the form still works via a
+          // normal POST + redirect (see worker/index.ts handleGalleryAuth),
+          // landing back here with ?e=1 read below. With JS, submit in
+          // place so a correct password can fade the scrim out instead of
+          // round-tripping through a full navigation to get back here.
+          const form = document.getElementById('lock-form') as HTMLFormElement;
+          const scrim = document.getElementById('lock-scrim') as HTMLDivElement;
+          const errorEl = document.getElementById('lock-error') as HTMLParagraphElement;
+          const button = form.querySelector('button') as HTMLButtonElement;
+
+          if (new URLSearchParams(location.search).get('e') === '1') errorEl.hidden = false;
+
+          form.addEventListener('submit', async (event) => {
+            event.preventDefault();
+            button.disabled = true;
+            errorEl.hidden = true;
+
+            try {
+              const response = await fetch('/api/gallery-auth', { method: 'POST', body: new FormData(form) });
+              if (response.ok) {
+                scrim.classList.add('is-dismissing');
+                setTimeout(() => location.reload(), 350);
+              } else {
+                errorEl.hidden = false;
+                button.disabled = false;
+              }
+            } catch {
+              errorEl.hidden = false;
+              button.disabled = false;
+            }
+          });
+        </script>
+      </Fragment>
+    )
+  }
 </Base>

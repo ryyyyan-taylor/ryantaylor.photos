@@ -8,6 +8,11 @@ interface Props {
   heroReveal?: boolean;
   image?: { url: string; width: number; height: number };
   noindex?: boolean;
+  // Blurs the whole shell (header/main/footer) for a password-protected
+  // gallery's `__locked` preview — pair with a `slot="overlay"` child (kept
+  // outside .shell, so it stays sharp) for the password card. See
+  // [...gallery].astro and worker/gallery-auth.ts.
+  locked?: boolean;
 }
 
 const {
@@ -16,6 +21,7 @@ const {
   heroReveal = false,
   image,
   noindex = false,
+  locked = false,
 } = Astro.props;
 const fullTitle = title ? `${title} — Ryan Taylor` : 'Ryan Taylor — Denver Photography';
 const path = Astro.url.pathname;
@@ -76,7 +82,7 @@ const nav = [
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
   </head>
   <body>
-    <div class="shell">
+    <div class="shell" class:list={{ 'is-locked': locked }}>
       <header id="site-header" class:list={['site-header', { 'site-header--hero': heroReveal }]}>
         <a class="wordmark" href="/">Ryan Taylor</a>
         <nav class="site-nav">
@@ -112,6 +118,8 @@ const nav = [
         </div>
       </footer>
     </div>
+
+    <slot name="overlay" />
 
     {
       heroReveal && (

@@ -6,23 +6,41 @@ interface Props {
   sizes: string;
   loading?: 'lazy' | 'eager';
   class?: string;
+  // Renders only the existing blur-up placeholder — no srcset, no real R2
+  // URL at all — for gallery previews shown before a password is entered.
+  // See worker/gallery-auth.ts and the `__locked` route in [...gallery].astro.
+  placeholder?: boolean;
 }
 
-const { photo, sizes, loading = 'lazy', class: className } = Astro.props;
+const { photo, sizes, loading = 'lazy', class: className, placeholder = false } = Astro.props;
 ---
 
-<picture>
-  <source type="image/avif" srcset={srcset(photo, 'avif')} sizes={sizes} />
-  <source type="image/webp" srcset={srcset(photo, 'webp')} sizes={sizes} />
-  <img
-    src={fallbackSrc(photo)}
-    width={photo.width}
-    height={photo.height}
-    alt={photo.alt}
-    loading={loading}
-    decoding="async"
-    fetchpriority={loading === 'eager' ? 'high' : undefined}
-    class={className}
-    style={`background-image:url(${photo.lqip})`}
-  />
-</picture>
+{
+  placeholder ? (
+    <img
+      src={photo.lqip}
+      width={photo.width}
+      height={photo.height}
+      alt=""
+      loading={loading}
+      decoding="async"
+      class={className}
+    />
+  ) : (
+    <picture>
+      <source type="image/avif" srcset={srcset(photo, 'avif')} sizes={sizes} />
+      <source type="image/webp" srcset={srcset(photo, 'webp')} sizes={sizes} />
+      <img
+        src={fallbackSrc(photo)}
+        width={photo.width}
+        height={photo.height}
+        alt={photo.alt}
+        loading={loading}
+        decoding="async"
+        fetchpriority={loading === 'eager' ? 'high' : undefined}
+        class={className}
+        style={`background-image:url(${photo.lqip})`}
+      />
+    </picture>
+  )
+}
