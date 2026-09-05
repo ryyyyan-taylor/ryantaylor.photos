@@ -28,7 +28,10 @@ const ZIP_TIERS = [
 ];
 // PBKDF2-SHA256, not scrypt/bcrypt — both Node (here) and the Workers runtime
 // (worker/gallery-auth.ts, verifying at request time) implement it natively.
-const PBKDF2_ITERATIONS = 600_000; // OWASP-recommended floor for PBKDF2-SHA256
+// 100,000 is Workers' hard cap on PBKDF2 iterations (crypto.subtle.deriveBits
+// throws above it) — the verifying side (worker/gallery-auth.ts) runs there,
+// so this can't be raised to OWASP's usual recommendation of 600k+.
+const PBKDF2_ITERATIONS = 100_000;
 const IMAGE_EXT = new Set(['.jpg', '.jpeg', '.png', '.tif', '.tiff', '.webp']);
 const VIDEO_EXT = new Set(['.mp4', '.mov', '.m4v', '.webm']);
 const MEDIA_EXT = new Set([...IMAGE_EXT, ...VIDEO_EXT]);
