@@ -3,16 +3,36 @@ import manifest from '../src/data/photos.json';
 const COOKIE_PREFIX = 'gauth_';
 const SESSION_MS = 30 * 24 * 60 * 60 * 1000; // 30 days
 
+interface ManifestPhoto {
+  id: string;
+  lqip: string;
+}
+
 interface ManifestGallery {
   slug: string;
   title: string;
+  cover: string;
+  photos: ManifestPhoto[];
   passwordHash: string | null;
 }
 
-const protectedGalleries = new Map<string, { title: string; passwordHash: string }>(
+interface ProtectedGallery {
+  title: string;
+  passwordHash: string;
+  // The cover photo's existing blur-up placeholder (tiny, already-blurry
+  // inline data URI) — reused as the lock screen's backdrop so it reads as
+  // "blurred preview of the real gallery" without sending any real photo or
+  // zip URL to a visitor who hasn't entered the password yet.
+  coverLqip: string | null;
+}
+
+const protectedGalleries = new Map<string, ProtectedGallery>(
   (manifest.galleries as ManifestGallery[])
     .filter((g): g is ManifestGallery & { passwordHash: string } => !!g.passwordHash)
-    .map((g) => [g.slug, { title: g.title, passwordHash: g.passwordHash }]),
+    .map((g) => {
+      const cover = g.photos.find((p) => p.id === g.cover) ?? g.photos[0];
+      return [g.slug, { title: g.title, passwordHash: g.passwordHash, coverLqip: cover?.lqip || null }];
+    }),
 );
 
 export function protectedGallery(slug: string) {
@@ -112,7 +132,7 @@ function escapeHtml(value: string): string {
     .replace(/'/g, '&#39;');
 }
 
-export function renderLockPage(slug: string, title: string, invalid: boolean): string {
+export function renderLockPage(slug: string, title: string, coverLqip: string | null, invalid: boolean): string {
   return `<!doctype html>
 <html lang="en">
 <head>
@@ -126,13 +146,30 @@ export function renderLockPage(slug: string, title: string, invalid: boolean): s
     :root { --bg: #0d0c0a; --fg: #eeece7; --muted: #8e8a82; --border: #2a2822; }
   }
   * { box-sizing: border-box; }
+  html, body { height: 100%; }
   body {
-    margin: 0; min-height: 100dvh; display: flex; align-items: center; justify-content: center;
-    background: var(--bg); color: var(--fg);
+    margin: 0; color: var(--fg);
     font: 16px/1.5 -apple-system, "Segoe UI", Inter, system-ui, sans-serif;
-    padding: 1.5rem;
   }
-  main { width: 100%; max-width: 22rem; text-align: center; }
+  .backdrop {
+    position: fixed; inset: -5%;
+    ${coverLqip ? `background-image: url("${coverLqip}");` : 'background: linear-gradient(135deg, #2a2822, #0d0c0a);'}
+    background-size: cover; background-position: center;
+    filter: blur(48px) saturate(1.15) brightness(0.85);
+    transform: scale(1.1); /* keep the blur radius from revealing an unblurred edge */
+  }
+  .scrim {
+    position: fixed; inset: 0; background: rgba(0, 0, 0, 0.4);
+    display: flex; align-items: center; justify-content: center; padding: 1.5rem;
+    transition: opacity 0.35s ease, transform 0.35s ease;
+  }
+  .scrim.is-dismissing { opacity: 0; transform: scale(1.02); pointer-events: none; }
+  .card {
+    width: 100%; max-width: 22rem; text-align: center;
+    background: var(--bg); color: var(--fg);
+    border-radius: 0.75rem; padding: 2rem 1.75rem;
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.35);
+  }
   h1 { font-size: 1.15rem; font-weight: 500; margin: 0 0 0.35rem; }
   p { color: var(--muted); margin: 0 0 1.5rem; font-size: 0.9rem; }
   form { display: flex; flex-direction: column; gap: 0.75rem; }
@@ -145,21 +182,54 @@ export function renderLockPage(slug: string, title: string, invalid: boolean): s
     font: inherit; padding: 0.65rem 0.8rem; border-radius: 0.4rem; border: none;
     background: var(--fg); color: var(--bg); cursor: pointer;
   }
-  .error { color: #b3402f; font-size: 0.85rem; margin: -0.5rem 0 0; }
-  a { color: inherit; }
+  button:disabled { opacity: 0.6; cursor: default; }
+  .error { color: #e08670; font-size: 0.85rem; margin: -0.5rem 0 0; }
 </style>
 </head>
 <body>
-<main>
-  <h1>${escapeHtml(title)}</h1>
-  <p>This gallery is password protected.</p>
-  <form method="post" action="/api/gallery-auth">
-    <input type="hidden" name="slug" value="${escapeHtml(slug)}" />
-    <input type="password" name="password" placeholder="Password" required autofocus />
-    ${invalid ? '<p class="error">Wrong password — try again.</p>' : ''}
-    <button type="submit">View gallery</button>
-  </form>
-</main>
+<div class="backdrop"></div>
+<div class="scrim" id="scrim">
+  <main class="card">
+    <h1>${escapeHtml(title)}</h1>
+    <p>This gallery is password protected.</p>
+    <form id="lock-form" method="post" action="/api/gallery-auth">
+      <input type="hidden" name="slug" value="${escapeHtml(slug)}" />
+      <input type="password" name="password" placeholder="Password" required autofocus />
+      <p class="error" id="lock-error" ${invalid ? '' : 'hidden'}>Wrong password — try again.</p>
+      <button type="submit">View gallery</button>
+    </form>
+  </main>
+</div>
+<script>
+  // Progressive enhancement: without JS the form still works via a normal
+  // POST + redirect (see worker/index.ts handleGalleryAuth). With JS, submit
+  // in place so the scrim can fade out instead of round-tripping through a
+  // full navigation to get back here.
+  const form = document.getElementById('lock-form');
+  const scrim = document.getElementById('scrim');
+  const errorEl = document.getElementById('lock-error');
+  const button = form.querySelector('button');
+
+  form.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    button.disabled = true;
+    errorEl.hidden = true;
+
+    try {
+      const response = await fetch('/api/gallery-auth', { method: 'POST', body: new FormData(form) });
+      if (response.ok) {
+        scrim.classList.add('is-dismissing');
+        setTimeout(() => location.reload(), 350);
+      } else {
+        errorEl.hidden = false;
+        button.disabled = false;
+      }
+    } catch {
+      errorEl.hidden = false;
+      button.disabled = false;
+    }
+  });
+</script>
 </body>
 </html>`;
 }

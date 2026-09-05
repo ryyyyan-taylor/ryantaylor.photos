@@ -46,7 +46,7 @@ async function gateProtectedGallery(request: Request, env: GalleryEnv, url: URL)
 
   if (await hasValidSession(request, slug, env.GALLERY_AUTH_SECRET)) return null;
 
-  return new Response(renderLockPage(slug, gallery.title, url.searchParams.get('e') === '1'), {
+  return new Response(renderLockPage(slug, gallery.title, gallery.coverLqip, url.searchParams.get('e') === '1'), {
     status: 401,
     headers: { 'content-type': 'text/html; charset=utf-8' },
   });
