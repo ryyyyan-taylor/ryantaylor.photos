@@ -60,6 +60,10 @@ export interface Gallery {
   // but are left out of the home grid, section nav, and the sitemap.
   unlisted: boolean;
   availableUntil: string | null;
+  // Set from gallery.json's `password`; enforced by the Worker (see
+  // worker/gallery-auth.ts), not by anything at build time — the page still
+  // builds normally, it's the Worker deciding whether to serve it.
+  passwordHash: string | null;
   zips: GalleryZip[] | null;
 }
 

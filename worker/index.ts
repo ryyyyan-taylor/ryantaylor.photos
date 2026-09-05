@@ -1,4 +1,11 @@
 import { buildConfirmationEmail, buildIcsAttachment, type ConfirmationFields } from './emails/confirmation';
+import {
+  hasValidSession,
+  issueSessionCookie,
+  protectedGallery,
+  renderLockPage,
+  verifyGalleryPassword,
+} from './gallery-auth';
 
 const OWNER_EMAIL = 'ryan4125taylor@gmail.com';
 const SENDER = { email: 'bookings@ryantaylor.photos', name: 'Ryan Taylor Photography' };
@@ -7,19 +14,62 @@ const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const DATE_RE = /^\d{4}-\d{2}-\d{2}$/;
 const TIME_RE = /^\d{2}:\d{2}$/;
 
+interface GalleryEnv extends Env {
+  GALLERY_AUTH_SECRET: string;
+}
+
 class ApiError extends Error {}
 
 export default {
-  async fetch(request: Request, env: Env): Promise<Response> {
+  async fetch(request: Request, env: GalleryEnv): Promise<Response> {
     const url = new URL(request.url);
 
     if (url.pathname.startsWith('/utils/api/')) {
       return handleApi(request, env, url);
     }
 
+    if (url.pathname === '/api/gallery-auth') {
+      return handleGalleryAuth(request, env);
+    }
+
+    const gate = await gateProtectedGallery(request, env, url);
+    if (gate) return gate;
+
     return env.ASSETS.fetch(request);
   },
-} satisfies ExportedHandler<Env>;
+} satisfies ExportedHandler<GalleryEnv>;
+
+async function gateProtectedGallery(request: Request, env: GalleryEnv, url: URL): Promise<Response | null> {
+  const slug = url.pathname.replace(/^\/|\/$/g, '');
+  const gallery = protectedGallery(slug);
+  if (!gallery) return null;
+
+  if (await hasValidSession(request, slug, env.GALLERY_AUTH_SECRET)) return null;
+
+  return new Response(renderLockPage(slug, gallery.title, url.searchParams.get('e') === '1'), {
+    status: 401,
+    headers: { 'content-type': 'text/html; charset=utf-8' },
+  });
+}
+
+async function handleGalleryAuth(request: Request, env: GalleryEnv): Promise<Response> {
+  if (request.method !== 'POST') {
+    return new Response('Method Not Allowed', { status: 405 });
+  }
+
+  const form = await request.formData().catch(() => null);
+  const slug = form?.get('slug')?.toString() ?? '';
+  const password = form?.get('password')?.toString() ?? '';
+  const gallery = protectedGallery(slug);
+
+  if (!gallery || !(await verifyGalleryPassword(gallery.passwordHash, password))) {
+    return Response.redirect(new URL(`/${slug}/?e=1`, request.url), 303);
+  }
+
+  const headers = new Headers({ Location: `/${slug}/` });
+  headers.append('Set-Cookie', await issueSessionCookie(slug, env.GALLERY_AUTH_SECRET));
+  return new Response(null, { status: 303, headers });
+}
 
 async function handleApi(request: Request, env: Env, url: URL): Promise<Response> {
   // Access is the real gate on /utils/*; this is a cheap backstop in case

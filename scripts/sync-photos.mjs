@@ -1,4 +1,4 @@
-import { createHash, randomBytes } from 'node:crypto';
+import { createHash, randomBytes, pbkdf2Sync } from 'node:crypto';
 import { createReadStream, createWriteStream } from 'node:fs';
 import { readdir, readFile, writeFile, stat, rm } from 'node:fs/promises';
 import { join, extname, basename } from 'node:path';
@@ -26,6 +26,9 @@ const ZIP_TIERS = [
   { key: 'large', label: 'Large', width: 3200 },
   { key: 'full', label: 'Full quality', width: null },
 ];
+// PBKDF2-SHA256, not scrypt/bcrypt — both Node (here) and the Workers runtime
+// (worker/gallery-auth.ts, verifying at request time) implement it natively.
+const PBKDF2_ITERATIONS = 600_000; // OWASP-recommended floor for PBKDF2-SHA256
 const IMAGE_EXT = new Set(['.jpg', '.jpeg', '.png', '.tif', '.tiff', '.webp']);
 const VIDEO_EXT = new Set(['.mp4', '.mov', '.m4v', '.webm']);
 const MEDIA_EXT = new Set([...IMAGE_EXT, ...VIDEO_EXT]);
@@ -99,6 +102,8 @@ for (const rel of await galleryDirs(SRC_DIR)) {
 
   const title = config?.title ?? titleize(names.at(-1));
   const coverFile = config?.cover && photos.find((p) => basename(p.file) === config.cover);
+  const passwordHash = config?.password ? hashPassword(config.password) : null;
+  if (passwordHash) console.log(`  protected: ${slug}`);
 
   const prevGallery = previousGalleries.get(slug);
   const prevFiles = new Set((prevGallery?.photos ?? []).map((p) => p.file));
@@ -126,6 +131,7 @@ for (const rel of await galleryDirs(SRC_DIR)) {
     photos,
     unlisted: !!config?.unlisted,
     availableUntil: config?.availableUntil ?? null,
+    passwordHash,
     zips,
   });
 }
@@ -437,6 +443,12 @@ async function hashFile(path) {
     stream.on('end', () => resolve(hash.digest('hex').slice(0, 8)));
     stream.on('error', reject);
   });
+}
+
+function hashPassword(password) {
+  const salt = randomBytes(16);
+  const hash = pbkdf2Sync(password, salt, PBKDF2_ITERATIONS, 32, 'sha256');
+  return `${PBKDF2_ITERATIONS}:${salt.toString('hex')}:${hash.toString('hex')}`;
 }
 
 async function upload(key, body, contentType, { immutable = true } = {}) {

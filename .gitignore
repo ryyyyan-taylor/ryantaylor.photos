@@ -4,6 +4,7 @@ dist/
 .wrangler/
 .claude/
 .env
+.dev.vars
 .DS_Store
 CLAUDE.md
 worker-configuration.d.ts

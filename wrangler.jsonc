@@ -10,9 +10,11 @@
     "binding": "ASSETS",
     "not_found_handling": "404-page",
     "html_handling": "auto-trailing-slash",
-    // /utils/api/* must always reach the Worker — the asset layer's 404-page
-    // fallback would otherwise swallow unmatched paths before it gets there.
-    "run_worker_first": ["/utils/api/*"]
+    // Every request must reach the Worker first: /utils/api/* is API-only
+    // (no matching asset anyway), and password-protected galleries need the
+    // Worker to decide, per-request, whether to serve the real page or a
+    // lock screen — see worker/gallery-auth.ts.
+    "run_worker_first": true
   },
   "send_email": [
     { "name": "EMAIL", "allowed_sender_addresses": ["bookings@ryantaylor.photos"] }

@@ -1,0 +1,4 @@
+# Copy to .dev.vars for `npm run preview` (wrangler dev). Generate a real
+# value with: openssl rand -hex 32
+# In production, set it with: wrangler secret put GALLERY_AUTH_SECRET
+GALLERY_AUTH_SECRET=

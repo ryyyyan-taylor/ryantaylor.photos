@@ -30,6 +30,12 @@ include only what you want to override. Copy `gallery.example.json` as a startin
 | `photos` | none | Per-file `alt`, `caption`, and `note`, keyed by exact filename. |
 | `unlisted` | `false` | Keeps the gallery off the home grid, section nav, and sitemap. The page still builds and is reachable by direct link — for client deliveries. |
 | `availableUntil` | none | `"YYYY-MM-DD"`. Purely a note shown on the page ("available to view through ...") — nothing is actually enforced or deleted automatically. |
+| `password` | none | Plaintext, here only. `photos:sync` hashes it (PBKDF2) into `photos.json` and never writes the plaintext anywhere. The Worker gates the page at request time — visiting the URL shows a password prompt instead of the gallery until it's entered (see `worker/gallery-auth.ts`). Removing the field and re-syncing removes protection. |
+
+`password` gates the gallery *page* only. Photo/zip files are still plain public objects on
+`img.ryantaylor.photos` — someone with a direct file URL (e.g. copied out of the page after
+logging in) can still fetch it without the password. Fine for keeping a gallery out of casual/search
+traffic; not a guarantee against a client resharing a link.
 
 `alt` is the accessibility description and is not shown. `caption` appears under the photo in the
 lightbox. `note` appears in the lightbox sidebar, below the EXIF data — use it for shooting notes or
