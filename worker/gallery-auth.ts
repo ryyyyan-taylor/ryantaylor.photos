@@ -4,35 +4,47 @@ const COOKIE_PREFIX = 'gauth_';
 const SESSION_MS = 30 * 24 * 60 * 60 * 1000; // 30 days
 
 interface ManifestPhoto {
-  id: string;
   lqip: string;
+  width: number;
+  height: number;
 }
 
 interface ManifestGallery {
   slug: string;
   title: string;
-  cover: string;
   photos: ManifestPhoto[];
   passwordHash: string | null;
+}
+
+export interface LockPreviewTile {
+  lqip: string;
+  aspect: number;
 }
 
 interface ProtectedGallery {
   title: string;
   passwordHash: string;
-  // The cover photo's existing blur-up placeholder (tiny, already-blurry
-  // inline data URI) — reused as the lock screen's backdrop so it reads as
-  // "blurred preview of the real gallery" without sending any real photo or
-  // zip URL to a visitor who hasn't entered the password yet.
-  coverLqip: string | null;
+  // Every photo's existing blur-up placeholder (tiny, already-blurry inline
+  // data URI) laid out in the real gallery's order — reused as the lock
+  // screen's backdrop so it reads as a blurred preview of the actual page
+  // without sending any real photo or zip URL to a visitor who hasn't
+  // entered the password yet.
+  tiles: LockPreviewTile[];
 }
 
 const protectedGalleries = new Map<string, ProtectedGallery>(
   (manifest.galleries as ManifestGallery[])
     .filter((g): g is ManifestGallery & { passwordHash: string } => !!g.passwordHash)
-    .map((g) => {
-      const cover = g.photos.find((p) => p.id === g.cover) ?? g.photos[0];
-      return [g.slug, { title: g.title, passwordHash: g.passwordHash, coverLqip: cover?.lqip || null }];
-    }),
+    .map((g) => [
+      g.slug,
+      {
+        title: g.title,
+        passwordHash: g.passwordHash,
+        tiles: g.photos
+          .filter((p) => p.lqip)
+          .map((p) => ({ lqip: p.lqip, aspect: p.width / p.height })),
+      },
+    ]),
 );
 
 export function protectedGallery(slug: string) {
@@ -132,7 +144,11 @@ function escapeHtml(value: string): string {
     .replace(/'/g, '&#39;');
 }
 
-export function renderLockPage(slug: string, title: string, coverLqip: string | null, invalid: boolean): string {
+export function renderLockPage(slug: string, title: string, tiles: LockPreviewTile[], invalid: boolean): string {
+  const tileHtml = tiles
+    .map((t) => `<div class="tile" style="aspect-ratio:${t.aspect.toFixed(4)};background-image:url('${t.lqip}')"></div>`)
+    .join('');
+
   return `<!doctype html>
 <html lang="en">
 <head>
@@ -148,15 +164,33 @@ export function renderLockPage(slug: string, title: string, coverLqip: string | 
   * { box-sizing: border-box; }
   html, body { height: 100%; }
   body {
-    margin: 0; color: var(--fg);
+    margin: 0; color: var(--fg); background: var(--bg);
     font: 16px/1.5 -apple-system, "Segoe UI", Inter, system-ui, sans-serif;
+    overflow: hidden; /* the preview underneath is decorative, never meant to scroll */
   }
-  .backdrop {
-    position: fixed; inset: -5%;
-    ${coverLqip ? `background-image: url("${coverLqip}");` : 'background: linear-gradient(135deg, #2a2822, #0d0c0a);'}
+  /* A stand-in for the real page — same header shape and a masonry grid of
+     every photo's blur-up placeholder, laid out in gallery order — then the
+     whole thing blurred hard as one composition. Every image here is the
+     tiny (~24px) placeholder already shipped for lazy-loading, not a real
+     photo, so blurring is presentation, not the only thing hiding anything. */
+  .page-preview {
+    position: fixed; inset: -6%;
+    filter: blur(32px) saturate(1.1) brightness(0.92);
+    transform: scale(1.08); /* keeps the blur radius from showing an unblurred edge */
+  }
+  .preview-header {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.25rem 1.75rem; font-weight: 500;
+  }
+  .preview-header span:last-child { color: var(--muted); font-size: 0.9rem; }
+  .preview-grid {
+    column-count: 2; column-gap: 0.85rem; padding: 0 1.75rem;
+  }
+  @media (min-width: 40rem) { .preview-grid { column-count: 3; } }
+  @media (min-width: 68rem) { .preview-grid { column-count: 4; } }
+  .tile {
+    break-inside: avoid; margin-bottom: 0.85rem; border-radius: 0.5rem;
     background-size: cover; background-position: center;
-    filter: blur(48px) saturate(1.15) brightness(0.85);
-    transform: scale(1.1); /* keep the blur radius from revealing an unblurred edge */
   }
   .scrim {
     position: fixed; inset: 0; background: rgba(0, 0, 0, 0.4);
@@ -187,7 +221,10 @@ export function renderLockPage(slug: string, title: string, coverLqip: string | 
 </style>
 </head>
 <body>
-<div class="backdrop"></div>
+<div class="page-preview">
+  <div class="preview-header"><span>Ryan Taylor</span><span>Work&nbsp;&nbsp;About</span></div>
+  <div class="preview-grid">${tileHtml}</div>
+</div>
 <div class="scrim" id="scrim">
   <main class="card">
     <h1>${escapeHtml(title)}</h1>
