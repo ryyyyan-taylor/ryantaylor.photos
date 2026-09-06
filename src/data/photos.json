@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-06T17:32:33.103Z",
+  "generatedAt": "2026-09-06T17:57:47.077Z",
   "widths": [
     480,
     960,
@@ -720,18 +720,18 @@
       ]
     },
     {
-      "slug": "events/summoner-s-skirmish-09-05-2026",
+      "slug": "events/summoner-skirmish-09-05-2026",
       "section": "events",
       "sectionTitle": "Events",
-      "title": "Summoner's Skirmish",
+      "title": "Summoner Skirmish Sept. 5th 2026",
       "description": "",
       "order": 999,
-      "cover": "events/summoner-s-skirmish-09-05-2026/img01222",
+      "cover": "events/summoner-skirmish-09-05-2026/img01222",
       "photos": [
         {
-          "id": "events/summoner-s-skirmish-09-05-2026/img00665",
-          "file": "Events/Summoner's Skirmish 09-05-2026/IMG00665.jpg",
-          "stem": "p/events/summoner-s-skirmish-09-05-2026/img00665.85e49568",
+          "id": "events/summoner-skirmish-09-05-2026/img00665",
+          "file": "Events/Summoner Skirmish 09-05-2026/IMG00665.jpg",
+          "stem": "p/events/summoner-skirmish-09-05-2026/img00665.85e49568",
           "hash": "85e49568",
           "width": 4563,
           "height": 3422,
@@ -761,9 +761,9 @@
           "videoMeta": null
         },
         {
-          "id": "events/summoner-s-skirmish-09-05-2026/img00667",
-          "file": "Events/Summoner's Skirmish 09-05-2026/IMG00667.jpg",
-          "stem": "p/events/summoner-s-skirmish-09-05-2026/img00667.2b70419c",
+          "id": "events/summoner-skirmish-09-05-2026/img00667",
+          "file": "Events/Summoner Skirmish 09-05-2026/IMG00667.jpg",
+          "stem": "p/events/summoner-skirmish-09-05-2026/img00667.2b70419c",
           "hash": "2b70419c",
           "width": 4699,
           "height": 3525,
@@ -793,9 +793,9 @@
           "videoMeta": null
         },
         {
-          "id": "events/summoner-s-skirmish-09-05-2026/img00668",
-          "file": "Events/Summoner's Skirmish 09-05-2026/IMG00668.jpg",
-          "stem": "p/events/summoner-s-skirmish-09-05-2026/img00668.e2723619",
+          "id": "events/summoner-skirmish-09-05-2026/img00668",
+          "file": "Events/Summoner Skirmish 09-05-2026/IMG00668.jpg",
+          "stem": "p/events/summoner-skirmish-09-05-2026/img00668.e2723619",
           "hash": "e2723619",
           "width": 4372,
           "height": 3279,
@@ -825,9 +825,9 @@
           "videoMeta": null
         },
         {
-          "id": "events/summoner-s-skirmish-09-05-2026/img00669",
-          "file": "Events/Summoner's Skirmish 09-05-2026/IMG00669.jpg",
-          "stem": "p/events/summoner-s-skirmish-09-05-2026/img00669.5c640290",
+          "id": "events/summoner-skirmish-09-05-2026/img00669",
+          "file": "Events/Summoner Skirmish 09-05-2026/IMG00669.jpg",
+          "stem": "p/events/summoner-skirmish-09-05-2026/img00669.5c640290",
           "hash": "5c640290",
           "width": 4340,
           "height": 3255,
@@ -857,9 +857,9 @@
           "videoMeta": null
         },
         {
-          "id": "events/summoner-s-skirmish-09-05-2026/img00675",
-          "file": "Events/Summoner's Skirmish 09-05-2026/IMG00675.jpg",
-          "stem": "p/events/summoner-s-skirmish-09-05-2026/img00675.961bbb45",
+          "id": "events/summoner-skirmish-09-05-2026/img00675",
+          "file": "Events/Summoner Skirmish 09-05-2026/IMG00675.jpg",
+          "stem": "p/events/summoner-skirmish-09-05-2026/img00675.961bbb45",
           "hash": "961bbb45",
           "width": 5333,
           "height": 4000,
@@ -889,9 +889,9 @@
           "videoMeta": null
         },
         {
-          "id": "events/summoner-s-skirmish-09-05-2026/img00678",
-          "file": "Events/Summoner's Skirmish 09-05-2026/IMG00678.jpg",
-          "stem": "p/events/summoner-s-skirmish-09-05-2026/img00678.2658fc1c",
+          "id": "events/summoner-skirmish-09-05-2026/img00678",
+          "file": "Events/Summoner Skirmish 09-05-2026/IMG00678.jpg",
+          "stem": "p/events/summoner-skirmish-09-05-2026/img00678.2658fc1c",
           "hash": "2658fc1c",
           "width": 6000,
           "height": 3374,
@@ -921,9 +921,9 @@
           "videoMeta": null
         },
         {
-          "id": "events/summoner-s-skirmish-09-05-2026/img00680",
-          "file": "Events/Summoner's Skirmish 09-05-2026/IMG00680.jpg",
-          "stem": "p/events/summoner-s-skirmish-09-05-2026/img00680.c856a4a5",
+          "id": "events/summoner-skirmish-09-05-2026/img00680",
+          "file": "Events/Summoner Skirmish 09-05-2026/IMG00680.jpg",
+          "stem": "p/events/summoner-skirmish-09-05-2026/img00680.c856a4a5",
           "hash": "c856a4a5",
           "width": 5333,
           "height": 4000,
@@ -953,9 +953,9 @@
           "videoMeta": null
         },
         {
-          "id": "events/summoner-s-skirmish-09-05-2026/img00682",
-          "file": "Events/Summoner's Skirmish 09-05-2026/IMG00682.jpg",
-          "stem": "p/events/summoner-s-skirmish-09-05-2026/img00682.8e3e0112",
+          "id": "events/summoner-skirmish-09-05-2026/img00682",
+          "file": "Events/Summoner Skirmish 09-05-2026/IMG00682.jpg",
+          "stem": "p/events/summoner-skirmish-09-05-2026/img00682.8e3e0112",
           "hash": "8e3e0112",
           "width": 5118,
           "height": 3839,
@@ -985,9 +985,9 @@
           "videoMeta": null
         },
         {
-          "id": "events/summoner-s-skirmish-09-05-2026/img00683",
-          "file": "Events/Summoner's Skirmish 09-05-2026/IMG00683.jpg",
-          "stem": "p/events/summoner-s-skirmish-09-05-2026/img00683.c9d8d21e",
+          "id": "events/summoner-skirmish-09-05-2026/img00683",
+          "file": "Events/Summoner Skirmish 09-05-2026/IMG00683.jpg",
+          "stem": "p/events/summoner-skirmish-09-05-2026/img00683.c9d8d21e",
           "hash": "c9d8d21e",
           "width": 4600,
           "height": 3450,
@@ -1017,9 +1017,9 @@
           "videoMeta": null
         },
         {
-          "id": "events/summoner-s-skirmish-09-05-2026/img00700",
-          "file": "Events/Summoner's Skirmish 09-05-2026/IMG00700.jpg",
-          "stem": "p/events/summoner-s-skirmish-09-05-2026/img00700.02908e17",
+          "id": "events/summoner-skirmish-09-05-2026/img00700",
+          "file": "Events/Summoner Skirmish 09-05-2026/IMG00700.jpg",
+          "stem": "p/events/summoner-skirmish-09-05-2026/img00700.02908e17",
           "hash": "02908e17",
           "width": 5333,
           "height": 4000,
@@ -1049,9 +1049,9 @@
           "videoMeta": null
         },
         {
-          "id": "events/summoner-s-skirmish-09-05-2026/img00720",
-          "file": "Events/Summoner's Skirmish 09-05-2026/IMG00720.jpg",
-          "stem": "p/events/summoner-s-skirmish-09-05-2026/img00720.62432282",
+          "id": "events/summoner-skirmish-09-05-2026/img00720",
+          "file": "Events/Summoner Skirmish 09-05-2026/IMG00720.jpg",
+          "stem": "p/events/summoner-skirmish-09-05-2026/img00720.62432282",
           "hash": "62432282",
           "width": 6000,
           "height": 3374,
@@ -1081,9 +1081,9 @@
           "videoMeta": null
         },
         {
-          "id": "events/summoner-s-skirmish-09-05-2026/img00739",
-          "file": "Events/Summoner's Skirmish 09-05-2026/IMG00739.jpg",
-          "stem": "p/events/summoner-s-skirmish-09-05-2026/img00739.6de11ccb",
+          "id": "events/summoner-skirmish-09-05-2026/img00739",
+          "file": "Events/Summoner Skirmish 09-05-2026/IMG00739.jpg",
+          "stem": "p/events/summoner-skirmish-09-05-2026/img00739.6de11ccb",
           "hash": "6de11ccb",
           "width": 4579,
           "height": 3434,
@@ -1113,9 +1113,9 @@
           "videoMeta": null
         },
         {
-          "id": "events/summoner-s-skirmish-09-05-2026/img00745",
-          "file": "Events/Summoner's Skirmish 09-05-2026/IMG00745.jpg",
-          "stem": "p/events/summoner-s-skirmish-09-05-2026/img00745.91f14fe3",
+          "id": "events/summoner-skirmish-09-05-2026/img00745",
+          "file": "Events/Summoner Skirmish 09-05-2026/IMG00745.jpg",
+          "stem": "p/events/summoner-skirmish-09-05-2026/img00745.91f14fe3",
           "hash": "91f14fe3",
           "width": 5024,
           "height": 3769,
@@ -1145,9 +1145,9 @@
           "videoMeta": null
         },
         {
-          "id": "events/summoner-s-skirmish-09-05-2026/img00797",
-          "file": "Events/Summoner's Skirmish 09-05-2026/IMG00797.jpg",
-          "stem": "p/events/summoner-s-skirmish-09-05-2026/img00797.bc32eb13",
+          "id": "events/summoner-skirmish-09-05-2026/img00797",
+          "file": "Events/Summoner Skirmish 09-05-2026/IMG00797.jpg",
+          "stem": "p/events/summoner-skirmish-09-05-2026/img00797.bc32eb13",
           "hash": "bc32eb13",
           "width": 5333,
           "height": 4000,
@@ -1177,9 +1177,9 @@
           "videoMeta": null
         },
         {
-          "id": "events/summoner-s-skirmish-09-05-2026/img00806",
-          "file": "Events/Summoner's Skirmish 09-05-2026/IMG00806.jpg",
-          "stem": "p/events/summoner-s-skirmish-09-05-2026/img00806.176a884b",
+          "id": "events/summoner-skirmish-09-05-2026/img00806",
+          "file": "Events/Summoner Skirmish 09-05-2026/IMG00806.jpg",
+          "stem": "p/events/summoner-skirmish-09-05-2026/img00806.176a884b",
           "hash": "176a884b",
           "width": 4693,
           "height": 3520,
@@ -1209,9 +1209,9 @@
           "videoMeta": null
         },
         {
-          "id": "events/summoner-s-skirmish-09-05-2026/img00818",
-          "file": "Events/Summoner's Skirmish 09-05-2026/IMG00818.jpg",
-          "stem": "p/events/summoner-s-skirmish-09-05-2026/img00818.9e36ca8d",
+          "id": "events/summoner-skirmish-09-05-2026/img00818",
+          "file": "Events/Summoner Skirmish 09-05-2026/IMG00818.jpg",
+          "stem": "p/events/summoner-skirmish-09-05-2026/img00818.9e36ca8d",
           "hash": "9e36ca8d",
           "width": 5332,
           "height": 4000,
@@ -1241,9 +1241,9 @@
           "videoMeta": null
         },
         {
-          "id": "events/summoner-s-skirmish-09-05-2026/img00821",
-          "file": "Events/Summoner's Skirmish 09-05-2026/IMG00821.jpg",
-          "stem": "p/events/summoner-s-skirmish-09-05-2026/img00821.8213583b",
+          "id": "events/summoner-skirmish-09-05-2026/img00821",
+          "file": "Events/Summoner Skirmish 09-05-2026/IMG00821.jpg",
+          "stem": "p/events/summoner-skirmish-09-05-2026/img00821.8213583b",
           "hash": "8213583b",
           "width": 5332,
           "height": 4000,
@@ -1273,9 +1273,9 @@
           "videoMeta": null
         },
         {
-          "id": "events/summoner-s-skirmish-09-05-2026/img00824",
-          "file": "Events/Summoner's Skirmish 09-05-2026/IMG00824.jpg",
-          "stem": "p/events/summoner-s-skirmish-09-05-2026/img00824.ddc72262",
+          "id": "events/summoner-skirmish-09-05-2026/img00824",
+          "file": "Events/Summoner Skirmish 09-05-2026/IMG00824.jpg",
+          "stem": "p/events/summoner-skirmish-09-05-2026/img00824.ddc72262",
           "hash": "ddc72262",
           "width": 5332,
           "height": 4000,
@@ -1305,9 +1305,9 @@
           "videoMeta": null
         },
         {
-          "id": "events/summoner-s-skirmish-09-05-2026/img00827",
-          "file": "Events/Summoner's Skirmish 09-05-2026/IMG00827.jpg",
-          "stem": "p/events/summoner-s-skirmish-09-05-2026/img00827.38e9bb25",
+          "id": "events/summoner-skirmish-09-05-2026/img00827",
+          "file": "Events/Summoner Skirmish 09-05-2026/IMG00827.jpg",
+          "stem": "p/events/summoner-skirmish-09-05-2026/img00827.38e9bb25",
           "hash": "38e9bb25",
           "width": 5332,
           "height": 4000,
@@ -1337,9 +1337,9 @@
           "videoMeta": null
         },
         {
-          "id": "events/summoner-s-skirmish-09-05-2026/img00830",
-          "file": "Events/Summoner's Skirmish 09-05-2026/IMG00830.jpg",
-          "stem": "p/events/summoner-s-skirmish-09-05-2026/img00830.1b92132f",
+          "id": "events/summoner-skirmish-09-05-2026/img00830",
+          "file": "Events/Summoner Skirmish 09-05-2026/IMG00830.jpg",
+          "stem": "p/events/summoner-skirmish-09-05-2026/img00830.1b92132f",
           "hash": "1b92132f",
           "width": 5332,
           "height": 4000,
@@ -1369,9 +1369,9 @@
           "videoMeta": null
         },
         {
-          "id": "events/summoner-s-skirmish-09-05-2026/img00858",
-          "file": "Events/Summoner's Skirmish 09-05-2026/IMG00858.jpg",
-          "stem": "p/events/summoner-s-skirmish-09-05-2026/img00858.eef8bd30",
+          "id": "events/summoner-skirmish-09-05-2026/img00858",
+          "file": "Events/Summoner Skirmish 09-05-2026/IMG00858.jpg",
+          "stem": "p/events/summoner-skirmish-09-05-2026/img00858.eef8bd30",
           "hash": "eef8bd30",
           "width": 4784,
           "height": 3588,
@@ -1401,9 +1401,9 @@
           "videoMeta": null
         },
         {
-          "id": "events/summoner-s-skirmish-09-05-2026/img00869",
-          "file": "Events/Summoner's Skirmish 09-05-2026/IMG00869.jpg",
-          "stem": "p/events/summoner-s-skirmish-09-05-2026/img00869.7a56a64c",
+          "id": "events/summoner-skirmish-09-05-2026/img00869",
+          "file": "Events/Summoner Skirmish 09-05-2026/IMG00869.jpg",
+          "stem": "p/events/summoner-skirmish-09-05-2026/img00869.7a56a64c",
           "hash": "7a56a64c",
           "width": 5332,
           "height": 4000,
@@ -1433,9 +1433,9 @@
           "videoMeta": null
         },
         {
-          "id": "events/summoner-s-skirmish-09-05-2026/img00873",
-          "file": "Events/Summoner's Skirmish 09-05-2026/IMG00873.jpg",
-          "stem": "p/events/summoner-s-skirmish-09-05-2026/img00873.9018ca85",
+          "id": "events/summoner-skirmish-09-05-2026/img00873",
+          "file": "Events/Summoner Skirmish 09-05-2026/IMG00873.jpg",
+          "stem": "p/events/summoner-skirmish-09-05-2026/img00873.9018ca85",
           "hash": "9018ca85",
           "width": 5332,
           "height": 4000,
@@ -1465,9 +1465,9 @@
           "videoMeta": null
         },
         {
-          "id": "events/summoner-s-skirmish-09-05-2026/img00884",
-          "file": "Events/Summoner's Skirmish 09-05-2026/IMG00884.jpg",
-          "stem": "p/events/summoner-s-skirmish-09-05-2026/img00884.1cfa4036",
+          "id": "events/summoner-skirmish-09-05-2026/img00884",
+          "file": "Events/Summoner Skirmish 09-05-2026/IMG00884.jpg",
+          "stem": "p/events/summoner-skirmish-09-05-2026/img00884.1cfa4036",
           "hash": "1cfa4036",
           "width": 5332,
           "height": 4000,
@@ -1497,9 +1497,9 @@
           "videoMeta": null
         },
         {
-          "id": "events/summoner-s-skirmish-09-05-2026/img00954",
-          "file": "Events/Summoner's Skirmish 09-05-2026/IMG00954.jpg",
-          "stem": "p/events/summoner-s-skirmish-09-05-2026/img00954.470103a0",
+          "id": "events/summoner-skirmish-09-05-2026/img00954",
+          "file": "Events/Summoner Skirmish 09-05-2026/IMG00954.jpg",
+          "stem": "p/events/summoner-skirmish-09-05-2026/img00954.470103a0",
           "hash": "470103a0",
           "width": 5332,
           "height": 4000,
@@ -1529,9 +1529,9 @@
           "videoMeta": null
         },
         {
-          "id": "events/summoner-s-skirmish-09-05-2026/img00963",
-          "file": "Events/Summoner's Skirmish 09-05-2026/IMG00963.jpg",
-          "stem": "p/events/summoner-s-skirmish-09-05-2026/img00963.badc78d8",
+          "id": "events/summoner-skirmish-09-05-2026/img00963",
+          "file": "Events/Summoner Skirmish 09-05-2026/IMG00963.jpg",
+          "stem": "p/events/summoner-skirmish-09-05-2026/img00963.badc78d8",
           "hash": "badc78d8",
           "width": 5332,
           "height": 4000,
@@ -1561,9 +1561,9 @@
           "videoMeta": null
         },
         {
-          "id": "events/summoner-s-skirmish-09-05-2026/img00965",
-          "file": "Events/Summoner's Skirmish 09-05-2026/IMG00965.jpg",
-          "stem": "p/events/summoner-s-skirmish-09-05-2026/img00965.b7bc16c6",
+          "id": "events/summoner-skirmish-09-05-2026/img00965",
+          "file": "Events/Summoner Skirmish 09-05-2026/IMG00965.jpg",
+          "stem": "p/events/summoner-skirmish-09-05-2026/img00965.b7bc16c6",
           "hash": "b7bc16c6",
           "width": 6000,
           "height": 4000,
@@ -1593,9 +1593,9 @@
           "videoMeta": null
         },
         {
-          "id": "events/summoner-s-skirmish-09-05-2026/img00972",
-          "file": "Events/Summoner's Skirmish 09-05-2026/IMG00972.jpg",
-          "stem": "p/events/summoner-s-skirmish-09-05-2026/img00972.e312883a",
+          "id": "events/summoner-skirmish-09-05-2026/img00972",
+          "file": "Events/Summoner Skirmish 09-05-2026/IMG00972.jpg",
+          "stem": "p/events/summoner-skirmish-09-05-2026/img00972.e312883a",
           "hash": "e312883a",
           "width": 5332,
           "height": 4000,
@@ -1625,9 +1625,9 @@
           "videoMeta": null
         },
         {
-          "id": "events/summoner-s-skirmish-09-05-2026/img00977",
-          "file": "Events/Summoner's Skirmish 09-05-2026/IMG00977.jpg",
-          "stem": "p/events/summoner-s-skirmish-09-05-2026/img00977.58ef29cc",
+          "id": "events/summoner-skirmish-09-05-2026/img00977",
+          "file": "Events/Summoner Skirmish 09-05-2026/IMG00977.jpg",
+          "stem": "p/events/summoner-skirmish-09-05-2026/img00977.58ef29cc",
           "hash": "58ef29cc",
           "width": 5333,
           "height": 4000,
@@ -1657,9 +1657,9 @@
           "videoMeta": null
         },
         {
-          "id": "events/summoner-s-skirmish-09-05-2026/img00991",
-          "file": "Events/Summoner's Skirmish 09-05-2026/IMG00991.jpg",
-          "stem": "p/events/summoner-s-skirmish-09-05-2026/img00991.e1facf6f",
+          "id": "events/summoner-skirmish-09-05-2026/img00991",
+          "file": "Events/Summoner Skirmish 09-05-2026/IMG00991.jpg",
+          "stem": "p/events/summoner-skirmish-09-05-2026/img00991.e1facf6f",
           "hash": "e1facf6f",
           "width": 5333,
           "height": 4000,
@@ -1689,9 +1689,9 @@
           "videoMeta": null
         },
         {
-          "id": "events/summoner-s-skirmish-09-05-2026/img00993",
-          "file": "Events/Summoner's Skirmish 09-05-2026/IMG00993.jpg",
-          "stem": "p/events/summoner-s-skirmish-09-05-2026/img00993.0942b7f0",
+          "id": "events/summoner-skirmish-09-05-2026/img00993",
+          "file": "Events/Summoner Skirmish 09-05-2026/IMG00993.jpg",
+          "stem": "p/events/summoner-skirmish-09-05-2026/img00993.0942b7f0",
           "hash": "0942b7f0",
           "width": 6000,
           "height": 3375,
@@ -1721,9 +1721,9 @@
           "videoMeta": null
         },
         {
-          "id": "events/summoner-s-skirmish-09-05-2026/img00998",
-          "file": "Events/Summoner's Skirmish 09-05-2026/IMG00998.jpg",
-          "stem": "p/events/summoner-s-skirmish-09-05-2026/img00998.ad6e97c6",
+          "id": "events/summoner-skirmish-09-05-2026/img00998",
+          "file": "Events/Summoner Skirmish 09-05-2026/IMG00998.jpg",
+          "stem": "p/events/summoner-skirmish-09-05-2026/img00998.ad6e97c6",
           "hash": "ad6e97c6",
           "width": 5333,
           "height": 4000,
@@ -1753,9 +1753,9 @@
           "videoMeta": null
         },
         {
-          "id": "events/summoner-s-skirmish-09-05-2026/img01011",
-          "file": "Events/Summoner's Skirmish 09-05-2026/IMG01011.jpg",
-          "stem": "p/events/summoner-s-skirmish-09-05-2026/img01011.136be467",
+          "id": "events/summoner-skirmish-09-05-2026/img01011",
+          "file": "Events/Summoner Skirmish 09-05-2026/IMG01011.jpg",
+          "stem": "p/events/summoner-skirmish-09-05-2026/img01011.136be467",
           "hash": "136be467",
           "width": 6000,
           "height": 4000,
@@ -1785,9 +1785,9 @@
           "videoMeta": null
         },
         {
-          "id": "events/summoner-s-skirmish-09-05-2026/img01012",
-          "file": "Events/Summoner's Skirmish 09-05-2026/IMG01012.jpg",
-          "stem": "p/events/summoner-s-skirmish-09-05-2026/img01012.0f15a24f",
+          "id": "events/summoner-skirmish-09-05-2026/img01012",
+          "file": "Events/Summoner Skirmish 09-05-2026/IMG01012.jpg",
+          "stem": "p/events/summoner-skirmish-09-05-2026/img01012.0f15a24f",
           "hash": "0f15a24f",
           "width": 5333,
           "height": 4000,
@@ -1817,9 +1817,9 @@
           "videoMeta": null
         },
         {
-          "id": "events/summoner-s-skirmish-09-05-2026/img01013",
-          "file": "Events/Summoner's Skirmish 09-05-2026/IMG01013.jpg",
-          "stem": "p/events/summoner-s-skirmish-09-05-2026/img01013.4b5f9f55",
+          "id": "events/summoner-skirmish-09-05-2026/img01013",
+          "file": "Events/Summoner Skirmish 09-05-2026/IMG01013.jpg",
+          "stem": "p/events/summoner-skirmish-09-05-2026/img01013.4b5f9f55",
           "hash": "4b5f9f55",
           "width": 5333,
           "height": 4000,
@@ -1849,9 +1849,9 @@
           "videoMeta": null
         },
         {
-          "id": "events/summoner-s-skirmish-09-05-2026/img01014",
-          "file": "Events/Summoner's Skirmish 09-05-2026/IMG01014.jpg",
-          "stem": "p/events/summoner-s-skirmish-09-05-2026/img01014.21b17a99",
+          "id": "events/summoner-skirmish-09-05-2026/img01014",
+          "file": "Events/Summoner Skirmish 09-05-2026/IMG01014.jpg",
+          "stem": "p/events/summoner-skirmish-09-05-2026/img01014.21b17a99",
           "hash": "21b17a99",
           "width": 5333,
           "height": 4000,
@@ -1881,9 +1881,9 @@
           "videoMeta": null
         },
         {
-          "id": "events/summoner-s-skirmish-09-05-2026/img01022",
-          "file": "Events/Summoner's Skirmish 09-05-2026/IMG01022.jpg",
-          "stem": "p/events/summoner-s-skirmish-09-05-2026/img01022.5153aadc",
+          "id": "events/summoner-skirmish-09-05-2026/img01022",
+          "file": "Events/Summoner Skirmish 09-05-2026/IMG01022.jpg",
+          "stem": "p/events/summoner-skirmish-09-05-2026/img01022.5153aadc",
           "hash": "5153aadc",
           "width": 5333,
           "height": 4000,
@@ -1913,9 +1913,9 @@
           "videoMeta": null
         },
         {
-          "id": "events/summoner-s-skirmish-09-05-2026/img01028",
-          "file": "Events/Summoner's Skirmish 09-05-2026/IMG01028.jpg",
-          "stem": "p/events/summoner-s-skirmish-09-05-2026/img01028.3d090fde",
+          "id": "events/summoner-skirmish-09-05-2026/img01028",
+          "file": "Events/Summoner Skirmish 09-05-2026/IMG01028.jpg",
+          "stem": "p/events/summoner-skirmish-09-05-2026/img01028.3d090fde",
           "hash": "3d090fde",
           "width": 5333,
           "height": 4000,
@@ -1945,9 +1945,9 @@
           "videoMeta": null
         },
         {
-          "id": "events/summoner-s-skirmish-09-05-2026/img01031",
-          "file": "Events/Summoner's Skirmish 09-05-2026/IMG01031.jpg",
-          "stem": "p/events/summoner-s-skirmish-09-05-2026/img01031.8140bb55",
+          "id": "events/summoner-skirmish-09-05-2026/img01031",
+          "file": "Events/Summoner Skirmish 09-05-2026/IMG01031.jpg",
+          "stem": "p/events/summoner-skirmish-09-05-2026/img01031.8140bb55",
           "hash": "8140bb55",
           "width": 4774,
           "height": 3580,
@@ -1977,9 +1977,9 @@
           "videoMeta": null
         },
         {
-          "id": "events/summoner-s-skirmish-09-05-2026/img01033",
-          "file": "Events/Summoner's Skirmish 09-05-2026/IMG01033.jpg",
-          "stem": "p/events/summoner-s-skirmish-09-05-2026/img01033.dff80a26",
+          "id": "events/summoner-skirmish-09-05-2026/img01033",
+          "file": "Events/Summoner Skirmish 09-05-2026/IMG01033.jpg",
+          "stem": "p/events/summoner-skirmish-09-05-2026/img01033.dff80a26",
           "hash": "dff80a26",
           "width": 5333,
           "height": 4000,
@@ -2009,9 +2009,9 @@
           "videoMeta": null
         },
         {
-          "id": "events/summoner-s-skirmish-09-05-2026/img01055",
-          "file": "Events/Summoner's Skirmish 09-05-2026/IMG01055.jpg",
-          "stem": "p/events/summoner-s-skirmish-09-05-2026/img01055.49dc653b",
+          "id": "events/summoner-skirmish-09-05-2026/img01055",
+          "file": "Events/Summoner Skirmish 09-05-2026/IMG01055.jpg",
+          "stem": "p/events/summoner-skirmish-09-05-2026/img01055.49dc653b",
           "hash": "49dc653b",
           "width": 4652,
           "height": 3488,
@@ -2041,9 +2041,9 @@
           "videoMeta": null
         },
         {
-          "id": "events/summoner-s-skirmish-09-05-2026/img01109",
-          "file": "Events/Summoner's Skirmish 09-05-2026/IMG01109.jpg",
-          "stem": "p/events/summoner-s-skirmish-09-05-2026/img01109.bb20321d",
+          "id": "events/summoner-skirmish-09-05-2026/img01109",
+          "file": "Events/Summoner Skirmish 09-05-2026/IMG01109.jpg",
+          "stem": "p/events/summoner-skirmish-09-05-2026/img01109.bb20321d",
           "hash": "bb20321d",
           "width": 5333,
           "height": 4000,
@@ -2073,9 +2073,9 @@
           "videoMeta": null
         },
         {
-          "id": "events/summoner-s-skirmish-09-05-2026/img01110",
-          "file": "Events/Summoner's Skirmish 09-05-2026/IMG01110.jpg",
-          "stem": "p/events/summoner-s-skirmish-09-05-2026/img01110.212ae7c7",
+          "id": "events/summoner-skirmish-09-05-2026/img01110",
+          "file": "Events/Summoner Skirmish 09-05-2026/IMG01110.jpg",
+          "stem": "p/events/summoner-skirmish-09-05-2026/img01110.212ae7c7",
           "hash": "212ae7c7",
           "width": 5333,
           "height": 4000,
@@ -2105,9 +2105,9 @@
           "videoMeta": null
         },
         {
-          "id": "events/summoner-s-skirmish-09-05-2026/img01111",
-          "file": "Events/Summoner's Skirmish 09-05-2026/IMG01111.jpg",
-          "stem": "p/events/summoner-s-skirmish-09-05-2026/img01111.844ae2ec",
+          "id": "events/summoner-skirmish-09-05-2026/img01111",
+          "file": "Events/Summoner Skirmish 09-05-2026/IMG01111.jpg",
+          "stem": "p/events/summoner-skirmish-09-05-2026/img01111.844ae2ec",
           "hash": "844ae2ec",
           "width": 5333,
           "height": 4000,
@@ -2137,9 +2137,9 @@
           "videoMeta": null
         },
         {
-          "id": "events/summoner-s-skirmish-09-05-2026/img01118",
-          "file": "Events/Summoner's Skirmish 09-05-2026/IMG01118.jpg",
-          "stem": "p/events/summoner-s-skirmish-09-05-2026/img01118.bfe30082",
+          "id": "events/summoner-skirmish-09-05-2026/img01118",
+          "file": "Events/Summoner Skirmish 09-05-2026/IMG01118.jpg",
+          "stem": "p/events/summoner-skirmish-09-05-2026/img01118.bfe30082",
           "hash": "bfe30082",
           "width": 5333,
           "height": 4000,
@@ -2169,9 +2169,9 @@
           "videoMeta": null
         },
         {
-          "id": "events/summoner-s-skirmish-09-05-2026/img01133",
-          "file": "Events/Summoner's Skirmish 09-05-2026/IMG01133.jpg",
-          "stem": "p/events/summoner-s-skirmish-09-05-2026/img01133.1d7db3ba",
+          "id": "events/summoner-skirmish-09-05-2026/img01133",
+          "file": "Events/Summoner Skirmish 09-05-2026/IMG01133.jpg",
+          "stem": "p/events/summoner-skirmish-09-05-2026/img01133.1d7db3ba",
           "hash": "1d7db3ba",
           "width": 4000,
           "height": 5333,
@@ -2201,9 +2201,9 @@
           "videoMeta": null
         },
         {
-          "id": "events/summoner-s-skirmish-09-05-2026/img01137",
-          "file": "Events/Summoner's Skirmish 09-05-2026/IMG01137.jpg",
-          "stem": "p/events/summoner-s-skirmish-09-05-2026/img01137.7ddca77e",
+          "id": "events/summoner-skirmish-09-05-2026/img01137",
+          "file": "Events/Summoner Skirmish 09-05-2026/IMG01137.jpg",
+          "stem": "p/events/summoner-skirmish-09-05-2026/img01137.7ddca77e",
           "hash": "7ddca77e",
           "width": 5333,
           "height": 4000,
@@ -2233,9 +2233,9 @@
           "videoMeta": null
         },
         {
-          "id": "events/summoner-s-skirmish-09-05-2026/img01138",
-          "file": "Events/Summoner's Skirmish 09-05-2026/IMG01138.jpg",
-          "stem": "p/events/summoner-s-skirmish-09-05-2026/img01138.3392412a",
+          "id": "events/summoner-skirmish-09-05-2026/img01138",
+          "file": "Events/Summoner Skirmish 09-05-2026/IMG01138.jpg",
+          "stem": "p/events/summoner-skirmish-09-05-2026/img01138.3392412a",
           "hash": "3392412a",
           "width": 5333,
           "height": 4000,
@@ -2265,9 +2265,9 @@
           "videoMeta": null
         },
         {
-          "id": "events/summoner-s-skirmish-09-05-2026/img01140",
-          "file": "Events/Summoner's Skirmish 09-05-2026/IMG01140.jpg",
-          "stem": "p/events/summoner-s-skirmish-09-05-2026/img01140.5e5a903d",
+          "id": "events/summoner-skirmish-09-05-2026/img01140",
+          "file": "Events/Summoner Skirmish 09-05-2026/IMG01140.jpg",
+          "stem": "p/events/summoner-skirmish-09-05-2026/img01140.5e5a903d",
           "hash": "5e5a903d",
           "width": 5333,
           "height": 4000,
@@ -2297,9 +2297,9 @@
           "videoMeta": null
         },
         {
-          "id": "events/summoner-s-skirmish-09-05-2026/img01144",
-          "file": "Events/Summoner's Skirmish 09-05-2026/IMG01144.jpg",
-          "stem": "p/events/summoner-s-skirmish-09-05-2026/img01144.664176cb",
+          "id": "events/summoner-skirmish-09-05-2026/img01144",
+          "file": "Events/Summoner Skirmish 09-05-2026/IMG01144.jpg",
+          "stem": "p/events/summoner-skirmish-09-05-2026/img01144.664176cb",
           "hash": "664176cb",
           "width": 5333,
           "height": 4000,
@@ -2329,9 +2329,9 @@
           "videoMeta": null
         },
         {
-          "id": "events/summoner-s-skirmish-09-05-2026/img01145",
-          "file": "Events/Summoner's Skirmish 09-05-2026/IMG01145.jpg",
-          "stem": "p/events/summoner-s-skirmish-09-05-2026/img01145.612e3f66",
+          "id": "events/summoner-skirmish-09-05-2026/img01145",
+          "file": "Events/Summoner Skirmish 09-05-2026/IMG01145.jpg",
+          "stem": "p/events/summoner-skirmish-09-05-2026/img01145.612e3f66",
           "hash": "612e3f66",
           "width": 5333,
           "height": 4000,
@@ -2361,9 +2361,9 @@
           "videoMeta": null
         },
         {
-          "id": "events/summoner-s-skirmish-09-05-2026/img01150",
-          "file": "Events/Summoner's Skirmish 09-05-2026/IMG01150.jpg",
-          "stem": "p/events/summoner-s-skirmish-09-05-2026/img01150.0a647833",
+          "id": "events/summoner-skirmish-09-05-2026/img01150",
+          "file": "Events/Summoner Skirmish 09-05-2026/IMG01150.jpg",
+          "stem": "p/events/summoner-skirmish-09-05-2026/img01150.0a647833",
           "hash": "0a647833",
           "width": 5333,
           "height": 4000,
@@ -2393,9 +2393,9 @@
           "videoMeta": null
         },
         {
-          "id": "events/summoner-s-skirmish-09-05-2026/img01151",
-          "file": "Events/Summoner's Skirmish 09-05-2026/IMG01151.jpg",
-          "stem": "p/events/summoner-s-skirmish-09-05-2026/img01151.3660d6b9",
+          "id": "events/summoner-skirmish-09-05-2026/img01151",
+          "file": "Events/Summoner Skirmish 09-05-2026/IMG01151.jpg",
+          "stem": "p/events/summoner-skirmish-09-05-2026/img01151.3660d6b9",
           "hash": "3660d6b9",
           "width": 5333,
           "height": 4000,
@@ -2425,9 +2425,9 @@
           "videoMeta": null
         },
         {
-          "id": "events/summoner-s-skirmish-09-05-2026/img01156",
-          "file": "Events/Summoner's Skirmish 09-05-2026/IMG01156.jpg",
-          "stem": "p/events/summoner-s-skirmish-09-05-2026/img01156.2741d421",
+          "id": "events/summoner-skirmish-09-05-2026/img01156",
+          "file": "Events/Summoner Skirmish 09-05-2026/IMG01156.jpg",
+          "stem": "p/events/summoner-skirmish-09-05-2026/img01156.2741d421",
           "hash": "2741d421",
           "width": 5333,
           "height": 4000,
@@ -2457,9 +2457,9 @@
           "videoMeta": null
         },
         {
-          "id": "events/summoner-s-skirmish-09-05-2026/img01158",
-          "file": "Events/Summoner's Skirmish 09-05-2026/IMG01158.jpg",
-          "stem": "p/events/summoner-s-skirmish-09-05-2026/img01158.39f0034f",
+          "id": "events/summoner-skirmish-09-05-2026/img01158",
+          "file": "Events/Summoner Skirmish 09-05-2026/IMG01158.jpg",
+          "stem": "p/events/summoner-skirmish-09-05-2026/img01158.39f0034f",
           "hash": "39f0034f",
           "width": 4258,
           "height": 3194,
@@ -2489,9 +2489,9 @@
           "videoMeta": null
         },
         {
-          "id": "events/summoner-s-skirmish-09-05-2026/img01165",
-          "file": "Events/Summoner's Skirmish 09-05-2026/IMG01165.jpg",
-          "stem": "p/events/summoner-s-skirmish-09-05-2026/img01165.6ec8a245",
+          "id": "events/summoner-skirmish-09-05-2026/img01165",
+          "file": "Events/Summoner Skirmish 09-05-2026/IMG01165.jpg",
+          "stem": "p/events/summoner-skirmish-09-05-2026/img01165.6ec8a245",
           "hash": "6ec8a245",
           "width": 4000,
           "height": 5333,
@@ -2521,9 +2521,9 @@
           "videoMeta": null
         },
         {
-          "id": "events/summoner-s-skirmish-09-05-2026/img01175",
-          "file": "Events/Summoner's Skirmish 09-05-2026/IMG01175.jpg",
-          "stem": "p/events/summoner-s-skirmish-09-05-2026/img01175.982b4bb5",
+          "id": "events/summoner-skirmish-09-05-2026/img01175",
+          "file": "Events/Summoner Skirmish 09-05-2026/IMG01175.jpg",
+          "stem": "p/events/summoner-skirmish-09-05-2026/img01175.982b4bb5",
           "hash": "982b4bb5",
           "width": 4000,
           "height": 5333,
@@ -2553,9 +2553,9 @@
           "videoMeta": null
         },
         {
-          "id": "events/summoner-s-skirmish-09-05-2026/img01180",
-          "file": "Events/Summoner's Skirmish 09-05-2026/IMG01180.jpg",
-          "stem": "p/events/summoner-s-skirmish-09-05-2026/img01180.5550deb0",
+          "id": "events/summoner-skirmish-09-05-2026/img01180",
+          "file": "Events/Summoner Skirmish 09-05-2026/IMG01180.jpg",
+          "stem": "p/events/summoner-skirmish-09-05-2026/img01180.5550deb0",
           "hash": "5550deb0",
           "width": 5333,
           "height": 4000,
@@ -2585,9 +2585,9 @@
           "videoMeta": null
         },
         {
-          "id": "events/summoner-s-skirmish-09-05-2026/img01184",
-          "file": "Events/Summoner's Skirmish 09-05-2026/IMG01184.jpg",
-          "stem": "p/events/summoner-s-skirmish-09-05-2026/img01184.c964b77b",
+          "id": "events/summoner-skirmish-09-05-2026/img01184",
+          "file": "Events/Summoner Skirmish 09-05-2026/IMG01184.jpg",
+          "stem": "p/events/summoner-skirmish-09-05-2026/img01184.c964b77b",
           "hash": "c964b77b",
           "width": 5333,
           "height": 4000,
@@ -2617,9 +2617,9 @@
           "videoMeta": null
         },
         {
-          "id": "events/summoner-s-skirmish-09-05-2026/img01187",
-          "file": "Events/Summoner's Skirmish 09-05-2026/IMG01187.jpg",
-          "stem": "p/events/summoner-s-skirmish-09-05-2026/img01187.116b454d",
+          "id": "events/summoner-skirmish-09-05-2026/img01187",
+          "file": "Events/Summoner Skirmish 09-05-2026/IMG01187.jpg",
+          "stem": "p/events/summoner-skirmish-09-05-2026/img01187.116b454d",
           "hash": "116b454d",
           "width": 5333,
           "height": 4000,
@@ -2649,9 +2649,9 @@
           "videoMeta": null
         },
         {
-          "id": "events/summoner-s-skirmish-09-05-2026/img01191",
-          "file": "Events/Summoner's Skirmish 09-05-2026/IMG01191.jpg",
-          "stem": "p/events/summoner-s-skirmish-09-05-2026/img01191.8287c085",
+          "id": "events/summoner-skirmish-09-05-2026/img01191",
+          "file": "Events/Summoner Skirmish 09-05-2026/IMG01191.jpg",
+          "stem": "p/events/summoner-skirmish-09-05-2026/img01191.8287c085",
           "hash": "8287c085",
           "width": 5333,
           "height": 4000,
@@ -2681,9 +2681,9 @@
           "videoMeta": null
         },
         {
-          "id": "events/summoner-s-skirmish-09-05-2026/img01201",
-          "file": "Events/Summoner's Skirmish 09-05-2026/IMG01201.jpg",
-          "stem": "p/events/summoner-s-skirmish-09-05-2026/img01201.336ff3b4",
+          "id": "events/summoner-skirmish-09-05-2026/img01201",
+          "file": "Events/Summoner Skirmish 09-05-2026/IMG01201.jpg",
+          "stem": "p/events/summoner-skirmish-09-05-2026/img01201.336ff3b4",
           "hash": "336ff3b4",
           "width": 4799,
           "height": 3598,
@@ -2713,9 +2713,9 @@
           "videoMeta": null
         },
         {
-          "id": "events/summoner-s-skirmish-09-05-2026/img01203",
-          "file": "Events/Summoner's Skirmish 09-05-2026/IMG01203.jpg",
-          "stem": "p/events/summoner-s-skirmish-09-05-2026/img01203.b68e5b81",
+          "id": "events/summoner-skirmish-09-05-2026/img01203",
+          "file": "Events/Summoner Skirmish 09-05-2026/IMG01203.jpg",
+          "stem": "p/events/summoner-skirmish-09-05-2026/img01203.b68e5b81",
           "hash": "b68e5b81",
           "width": 5218,
           "height": 3479,
@@ -2745,9 +2745,9 @@
           "videoMeta": null
         },
         {
-          "id": "events/summoner-s-skirmish-09-05-2026/img01206",
-          "file": "Events/Summoner's Skirmish 09-05-2026/IMG01206.jpg",
-          "stem": "p/events/summoner-s-skirmish-09-05-2026/img01206.d254d874",
+          "id": "events/summoner-skirmish-09-05-2026/img01206",
+          "file": "Events/Summoner Skirmish 09-05-2026/IMG01206.jpg",
+          "stem": "p/events/summoner-skirmish-09-05-2026/img01206.d254d874",
           "hash": "d254d874",
           "width": 4000,
           "height": 5332,
@@ -2777,9 +2777,9 @@
           "videoMeta": null
         },
         {
-          "id": "events/summoner-s-skirmish-09-05-2026/img01207",
-          "file": "Events/Summoner's Skirmish 09-05-2026/IMG01207.jpg",
-          "stem": "p/events/summoner-s-skirmish-09-05-2026/img01207.4a8b8ac4",
+          "id": "events/summoner-skirmish-09-05-2026/img01207",
+          "file": "Events/Summoner Skirmish 09-05-2026/IMG01207.jpg",
+          "stem": "p/events/summoner-skirmish-09-05-2026/img01207.4a8b8ac4",
           "hash": "4a8b8ac4",
           "width": 6000,
           "height": 4000,
@@ -2809,9 +2809,9 @@
           "videoMeta": null
         },
         {
-          "id": "events/summoner-s-skirmish-09-05-2026/img01210",
-          "file": "Events/Summoner's Skirmish 09-05-2026/IMG01210.jpg",
-          "stem": "p/events/summoner-s-skirmish-09-05-2026/img01210.58dd13f3",
+          "id": "events/summoner-skirmish-09-05-2026/img01210",
+          "file": "Events/Summoner Skirmish 09-05-2026/IMG01210.jpg",
+          "stem": "p/events/summoner-skirmish-09-05-2026/img01210.58dd13f3",
           "hash": "58dd13f3",
           "width": 4638,
           "height": 3479,
@@ -2841,9 +2841,9 @@
           "videoMeta": null
         },
         {
-          "id": "events/summoner-s-skirmish-09-05-2026/img01216",
-          "file": "Events/Summoner's Skirmish 09-05-2026/IMG01216.jpg",
-          "stem": "p/events/summoner-s-skirmish-09-05-2026/img01216.44931c6f",
+          "id": "events/summoner-skirmish-09-05-2026/img01216",
+          "file": "Events/Summoner Skirmish 09-05-2026/IMG01216.jpg",
+          "stem": "p/events/summoner-skirmish-09-05-2026/img01216.44931c6f",
           "hash": "44931c6f",
           "width": 5333,
           "height": 4000,
@@ -2873,9 +2873,9 @@
           "videoMeta": null
         },
         {
-          "id": "events/summoner-s-skirmish-09-05-2026/img01220",
-          "file": "Events/Summoner's Skirmish 09-05-2026/IMG01220.jpg",
-          "stem": "p/events/summoner-s-skirmish-09-05-2026/img01220.50e311e7",
+          "id": "events/summoner-skirmish-09-05-2026/img01220",
+          "file": "Events/Summoner Skirmish 09-05-2026/IMG01220.jpg",
+          "stem": "p/events/summoner-skirmish-09-05-2026/img01220.50e311e7",
           "hash": "50e311e7",
           "width": 5333,
           "height": 4000,
@@ -2905,9 +2905,9 @@
           "videoMeta": null
         },
         {
-          "id": "events/summoner-s-skirmish-09-05-2026/img01222",
-          "file": "Events/Summoner's Skirmish 09-05-2026/IMG01222.jpg",
-          "stem": "p/events/summoner-s-skirmish-09-05-2026/img01222.b10c4600",
+          "id": "events/summoner-skirmish-09-05-2026/img01222",
+          "file": "Events/Summoner Skirmish 09-05-2026/IMG01222.jpg",
+          "stem": "p/events/summoner-skirmish-09-05-2026/img01222.b10c4600",
           "hash": "b10c4600",
           "width": 5000,
           "height": 4000,
@@ -2939,30 +2939,30 @@
       ],
       "unlisted": true,
       "availableUntil": null,
-      "passwordHash": "100000:6aeb6649eba6b39342b6a68933457f65:fbb5d0b0eee1d0b28c15af26fa0ad9a59ea13e8887020cf9ffe22567b964a538",
+      "passwordHash": "100000:a9f49da41d4f8ef432413ff079cf1e8b:af7183b848587e678718c37ca37322c88067bb3cd8ea272befeba3976f930b96",
       "zips": [
         {
           "key": "small",
           "label": "Small",
-          "path": "zip/events/summoner-s-skirmish-09-05-2026-small.zip",
+          "path": "zip/events/summoner-skirmish-09-05-2026-small.zip",
           "size": 13112889
         },
         {
           "key": "medium",
           "label": "Medium",
-          "path": "zip/events/summoner-s-skirmish-09-05-2026-medium.zip",
+          "path": "zip/events/summoner-skirmish-09-05-2026-medium.zip",
           "size": 45151394
         },
         {
           "key": "large",
           "label": "Large",
-          "path": "zip/events/summoner-s-skirmish-09-05-2026-large.zip",
+          "path": "zip/events/summoner-skirmish-09-05-2026-large.zip",
           "size": 114828146
         },
         {
           "key": "full",
           "label": "Full quality",
-          "path": "zip/events/summoner-s-skirmish-09-05-2026-full.zip",
+          "path": "zip/events/summoner-skirmish-09-05-2026-full.zip",
           "size": 1168052435
         }
       ]
