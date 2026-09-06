@@ -8,7 +8,9 @@
     "preview": "wrangler dev",
     "deploy": "astro build && wrangler deploy",
     "photos:sync": "node --env-file-if-exists=.env scripts/sync-photos.mjs",
-    "photos:check": "node --env-file-if-exists=.env scripts/sync-photos.mjs --dry-run"
+    "photos:check": "node --env-file-if-exists=.env scripts/sync-photos.mjs --dry-run",
+    "photos:prune:check": "node --env-file-if-exists=.env scripts/sync-photos.mjs --dry-run --prune",
+    "photos:prune": "node --env-file-if-exists=.env scripts/sync-photos.mjs --prune"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.3",

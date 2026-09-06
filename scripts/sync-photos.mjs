@@ -7,7 +7,7 @@ import { spawn } from 'node:child_process';
 import sharp from 'sharp';
 import ExifReader from 'exif-reader';
 import archiver from 'archiver';
-import { S3Client, PutObjectCommand } from '@aws-sdk/client-s3';
+import { S3Client, PutObjectCommand, ListObjectsV2Command, DeleteObjectsCommand } from '@aws-sdk/client-s3';
 
 const SRC_DIR = process.env.PHOTOS_DIR || 'photos';
 const MANIFEST = 'src/data/photos.json';
@@ -42,17 +42,21 @@ const argv = new Set(process.argv.slice(2));
 const dryRun = argv.has('--dry-run');
 const force = argv.has('--force');
 const allowEmpty = argv.has('--allow-empty');
+const prune = argv.has('--prune');
+const pruneForce = argv.has('--prune-force');
+// Listing the bucket to preview orphans needs a live client even in --dry-run.
+const needsS3 = !dryRun || prune;
 
 const env = process.env;
 const bucket = env.R2_BUCKET;
-const s3 = dryRun ? null : new S3Client({
+const s3 = needsS3 ? new S3Client({
   region: 'auto',
   endpoint: `https://${requireEnv('R2_ACCOUNT_ID')}.r2.cloudflarestorage.com`,
   credentials: {
     accessKeyId: requireEnv('R2_ACCESS_KEY_ID'),
     secretAccessKey: requireEnv('R2_SECRET_ACCESS_KEY'),
   },
-});
+}) : null;
 
 function requireEnv(name) {
   const value = env[name];
@@ -62,7 +66,7 @@ function requireEnv(name) {
   }
   return value;
 }
-if (!dryRun && !bucket) requireEnv('R2_BUCKET');
+if (needsS3 && !bucket) requireEnv('R2_BUCKET');
 
 const previous = new Map();
 const previousGalleries = new Map();
@@ -161,6 +165,8 @@ if (dryRun) {
   console.log(`\n${uploaded} uploaded, ${skipped} unchanged -> ${MANIFEST}`);
   console.log('Commit the manifest, then: npm run deploy');
 }
+
+if (prune) await pruneOrphans(galleries);
 
 async function processPhoto(rel, slug, dir, file, config) {
   const path = join(dir, file);
@@ -534,6 +540,74 @@ async function buildZip(dir, slug, title, photos) {
     zips.push({ key: tier.key, label: tier.label, path: key, size });
   }
   return zips;
+}
+
+// Every R2 key the current manifest still needs, derived straight from the
+// records just built (not from constants like WIDTHS/FORMATS, which could
+// drift from what a photo actually has) — so a stale-format or partial
+// record fails safe by simply not protecting a key, never by inventing one.
+function keysFor(gallery) {
+  const keys = new Set();
+  for (const photo of gallery.photos) {
+    keys.add(`originals/${photo.file}`);
+    if (photo.stem && photo.widths) {
+      for (const w of photo.widths) {
+        for (const { ext } of FORMATS) keys.add(`${photo.stem}-${w}.${ext}`);
+      }
+    }
+    if (photo.videoSources?.mp4) keys.add(photo.videoSources.mp4);
+  }
+  for (const zip of gallery.zips ?? []) keys.add(zip.path);
+  return keys;
+}
+
+// Lists the four prefixes the sync ever writes to and deletes whatever isn't
+// referenced by the manifest just built — catches removed galleries, removed
+// photos, and stale variants left behind by a re-encode (old hash's stem),
+// not just the exact diff of one sync run. Never touches keys outside those
+// prefixes, so anything hand-uploaded to the bucket is left alone.
+async function pruneOrphans(galleries) {
+  const keep = new Set();
+  for (const gallery of galleries) for (const key of keysFor(gallery)) keep.add(key);
+
+  const listed = [];
+  for (const prefix of ['originals/', 'p/', 'v/', 'zip/']) {
+    let token;
+    do {
+      const res = await s3.send(new ListObjectsV2Command({ Bucket: bucket, Prefix: prefix, ContinuationToken: token }));
+      for (const obj of res.Contents ?? []) listed.push(obj.Key);
+      token = res.IsTruncated ? res.NextContinuationToken : undefined;
+    } while (token);
+  }
+
+  const orphans = listed.filter((key) => !keep.has(key));
+  if (!orphans.length) {
+    console.log('\nprune: no orphaned objects in R2');
+    return;
+  }
+
+  // A wrong PHOTOS_DIR or bucket would make nearly everything look orphaned —
+  // bail rather than delete the whole library, unless explicitly overridden.
+  if (orphans.length > keep.size && !pruneForce) {
+    console.error(`\nprune: refusing to delete ${orphans.length} object(s) — more than the ${keep.size} the manifest references.`);
+    console.error('This usually means PHOTOS_DIR or R2_BUCKET points somewhere unexpected. Pass --prune-force to override.');
+    process.exit(1);
+  }
+
+  console.log(`\nprune: ${orphans.length} orphaned object(s)${dryRun ? ' (dry run, not deleted)' : ''}`);
+  for (const key of orphans.slice(0, 20)) console.log(`  - ${key}`);
+  if (orphans.length > 20) console.log(`  ... and ${orphans.length - 20} more`);
+  if (dryRun) return;
+
+  for (let i = 0; i < orphans.length; i += 1000) {
+    const chunk = orphans.slice(i, i + 1000);
+    const res = await s3.send(new DeleteObjectsCommand({
+      Bucket: bucket,
+      Delete: { Objects: chunk.map((Key) => ({ Key })), Quiet: true },
+    }));
+    for (const err of res.Errors ?? []) console.error(`  ! failed to delete ${err.Key}: ${err.Message}`);
+  }
+  console.log(`prune: deleted ${orphans.length} object(s)`);
 }
 
 function formatBytes(bytes) {
