@@ -48,10 +48,11 @@ lightbox shows it too, alongside the gallery title. Photos must be contiguous in
 if a subsection's files aren't next to each other, its heading appears more than once. Leave it
 off for a plain, ungrouped gallery (the default).
 
-Every gallery also gets a "Download all" menu with four zips — Small (1024px), Medium (2048px),
-Large (3200px), and Full quality (untouched originals) — built automatically by `photos:sync` and
-rebuilt whenever the gallery's files change. Videos have no resized variant, so they're included
-as-is in every tier. Nothing to configure.
+Every gallery also gets a "Download all" menu with zips for its photos — Small (1024px), Medium
+(2048px), Large (3200px), and Full quality (untouched originals) — built automatically by
+`photos:sync` and rebuilt whenever the gallery's files change. A gallery with any videos also gets
+a Video zip (the untouched originals) instead of duplicating them into every photo tier. Nothing to
+configure.
 
 Example:
 

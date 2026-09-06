@@ -20,11 +20,15 @@ const FORMATS = [
 // original; the rest are re-encoded JPEGs at these widths, sized for screen
 // use rather than the resized web variants (which are lossier and only
 // available as avif/webp, not the safest formats for a client to unzip).
+// Photo tiers exclude videos entirely — a video has no resized variant, so
+// including it as-is in all four would mean archiving/uploading the same
+// footage four times over. Videos instead get their own single tier.
 const ZIP_TIERS = [
-  { key: 'small', label: 'Small', width: 1024 },
-  { key: 'medium', label: 'Medium', width: 2048 },
-  { key: 'large', label: 'Large', width: 3200 },
-  { key: 'full', label: 'Full quality', width: null },
+  { key: 'small', label: 'Small', kind: 'photo', width: 1024 },
+  { key: 'medium', label: 'Medium', kind: 'photo', width: 2048 },
+  { key: 'large', label: 'Large', kind: 'photo', width: 3200 },
+  { key: 'full', label: 'Full quality', kind: 'photo', width: null },
+  { key: 'video', label: 'Video', kind: 'video', width: null },
 ];
 // PBKDF2-SHA256, not scrypt/bcrypt — both Node (here) and the Workers runtime
 // (worker/gallery-auth.ts, verifying at request time) implement it natively.
@@ -489,16 +493,20 @@ async function uploadFile(key, path, contentType, { immutable = true, contentDis
   }));
 }
 
-// Builds one zip per ZIP_TIERS entry. Photos are re-encoded to that tier's
-// width (skipped for 'full', which ships the untouched original — same
-// source bytes as originals/<rel>/<file>, read straight off disk rather than
-// round-tripping through R2); videos have no resized variant, so every tier
-// gets the original file. Keys are stable (no content hash) since they're
-// meant to always serve the current set, not be cached forever like image
-// variants. Rebuilt whenever the gallery's contents change.
+// Builds one zip per ZIP_TIERS entry that has a matching photo. A photo tier
+// gets only photos, re-encoded to that tier's width (skipped for 'full',
+// which ships the untouched original — same source bytes as
+// originals/<rel>/<file>, read straight off disk rather than round-tripping
+// through R2); the video tier gets only videos, untouched. A gallery with no
+// videos simply produces no video zip. Keys are stable (no content hash)
+// since they're meant to always serve the current set, not be cached forever
+// like image variants. Rebuilt whenever the gallery's contents change.
 async function buildZip(dir, slug, title, photos) {
   const zips = [];
   for (const tier of ZIP_TIERS) {
+    const tierPhotos = photos.filter((p) => (p.kind === 'video') === (tier.kind === 'video'));
+    if (!tierPhotos.length) continue;
+
     const zipPath = join(tmpdir(), `rtp-zip-${randomBytes(6).toString('hex')}.zip`);
     await new Promise((resolve, reject) => {
       const output = createWriteStream(zipPath);
@@ -508,7 +516,7 @@ async function buildZip(dir, slug, title, photos) {
       archive.on('error', reject);
       archive.pipe(output);
       (async () => {
-        for (const photo of photos) {
+        for (const photo of tierPhotos) {
           const srcPath = join(dir, basename(photo.file));
           if (photo.kind === 'video' || !tier.width) {
             archive.file(srcPath, { name: basename(photo.file) });
