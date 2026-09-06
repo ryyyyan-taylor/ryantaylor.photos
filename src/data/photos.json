@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-06T17:59:02.227Z",
+  "generatedAt": "2026-09-06T19:34:13.071Z",
   "widths": [
     480,
     960,
@@ -2137,6 +2137,90 @@
           "videoMeta": null
         },
         {
+          "id": "events/summoner-skirmish-09-05-2026/img01112",
+          "file": "Events/Summoner Skirmish 09-05-2026/IMG01112.MP4",
+          "stem": "p/events/summoner-skirmish-09-05-2026/img01112.f667d406",
+          "hash": "f667d406",
+          "width": 3840,
+          "height": 2160,
+          "widths": [
+            480,
+            960,
+            1440,
+            2048
+          ],
+          "lqip": "data:image/webp;base64,UklGRr4AAABXRUJQVlA4ILIAAABwBACdASoYAA4APu1iqU2ppaOiMAgBMB2JaACdAYw6mCdFCGzvWxuhXgyhMAD+71oQZZQ/Um1UMlrsNlNlO/UDYpiph+OxpCSwet0bdC0Tb/cGkW9HwyZhLO9YuuIK8YYnwZOv+uYez8tgFD+oQB9quitK9vJDRrw/XY6DfZydrNblyITqoLIUazTEeDSFWGJwAKgRvc8zUAqLN0p18Y5zxMsvb71WbOeYO4nvhnoNMpAA",
+          "alt": "",
+          "caption": "",
+          "note": "",
+          "subsection": "Swiss",
+          "exif": null,
+          "kind": "video",
+          "duration": 18.02,
+          "videoSources": {
+            "mp4": "v/events/summoner-skirmish-09-05-2026/img01112.f667d406.mp4"
+          },
+          "videoMeta": {
+            "fps": 23.98
+          }
+        },
+        {
+          "id": "events/summoner-skirmish-09-05-2026/img01113",
+          "file": "Events/Summoner Skirmish 09-05-2026/IMG01113.MP4",
+          "stem": "p/events/summoner-skirmish-09-05-2026/img01113.8f9ac80a",
+          "hash": "8f9ac80a",
+          "width": 3840,
+          "height": 2160,
+          "widths": [
+            480,
+            960,
+            1440,
+            2048
+          ],
+          "lqip": "data:image/webp;base64,UklGRsgAAABXRUJQVlA4ILwAAABQBACdASoYAA4APu1iqU2ppaOiMAgBMB2JagCdAYxOiFbkX9THSybHzJdAAP6tZd8v88kClbxAtJs6visZ7ZTCbHtzcCmrdxSXadtdCz3vy4M69Z3TDYnez5cEQVYZI8JEXDI9CPOYR/7ri/Cs5xHNG6UJVrcLVO33xEXWA1CfUb5XJy9M7J/hARdVR/GF8yrcvlskBeiCF8sDAVgeBF/GDi1SUIoHSvsEdYvC0OQDzoNwwNcwtQCYppYAAA==",
+          "alt": "",
+          "caption": "",
+          "note": "",
+          "subsection": "Swiss",
+          "exif": null,
+          "kind": "video",
+          "duration": 28.53,
+          "videoSources": {
+            "mp4": "v/events/summoner-skirmish-09-05-2026/img01113.8f9ac80a.mp4"
+          },
+          "videoMeta": {
+            "fps": 23.98
+          }
+        },
+        {
+          "id": "events/summoner-skirmish-09-05-2026/img01114",
+          "file": "Events/Summoner Skirmish 09-05-2026/IMG01114.MP4",
+          "stem": "p/events/summoner-skirmish-09-05-2026/img01114.872b9e1f",
+          "hash": "872b9e1f",
+          "width": 3840,
+          "height": 2160,
+          "widths": [
+            480,
+            960,
+            1440,
+            2048
+          ],
+          "lqip": "data:image/webp;base64,UklGRtAAAABXRUJQVlA4IMQAAABwBACdASoYAA4APu1iqU2ppaOiMAgBMB2JZgCdMoAluhOZifiU19uo3CY/AAD+3JBU3nsCZNcfEMLCE7Ja5KTmx32+vezoWB7vF6xFAq5CdWoZhSHoh6P06Oem+E1bW/ysm2RBpw47t6WKO7Fa9Ok32TJpSZ7pG3Ev4jFty3UohG2/+OpV10g2TaxrhxnTVGjUUf0Y5lhTUtYuj/XWoiRNXvesolcgzuKZHXPyVK/Ll8hJ7PGaYzI5CKs4OTuTnEddgAAA",
+          "alt": "",
+          "caption": "",
+          "note": "",
+          "subsection": "Swiss",
+          "exif": null,
+          "kind": "video",
+          "duration": 66.07,
+          "videoSources": {
+            "mp4": "v/events/summoner-skirmish-09-05-2026/img01114.872b9e1f.mp4"
+          },
+          "videoMeta": {
+            "fps": 23.98
+          }
+        },
+        {
           "id": "events/summoner-skirmish-09-05-2026/img01118",
           "file": "Events/Summoner Skirmish 09-05-2026/IMG01118.jpg",
           "stem": "p/events/summoner-skirmish-09-05-2026/img01118.bfe30082",
@@ -2873,6 +2957,62 @@
           "videoMeta": null
         },
         {
+          "id": "events/summoner-skirmish-09-05-2026/img01217",
+          "file": "Events/Summoner Skirmish 09-05-2026/IMG01217.MP4",
+          "stem": "p/events/summoner-skirmish-09-05-2026/img01217.7de9559a",
+          "hash": "7de9559a",
+          "width": 3840,
+          "height": 2160,
+          "widths": [
+            480,
+            960,
+            1440,
+            2048
+          ],
+          "lqip": "data:image/webp;base64,UklGRrAAAABXRUJQVlA4IKQAAABQBACdASoYAA4APu1iqU2ppaOiMAgBMB2JYwC7MoAlrAtomhRwAA4aTSEAAP7xEs0vOWxmF2Z5h8aTn0eOg/8rj7u9oz7ttrIlOxZ4TV2b5PEAEfTReh2wVR4m5UTJggsGmKNf0sXBZebFGP/0Tx+eNtOZyPKpeIYmPJIcWylObRf5KeysjY5q8ZcEd/UgH0kXSJPz5fkE97RjvXDtfw7lzQAAAA==",
+          "alt": "",
+          "caption": "",
+          "note": "",
+          "subsection": "Finals",
+          "exif": null,
+          "kind": "video",
+          "duration": 24.025,
+          "videoSources": {
+            "mp4": "v/events/summoner-skirmish-09-05-2026/img01217.7de9559a.mp4"
+          },
+          "videoMeta": {
+            "fps": 23.98
+          }
+        },
+        {
+          "id": "events/summoner-skirmish-09-05-2026/img01218",
+          "file": "Events/Summoner Skirmish 09-05-2026/IMG01218.MP4",
+          "stem": "p/events/summoner-skirmish-09-05-2026/img01218.e1bab58a",
+          "hash": "e1bab58a",
+          "width": 3840,
+          "height": 2160,
+          "widths": [
+            480,
+            960,
+            1440,
+            2048
+          ],
+          "lqip": "data:image/webp;base64,UklGRqQAAABXRUJQVlA4IJgAAABwBACdASoYAA4APu1iqU2ppaQiMAgBMB2JYwC7AYyywPcVs3zg6eU7N3gwzAD+7E8a+i57slCinXgfetkNvzWjY2DDmNboQK/39X17dacWjUALQal6suEspvsoE9PnV8g0M8nAm88hNTK17/wLUwD1nwh8i9f08P5Niwp8TpFLUYZn8psCuYY8rj7C11CkIaxFFTQcgQAAAA==",
+          "alt": "",
+          "caption": "",
+          "note": "",
+          "subsection": "Finals",
+          "exif": null,
+          "kind": "video",
+          "duration": 47.05,
+          "videoSources": {
+            "mp4": "v/events/summoner-skirmish-09-05-2026/img01218.e1bab58a.mp4"
+          },
+          "videoMeta": {
+            "fps": 23.98
+          }
+        },
+        {
           "id": "events/summoner-skirmish-09-05-2026/img01220",
           "file": "Events/Summoner Skirmish 09-05-2026/IMG01220.jpg",
           "stem": "p/events/summoner-skirmish-09-05-2026/img01220.50e311e7",
@@ -2939,7 +3079,7 @@
       ],
       "unlisted": true,
       "availableUntil": null,
-      "passwordHash": "100000:c29ae400964e6227366c7d5f10893b7a:7150468df9889aed0ace8b3fee234303c288c43c218c52ad4890eb0966b24d12",
+      "passwordHash": "100000:1b47c31200a1eeaf0394012244789947:28ed8792dcb9a84626bf0d159f4179c763f4bad09039a4775049a6328218d24f",
       "zips": [
         {
           "key": "small",
@@ -2964,6 +3104,12 @@
           "label": "Full quality",
           "path": "zip/events/summoner-skirmish-09-05-2026-full.zip",
           "size": 1168052435
+        },
+        {
+          "key": "video",
+          "label": "Video",
+          "path": "zip/events/summoner-skirmish-09-05-2026-video.zip",
+          "size": 2223134414
         }
       ]
     },
