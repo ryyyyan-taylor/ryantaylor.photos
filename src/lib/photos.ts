@@ -33,6 +33,11 @@ export interface Photo {
   alt: string;
   caption: string;
   note: string;
+  // Groups photos within one gallery's page under a heading — unrelated to
+  // Gallery.section below, which groups separate galleries in the site nav.
+  // Optional: absent from any manifest entry synced before this field
+  // existed, so read as `photo.subsection ?? null`, not `photo.subsection`.
+  subsection?: string | null;
   exif: PhotoExif | null;
   kind: 'photo' | 'video';
   duration: number | null;

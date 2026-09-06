@@ -363,6 +363,10 @@ h3 {
   margin-bottom: clamp(3rem, 9vw, 6rem);
 }
 
+.section-group:last-child {
+  margin-bottom: 0;
+}
+
 .section-heading {
   font-size: clamp(1.1rem, 2vw, 1.3rem);
   font-family: var(--font);
@@ -732,6 +736,14 @@ h3 {
   overflow-y: auto;
   color: var(--overlay-fg);
   padding-top: 2.5rem;
+}
+
+.lightbox-location {
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--overlay-fg) 75%, transparent);
+  margin: 0 0 0.75rem;
 }
 
 .lightbox-caption {

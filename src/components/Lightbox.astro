@@ -2,14 +2,16 @@
 import { largestSrc, sizedSrc, videoSrc, type Photo } from '../lib/photos';
 
 interface Props {
-  galleries: { slug: string; photos: Photo[] }[];
+  galleries: { slug: string; title: string; photos: Photo[] }[];
 }
 
 const { galleries } = Astro.props;
 
-const toItem = (photo: Photo, gallerySlug: string) => ({
+const toItem = (photo: Photo, gallerySlug: string, galleryTitle: string) => ({
   kind: photo.kind,
   galleryHref: `/${gallerySlug}/`,
+  galleryTitle,
+  subsection: photo.subsection ?? null,
   alt: photo.alt,
   caption: photo.caption,
   note: photo.note ?? '',
@@ -35,7 +37,9 @@ const toItem = (photo: Photo, gallerySlug: string) => ({
         })),
 });
 
-const groups = Object.fromEntries(galleries.map(({ slug, photos }) => [slug, photos.map((photo) => toItem(photo, slug))]));
+const groups = Object.fromEntries(
+  galleries.map(({ slug, title, photos }) => [slug, photos.map((photo) => toItem(photo, slug, title))]),
+);
 ---
 
 <dialog class="lightbox" id="lightbox" aria-label="Photo viewer">
@@ -51,6 +55,7 @@ const groups = Object.fromEntries(galleries.map(({ slug, photos }) => [slug, pho
       <div class="lightbox-thumbs" id="lightbox-thumbs"></div>
     </div>
     <aside class="lightbox-sidebar">
+      <p class="lightbox-location" id="lightbox-location"></p>
       <p class="lightbox-caption" id="lightbox-caption"></p>
       <dl class="lightbox-exif" id="lightbox-exif"></dl>
       <p class="lightbox-note" id="lightbox-note"></p>
@@ -86,6 +91,8 @@ const groups = Object.fromEntries(galleries.map(({ slug, photos }) => [slug, pho
   interface LightboxItem {
     kind: 'photo' | 'video';
     galleryHref: string;
+    galleryTitle: string;
+    subsection: string | null;
     alt: string;
     caption: string;
     note: string;
@@ -104,6 +111,7 @@ const groups = Object.fromEntries(galleries.map(({ slug, photos }) => [slug, pho
   const imageWrap = document.querySelector('.lightbox-image-wrap') as HTMLDivElement;
   const image = document.getElementById('lightbox-image') as HTMLImageElement;
   const video = document.getElementById('lightbox-video') as HTMLVideoElement;
+  const locationLabel = document.getElementById('lightbox-location') as HTMLParagraphElement;
   const caption = document.getElementById('lightbox-caption') as HTMLParagraphElement;
   const exifList = document.getElementById('lightbox-exif') as HTMLDListElement;
   const note = document.getElementById('lightbox-note') as HTMLParagraphElement;
@@ -309,6 +317,7 @@ const groups = Object.fromEntries(galleries.map(({ slug, photos }) => [slug, pho
     }
     image.alt = item.alt;
 
+    locationLabel.textContent = item.subsection ? `${item.galleryTitle} · ${item.subsection}` : item.galleryTitle;
     caption.textContent = item.caption;
     if (item.kind === 'video') renderVideoInfo(item);
     else renderExif(item.exif);

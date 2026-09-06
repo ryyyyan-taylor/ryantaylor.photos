@@ -73,7 +73,9 @@ for (let i = tiles.length - 1; i > 0; i--) {
           }
         </div>
 
-        <Lightbox galleries={listedGalleries.map((gallery: Gallery) => ({ slug: gallery.slug, photos: gallery.photos }))} />
+        <Lightbox
+          galleries={listedGalleries.map((gallery: Gallery) => ({ slug: gallery.slug, title: gallery.title, photos: gallery.photos }))}
+        />
       </>
     )
   }

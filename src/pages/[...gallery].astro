@@ -23,6 +23,28 @@ export function getStaticPaths() {
 
 const { gallery, locked } = Astro.props as { gallery: Gallery; locked: boolean };
 const coverPhoto = photoById(gallery.cover);
+
+// Split into consecutive runs by subsection so a heading only appears where
+// the value actually changes. Locked pages never segment — the `__locked`
+// route exists to leak nothing about the gallery, subsection names included
+// (see the placeholder-only rendering below). Galleries with no subsections
+// set collapse to a single run, which renders identically to the old flat
+// `.masonry` block below.
+interface Segment {
+  subsection: string | null;
+  items: { photo: (typeof gallery.photos)[number]; index: number }[];
+}
+const segments: Segment[] = [];
+if (!locked) {
+  gallery.photos.forEach((photo, index) => {
+    const subsection = photo.subsection ?? null;
+    const last = segments.at(-1);
+    if (last && last.subsection === subsection) last.items.push({ photo, index });
+    else segments.push({ subsection, items: [{ photo, index }] });
+  });
+} else {
+  segments.push({ subsection: null, items: gallery.photos.map((photo, index) => ({ photo, index })) });
+}
 const availableUntil = gallery.availableUntil
   ? new Date(`${gallery.availableUntil}T00:00:00Z`).toLocaleDateString('en-US', {
       year: 'numeric',
@@ -70,22 +92,30 @@ const availableUntil = gallery.availableUntil
     }
   </section>
 
-  <div class="masonry">
-    {
-      gallery.photos.map((photo, i) => (
+  {
+    segments.map((segment) => {
+      const tiles = segment.items.map(({ photo, index }) => (
         <Tile
           photo={photo}
           gallerySlug={gallery.slug}
-          indexInGallery={i}
+          indexInGallery={index}
           sizes="(min-width: 68rem) 32vw, (min-width: 40rem) 48vw, 94vw"
-          loading={i < 4 ? 'eager' : 'lazy'}
+          loading={index < 4 ? 'eager' : 'lazy'}
           placeholder={locked}
         />
-      ))
-    }
-  </div>
+      ));
+      return segment.subsection ? (
+        <div class="section-group">
+          <h2 class="section-heading">{segment.subsection}</h2>
+          <div class="masonry">{tiles}</div>
+        </div>
+      ) : (
+        <div class="masonry">{tiles}</div>
+      );
+    })
+  }
 
-  {!locked && <Lightbox galleries={[{ slug: gallery.slug, photos: gallery.photos }]} />}
+  {!locked && <Lightbox galleries={[{ slug: gallery.slug, title: gallery.title, photos: gallery.photos }]} />}
 
   {
     locked && (
