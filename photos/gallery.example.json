@@ -3,6 +3,7 @@
   "description": "Dirt jumps at golden hour, summer 2026.",
   "order": 10,
   "cover": "IMG00021.jpg",
+  "photoOrder": ["IMG00024.jpg", "IMG00021.jpg"],
   "photos": {
     "IMG00021.jpg": {
       "alt": "Rider mid-air over the second table top, arms extended",

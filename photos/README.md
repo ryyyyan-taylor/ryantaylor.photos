@@ -28,6 +28,7 @@ include only what you want to override. Copy `gallery.example.json` as a startin
 | `order` | `999` | Lower sorts earlier on the home page. Ties break by title. |
 | `cover` | first photo | Exact filename **with extension**, case-sensitive. |
 | `photos` | none | Per-file `alt`, `caption`, `note`, and `subsection`, keyed by exact filename. |
+| `photoOrder` | none | Filenames in display order (see below). Overrides the default filename sort. |
 | `unlisted` | `false` | Keeps the gallery off the home grid, section nav, and sitemap. The page still builds and is reachable by direct link — for client deliveries. |
 | `availableUntil` | none | `"YYYY-MM-DD"`. Purely a note shown on the page ("available to view through ...") — nothing is actually enforced or deleted automatically. |
 | `password` | none | Plaintext, here only. `photos:sync` hashes it (PBKDF2) into `photos.json` and never writes the plaintext anywhere. The Worker gates the page at request time — visiting the URL shows a password prompt instead of the gallery until it's entered (see `worker/gallery-auth.ts`). Removing the field and re-syncing removes protection. |
@@ -44,9 +45,18 @@ backstory. Photos you omit simply have none of these.
 `subsection` groups photos *within one gallery's page* under a header — unrelated to the
 folder-based section above (which groups separate galleries in the site nav). Give consecutive
 photos the same `subsection` string and the gallery page splits them apart with a heading; the
-lightbox shows it too, alongside the gallery title. Photos must be contiguous in filename order —
-if a subsection's files aren't next to each other, its heading appears more than once. Leave it
-off for a plain, ungrouped gallery (the default).
+lightbox shows it too, alongside the gallery title. Photos must be contiguous in display order (see
+`photoOrder` below) — if a subsection's files aren't next to each other, its heading appears more
+than once. Leave it off for a plain, ungrouped gallery (the default).
+
+By default photos display in filename sort order, which rarely matches the order you'd actually
+want to tell a story in. `photoOrder` overrides that with an explicit filename list:
+
+    "photoOrder": ["IMG00024.jpg", "IMG00021.jpg", "IMG00055.jpg"]
+
+Files you list come first, in that order; anything in the gallery you don't mention is appended
+afterward in its normal filename-sorted position — so you only need to list the photos you're
+actually reordering, not the whole gallery.
 
 Every gallery also gets a "Download all" menu with zips for its photos — Small (1024px), Medium
 (2048px), Large (3200px), and Full quality (untouched originals) — built automatically by

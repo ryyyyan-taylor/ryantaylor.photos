@@ -108,7 +108,7 @@ for (const rel of await galleryDirs(SRC_DIR)) {
     mapPool(videoFiles, VIDEO_CONCURRENCY, (file) => processVideo(rel, slug, dir, file, config)),
   ]);
   const byFile = new Map([...imagePhotos, ...videoPhotos].map((p) => [basename(p.file), p]));
-  const photos = files.map((f) => byFile.get(f)).filter(Boolean);
+  const photos = reorderPhotos(files.map((f) => byFile.get(f)).filter(Boolean), config?.photoOrder);
   if (!photos.length) continue;
 
   const title = config?.title ?? titleize(names.at(-1));
@@ -655,6 +655,19 @@ async function readJson(path) {
   } catch {
     return null;
   }
+}
+
+// Display/subsection order defaults to filename sort, but gallery.json can
+// override it with an explicit `photoOrder` filename list. Listed files come
+// first in that sequence; anything not listed (new additions, typos) falls
+// back to its filename-sorted position at the end, so a partial or stale
+// list degrades safely instead of silently dropping photos.
+function reorderPhotos(photos, order) {
+  if (!order?.length) return photos;
+  const byName = new Map(photos.map((p) => [basename(p.file), p]));
+  const ordered = order.map((name) => byName.get(name)).filter(Boolean);
+  const orderedSet = new Set(ordered);
+  return [...ordered, ...photos.filter((p) => !orderedSet.has(p))];
 }
 
 function slugify(name) {
