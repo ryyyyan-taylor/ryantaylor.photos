@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-06T19:34:13.071Z",
+  "generatedAt": "2026-09-07T19:25:03.741Z",
   "widths": [
     480,
     960,
@@ -3079,7 +3079,7 @@
       ],
       "unlisted": true,
       "availableUntil": null,
-      "passwordHash": "100000:1b47c31200a1eeaf0394012244789947:28ed8792dcb9a84626bf0d159f4179c763f4bad09039a4775049a6328218d24f",
+      "passwordHash": "100000:0b175febd2fd36a6ff760ccad3a26aa3:fbbab820e584c4291b1885c1be32e167b8d59f0501116ae3a06dfbef9901610f",
       "zips": [
         {
           "key": "small",
@@ -3110,6 +3110,310 @@
           "label": "Video",
           "path": "zip/events/summoner-skirmish-09-05-2026-video.zip",
           "size": 2223134414
+        }
+      ]
+    },
+    {
+      "slug": "teg-interior",
+      "section": null,
+      "sectionTitle": null,
+      "title": "TEG Interior",
+      "description": "",
+      "order": 999,
+      "cover": "teg-interior/img01239-fused",
+      "photos": [
+        {
+          "id": "teg-interior/img01239-fused",
+          "file": "TEG Interior/IMG01239_fused.jpg",
+          "stem": "p/teg-interior/img01239-fused.9204d924",
+          "hash": "9204d924",
+          "width": 5150,
+          "height": 2930,
+          "widths": [
+            480,
+            960,
+            1440,
+            2048
+          ],
+          "lqip": "data:image/webp;base64,UklGRn4AAABXRUJQVlA4IHIAAADwAwCdASoYAA4APu1iqU2ppaQiMAgBMB2JYwCsACDRuHaGXUF3TAkAAP2sojJJXsXcofdelAmeBgQghLgSMgKCAGgWwhBYHsKzRovqC+dfc88d02slxRqtnM4t31k1olhSdEwpbNtStgJbpcodziEAAAA=",
+          "alt": "",
+          "caption": "",
+          "note": "",
+          "subsection": null,
+          "exif": null,
+          "kind": "photo",
+          "duration": null,
+          "videoSources": null,
+          "videoMeta": null
+        },
+        {
+          "id": "teg-interior/img01244-fused",
+          "file": "TEG Interior/IMG01244_fused.jpg",
+          "stem": "p/teg-interior/img01244-fused.7f189078",
+          "hash": "7f189078",
+          "width": 6024,
+          "height": 3363,
+          "widths": [
+            480,
+            960,
+            1440,
+            2048
+          ],
+          "lqip": "data:image/webp;base64,UklGRrIAAABXRUJQVlA4IKYAAABQBACdASoYAA0APu1iqU2ppaQiMAgBMB2JaACdDBAAMcGrJYNjvx8rd5gAAPA7BGdKxf24Tp27ElGc+JyP/DLNA+b0ohdn1h4clhjTLNfsCSDDEItGJqowFv5SP7zLwExpOVdfLhlFp3VKHorB+M3KaLtOQ5CVj+TCClk74Y8ol2vbxqfvmMepdOe6HPVD6kf8xKH+QrXDoxr1/V6Vy8ZbR/BYZAAA",
+          "alt": "",
+          "caption": "",
+          "note": "",
+          "subsection": null,
+          "exif": null,
+          "kind": "photo",
+          "duration": null,
+          "videoSources": null,
+          "videoMeta": null
+        },
+        {
+          "id": "teg-interior/img01249-fused",
+          "file": "TEG Interior/IMG01249_fused.jpg",
+          "stem": "p/teg-interior/img01249-fused.5702bc27",
+          "hash": "5702bc27",
+          "width": 6024,
+          "height": 3363,
+          "widths": [
+            480,
+            960,
+            1440,
+            2048
+          ],
+          "lqip": "data:image/webp;base64,UklGRqAAAABXRUJQVlA4IJQAAAAwBACdASoYAA0APu1iqU2ppaOiMAgBMB2JZgCw7B9fFOvxv4St6XGPKAAAzgbsoq8Q6doemxp7PO6RXC1k8x+jWQvvWBgSVokCw+XEjfJ9jEWNtkkKrS8vxCp67adJp3XNrGLigkwVsWyD8vNWD/ezwJnWFxsxUgS3Lrt0lnuCu0giSf3EvkZAEtTTdgxppo4dgAAA",
+          "alt": "",
+          "caption": "",
+          "note": "",
+          "subsection": null,
+          "exif": null,
+          "kind": "photo",
+          "duration": null,
+          "videoSources": null,
+          "videoMeta": null
+        },
+        {
+          "id": "teg-interior/img01254-fused",
+          "file": "TEG Interior/IMG01254_fused.jpg",
+          "stem": "p/teg-interior/img01254-fused.a1648201",
+          "hash": "a1648201",
+          "width": 6024,
+          "height": 4024,
+          "widths": [
+            480,
+            960,
+            1440,
+            2048
+          ],
+          "lqip": "data:image/webp;base64,UklGRpwAAABXRUJQVlA4IJAAAADwAwCdASoYABAAPu1iqU2ppaOiMAgBMB2JYwCdACKwb9gEHQ3Gky6AAP54Nlmf9lfg1T9CdzVAyg/gtHKXYJSoqibfqjs6i7JPQv0qHGsDI6f8fWaHI23CL0HKmkhwm/NWYjJPLbAjI2UfVt1t1kl8RWD0MbNTZea8LrFRS70Gd0M2cHny3B3DKGLMk53UoAA=",
+          "alt": "",
+          "caption": "",
+          "note": "",
+          "subsection": null,
+          "exif": null,
+          "kind": "photo",
+          "duration": null,
+          "videoSources": null,
+          "videoMeta": null
+        },
+        {
+          "id": "teg-interior/img01259-fused",
+          "file": "TEG Interior/IMG01259_fused.jpg",
+          "stem": "p/teg-interior/img01259-fused.117e309d",
+          "hash": "117e309d",
+          "width": 6024,
+          "height": 4024,
+          "widths": [
+            480,
+            960,
+            1440,
+            2048
+          ],
+          "lqip": "data:image/webp;base64,UklGRpwAAABXRUJQVlA4IJAAAAAQBACdASoYABAAPu1iqU2ppaOiMAgBMB2JQBWABF0TUC5GkoiHTofyiAD6jGnL7zIP3fAs+eBIZdbHnVxyX0JeOa2DW1uDD0LwD8hnjGS6BParJ3At0rgGUdM4f5vBA865b3Wwte1zeH3m1IyZThB7lvnyTsOy6/aWdFXhV2vZmmITDB9xfRLreZsCXbGZgAA=",
+          "alt": "",
+          "caption": "",
+          "note": "",
+          "subsection": null,
+          "exif": null,
+          "kind": "photo",
+          "duration": null,
+          "videoSources": null,
+          "videoMeta": null
+        },
+        {
+          "id": "teg-interior/img01264-fused",
+          "file": "TEG Interior/IMG01264_fused.jpg",
+          "stem": "p/teg-interior/img01264-fused.1645b67b",
+          "hash": "1645b67b",
+          "width": 6024,
+          "height": 2683,
+          "widths": [
+            480,
+            960,
+            1440,
+            2048
+          ],
+          "lqip": "data:image/webp;base64,UklGRogAAABXRUJQVlA4IHwAAAAQBACdASoYAAsAPu1iqk2ppaQiMAgBMB2JQBOgA0Td8GZcZCh7LjDcAAD+dY0JLoTNCtrbsPFm8ZIEloQm1el9J1TJeMCyGPEqa05PjwqSDjVkNHDvVv7Yw9vOHrdR7a1Tvo6W5rvoRCf/HzIs611zOdqy0RTaoaZMkgAA",
+          "alt": "",
+          "caption": "",
+          "note": "",
+          "subsection": null,
+          "exif": null,
+          "kind": "photo",
+          "duration": null,
+          "videoSources": null,
+          "videoMeta": null
+        },
+        {
+          "id": "teg-interior/img01269-fused",
+          "file": "TEG Interior/IMG01269_fused.jpg",
+          "stem": "p/teg-interior/img01269-fused.3205d08e",
+          "hash": "3205d08e",
+          "width": 6024,
+          "height": 4024,
+          "widths": [
+            480,
+            960,
+            1440,
+            2048
+          ],
+          "lqip": "data:image/webp;base64,UklGRp4AAABXRUJQVlA4IJIAAABQBACdASoYABAAPu1iqU2ppaOiMAgBMB2JYwCw7CFTAf1VFmLBftGGcoqOAP4kpNcW1gXshjBk/JFJkPeSAc8j+pib6Jx/u5JBHpNsqz2QCYuIVc+Tc/h2AITey+r603WZXqfeFv3PMvFSkVr0elYpqVE23yxBx8W8GFCn8o+DjjiJ9qq0BpI2ZIAMITsGI0AAAA==",
+          "alt": "",
+          "caption": "",
+          "note": "",
+          "subsection": null,
+          "exif": null,
+          "kind": "photo",
+          "duration": null,
+          "videoSources": null,
+          "videoMeta": null
+        },
+        {
+          "id": "teg-interior/img01274-fused",
+          "file": "TEG Interior/IMG01274_fused.jpg",
+          "stem": "p/teg-interior/img01274-fused.ef6b9d7d",
+          "hash": "ef6b9d7d",
+          "width": 6024,
+          "height": 4024,
+          "widths": [
+            480,
+            960,
+            1440,
+            2048
+          ],
+          "lqip": "data:image/webp;base64,UklGRp4AAABXRUJQVlA4IJIAAAAQBACdASoYABAAPu1iqU2ppaOiMAgBMB2JQBOgBH+jn0AS0SmnEVwm+gDNlCOkM63Jma2IimblAQetvVY1Qz3jYu9C0kED2BBcsA2To9LyhO7JwvvJ6R6HH5U4A0CKd/oZoxrqrJqSQzpDr6Oq1qhervRQ2TMNOqACksAYLU59zS/qac6CZkrXQVpTpz8cFEAAAA==",
+          "alt": "",
+          "caption": "",
+          "note": "",
+          "subsection": null,
+          "exif": null,
+          "kind": "photo",
+          "duration": null,
+          "videoSources": null,
+          "videoMeta": null
+        },
+        {
+          "id": "teg-interior/img01284-fused",
+          "file": "TEG Interior/IMG01284_fused.jpg",
+          "stem": "p/teg-interior/img01284-fused.4eb18b47",
+          "hash": "4eb18b47",
+          "width": 6024,
+          "height": 4024,
+          "widths": [
+            480,
+            960,
+            1440,
+            2048
+          ],
+          "lqip": "data:image/webp;base64,UklGRoQAAABXRUJQVlA4IHgAAACwAwCdASoYABAAPu1iqU2ppaOiMAgBMB2JQBOgAzpYKrQ/YmKAAAD6j4iuwARGmfCoQ1O3in1P/+RMxJyMLyhDanKn863HP1VfHlDLF2gNXzSJbLdqMizWLvrqzD8UZ3gsdv0nor6NXlvsBLcUc00Y7Q0gHP4wAAA=",
+          "alt": "",
+          "caption": "",
+          "note": "",
+          "subsection": null,
+          "exif": null,
+          "kind": "photo",
+          "duration": null,
+          "videoSources": null,
+          "videoMeta": null
+        },
+        {
+          "id": "teg-interior/img01289-fused",
+          "file": "TEG Interior/IMG01289_fused.jpg",
+          "stem": "p/teg-interior/img01289-fused.f96b87f7",
+          "hash": "f96b87f7",
+          "width": 6024,
+          "height": 4024,
+          "widths": [
+            480,
+            960,
+            1440,
+            2048
+          ],
+          "lqip": "data:image/webp;base64,UklGRoYAAABXRUJQVlA4IHoAAADQAwCdASoYABAAPu1iqU2ppaQiMAgBMB2JYgCdACDUyHRUxFebXwAAyjqneaSFCbAHi9jqyqUBGFgK5zJtaGbWbKMuP7ank63FFFH5g2tZatksySmZsZ87gOM/Z+7iXAYyynTBH+1csimGiuijN4Boxio1a+rrAdoAAA==",
+          "alt": "",
+          "caption": "",
+          "note": "",
+          "subsection": null,
+          "exif": null,
+          "kind": "photo",
+          "duration": null,
+          "videoSources": null,
+          "videoMeta": null
+        },
+        {
+          "id": "teg-interior/img01294-fused",
+          "file": "TEG Interior/IMG01294_fused.jpg",
+          "stem": "p/teg-interior/img01294-fused.5301d581",
+          "hash": "5301d581",
+          "width": 5756,
+          "height": 3369,
+          "widths": [
+            480,
+            960,
+            1440,
+            2048
+          ],
+          "lqip": "data:image/webp;base64,UklGRqIAAABXRUJQVlA4IJYAAADwAwCdASoYAA4APu1iqU2ppaOiMAgBMB2JZgCsAB0u/TQhWqmb3pfAAPafQJ3qcv+UkjrC7FWGs3aW/JXIv3AGKQQPJ3yc/4lsbFvRL/gHgRU1J6FcDYr4y6rJYDDq7pevIDDqVosO/2A7L08XWYcg6Tmc9xUk6GMfwz+e8r+M6oM+lW6W1GX+aXtlH77WcXanvKkAAAA=",
+          "alt": "",
+          "caption": "",
+          "note": "",
+          "subsection": null,
+          "exif": null,
+          "kind": "photo",
+          "duration": null,
+          "videoSources": null,
+          "videoMeta": null
+        }
+      ],
+      "unlisted": true,
+      "availableUntil": null,
+      "passwordHash": null,
+      "zips": [
+        {
+          "key": "small",
+          "label": "Small",
+          "path": "zip/teg-interior-small.zip",
+          "size": 2135622
+        },
+        {
+          "key": "medium",
+          "label": "Medium",
+          "path": "zip/teg-interior-medium.zip",
+          "size": 7429870
+        },
+        {
+          "key": "large",
+          "label": "Large",
+          "path": "zip/teg-interior-large.zip",
+          "size": 15593500
+        },
+        {
+          "key": "full",
+          "label": "Full quality",
+          "path": "zip/teg-interior-full.zip",
+          "size": 189144521
         }
       ]
     },
