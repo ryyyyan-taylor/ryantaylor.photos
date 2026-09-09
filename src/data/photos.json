@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-07T19:25:03.741Z",
+  "generatedAt": "2026-09-09T15:51:43.927Z",
   "widths": [
     480,
     960,
@@ -3079,7 +3079,7 @@
       ],
       "unlisted": true,
       "availableUntil": null,
-      "passwordHash": "100000:0b175febd2fd36a6ff760ccad3a26aa3:fbbab820e584c4291b1885c1be32e167b8d59f0501116ae3a06dfbef9901610f",
+      "passwordHash": "100000:29fddeb7c1eb380883e57360da32c865:d6d116b00f3e341bda9e2ebec0e2aca67dfec535f99f8175b952f96f5ecbd582",
       "zips": [
         {
           "key": "small",
@@ -3385,6 +3385,33 @@
           "duration": null,
           "videoSources": null,
           "videoMeta": null
+        },
+        {
+          "id": "teg-interior/timeline-1",
+          "file": "TEG Interior/Timeline 1.mov",
+          "stem": "p/teg-interior/timeline-1.d561aba0",
+          "hash": "d561aba0",
+          "width": 1920,
+          "height": 1080,
+          "widths": [
+            480,
+            960,
+            1440
+          ],
+          "lqip": "data:image/webp;base64,UklGRrIAAABXRUJQVlA4IKYAAACQBACdASoYAA4APu1iqU2ppaOiMAgBMB2JQBdgMZUdpOjm/SPu+qLzXuMptwAA/tzqux2WYo7nR/Hc4W07IJvVOTqETEPRBmYI+V7fsebPc8S5aG+GanM6O9z/2moo2DigyeUtufL18MLv4SabMPolLq7vBEAJZyGtXNCVBcNDyOgU3GFoVtZbi1FtFECLdLghTj2D/OXBpxGZABF+PUPDxVg4AAAA",
+          "alt": "",
+          "caption": "",
+          "note": "",
+          "subsection": null,
+          "exif": null,
+          "kind": "video",
+          "duration": 50.4504,
+          "videoSources": {
+            "mp4": "v/teg-interior/timeline-1.d561aba0.mp4"
+          },
+          "videoMeta": {
+            "fps": 29.97
+          }
         }
       ],
       "unlisted": true,
@@ -3414,6 +3441,12 @@
           "label": "Full quality",
           "path": "zip/teg-interior-full.zip",
           "size": 189144521
+        },
+        {
+          "key": "video",
+          "label": "Video",
+          "path": "zip/teg-interior-video.zip",
+          "size": 1271006469
         }
       ]
     },
