@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-09T15:51:43.927Z",
+  "generatedAt": "2026-09-19T19:51:43.996Z",
   "widths": [
     480,
     960,
@@ -716,6 +716,55 @@
           "label": "Full quality",
           "path": "zip/sports/mckay-bike-park-full.zip",
           "size": 237478070
+        }
+      ]
+    },
+    {
+      "slug": "fpv",
+      "section": null,
+      "sectionTitle": null,
+      "title": "FPV",
+      "description": "",
+      "order": 999,
+      "cover": "fpv/new-tune",
+      "photos": [
+        {
+          "id": "fpv/new-tune",
+          "file": "FPV/new-tune.mp4",
+          "stem": "p/fpv/new-tune.dc33a6f9",
+          "hash": "dc33a6f9",
+          "width": 2028,
+          "height": 1140,
+          "widths": [
+            480,
+            960,
+            1440
+          ],
+          "lqip": "data:image/webp;base64,UklGRpQAAABXRUJQVlA4IIgAAADQAwCdASoYAA0ALrV2u12jqampiYC0SgCsAYt9njvcFEi/PpgrK2AA/gYrSCjjkP0TObq1AuM4NQK87jfiuhtlUPir7ew/1XKOY/WvIihjEj9RYLdxSKy6+l+9mX/heeo/CsQmMzMaExLbY+bG2DJNPoK+hinfFgSN0XBc5z6aAvWeT9k9p2AA",
+          "alt": "",
+          "caption": "",
+          "note": "",
+          "subsection": null,
+          "exif": null,
+          "kind": "video",
+          "duration": 57.173,
+          "videoSources": {
+            "mp4": "v/fpv/new-tune.dc33a6f9.mp4"
+          },
+          "videoMeta": {
+            "fps": 59.94
+          }
+        }
+      ],
+      "unlisted": false,
+      "availableUntil": null,
+      "passwordHash": null,
+      "zips": [
+        {
+          "key": "video",
+          "label": "Video",
+          "path": "zip/fpv-video.zip",
+          "size": 102843725
         }
       ]
     },
@@ -3079,7 +3128,7 @@
       ],
       "unlisted": true,
       "availableUntil": null,
-      "passwordHash": "100000:29fddeb7c1eb380883e57360da32c865:d6d116b00f3e341bda9e2ebec0e2aca67dfec535f99f8175b952f96f5ecbd582",
+      "passwordHash": "100000:e1a9d33ca8adea88d63497847748f56d:948624b375a7f9980e3a8d6a55dc0f7b1007e1d9b5d4b9bd9dc59d5996b8e82d",
       "zips": [
         {
           "key": "small",
@@ -3387,10 +3436,36 @@
           "videoMeta": null
         },
         {
-          "id": "teg-interior/timeline-1",
-          "file": "TEG Interior/Timeline 1.mov",
-          "stem": "p/teg-interior/timeline-1.d561aba0",
-          "hash": "d561aba0",
+          "id": "teg-interior/teg-overview",
+          "file": "TEG Interior/teg_overview.mov",
+          "stem": "p/teg-interior/teg-overview.66b257a2",
+          "hash": "66b257a2",
+          "width": 1080,
+          "height": 1080,
+          "widths": [
+            480,
+            960
+          ],
+          "lqip": "data:image/webp;base64,UklGRvQAAABXRUJQVlA4IOgAAACQBQCdASoYABgAPu1irFAppSQisBgIATAdiWIAuwAOj42Mi9THB4o7fF0J/fuBR7vVuE8rwAD6ncu3zjjwlZLCG+ZZSeVovxRqSb3ROaamKPCe2LlZMI2HhQHXGXxn+XXIHrVLbJ3xwD7XxX5895oYTZeiWx/XykuY0KZhMFiNgoM8hk1WoYKzWGIDJIpoR6OAllkADP61Dhx9fFdqrmoaLBL3q2KxHL8Dfil7HEXviA1FQd9IzhIa2hhg00o+wJTv89MdgNu3UeyEVCUSMMFkns7F8er59yETpORd3hW8uEn5JC4ZAAAA",
+          "alt": "",
+          "caption": "",
+          "note": "",
+          "subsection": null,
+          "exif": null,
+          "kind": "video",
+          "duration": 17.8178,
+          "videoSources": {
+            "mp4": "v/teg-interior/teg-overview.66b257a2.mp4"
+          },
+          "videoMeta": {
+            "fps": 29.97
+          }
+        },
+        {
+          "id": "teg-interior/teg-walkthrough",
+          "file": "TEG Interior/teg_walkthrough.mov",
+          "stem": "p/teg-interior/teg-walkthrough.4bc742d1",
+          "hash": "4bc742d1",
           "width": 1920,
           "height": 1080,
           "widths": [
@@ -3398,16 +3473,16 @@
             960,
             1440
           ],
-          "lqip": "data:image/webp;base64,UklGRrIAAABXRUJQVlA4IKYAAACQBACdASoYAA4APu1iqU2ppaOiMAgBMB2JQBdgMZUdpOjm/SPu+qLzXuMptwAA/tzqux2WYo7nR/Hc4W07IJvVOTqETEPRBmYI+V7fsebPc8S5aG+GanM6O9z/2moo2DigyeUtufL18MLv4SabMPolLq7vBEAJZyGtXNCVBcNDyOgU3GFoVtZbi1FtFECLdLghTj2D/OXBpxGZABF+PUPDxVg4AAAA",
+          "lqip": "data:image/webp;base64,UklGRqoAAABXRUJQVlA4IJ4AAADQAwCdASoYAA4APu1iqU2ppaOiMAgBMB2JQBOgAvZ1lFodP1Z7wEAA/kEiBns/jOv3rRNTPg0FDI6N1NJEsCdMse9gQ4ubedQcHSm70HInJhZjxdQKFf8rz1ev40nFz3OtuZB6Kz8evNTHz/O0XrrK3t993PZdl6vEiq8OJzhoAP9LycQzFtaej/3nw4iV2rUdgX4ZMCDcYWY9lcAAAA==",
           "alt": "",
           "caption": "",
           "note": "",
           "subsection": null,
           "exif": null,
           "kind": "video",
-          "duration": 50.4504,
+          "duration": 43.777067,
           "videoSources": {
-            "mp4": "v/teg-interior/timeline-1.d561aba0.mp4"
+            "mp4": "v/teg-interior/teg-walkthrough.4bc742d1.mp4"
           },
           "videoMeta": {
             "fps": 29.97
@@ -3446,7 +3521,7 @@
           "key": "video",
           "label": "Video",
           "path": "zip/teg-interior-video.zip",
-          "size": 1271006469
+          "size": 1424611166
         }
       ]
     },
