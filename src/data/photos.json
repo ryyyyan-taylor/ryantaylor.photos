@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-20T06:58:39.018Z",
+  "generatedAt": "2026-09-22T20:30:32.040Z",
   "widths": [
     480,
     960,
@@ -3128,7 +3128,7 @@
       ],
       "unlisted": true,
       "availableUntil": null,
-      "passwordHash": "100000:3a1c5931c537865ad8daffb4beeff309:9d031e0e7312c13709e78d56f58a9569fea53d7b3c3e440f83f6146c6a47c68e",
+      "passwordHash": "100000:580403baa49b90764a96c8450c40844e:91dffb57ec8dc37c9a926d2b2c776aacd1958e30b85fdf6e216cf14ebeeedff0",
       "zips": [
         {
           "key": "small",
@@ -4490,6 +4490,334 @@
           "label": "Full quality",
           "path": "zip/events/total-escape-games-full.zip",
           "size": 488358791
+        }
+      ]
+    },
+    {
+      "slug": "sports/valmont-bike-park",
+      "section": "sports",
+      "sectionTitle": "Sports",
+      "title": "Valmont Bike Park",
+      "description": "Mountain Bike Park in Boulder, CO. Summer 2026",
+      "order": 999,
+      "cover": "sports/valmont-bike-park/img01702",
+      "photos": [
+        {
+          "id": "sports/valmont-bike-park/img01461",
+          "file": "Sports/Valmont Bike Park/IMG01461.jpg",
+          "stem": "p/sports/valmont-bike-park/img01461.dbe4d661",
+          "hash": "dbe4d661",
+          "width": 5023,
+          "height": 3767,
+          "widths": [
+            480,
+            960,
+            1440,
+            2048
+          ],
+          "lqip": "data:image/webp;base64,UklGRroAAABXRUJQVlA4IK4AAADQBACdASoYABIAPu1srlIppaQiqAgBMB2JQBOmae5JgyT0tJO67fNCH/AikrnkkADnkgiUPUXND8/cnQ8PB0JKIL2PCWWIGodj0M/qCoDwyd+OCoPKGalpxASksm7WNCTEoec0SeIE2UwPM66iI2bct651W0i7AMAFpN75uaCCxvkvnzIOTU3uo4UkaxzPkKn6m8JUnN+iG/oxF8WZRnr0cClJD3Xkc8gI6bgAAAA=",
+          "alt": "",
+          "caption": "",
+          "note": "",
+          "subsection": null,
+          "exif": {
+            "camera": "Sony ILCE-6400",
+            "lens": "18-50mm F2.8 DC DN | Contemporary 021",
+            "focalLength": "50mm (75mm equiv.)",
+            "aperture": "f/2.8",
+            "shutterSpeed": "1/4000s",
+            "iso": 100,
+            "takenAt": "Sep 20, 2026"
+          },
+          "kind": "photo",
+          "duration": null,
+          "videoSources": null,
+          "videoMeta": null
+        },
+        {
+          "id": "sports/valmont-bike-park/img01510",
+          "file": "Sports/Valmont Bike Park/IMG01510.jpg",
+          "stem": "p/sports/valmont-bike-park/img01510.4176a3b5",
+          "hash": "4176a3b5",
+          "width": 3012,
+          "height": 4016,
+          "widths": [
+            480,
+            960,
+            1440,
+            2048
+          ],
+          "lqip": "data:image/webp;base64,UklGRsgAAABXRUJQVlA4ILwAAADQBQCdASoYACAAPu1ur1IppiQiqAgBMB2JaACdMoR5j42I1YaiAaL8M51dUVYKfDJb1kto14/UAPcmo8HPk2fNV6IkkimmH9rNEJVgze3/HEPDCCK43t2l4vYKzlQZj0W2j+QhTVt438kcAylR7hQfkvmVWg4eeKItYhLwGd7LiBoCm3sujMH4MvipEpkHZZ98RkNC6aVcULTrst1AbJ8PRHqdJSOKdu4m6HdDydj5NK0H24ejfXiEGfvAAA==",
+          "alt": "",
+          "caption": "",
+          "note": "",
+          "subsection": null,
+          "exif": {
+            "camera": "Sony ILCE-6400",
+            "lens": "18-50mm F2.8 DC DN | Contemporary 021",
+            "focalLength": "29mm (44mm equiv.)",
+            "aperture": "f/2.8",
+            "shutterSpeed": "1/4000s",
+            "iso": 100,
+            "takenAt": "Sep 20, 2026"
+          },
+          "kind": "photo",
+          "duration": null,
+          "videoSources": null,
+          "videoMeta": null
+        },
+        {
+          "id": "sports/valmont-bike-park/img01517",
+          "file": "Sports/Valmont Bike Park/IMG01517.jpg",
+          "stem": "p/sports/valmont-bike-park/img01517.81c4f6c5",
+          "hash": "81c4f6c5",
+          "width": 4221,
+          "height": 3165,
+          "widths": [
+            480,
+            960,
+            1440,
+            2048
+          ],
+          "lqip": "data:image/webp;base64,UklGRpgAAABXRUJQVlA4IIwAAACQBACdASoYABIAPu1iq1AppSOisBgIATAdiUAXZmE4NaaLv7tsNoEnB+dYh0AA/rFH+n42Q3taYUnpLvLmfCMVR5A6eIR4cQXcZ4XF9QxYdfVjrud/oiB1L+vtHrLgG1VbrYheLjAo+RiSVhmdDpOjBVckjJ+TovKmBWA2Oong0xrtuNLfN2YGwAAAAA==",
+          "alt": "",
+          "caption": "",
+          "note": "",
+          "subsection": null,
+          "exif": {
+            "camera": "Sony ILCE-6400",
+            "lens": "18-50mm F2.8 DC DN | Contemporary 021",
+            "focalLength": "18mm (27mm equiv.)",
+            "aperture": "f/2.8",
+            "shutterSpeed": "1/4000s",
+            "iso": 125,
+            "takenAt": "Sep 20, 2026"
+          },
+          "kind": "photo",
+          "duration": null,
+          "videoSources": null,
+          "videoMeta": null
+        },
+        {
+          "id": "sports/valmont-bike-park/img01536",
+          "file": "Sports/Valmont Bike Park/IMG01536.jpg",
+          "stem": "p/sports/valmont-bike-park/img01536.821459bf",
+          "hash": "821459bf",
+          "width": 4546,
+          "height": 3410,
+          "widths": [
+            480,
+            960,
+            1440,
+            2048
+          ],
+          "lqip": "data:image/webp;base64,UklGRqAAAABXRUJQVlA4IJQAAADwBACdASoYABIAPu1orE+ppiQiMBgIATAdiWoAnTKAAKoR/aZ1IeLo2iX05odkIdwA+ZSJXQTZVa0d/5NZLmeEDSAbDs6LUJxnSQBQzc14qhMVFri2D7l0OyKvA3JoY+E6+b8mmMakgwnjlfQclQh7BOPSuLkNby3K9Bj4F1JlH71NrJGTzAbA2+0elLSiKaNHAAAA",
+          "alt": "",
+          "caption": "",
+          "note": "",
+          "subsection": null,
+          "exif": {
+            "camera": "Sony ILCE-6400",
+            "lens": "18-50mm F2.8 DC DN | Contemporary 021",
+            "focalLength": "32mm (47mm equiv.)",
+            "aperture": "f/2.8",
+            "shutterSpeed": "1/3200s",
+            "iso": 125,
+            "takenAt": "Sep 20, 2026"
+          },
+          "kind": "photo",
+          "duration": null,
+          "videoSources": null,
+          "videoMeta": null
+        },
+        {
+          "id": "sports/valmont-bike-park/img01600",
+          "file": "Sports/Valmont Bike Park/IMG01600.jpg",
+          "stem": "p/sports/valmont-bike-park/img01600.8618a59d",
+          "hash": "8618a59d",
+          "width": 4453,
+          "height": 3338,
+          "widths": [
+            480,
+            960,
+            1440,
+            2048
+          ],
+          "lqip": "data:image/webp;base64,UklGRqAAAABXRUJQVlA4IJQAAAAQBQCdASoYABIAPu1qqU8ppiOiMBgIATAdiUAW4H/YCtFC2xokr+une3UDB/+SHCwAAPyDObrLLmqffMmu9DN+jtGn3fhHq9ALkTylOGvALPkMM9FCi/jSaqF9iaThEmMSOC5Up9I1hrGAPPBMA2NjSGpa3ILLXvWXRAjgx4FG94XC2ppwSMn6Dwe2ltFRavyfAAAA",
+          "alt": "",
+          "caption": "",
+          "note": "",
+          "subsection": null,
+          "exif": {
+            "camera": "Sony ILCE-6400",
+            "lens": "18-50mm F2.8 DC DN | Contemporary 021",
+            "focalLength": "50mm (75mm equiv.)",
+            "aperture": "f/2.8",
+            "shutterSpeed": "1/4000s",
+            "iso": 100,
+            "takenAt": "Sep 20, 2026"
+          },
+          "kind": "photo",
+          "duration": null,
+          "videoSources": null,
+          "videoMeta": null
+        },
+        {
+          "id": "sports/valmont-bike-park/img01622",
+          "file": "Sports/Valmont Bike Park/IMG01622.jpg",
+          "stem": "p/sports/valmont-bike-park/img01622.9bfd8223",
+          "hash": "9bfd8223",
+          "width": 4612,
+          "height": 3459,
+          "widths": [
+            480,
+            960,
+            1440,
+            2048
+          ],
+          "lqip": "data:image/webp;base64,UklGRrgAAABXRUJQVlA4IKwAAABQBQCdASoYABIAPu1ur1IppiQiqAgBMB2JYgCpFMFJ/gHTBoFiSMrl8le2h68a11vHUQAA8dvk6MBzAsJvTcLzJ9qj2rkwcU+fGLXo1IntvAfSuMpSKQZhnaO4V85ytxR5kkIeR6iS/g1g75X5SGIpd78KqwkESsUUwmSjoJVQ8KOdkIy93RREOiLl+ofbTyq8UxqDnQB3NqZDiTSiHR6WadMN7S3P0gzS0QAA",
+          "alt": "",
+          "caption": "",
+          "note": "",
+          "subsection": null,
+          "exif": {
+            "camera": "Sony ILCE-6400",
+            "lens": "18-50mm F2.8 DC DN | Contemporary 021",
+            "focalLength": "44mm (66mm equiv.)",
+            "aperture": "f/2.8",
+            "shutterSpeed": "1/4000s",
+            "iso": 100,
+            "takenAt": "Sep 20, 2026"
+          },
+          "kind": "photo",
+          "duration": null,
+          "videoSources": null,
+          "videoMeta": null
+        },
+        {
+          "id": "sports/valmont-bike-park/img01702",
+          "file": "Sports/Valmont Bike Park/IMG01702.jpg",
+          "stem": "p/sports/valmont-bike-park/img01702.61ac65e2",
+          "hash": "61ac65e2",
+          "width": 5055,
+          "height": 3791,
+          "widths": [
+            480,
+            960,
+            1440,
+            2048
+          ],
+          "lqip": "data:image/webp;base64,UklGRrwAAABXRUJQVlA4ILAAAABwBQCdASoYABIAPu1sq1EppaOiqAqpMB2JaACdOUFUXZJADpx4maqm/JxyTcUap1s79FUAAP0U5mpevnR07xJVKG2N1dPwAMHObLpyRcTcB1tRBQM9QHWJJd83FAUH+xTz+uK+c2de5TN2WZBksg3ZHSyZlHIfMXaLth3qNtvrnvHjSYr7dFO4xJoTeeAa6mMVLY/0D/jKiR5dVXdvcYYKk0YQgaIPBXP+0aefi5AAAA==",
+          "alt": "",
+          "caption": "",
+          "note": "",
+          "subsection": null,
+          "exif": {
+            "camera": "Sony ILCE-6400",
+            "lens": "18-50mm F2.8 DC DN | Contemporary 021",
+            "focalLength": "31mm (46mm equiv.)",
+            "aperture": "f/2.8",
+            "shutterSpeed": "1/4000s",
+            "iso": 100,
+            "takenAt": "Sep 20, 2026"
+          },
+          "kind": "photo",
+          "duration": null,
+          "videoSources": null,
+          "videoMeta": null
+        },
+        {
+          "id": "sports/valmont-bike-park/img01744",
+          "file": "Sports/Valmont Bike Park/IMG01744.jpg",
+          "stem": "p/sports/valmont-bike-park/img01744.e58d470f",
+          "hash": "e58d470f",
+          "width": 5191,
+          "height": 3892,
+          "widths": [
+            480,
+            960,
+            1440,
+            2048
+          ],
+          "lqip": "data:image/webp;base64,UklGRrIAAABXRUJQVlA4IKYAAADQBACdASoYABIAPu1ur1IppiQiqAgBMB2JYwC7ABDWkOMcauaonTLAXQS+JxuFYAD+r9Tywno//EQGQVi9rvqRA0UzqF6UUDg3pHhIWQvE/J3D6FEAA1jVw+dD3tuPxTxhw8Ow2KzFjzQAYu0Im/9103x0aVbWD+p0JSsvByo+6AK0SPVIRdFnfmIU3Ll2z2t5BpNr+NpfwnozG/pePuHZxQ4AAAAA",
+          "alt": "",
+          "caption": "",
+          "note": "",
+          "subsection": null,
+          "exif": {
+            "camera": "Sony ILCE-6400",
+            "lens": "18-50mm F2.8 DC DN | Contemporary 021",
+            "focalLength": "37mm (54mm equiv.)",
+            "aperture": "f/2.8",
+            "shutterSpeed": "1/4000s",
+            "iso": 125,
+            "takenAt": "Sep 20, 2026"
+          },
+          "kind": "photo",
+          "duration": null,
+          "videoSources": null,
+          "videoMeta": null
+        },
+        {
+          "id": "sports/valmont-bike-park/img01785",
+          "file": "Sports/Valmont Bike Park/IMG01785.jpg",
+          "stem": "p/sports/valmont-bike-park/img01785.6a9cea9a",
+          "hash": "6a9cea9a",
+          "width": 5333,
+          "height": 4000,
+          "widths": [
+            480,
+            960,
+            1440,
+            2048
+          ],
+          "lqip": "data:image/webp;base64,UklGRrYAAABXRUJQVlA4IKoAAADwBACdASoYABIAPu1sqlEppaOiqAqpMB2JYwCzgAYWW2yu0B0LNz0NvWcesjnddyAA275iBau1b6srPFzfZU9H7ZOAhm9bH/Vwdq8+7rrvksaes2x5UrJwfOsLAHfnf9wTZ+aXVUdyxq1ryrvAoLxF5/+t66fWMaOjnpDJ6F0LDnVaUGH4B0GwYx1m71IRWXnhYT704EohtbN2Xjc0nnIO53pbFo4TQYIAAA==",
+          "alt": "",
+          "caption": "",
+          "note": "",
+          "subsection": null,
+          "exif": {
+            "camera": "Sony ILCE-6400",
+            "lens": "18-50mm F2.8 DC DN | Contemporary 021",
+            "focalLength": "33mm (49mm equiv.)",
+            "aperture": "f/2.8",
+            "shutterSpeed": "1/4000s",
+            "iso": 100,
+            "takenAt": "Sep 20, 2026"
+          },
+          "kind": "photo",
+          "duration": null,
+          "videoSources": null,
+          "videoMeta": null
+        }
+      ],
+      "unlisted": false,
+      "availableUntil": null,
+      "passwordHash": null,
+      "zips": [
+        {
+          "key": "small",
+          "label": "Small",
+          "path": "zip/sports/valmont-bike-park-small.zip",
+          "size": 1886905
+        },
+        {
+          "key": "medium",
+          "label": "Medium",
+          "path": "zip/sports/valmont-bike-park-medium.zip",
+          "size": 6147317
+        },
+        {
+          "key": "large",
+          "label": "Large",
+          "path": "zip/sports/valmont-bike-park-large.zip",
+          "size": 12881733
+        },
+        {
+          "key": "full",
+          "label": "Full quality",
+          "path": "zip/sports/valmont-bike-park-full.zip",
+          "size": 115388524
         }
       ]
     }
