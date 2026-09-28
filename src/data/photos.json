@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-28T20:48:20.747Z",
+  "generatedAt": "2026-09-28T21:23:06.058Z",
   "widths": [
     480,
     960,
@@ -3628,7 +3628,7 @@
       ],
       "unlisted": true,
       "availableUntil": null,
-      "passwordHash": "100000:af2eb09c477123d2ed769138389e2753:17bc4abb55f8e7d2a41d1d6cbd9fba45819926e618f49b6e1ff064b74e25e9c2",
+      "passwordHash": "100000:e072a1b1d29be07bb177a960a7d16774:89d6a76e858ccd9e8abd46986eff914fd4bd2a9672218912aca9b86cd0f47c0c",
       "zips": [
         {
           "key": "small",
@@ -3663,7 +3663,7 @@
       "title": "Summoner Skirmish Sept. 5th 2026",
       "description": "",
       "order": 999,
-      "cover": "events/summoner-skirmish-09-05-2026/img01222",
+      "cover": "events/summoner-skirmish-09-05-2026/img00665",
       "photos": [
         {
           "id": "events/summoner-skirmish-09-05-2026/img00665",
@@ -5892,161 +5892,41 @@
           "duration": null,
           "videoSources": null,
           "videoMeta": null
-        },
-        {
-          "id": "events/summoner-skirmish-09-05-2026/img01217",
-          "file": "Events/Summoner Skirmish 09-05-2026/IMG01217.MP4",
-          "stem": "p/events/summoner-skirmish-09-05-2026/img01217.7de9559a",
-          "hash": "7de9559a",
-          "width": 3840,
-          "height": 2160,
-          "widths": [
-            480,
-            960,
-            1440,
-            2048
-          ],
-          "lqip": "data:image/webp;base64,UklGRrAAAABXRUJQVlA4IKQAAABQBACdASoYAA4APu1iqU2ppaOiMAgBMB2JYwC7MoAlrAtomhRwAA4aTSEAAP7xEs0vOWxmF2Z5h8aTn0eOg/8rj7u9oz7ttrIlOxZ4TV2b5PEAEfTReh2wVR4m5UTJggsGmKNf0sXBZebFGP/0Tx+eNtOZyPKpeIYmPJIcWylObRf5KeysjY5q8ZcEd/UgH0kXSJPz5fkE97RjvXDtfw7lzQAAAA==",
-          "alt": "",
-          "caption": "",
-          "note": "",
-          "subsection": "Finals",
-          "exif": null,
-          "kind": "video",
-          "duration": 24.025,
-          "videoSources": {
-            "mp4": "v/events/summoner-skirmish-09-05-2026/img01217.7de9559a.mp4"
-          },
-          "videoMeta": {
-            "fps": 23.98
-          }
-        },
-        {
-          "id": "events/summoner-skirmish-09-05-2026/img01218",
-          "file": "Events/Summoner Skirmish 09-05-2026/IMG01218.MP4",
-          "stem": "p/events/summoner-skirmish-09-05-2026/img01218.e1bab58a",
-          "hash": "e1bab58a",
-          "width": 3840,
-          "height": 2160,
-          "widths": [
-            480,
-            960,
-            1440,
-            2048
-          ],
-          "lqip": "data:image/webp;base64,UklGRqQAAABXRUJQVlA4IJgAAABwBACdASoYAA4APu1iqU2ppaQiMAgBMB2JYwC7AYyywPcVs3zg6eU7N3gwzAD+7E8a+i57slCinXgfetkNvzWjY2DDmNboQK/39X17dacWjUALQal6suEspvsoE9PnV8g0M8nAm88hNTK17/wLUwD1nwh8i9f08P5Niwp8TpFLUYZn8psCuYY8rj7C11CkIaxFFTQcgQAAAA==",
-          "alt": "",
-          "caption": "",
-          "note": "",
-          "subsection": "Finals",
-          "exif": null,
-          "kind": "video",
-          "duration": 47.05,
-          "videoSources": {
-            "mp4": "v/events/summoner-skirmish-09-05-2026/img01218.e1bab58a.mp4"
-          },
-          "videoMeta": {
-            "fps": 23.98
-          }
-        },
-        {
-          "id": "events/summoner-skirmish-09-05-2026/img01220",
-          "file": "Events/Summoner Skirmish 09-05-2026/IMG01220.jpg",
-          "stem": "p/events/summoner-skirmish-09-05-2026/img01220.50e311e7",
-          "hash": "50e311e7",
-          "width": 5333,
-          "height": 4000,
-          "widths": [
-            480,
-            960,
-            1440,
-            2048
-          ],
-          "lqip": "data:image/webp;base64,UklGRuwAAABXRUJQVlA4IOAAAACQBQCdASoYABIAPu1ur1IppiQiqAgBMB2JaAC1GoM8I0mMlxjX4NT75JWzWi3gxxLrvHFaAADOE3vNrvW6vMxZwIf0PO23KsWjud0jgOy3oaog51lGukF1edCq4DuIh+2H2dU+m8/qvchGtkrdCgQjM4uCWT+EeT6763s0uWUyGnOoHMgEuPYa+Us5JD2n1b36evH0lNZLWh2OqGY+Egy80uhNvXb76B7/a92F4mFD7Aqo2ZwciDDS7Fc9U8odrGFMMlonbPaByOWPGWWPLgP+KoibvURLnqUxRAKL46LgAA==",
-          "alt": "",
-          "caption": "",
-          "note": "",
-          "subsection": "Finals",
-          "exif": {
-            "camera": "Sony ILCE-6400",
-            "lens": "18-50mm F2.8 DC DN | Contemporary 021",
-            "focalLength": "33mm (49mm equiv.)",
-            "aperture": "f/5",
-            "shutterSpeed": "1/50s",
-            "iso": 3200,
-            "takenAt": "Sep 5, 2026"
-          },
-          "kind": "photo",
-          "duration": null,
-          "videoSources": null,
-          "videoMeta": null
-        },
-        {
-          "id": "events/summoner-skirmish-09-05-2026/img01222",
-          "file": "Events/Summoner Skirmish 09-05-2026/IMG01222.jpg",
-          "stem": "p/events/summoner-skirmish-09-05-2026/img01222.b10c4600",
-          "hash": "b10c4600",
-          "width": 5000,
-          "height": 4000,
-          "widths": [
-            480,
-            960,
-            1440,
-            2048
-          ],
-          "lqip": "data:image/webp;base64,UklGRuIAAABXRUJQVlA4INYAAABwBQCdASoYABMAPu1wsFKppiSiqAgBMB2JQBfNJAQVoLghyRHhOjYmn06UmH4gY6cS0I4AAMsnWApQ1hyUfLXXUxkTjJP93B1dGVGZ+TjjzVorf25GYNQuNXB2vr+Dmd0kefGSYBAq72Omvce0OcgGQazRitvxGOyhF5yruBBmrZN2LYcx1f32Qtkw8IfLoVv29FY8oajUzgPbDqPpzwRPGRNz5qhWd6XJOl/1PMqCzqvKA1CxznUtgGKfRFej4bXrJZEUJaJyM/FLhlvNw70KXyXG1qAA",
-          "alt": "",
-          "caption": "",
-          "note": "",
-          "subsection": "Finals",
-          "exif": {
-            "camera": "Sony ILCE-6400",
-            "lens": "18-50mm F2.8 DC DN | Contemporary 021",
-            "focalLength": "21mm (31mm equiv.)",
-            "aperture": "f/2.8",
-            "shutterSpeed": "1/40s",
-            "iso": 320,
-            "takenAt": "Sep 5, 2026"
-          },
-          "kind": "photo",
-          "duration": null,
-          "videoSources": null,
-          "videoMeta": null
         }
       ],
       "unlisted": true,
       "availableUntil": null,
-      "passwordHash": "100000:07db4809d91c950a2e70ddc44210af28:bf012242ee80cf1f16d4630b4f403d855bf47d079d8e872c43f7af53e6e545ed",
+      "passwordHash": "100000:d183baa01f2886ca7d6d6715ee10165e:ca39274feb7363380d435e3b331cb9dd985b940cebde75c8523b54a3d9f927de",
       "zips": [
         {
           "key": "small",
           "label": "Small",
           "path": "zip/events/summoner-skirmish-09-05-2026-small.zip",
-          "size": 13112889
+          "size": 12735321
         },
         {
           "key": "medium",
           "label": "Medium",
           "path": "zip/events/summoner-skirmish-09-05-2026-medium.zip",
-          "size": 45151394
+          "size": 43897429
         },
         {
           "key": "large",
           "label": "Large",
           "path": "zip/events/summoner-skirmish-09-05-2026-large.zip",
-          "size": 114828146
+          "size": 111634105
         },
         {
           "key": "full",
           "label": "Full quality",
           "path": "zip/events/summoner-skirmish-09-05-2026-full.zip",
-          "size": 1168052435
+          "size": 1135436669
         },
         {
           "key": "video",
           "label": "Video",
           "path": "zip/events/summoner-skirmish-09-05-2026-video.zip",
-          "size": 2223134414
+          "size": 1375833101
         }
       ]
     },
