@@ -24,7 +24,8 @@ Files sort by filename, so number them to control order. Unchanged files are ski
 the R2 objects stay as backup.
 
 Optional `photos/<gallery>/gallery.json` sets the title, blurb, cover, order, and per-photo alt text —
-see `photos/README.md`.
+see `photos/README.md`. `npm run admin` starts a local web UI for editing those files visually and
+running sync/deploy without the CLI — see [Admin UI](#admin-ui).
 
 ## Sections
 
@@ -41,6 +42,22 @@ folder is how you rename a section.
 
 Folder and file names are slugified for URLs but kept as-is for display: `Sports/McKay Bike Park/`
 publishes at `/sports/mckay-bike-park/` and is titled "McKay Bike Park".
+
+## Admin UI
+
+`npm run admin` starts a local-only web app at `http://localhost:5050` (change the port with
+`ADMIN_PORT`) for managing the library without touching JSON or the CLI by hand:
+
+- Browse galleries, edit every `gallery.json` field (title, description, order, unlisted,
+  availableUntil, password) through a form.
+- View, reorder (drag and drop), and set the cover among a gallery's photos and videos; edit each
+  photo's alt/caption/note/subsection.
+- Buttons for `photos:check`, `photos:sync`, `photos:prune:check`, `photos:prune`, and `deploy`,
+  streaming live command output; a commit button stages and commits `src/data/photos.json`.
+
+It only ever writes `gallery.json` files under `PHOTOS_DIR` and shells out to the same npm scripts
+listed below — nothing it does bypasses them. Meant to run on the same machine as the photo library;
+not meant to be exposed beyond localhost.
 
 ## Cloudflare setup
 
@@ -65,8 +82,11 @@ falls back to the default in `src/lib/photos.ts`. If the image domain ever chang
 | | |
 |---|---|
 | `npm run dev` | local dev server |
+| `npm run admin` | local web UI for editing galleries and running the commands below |
 | `npm run photos:check` | dry run — what sync would do, no uploads |
 | `npm run photos:sync` | encode, upload to R2, rewrite the manifest |
+| `npm run photos:prune:check` | dry run — what prune would delete from R2 |
+| `npm run photos:prune` | delete R2 objects no longer in the manifest |
 | `npm run build` | build to `dist/` |
 | `npm run preview` | serve `dist/` through Wrangler, as Workers will |
 | `npm run deploy` | build and deploy |

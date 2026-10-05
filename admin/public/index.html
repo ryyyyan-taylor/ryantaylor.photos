@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Portfolio Admin</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header id="top">
+  <h1>Portfolio Admin</h1>
+  <span id="photos-dir" class="dim"></span>
+  <div id="actions">
+    <button data-action="sync-check">Check sync</button>
+    <button data-action="sync" class="primary">Sync</button>
+    <button data-action="prune-check">Check prune</button>
+    <button data-action="prune" class="danger">Prune</button>
+    <span class="sep"></span>
+    <input id="commit-message" type="text" placeholder="feat(photos): ..." size="28">
+    <button data-action="commit">Commit</button>
+    <button data-action="push">Push</button>
+    <span class="sep"></span>
+    <button data-action="deploy" class="primary">Deploy</button>
+  </div>
+</header>
+
+<pre id="log" hidden></pre>
+
+<main>
+  <aside id="gallery-list"></aside>
+  <section id="editor">
+    <p class="empty">Pick a gallery on the left.</p>
+  </section>
+</main>
+
+<script src="/app.js"></script>
+</body>
+</html>

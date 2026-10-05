@@ -10,7 +10,8 @@
     "photos:sync": "node --env-file-if-exists=.env scripts/sync-photos.mjs",
     "photos:check": "node --env-file-if-exists=.env scripts/sync-photos.mjs --dry-run",
     "photos:prune:check": "node --env-file-if-exists=.env scripts/sync-photos.mjs --dry-run --prune",
-    "photos:prune": "node --env-file-if-exists=.env scripts/sync-photos.mjs --prune"
+    "photos:prune": "node --env-file-if-exists=.env scripts/sync-photos.mjs --prune",
+    "admin": "node --env-file-if-exists=.env admin/server.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.3",

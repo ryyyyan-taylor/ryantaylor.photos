@@ -8,6 +8,7 @@ import sharp from 'sharp';
 import ExifReader from 'exif-reader';
 import archiver from 'archiver';
 import { S3Client, PutObjectCommand, ListObjectsV2Command, DeleteObjectsCommand } from '@aws-sdk/client-s3';
+import { IMAGE_EXT, VIDEO_EXT, MEDIA_EXT, slugify, titleize, galleryDirs, readJson } from './lib/gallery-fs.mjs';
 
 const SRC_DIR = process.env.PHOTOS_DIR || 'photos';
 const MANIFEST = 'src/data/photos.json';
@@ -36,9 +37,6 @@ const ZIP_TIERS = [
 // throws above it) — the verifying side (worker/gallery-auth.ts) runs there,
 // so this can't be raised to OWASP's usual recommendation of 600k+.
 const PBKDF2_ITERATIONS = 100_000;
-const IMAGE_EXT = new Set(['.jpg', '.jpeg', '.png', '.tif', '.tiff', '.webp']);
-const VIDEO_EXT = new Set(['.mp4', '.mov', '.m4v', '.webm']);
-const MEDIA_EXT = new Set([...IMAGE_EXT, ...VIDEO_EXT]);
 const CONCURRENCY = 4;
 const VIDEO_CONCURRENCY = 1; // transcodes are CPU-heavy; run them one at a time
 
@@ -81,6 +79,13 @@ try {
     for (const photo of gallery.photos ?? []) previous.set(photo.file, photo);
   }
 } catch {}
+
+try {
+  await stat(SRC_DIR);
+} catch {
+  console.error(`No ${SRC_DIR}/ directory. Create ${SRC_DIR}/<gallery-name>/ and drop images in.`);
+  process.exit(1);
+}
 
 const galleries = [];
 let uploaded = 0;
@@ -629,34 +634,6 @@ function formatBytes(bytes) {
   return `${i === 0 ? value : value.toFixed(1)} ${units[i]}`;
 }
 
-async function galleryDirs(root, prefix = '') {
-  let entries;
-  try {
-    entries = await readdir(prefix ? join(root, ...prefix.split('/')) : root, { withFileTypes: true });
-  } catch {
-    if (prefix) return [];
-    console.error(`No ${root}/ directory. Create ${root}/<gallery-name>/ and drop images in.`);
-    process.exit(1);
-  }
-
-  const found = [];
-  if (prefix && entries.some((e) => e.isFile() && MEDIA_EXT.has(extname(e.name).toLowerCase()))) {
-    found.push(prefix);
-  }
-  for (const entry of entries.filter((e) => e.isDirectory()).sort((a, b) => a.name.localeCompare(b.name))) {
-    found.push(...(await galleryDirs(root, prefix ? `${prefix}/${entry.name}` : entry.name)));
-  }
-  return found;
-}
-
-async function readJson(path) {
-  try {
-    return JSON.parse(await readFile(path, 'utf8'));
-  } catch {
-    return null;
-  }
-}
-
 // Display/subsection order defaults to filename sort, but gallery.json can
 // override it with an explicit `photoOrder` filename list. Listed files come
 // first in that sequence; anything not listed (new additions, typos) falls
@@ -668,19 +645,6 @@ function reorderPhotos(photos, order) {
   const ordered = order.map((name) => byName.get(name)).filter(Boolean);
   const orderedSet = new Set(ordered);
   return [...ordered, ...photos.filter((p) => !orderedSet.has(p))];
-}
-
-function slugify(name) {
-  return name
-    .normalize('NFKD')
-    .replace(/[\u0300-\u036f]/g, '')
-    .replace(/[^a-zA-Z0-9]+/g, '-')
-    .replace(/^-+|-+$/g, '')
-    .toLowerCase();
-}
-
-function titleize(name) {
-  return name.replace(/[-_]+/g, ' ').replace(/\s+/g, ' ').trim().replace(/\b\w/g, (c) => c.toUpperCase());
 }
 
 function mimeOf(file) {
