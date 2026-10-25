@@ -7,14 +7,24 @@ Set `PHOTOS_DIR` in `.env` to keep the library somewhere else entirely; this fol
 Names are slugified for URLs and kept as-is for titles — `Sports/McKay Bike Park/` publishes at
 `/sports/mckay-bike-park/` titled "McKay Bike Park".
 
-Any folder containing images is a gallery. Nest one level to group galleries into a section:
+A top-level folder holding images (or a `gallery.json`) is a gallery. A top-level folder with neither
+is a section, and each folder inside it is a gallery:
 
     photos/portraits/*.jpg              -> /portraits/          (no section)
     photos/sports/bike-park/*.jpg       -> /sports/bike-park/   (section: Sports)
     photos/sports/climbing/*.jpg        -> /sports/climbing/    (section: Sports)
 
-Sections are the first path segment, titled from the folder name, and appear under /sections/.
-Deeper nesting works too — the first segment is still the section.
+Sections are titled from the folder name and appear under /sections/.
+
+Folders inside a gallery are its subsections. Each gets a heading on the gallery page and in the
+lightbox. Order follows folder name; a leading number is used for ordering and stripped from the
+title. Loose files in the gallery folder come first, with no heading:
+
+    photos/events/finals/01 Swiss/*.jpg   -> subsection "Swiss"
+    photos/events/finals/02 Top 4/*.jpg   -> subsection "Top 4"
+
+Filenames must be unique within a gallery, across its subsection folders. A gallery made only of
+subsection folders needs a `gallery.json` (even `{}`), or it is read as a section.
 
 ## gallery.json
 
@@ -27,7 +37,7 @@ include only what you want to override. Copy `gallery.example.json` as a startin
 | `description` | none | Blurb under the gallery heading. |
 | `order` | `999` | Lower sorts earlier on the home page. Ties break by title. |
 | `cover` | first photo | Exact filename **with extension**, case-sensitive. |
-| `photos` | none | Per-file `alt`, `caption`, `note`, and `subsection`, keyed by exact filename. |
+| `photos` | none | Per-file `alt`, `caption`, and `note`, keyed by exact filename. |
 | `photoOrder` | none | Filenames in display order (see below). Overrides the default filename sort. |
 | `unlisted` | `false` | Keeps the gallery off the home grid, section nav, and sitemap. The page still builds and is reachable by direct link — for client deliveries. |
 | `availableUntil` | none | `"YYYY-MM-DD"`. Purely a note shown on the page ("available to view through ...") — nothing is actually enforced or deleted automatically. |
@@ -41,13 +51,6 @@ traffic; not a guarantee against a client resharing a link.
 `alt` is the accessibility description and is not shown. `caption` appears under the photo in the
 lightbox. `note` appears in the lightbox sidebar, below the EXIF data — use it for shooting notes or
 backstory. Photos you omit simply have none of these.
-
-`subsection` groups photos *within one gallery's page* under a header — unrelated to the
-folder-based section above (which groups separate galleries in the site nav). Give consecutive
-photos the same `subsection` string and the gallery page splits them apart with a heading; the
-lightbox shows it too, alongside the gallery title. Photos must be contiguous in display order (see
-`photoOrder` below) — if a subsection's files aren't next to each other, its heading appears more
-than once. Leave it off for a plain, ungrouped gallery (the default).
 
 By default photos display in filename sort order, which rarely matches the order you'd actually
 want to tell a story in. `photoOrder` overrides that with an explicit filename list:

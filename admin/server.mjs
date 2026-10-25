@@ -7,7 +7,7 @@ import { tmpdir } from 'node:os';
 import { spawn } from 'node:child_process';
 import { createHash } from 'node:crypto';
 import sharp from 'sharp';
-import { IMAGE_EXT, MEDIA_EXT, titleize, galleryDirs, readJson, reorderFiles } from '../scripts/lib/gallery-fs.mjs';
+import { IMAGE_EXT, titleize, galleryDirs, galleryMedia, readJson } from '../scripts/lib/gallery-fs.mjs';
 
 const __dirname = resolve(fileURLToPath(import.meta.url), '..');
 const REPO_ROOT = resolve(__dirname, '..');
@@ -92,13 +92,6 @@ function resolveGalleryDir(id) {
   return dir;
 }
 
-async function readMediaFiles(dir) {
-  const entries = await readdir(dir);
-  return entries
-    .filter((f) => MEDIA_EXT.has(extname(f).toLowerCase()))
-    .sort((a, b) => a.localeCompare(b, 'en', { numeric: true }));
-}
-
 // What the cover would be with no explicit override: the first image in
 // display order, falling back to the first file at all only if the gallery
 // has no images (a video can't be rendered as a thumbnail, unlike the site
@@ -117,9 +110,10 @@ async function listGalleries(res) {
   for (const rel of dirs) {
     const dir = join(SRC_DIR, ...rel.split('/'));
     const names = rel.split('/');
-    const [config, files] = await Promise.all([readJson(join(dir, 'gallery.json')), readMediaFiles(dir)]);
-    if (!files.length) continue;
-    const order = reorderFiles(files, config?.photoOrder);
+    const config = await readJson(join(dir, 'gallery.json'));
+    const media = await galleryMedia(dir, config?.photoOrder);
+    if (!media.length) continue;
+    const order = media.map((m) => m.file);
     const cover = effectiveCover(order, config);
     galleries.push({
       id: rel,
@@ -127,7 +121,7 @@ async function listGalleries(res) {
       title: config?.title ?? titleize(names.at(-1)),
       order: config?.order ?? 999,
       unlisted: !!config?.unlisted,
-      photoCount: files.length,
+      photoCount: media.length,
       cover,
       coverKind: IMAGE_EXT.has(extname(cover).toLowerCase()) ? 'photo' : 'video',
     });
@@ -138,19 +132,21 @@ async function listGalleries(res) {
 
 async function getGallery(res, id) {
   const dir = resolveGalleryDir(id);
-  const [config, files] = await Promise.all([readJson(join(dir, 'gallery.json')), readMediaFiles(dir)]);
-  if (!files.length) return sendJson(res, { error: 'no media files in this gallery' }, 404);
+  const config = await readJson(join(dir, 'gallery.json'));
+  const media = await galleryMedia(dir, config?.photoOrder);
+  if (!media.length) return sendJson(res, { error: 'no media files in this gallery' }, 404);
 
-  const order = reorderFiles(files, config?.photoOrder);
-  const photos = order.map((file) => {
+  const order = media.map((m) => m.file);
+  const photos = media.map(({ file, path, subsection }) => {
     const meta = config?.photos?.[file] ?? {};
     return {
       file,
+      path,
       kind: IMAGE_EXT.has(extname(file).toLowerCase()) ? 'photo' : 'video',
       alt: meta.alt ?? '',
       caption: meta.caption ?? '',
       note: meta.note ?? '',
-      subsection: meta.subsection ?? '',
+      subsection: subsection ?? '',
     };
   });
 
@@ -166,7 +162,7 @@ async function getGallery(res, id) {
     cover: effectiveCover(order, config),
     autoCover: autoCoverOf(order),
     savedPhotoOrder: config?.photoOrder ?? null,
-    naturalOrder: files,
+    naturalOrder: (await galleryMedia(dir)).map((m) => m.file),
     photos,
   });
 }
@@ -183,9 +179,9 @@ async function putGallery(req, res, id) {
 async function serveMedia(res, params) {
   const id = params.get('id');
   const file = params.get('file') || '';
-  if (!file || file.includes('/') || file.includes('\\')) throw new Error('invalid file');
   const dir = resolveGalleryDir(id);
-  const full = join(dir, file);
+  const full = resolve(join(dir, file));
+  if (!file || !full.startsWith(dir + sep)) throw new Error('invalid file');
   const ext = extname(file).toLowerCase();
   if (!IMAGE_EXT.has(ext)) return res.writeHead(404).end();
 

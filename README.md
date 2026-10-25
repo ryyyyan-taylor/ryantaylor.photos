@@ -51,7 +51,7 @@ publishes at `/sports/mckay-bike-park/` and is titled "McKay Bike Park".
 - Browse galleries, edit every `gallery.json` field (title, description, order, unlisted,
   availableUntil, password) through a form.
 - View, reorder (drag and drop), and set the cover among a gallery's photos and videos; edit each
-  photo's alt/caption/note/subsection.
+  photo's alt/caption/note (subsections are shown read-only; they come from folders).
 - Buttons for `photos:check`, `photos:sync`, `photos:prune:check`, `photos:prune`, and `deploy`,
   streaming live command output; a commit button stages and commits `src/data/photos.json`.
 

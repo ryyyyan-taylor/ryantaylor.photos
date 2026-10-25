@@ -20,25 +20,79 @@ export function titleize(name) {
   return name.replace(/[-_]+/g, ' ').replace(/\s+/g, ' ').trim().replace(/\b\w/g, (c) => c.toUpperCase());
 }
 
-// Recursively finds gallery folders under root: any directory (at any depth)
-// containing at least one media file, one level of nesting = section. Mirrors
-// the rule photos/README.md documents. Returns slash-joined relative paths.
-export async function galleryDirs(root, prefix = '') {
-  let entries;
+async function subdirs(dir) {
   try {
-    entries = await readdir(prefix ? join(root, ...prefix.split('/')) : root, { withFileTypes: true });
+    const entries = await readdir(dir, { withFileTypes: true });
+    return entries
+      .filter((e) => e.isDirectory() && !e.name.startsWith('.'))
+      .map((e) => e.name)
+      .sort((a, b) => a.localeCompare(b, 'en', { numeric: true }));
   } catch {
     return [];
   }
+}
 
-  const found = [];
-  if (prefix && entries.some((e) => e.isFile() && MEDIA_EXT.has(extname(e.name).toLowerCase()))) {
-    found.push(prefix);
+async function looseMedia(dir) {
+  try {
+    const entries = await readdir(dir, { withFileTypes: true });
+    return entries
+      .filter((e) => e.isFile() && MEDIA_EXT.has(extname(e.name).toLowerCase()))
+      .map((e) => e.name)
+      .sort((a, b) => a.localeCompare(b, 'en', { numeric: true }));
+  } catch {
+    return [];
   }
-  for (const entry of entries.filter((e) => e.isDirectory()).sort((a, b) => a.name.localeCompare(b.name))) {
-    found.push(...(await galleryDirs(root, prefix ? `${prefix}/${entry.name}` : entry.name)));
+}
+
+async function hasMedia(dir) {
+  if ((await looseMedia(dir)).length) return true;
+  for (const sub of await subdirs(dir)) if ((await looseMedia(join(dir, sub))).length) return true;
+  return false;
+}
+
+// A top-level folder is a gallery if it holds media directly or has a
+// gallery.json; otherwise it is a section and each child folder with media is
+// a gallery. Folders inside a gallery are its subsections (see galleryMedia).
+// Returns slash-joined paths relative to root.
+export async function galleryDirs(root) {
+  const found = [];
+  for (const top of await subdirs(root)) {
+    const topDir = join(root, top);
+    if ((await looseMedia(topDir)).length || (await readJson(join(topDir, 'gallery.json')))) {
+      found.push(top);
+      continue;
+    }
+    for (const child of await subdirs(topDir)) {
+      if (await hasMedia(join(topDir, child))) found.push(`${top}/${child}`);
+    }
   }
   return found;
+}
+
+export function subsectionTitle(folderName) {
+  return folderName.replace(/^\d+[\s._-]+/, '');
+}
+
+// A gallery's media in display order: loose files first, then each subfolder
+// (a subsection) in folder order, with photoOrder applied inside each group.
+// `file` is the bare filename, unique across the gallery; `path` is relative
+// to the gallery folder.
+export async function galleryMedia(dir, photoOrder) {
+  const groups = [{ subsection: null, folder: '', files: await looseMedia(dir) }];
+  for (const folder of await subdirs(dir)) {
+    groups.push({ subsection: subsectionTitle(folder), folder, files: await looseMedia(join(dir, folder)) });
+  }
+
+  const seen = new Set();
+  const media = [];
+  for (const { subsection, folder, files } of groups) {
+    for (const file of reorderFiles(files, photoOrder)) {
+      if (seen.has(file)) throw new Error(`${dir}: "${file}" appears in more than one subfolder`);
+      seen.add(file);
+      media.push({ file, path: folder ? `${folder}/${file}` : file, subsection });
+    }
+  }
+  return media;
 }
 
 export async function readJson(path) {

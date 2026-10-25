@@ -1,6 +1,6 @@
 import { createHash, randomBytes, pbkdf2Sync } from 'node:crypto';
 import { createReadStream, createWriteStream } from 'node:fs';
-import { readdir, readFile, writeFile, stat, rm } from 'node:fs/promises';
+import { readFile, writeFile, stat, rm } from 'node:fs/promises';
 import { join, extname, basename } from 'node:path';
 import { tmpdir } from 'node:os';
 import { spawn } from 'node:child_process';
@@ -8,7 +8,7 @@ import sharp from 'sharp';
 import ExifReader from 'exif-reader';
 import archiver from 'archiver';
 import { S3Client, PutObjectCommand, ListObjectsV2Command, DeleteObjectsCommand } from '@aws-sdk/client-s3';
-import { IMAGE_EXT, VIDEO_EXT, MEDIA_EXT, slugify, titleize, galleryDirs, readJson } from './lib/gallery-fs.mjs';
+import { IMAGE_EXT, VIDEO_EXT, slugify, titleize, galleryDirs, galleryMedia, readJson } from './lib/gallery-fs.mjs';
 
 const SRC_DIR = process.env.PHOTOS_DIR || 'photos';
 const MANIFEST = 'src/data/photos.json';
@@ -97,23 +97,20 @@ for (const rel of await galleryDirs(SRC_DIR)) {
   const names = rel.split('/');
   const slug = names.map(slugify).join('/');
   const config = await readJson(join(dir, 'gallery.json'));
-  const files = (await readdir(dir))
-    .filter((f) => MEDIA_EXT.has(extname(f).toLowerCase()))
-    .sort((a, b) => a.localeCompare(b, 'en', { numeric: true }));
+  const files = await galleryMedia(dir, config?.photoOrder);
 
-  const imageFiles = files.filter((f) => IMAGE_EXT.has(extname(f).toLowerCase()));
-  const videoFiles = files.filter((f) => VIDEO_EXT.has(extname(f).toLowerCase()));
+  const imageFiles = files.filter((f) => IMAGE_EXT.has(extname(f.file).toLowerCase()));
+  const videoFiles = files.filter((f) => VIDEO_EXT.has(extname(f.file).toLowerCase()));
 
   // Photos and videos run in separate pools (different concurrency, wildly
-  // different cost per item) but are re-merged into the original filename
-  // order below, so a gallery.json's numbering still controls display order.
+  // different cost per item) but are re-merged into display order below.
   const beforeUploaded = uploaded;
   const [imagePhotos, videoPhotos] = await Promise.all([
     mapPool(imageFiles, CONCURRENCY, (file) => processPhoto(rel, slug, dir, file, config)),
     mapPool(videoFiles, VIDEO_CONCURRENCY, (file) => processVideo(rel, slug, dir, file, config)),
   ]);
   const byFile = new Map([...imagePhotos, ...videoPhotos].map((p) => [basename(p.file), p]));
-  const photos = reorderPhotos(files.map((f) => byFile.get(f)).filter(Boolean), config?.photoOrder);
+  const photos = files.map((f) => byFile.get(f.file)).filter(Boolean);
   if (!photos.length) continue;
 
   const title = config?.title ?? titleize(names.at(-1));
@@ -132,7 +129,7 @@ for (const rel of await galleryDirs(SRC_DIR)) {
 
   let zips = prevGallery?.zips ?? null;
   if (shouldRebuildZip) {
-    zips = await buildZip(dir, slug, title, photos);
+    zips = await buildZip(dir, slug, title, photos, new Map(files.map((f) => [f.file, f.path])));
     console.log(`  zip: ${slug} (${zips.map((z) => `${z.key}=${formatBytes(z.size)}`).join(', ')})`);
   }
 
@@ -177,8 +174,8 @@ if (dryRun) {
 
 if (prune) await pruneOrphans(galleries);
 
-async function processPhoto(rel, slug, dir, file, config) {
-  const path = join(dir, file);
+async function processPhoto(rel, slug, dir, { file, path: relPath, subsection }, config) {
+  const path = join(dir, relPath);
   const bytes = await readFile(path);
   const hash = createHash('sha256').update(bytes).digest('hex').slice(0, 8);
   const name = slugify(basename(file, extname(file)));
@@ -213,7 +210,7 @@ async function processPhoto(rel, slug, dir, file, config) {
     alt: meta.alt ?? '',
     caption: meta.caption ?? '',
     note: meta.note ?? '',
-    subsection: meta.subsection ?? null,
+    subsection,
     exif,
     kind: 'photo',
     duration: null,
@@ -222,10 +219,10 @@ async function processPhoto(rel, slug, dir, file, config) {
   };
 }
 
-async function processVideo(rel, slug, dir, file, config) {
+async function processVideo(rel, slug, dir, { file, path: relPath, subsection }, config) {
   await ensureFfmpeg();
 
-  const path = join(dir, file);
+  const path = join(dir, relPath);
   const hash = await hashFile(path);
   const name = slugify(basename(file, extname(file)));
   const id = `${slug}/${name}`;
@@ -281,7 +278,7 @@ async function processVideo(rel, slug, dir, file, config) {
     alt: meta.alt ?? '',
     caption: meta.caption ?? '',
     note: meta.note ?? '',
-    subsection: meta.subsection ?? null,
+    subsection,
     exif: null,
     kind: 'video',
     duration,
@@ -506,7 +503,7 @@ async function uploadFile(key, path, contentType, { immutable = true, contentDis
 // videos simply produces no video zip. Keys are stable (no content hash)
 // since they're meant to always serve the current set, not be cached forever
 // like image variants. Rebuilt whenever the gallery's contents change.
-async function buildZip(dir, slug, title, photos) {
+async function buildZip(dir, slug, title, photos, pathOf) {
   const zips = [];
   for (const tier of ZIP_TIERS) {
     const tierPhotos = photos.filter((p) => (p.kind === 'video') === (tier.kind === 'video'));
@@ -522,7 +519,7 @@ async function buildZip(dir, slug, title, photos) {
       archive.pipe(output);
       (async () => {
         for (const photo of tierPhotos) {
-          const srcPath = join(dir, basename(photo.file));
+          const srcPath = join(dir, pathOf.get(basename(photo.file)));
           if (photo.kind === 'video' || !tier.width) {
             archive.file(srcPath, { name: basename(photo.file) });
             continue;
@@ -632,19 +629,6 @@ function formatBytes(bytes) {
     i++;
   }
   return `${i === 0 ? value : value.toFixed(1)} ${units[i]}`;
-}
-
-// Display/subsection order defaults to filename sort, but gallery.json can
-// override it with an explicit `photoOrder` filename list. Listed files come
-// first in that sequence; anything not listed (new additions, typos) falls
-// back to its filename-sorted position at the end, so a partial or stale
-// list degrades safely instead of silently dropping photos.
-function reorderPhotos(photos, order) {
-  if (!order?.length) return photos;
-  const byName = new Map(photos.map((p) => [basename(p.file), p]));
-  const ordered = order.map((name) => byName.get(name)).filter(Boolean);
-  const orderedSet = new Set(ordered);
-  return [...ordered, ...photos.filter((p) => !orderedSet.has(p))];
 }
 
 function mimeOf(file) {

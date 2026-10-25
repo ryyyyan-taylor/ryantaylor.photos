@@ -104,7 +104,7 @@ function renderEditor() {
       </div>
     </div>
 
-    <h3>Photos &amp; videos (drag to reorder, click the star to set the cover, click a tile to edit it)
+    <h3>Photos &amp; videos (drag to reorder within a subsection, click the star to set the cover, click a tile to edit it)
       <button id="reset-order" style="font-size:0.75rem">Reset to filename order</button>
     </h3>
     <div class="photo-grid" id="photo-grid"></div>
@@ -140,7 +140,18 @@ function renderPhotoGrid() {
   grid.innerHTML = '';
   const g = state.gallery;
 
+  let lastSubsection;
   g.photos.forEach((p, i) => {
+    if (p.subsection !== lastSubsection) {
+      lastSubsection = p.subsection;
+      if (p.subsection || i > 0) {
+        const heading = document.createElement('div');
+        heading.className = 'subsection-heading';
+        heading.textContent = p.subsection || 'Ungrouped';
+        grid.appendChild(heading);
+      }
+    }
+
     const tile = document.createElement('div');
     tile.className = 'tile' + (p.file === g.cover ? ' is-cover' : '') + (p.file === state.selected ? ' selected' : '');
     tile.draggable = true;
@@ -148,7 +159,7 @@ function renderPhotoGrid() {
 
     const media = p.kind === 'video'
       ? '<div class="video-badge">\u{1F3AC}</div>'
-      : `<img loading="lazy" src="/media?id=${encodeURIComponent(g.id)}&file=${encodeURIComponent(p.file)}&w=280">`;
+      : `<img loading="lazy" src="/media?id=${encodeURIComponent(g.id)}&file=${encodeURIComponent(p.path)}&w=280">`;
 
     tile.innerHTML = `
       ${media}
@@ -177,7 +188,7 @@ function renderPhotoGrid() {
       if (!from || from === tile) return;
       const fromIndex = Number(from.dataset.index);
       const toIndex = Number(tile.dataset.index);
-      if (fromIndex === toIndex) return;
+      if (fromIndex === toIndex || g.photos[fromIndex].subsection !== p.subsection) return;
       const [moved] = g.photos.splice(fromIndex, 1);
       g.photos.splice(toIndex, 0, moved);
       markDirty();
@@ -214,15 +225,14 @@ function renderPhotoDetail() {
       <textarea id="d-note">${escapeHtml(p.note)}</textarea>
     </div>
     <div class="field">
-      <label>Subsection (groups consecutive photos under a heading)</label>
-      <input id="d-subsection" type="text" value="${escapeHtml(p.subsection)}">
+      <label>Subsection (from the folder name; move the file to change it)</label>
+      <input type="text" value="${escapeHtml(p.subsection)}" disabled>
     </div>
   `;
 
   $('#d-alt').addEventListener('input', (e) => { p.alt = e.target.value; markDirty(); });
   $('#d-caption').addEventListener('input', (e) => { p.caption = e.target.value; markDirty(); });
   $('#d-note').addEventListener('input', (e) => { p.note = e.target.value; markDirty(); });
-  $('#d-subsection').addEventListener('input', (e) => { p.subsection = e.target.value; markDirty(); });
 }
 
 async function saveGallery() {
@@ -267,7 +277,6 @@ async function saveGallery() {
     if (p.alt.trim()) entry.alt = p.alt.trim();
     if (p.caption.trim()) entry.caption = p.caption.trim();
     if (p.note.trim()) entry.note = p.note.trim();
-    if (p.subsection.trim()) entry.subsection = p.subsection.trim();
     if (Object.keys(entry).length) photos[p.file] = entry;
   }
   if (Object.keys(photos).length) payload.photos = photos;
