@@ -209,7 +209,15 @@ const groups = Object.fromEntries(
   let panX = 0;
   let panY = 0;
 
-  const clamp = (value: number, max: number) => Math.min(max, Math.max(-max, value));
+  const panBounds = (center: number, size: number, viewport: number) => {
+    const topEdge = center - (size * zoom) / 2;
+    const bottomEdge = center + (size * zoom) / 2;
+    const a = -topEdge;
+    const b = viewport - bottomEdge;
+    return [Math.min(a, b), Math.max(a, b)];
+  };
+
+  const clamp = (value: number, [min, max]: number[]) => Math.min(max, Math.max(min, value));
 
   // transform-origin stays centered; panning/zoom-toward-cursor both work by
   // solving for a translate (in screen px, applied after the scale) rather
@@ -218,10 +226,10 @@ const groups = Object.fromEntries(
   // clamp against regardless of current zoom.
   const applyTransform = () => {
     if (zoom > MIN_ZOOM) {
-      const maxPanX = Math.max(0, (image.offsetWidth * zoom - imageWrap.clientWidth) / 2);
-      const maxPanY = Math.max(0, (image.offsetHeight * zoom - imageWrap.clientHeight) / 2);
-      panX = clamp(panX, maxPanX);
-      panY = clamp(panY, maxPanY);
+      const centerX = image.offsetLeft + image.offsetWidth / 2;
+      const centerY = image.offsetTop + image.offsetHeight / 2;
+      panX = clamp(panX, panBounds(centerX, image.offsetWidth, imageWrap.clientWidth));
+      panY = clamp(panY, panBounds(centerY, image.offsetHeight, imageWrap.clientHeight));
       image.style.transform = `translate(${panX}px, ${panY}px) scale(${zoom})`;
     } else {
       panX = 0;
