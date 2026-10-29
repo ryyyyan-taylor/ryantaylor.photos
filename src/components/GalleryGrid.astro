@@ -1,0 +1,53 @@
+---
+import Tile from './Tile.astro';
+import type { Gallery } from '../lib/photos';
+
+interface Props {
+  gallery: Gallery;
+  locked?: boolean;
+}
+
+const { gallery, locked = false } = Astro.props;
+
+// Split into consecutive runs by subsection so a heading only appears where
+// the value actually changes. Locked pages never segment — the `__locked`
+// route exists to leak nothing about the gallery, subsection names included.
+interface Segment {
+  subsection: string | null;
+  items: { photo: (typeof gallery.photos)[number]; index: number }[];
+}
+const segments: Segment[] = [];
+if (!locked) {
+  gallery.photos.forEach((photo, index) => {
+    const subsection = photo.subsection ?? null;
+    const last = segments.at(-1);
+    if (last && last.subsection === subsection) last.items.push({ photo, index });
+    else segments.push({ subsection, items: [{ photo, index }] });
+  });
+} else {
+  segments.push({ subsection: null, items: gallery.photos.map((photo, index) => ({ photo, index })) });
+}
+---
+
+{
+  segments.map((segment) => {
+    const tiles = segment.items.map(({ photo, index }) => (
+      <Tile
+        photo={photo}
+        gallerySlug={gallery.slug}
+        indexInGallery={index}
+        sizes="(min-width: 68rem) 32vw, (min-width: 40rem) 48vw, 94vw"
+        loading={index < 4 ? 'eager' : 'lazy'}
+        placeholder={locked}
+      />
+    ));
+    return segment.subsection ? (
+      <div class="section-group">
+        <h2 class="section-heading">{segment.subsection}</h2>
+        <div class="masonry">{tiles}</div>
+      </div>
+    ) : (
+      <div class="masonry">{tiles}</div>
+    );
+  })
+}

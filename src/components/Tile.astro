@@ -8,13 +8,12 @@ interface Props {
   indexInGallery: number;
   sizes: string;
   loading?: 'eager' | 'lazy';
-  section?: string | null;
   // See Photo.astro — renders a blurred placeholder tile with no lightbox
   // wiring, for the `__locked` preview of a password-protected gallery.
   placeholder?: boolean;
 }
 
-const { photo, gallerySlug, indexInGallery, sizes, loading = 'lazy', section, placeholder = false } = Astro.props;
+const { photo, gallerySlug, indexInGallery, sizes, loading = 'lazy', placeholder = false } = Astro.props;
 const label = photo.alt || (photo.kind === 'video' ? 'Play video' : 'View photo');
 ---
 
@@ -29,7 +28,6 @@ const label = photo.alt || (photo.kind === 'video' ? 'Play video' : 'View photo'
       type="button"
       data-gallery={gallerySlug}
       data-index={indexInGallery}
-      data-section={section ?? ''}
       aria-label={label}
     >
       <Photo photo={photo} sizes={sizes} loading={loading} />

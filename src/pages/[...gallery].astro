@@ -1,11 +1,15 @@
 ---
 import Base from '../layouts/Base.astro';
-import Tile from '../components/Tile.astro';
+import BackLink from '../components/BackLink.astro';
+import GalleryGrid from '../components/GalleryGrid.astro';
 import Lightbox from '../components/Lightbox.astro';
+import { showcaseSlugs } from '../lib/showcases';
 import { describeMedia, formatBytes, galleries, ogImage, photoById, zipHref, type Gallery } from '../lib/photos';
 
 export function getStaticPaths() {
-  const pages = galleries.map((gallery) => ({ params: { gallery: gallery.slug }, props: { gallery, locked: false } }));
+  const pages = galleries
+    .filter((gallery) => !showcaseSlugs.has(gallery.slug))
+    .map((gallery) => ({ params: { gallery: gallery.slug }, props: { gallery, locked: false } }));
 
   // Every password-protected gallery also gets a `__locked` sibling route —
   // the same page, rendered with only blur-up placeholders and no real
@@ -23,28 +27,8 @@ export function getStaticPaths() {
 
 const { gallery, locked } = Astro.props as { gallery: Gallery; locked: boolean };
 const coverPhoto = photoById(gallery.cover);
+const back = gallery.section === 'archive' ? { href: '/archive/', label: 'Archive' } : { href: '/', label: 'Home' };
 
-// Split into consecutive runs by subsection so a heading only appears where
-// the value actually changes. Locked pages never segment — the `__locked`
-// route exists to leak nothing about the gallery, subsection names included
-// (see the placeholder-only rendering below). Galleries with no subsections
-// set collapse to a single run, which renders identically to the old flat
-// `.masonry` block below.
-interface Segment {
-  subsection: string | null;
-  items: { photo: (typeof gallery.photos)[number]; index: number }[];
-}
-const segments: Segment[] = [];
-if (!locked) {
-  gallery.photos.forEach((photo, index) => {
-    const subsection = photo.subsection ?? null;
-    const last = segments.at(-1);
-    if (last && last.subsection === subsection) last.items.push({ photo, index });
-    else segments.push({ subsection, items: [{ photo, index }] });
-  });
-} else {
-  segments.push({ subsection: null, items: gallery.photos.map((photo, index) => ({ photo, index })) });
-}
 const availableUntil = gallery.availableUntil
   ? new Date(`${gallery.availableUntil}T00:00:00Z`).toLocaleDateString('en-US', {
       year: 'numeric',
@@ -64,9 +48,8 @@ const availableUntil = gallery.availableUntil
 >
   <section class="page-head">
     <p class="eyebrow">
-      <a class="back-link" href="/" aria-label="Back to all work">
-        ←
-      </a>
+      <BackLink {...back} />
+      <span class="eyebrow-sep" aria-hidden="true">·</span>
       {describeMedia(gallery.photos)}
     </p>
     <h1>{gallery.title}</h1>
@@ -92,28 +75,7 @@ const availableUntil = gallery.availableUntil
     }
   </section>
 
-  {
-    segments.map((segment) => {
-      const tiles = segment.items.map(({ photo, index }) => (
-        <Tile
-          photo={photo}
-          gallerySlug={gallery.slug}
-          indexInGallery={index}
-          sizes="(min-width: 68rem) 32vw, (min-width: 40rem) 48vw, 94vw"
-          loading={index < 4 ? 'eager' : 'lazy'}
-          placeholder={locked}
-        />
-      ));
-      return segment.subsection ? (
-        <div class="section-group">
-          <h2 class="section-heading">{segment.subsection}</h2>
-          <div class="masonry">{tiles}</div>
-        </div>
-      ) : (
-        <div class="masonry">{tiles}</div>
-      );
-    })
-  }
+  <GalleryGrid gallery={gallery} locked={locked} />
 
   {!locked && <Lightbox galleries={[{ slug: gallery.slug, title: gallery.title, photos: gallery.photos }]} />}
 

@@ -1,0 +1,36 @@
+---
+import Base from '../layouts/Base.astro';
+import BackLink from '../components/BackLink.astro';
+import GalleryCard from '../components/GalleryCard.astro';
+import { listedGalleries, ogImage, photoById } from '../lib/photos';
+
+const archive = listedGalleries.filter((g) => g.section === 'archive');
+const coverPhoto = archive[0] ? photoById(archive[0].cover) : undefined;
+---
+
+<Base
+  title="Archive"
+  description="Every gallery by Ryan Taylor, photographer based in Denver, CO."
+  image={coverPhoto ? ogImage(coverPhoto) : undefined}
+>
+  <section class="page-head">
+    <p class="eyebrow">
+      <BackLink href="/" label="Home" />
+      <span class="eyebrow-sep" aria-hidden="true">·</span>
+      {archive.length} galler{archive.length === 1 ? 'y' : 'ies'}
+    </p>
+    <h1>Archive</h1>
+  </section>
+
+  {
+    archive.length ? (
+      <div class="gallery-index">
+        {archive.map((gallery, i) => <GalleryCard gallery={gallery} eager={i < 2} />)}
+      </div>
+    ) : (
+      <div class="empty">
+        <p>No archived galleries yet.</p>
+      </div>
+    )
+  }
+</Base>

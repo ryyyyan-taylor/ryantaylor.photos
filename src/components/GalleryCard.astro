@@ -11,7 +11,7 @@ const { gallery, eager = false } = Astro.props;
 const cover = photoById(gallery.cover) ?? gallery.photos[0];
 ---
 
-<a class="gallery-card" href={`/${gallery.slug}/`}>
+<a class="gallery-card" href={`/${gallery.slug}/`} data-type={gallery.type ?? undefined}>
   <figure>
     <div class="frame">
       <Photo photo={cover} sizes="(min-width: 60rem) 30vw, 92vw" loading={eager ? 'eager' : 'lazy'} />

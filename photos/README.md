@@ -4,17 +4,21 @@ Source-of-truth originals. Gitignored — these live here and in R2 under `origi
 
 Set `PHOTOS_DIR` in `.env` to keep the library somewhere else entirely; this folder is then unused.
 
-Names are slugified for URLs and kept as-is for titles — `Sports/McKay Bike Park/` publishes at
-`/sports/mckay-bike-park/` titled "McKay Bike Park".
+Names are slugified for URLs and kept as-is for titles — `Archive/McKay Bike Park/` publishes at
+`/archive/mckay-bike-park/` titled "McKay Bike Park".
 
 A top-level folder holding images (or a `gallery.json`) is a gallery. A top-level folder with neither
 is a section, and each folder inside it is a gallery:
 
-    photos/portraits/*.jpg              -> /portraits/          (no section)
-    photos/sports/bike-park/*.jpg       -> /sports/bike-park/   (section: Sports)
-    photos/sports/climbing/*.jpg        -> /sports/climbing/    (section: Sports)
+    photos/Events/*.jpg                 -> /events/             (no section)
+    photos/Archive/Bike Park/*.jpg      -> /archive/bike-park/  (section: Archive)
+    photos/Archive/Climbing/*.jpg       -> /archive/climbing/   (section: Archive)
 
-Sections are titled from the folder name and appear under /sections/.
+Galleries in the Archive section are listed on /archive/.
+
+Showcases (`Events/`, `Sports/`, listed in `src/lib/showcases.ts`) are ordinary top-level galleries
+whose folder name matches a showcase slug — the showcase page replaces the gallery page at that URL.
+They ship with a `gallery.json` so subsection folders inside them work (see below).
 
 Folders inside a gallery are its subsections. Each gets a heading on the gallery page and in the
 lightbox. Order follows folder name; a leading number is used for ordering and stripped from the
@@ -39,6 +43,7 @@ include only what you want to override. Copy `gallery.example.json` as a startin
 | `cover` | first photo | Exact filename **with extension**, case-sensitive. |
 | `photos` | none | Per-file `alt`, `caption`, and `note`, keyed by exact filename. |
 | `photoOrder` | none | Filenames in display order (see below). Overrides the default filename sort. |
+| `type` | none | A category like `"events"` or `"sports"`. Used to filter the archive page. |
 | `unlisted` | `false` | Keeps the gallery off the home grid, section nav, and sitemap. The page still builds and is reachable by direct link — for client deliveries. |
 | `availableUntil` | none | `"YYYY-MM-DD"`. Purely a note shown on the page ("available to view through ...") — nothing is actually enforced or deleted automatically. |
 | `password` | none | Plaintext, here only. `photos:sync` hashes it (PBKDF2) into `photos.json` and never writes the plaintext anywhere. The Worker gates the page at request time — visiting the URL shows a password prompt instead of the gallery until it's entered (see `worker/gallery-auth.ts`). Removing the field and re-syncing removes protection. |

@@ -1,4 +1,5 @@
 const state = { galleries: [], id: null, gallery: null, selected: null, dirty: false };
+const MAX_FEATURED = 3;
 
 const $ = (sel, root = document) => root.querySelector(sel);
 const $$ = (sel, root = document) => [...root.querySelectorAll(sel)];
@@ -79,6 +80,10 @@ function renderEditor() {
         <input id="f-title" type="text" placeholder="${escapeHtml(g.defaultTitle)}" value="${escapeHtml(g.title)}">
       </div>
       <div class="field">
+        <label>Type</label>
+        <input id="f-type" type="text" placeholder="e.g. events" value="${escapeHtml(g.type)}">
+      </div>
+      <div class="field">
         <label>Order</label>
         <input id="f-order" type="number" value="${g.order}" style="width:5rem">
       </div>
@@ -104,7 +109,7 @@ function renderEditor() {
       </div>
     </div>
 
-    <h3>Photos &amp; videos (drag to reorder within a subsection, click the star to set the cover, click a tile to edit it)
+    <h3>Photos &amp; videos (drag to reorder within a subsection, click the star to set the cover, the number to feature it on the home page, click a tile to edit it)
       <button id="reset-order" style="font-size:0.75rem">Reset to filename order</button>
     </h3>
     <div class="photo-grid" id="photo-grid"></div>
@@ -118,7 +123,7 @@ function renderEditor() {
 
   renderPhotoGrid();
 
-  for (const id of ['f-title', 'f-order', 'f-unlisted', 'f-description', 'f-available', 'f-password']) {
+  for (const id of ['f-title', 'f-type', 'f-order', 'f-unlisted', 'f-description', 'f-available', 'f-password']) {
     $('#' + id).addEventListener('input', markDirty);
   }
   $('#save-gallery').addEventListener('click', saveGallery);
@@ -139,6 +144,7 @@ function renderPhotoGrid() {
   const grid = $('#photo-grid');
   grid.innerHTML = '';
   const g = state.gallery;
+  const canFeature = !g.id.includes('/');
 
   let lastSubsection;
   g.photos.forEach((p, i) => {
@@ -152,6 +158,7 @@ function renderPhotoGrid() {
       }
     }
 
+    const featuredAt = g.featured.indexOf(p.file);
     const tile = document.createElement('div');
     tile.className = 'tile' + (p.file === g.cover ? ' is-cover' : '') + (p.file === state.selected ? ' selected' : '');
     tile.draggable = true;
@@ -164,15 +171,23 @@ function renderPhotoGrid() {
     tile.innerHTML = `
       ${media}
       <button class="cover-star" title="Set as cover">${p.file === g.cover ? '★' : '☆'}</button>
+      ${canFeature ? `<button class="feature-toggle${featuredAt >= 0 ? ' is-featured' : ''}" title="Feature on home page (up to ${MAX_FEATURED})">${featuredAt >= 0 ? featuredAt + 1 : '+'}</button>` : ''}
       <div class="filename">${escapeHtml(p.file)}</div>
     `;
 
     tile.addEventListener('click', (e) => {
-      if (e.target.closest('.cover-star')) return;
+      if (e.target.closest('.cover-star, .feature-toggle')) return;
       selectPhoto(p.file);
     });
     $('.cover-star', tile).addEventListener('click', () => {
       g.cover = p.file;
+      markDirty();
+      renderPhotoGrid();
+    });
+    $('.feature-toggle', tile)?.addEventListener('click', () => {
+      if (featuredAt >= 0) g.featured.splice(featuredAt, 1);
+      else if (g.featured.length < MAX_FEATURED) g.featured.push(p.file);
+      else return;
       markDirty();
       renderPhotoGrid();
     });
@@ -245,6 +260,9 @@ async function saveGallery() {
   const description = $('#f-description').value.trim();
   if (description) payload.description = description;
 
+  const type = $('#f-type').value.trim().toLowerCase();
+  if (type) payload.type = type;
+
   const order = Number($('#f-order').value);
   if (Number.isFinite(order) && order !== 999) payload.order = order;
 
@@ -270,6 +288,9 @@ async function saveGallery() {
   }
 
   if (g.cover && g.cover !== g.autoCover) payload.cover = g.cover;
+
+  const featured = g.featured.filter((f) => g.photos.some((p) => p.file === f));
+  if (featured.length) payload.featured = featured;
 
   const photos = {};
   for (const p of g.photos) {
