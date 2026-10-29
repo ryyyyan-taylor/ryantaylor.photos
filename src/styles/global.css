@@ -124,6 +124,14 @@ h3 {
   color: var(--muted);
 }
 
+.wordmark,
+.site-nav a,
+.site-footer a,
+.back-link {
+  padding-block: 0.75rem;
+  margin-block: -0.75rem;
+}
+
 .site-nav a:hover {
   color: var(--fg);
 }
@@ -158,6 +166,8 @@ h3 {
 .site-footer-gear {
   display: inline-flex;
   align-items: center;
+  padding-inline: 0.75rem;
+  margin-inline: -0.75rem;
 }
 
 .utility-list {
@@ -278,11 +288,11 @@ h3 {
 
 @media (min-width: 48rem) {
   .feature {
-    grid-template-columns: minmax(0, 1fr) minmax(0, 34rem);
+    grid-template-columns: minmax(14rem, 1fr) minmax(0, 34rem);
   }
 
   .feature--flip {
-    grid-template-columns: minmax(0, 34rem) minmax(0, 1fr);
+    grid-template-columns: minmax(0, 34rem) minmax(14rem, 1fr);
   }
 
   .feature--flip .feature-copy {
@@ -325,7 +335,7 @@ h3 {
 .cta-link {
   display: inline-block;
   margin-top: 0.4rem;
-  padding: 0.5rem 1.1rem;
+  padding: 0.75rem 1.1rem;
   border: 1px solid var(--line);
   font-size: 0.8rem;
   letter-spacing: 0.09em;
@@ -1106,6 +1116,13 @@ h3 {
 
 .confirmation-form .field-row--3 {
   grid-template-columns: 1fr 1fr 1fr;
+}
+
+@media (max-width: 40rem) {
+  .confirmation-form .field-row,
+  .confirmation-form .field-row--3 {
+    grid-template-columns: 1fr;
+  }
 }
 
 .confirmation-form .field-hint {
