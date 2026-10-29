@@ -1,5 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
+import BackLink from '../../components/BackLink.astro';
 ---
 
 <Base
@@ -10,8 +11,7 @@ import Base from '../../layouts/Base.astro';
   <div class="legal-page">
     <section class="page-head">
       <p class="eyebrow">
-        <a class="back-link" href="/utils/" aria-label="Back to utilities">←</a>
-        Utilities
+        <BackLink href="/utils/" label="Utilities" />
       </p>
       <h1>Booking Confirmation</h1>
       <p class="lede">Fill in the details, preview the email, then send it to your client.</p>

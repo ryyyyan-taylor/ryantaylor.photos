@@ -58,11 +58,16 @@ export interface Gallery {
   sectionTitle: string | null;
   title: string;
   description: string;
+  // gallery.json `type` (e.g. "events"), for filtering the archive. Optional
+  // like `subsection`: absent from manifests synced before it existed.
+  type?: string | null;
   order: number;
   cover: string;
+  // gallery.json `featured`: photo ids picked for a showcase's home page row.
+  featured?: string[];
   photos: Photo[];
   // Unlisted galleries still get their own page (for direct client links)
-  // but are left out of the home grid, section nav, and the sitemap.
+  // but are left out of the archive page and the sitemap.
   unlisted: boolean;
   availableUntil: string | null;
   // Set from gallery.json's `password`; enforced by the Worker (see
@@ -72,12 +77,6 @@ export interface Gallery {
   zips: GalleryZip[] | null;
 }
 
-export interface Section {
-  slug: string;
-  title: string;
-  galleries: Gallery[];
-}
-
 export const IMG_BASE = (import.meta.env.PUBLIC_IMG_BASE ?? 'https://img.ryantaylor.photos').replace(/\/$/, '');
 
 // The full set, including unlisted galleries — [...gallery].astro builds a
@@ -85,29 +84,12 @@ export const IMG_BASE = (import.meta.env.PUBLIC_IMG_BASE ?? 'https://img.ryantay
 export const galleries = manifest.galleries as Gallery[];
 
 // Everything that should actually appear somewhere a visitor can browse to:
-// the home grid, section pages, section chips, the sitemap.
+// the archive page and the sitemap.
 export const listedGalleries = galleries.filter((g) => !g.unlisted);
 
+export const headshot = (manifest as { headshot?: Photo | null }).headshot ?? null;
+
 export const allPhotos = galleries.flatMap((g) => g.photos);
-
-function titleize(slug: string) {
-  return slug.replace(/[-_]/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase());
-}
-
-const sectionTitles = new Map<string, string>();
-for (const gallery of listedGalleries) {
-  if (gallery.section) sectionTitles.set(gallery.section, gallery.sectionTitle ?? titleize(gallery.section));
-}
-
-export const sections: Section[] = [...sectionTitles]
-  .map(([slug, title]) => ({ slug, title, galleries: listedGalleries.filter((g) => g.section === slug) }))
-  .sort((a, b) => a.title.localeCompare(b.title));
-
-export const unsectioned = listedGalleries.filter((g) => !g.section);
-
-export function getSection(slug: string) {
-  return sections.find((s) => s.slug === slug);
-}
 
 export function getGallery(slug: string) {
   return galleries.find((g) => g.slug === slug);

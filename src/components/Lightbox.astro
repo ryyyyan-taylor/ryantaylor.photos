@@ -7,9 +7,8 @@ interface Props {
 
 const { galleries } = Astro.props;
 
-const toItem = (photo: Photo, gallerySlug: string, galleryTitle: string) => ({
+const toItem = (photo: Photo, galleryTitle: string) => ({
   kind: photo.kind,
-  galleryHref: `/${gallerySlug}/`,
   galleryTitle,
   subsection: photo.subsection ?? null,
   alt: photo.alt,
@@ -38,7 +37,7 @@ const toItem = (photo: Photo, gallerySlug: string, galleryTitle: string) => ({
 });
 
 const groups = Object.fromEntries(
-  galleries.map(({ slug, title, photos }) => [slug, photos.map((photo) => toItem(photo, slug, title))]),
+  galleries.map(({ slug, title, photos }) => [slug, photos.map((photo) => toItem(photo, title))]),
 );
 ---
 
@@ -65,7 +64,6 @@ const groups = Object.fromEntries(
         </button>
         <ul class="download-menu" id="download-menu" hidden></ul>
       </div>
-      <a class="view-gallery-link" id="lightbox-gallery-link" href="/">View Full Gallery</a>
     </aside>
   </div>
 </dialog>
@@ -90,7 +88,6 @@ const groups = Object.fromEntries(
   }
   interface LightboxItem {
     kind: 'photo' | 'video';
-    galleryHref: string;
     galleryTitle: string;
     subsection: string | null;
     alt: string;
@@ -118,7 +115,6 @@ const groups = Object.fromEntries(
   const thumbs = document.getElementById('lightbox-thumbs') as HTMLDivElement;
   const downloadToggle = document.getElementById('lightbox')!.querySelector<HTMLButtonElement>('.download-toggle')!;
   const downloadMenu = document.getElementById('download-menu') as HTMLUListElement;
-  const galleryLink = document.getElementById('lightbox-gallery-link') as HTMLAnchorElement;
   const tiles = [...document.querySelectorAll<HTMLButtonElement>('.tile')];
   const dataEl = document.getElementById('lightbox-data');
   const groups: Record<string, LightboxItem[]> = dataEl ? JSON.parse(dataEl.textContent ?? '{}') : {};
@@ -333,7 +329,6 @@ const groups = Object.fromEntries(
     note.hidden = !item.note;
     renderDownloads(item.downloads);
     closeDownloadMenu();
-    galleryLink.href = item.galleryHref;
     thumbButtons.forEach((btn, i) => {
       btn.classList.toggle('active', i === index);
       if (i === index) btn.scrollIntoView({ block: 'nearest', inline: 'center' });

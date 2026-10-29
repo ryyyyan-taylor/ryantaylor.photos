@@ -1,0 +1,61 @@
+---
+import Base from '../layouts/Base.astro';
+import BackLink from '../components/BackLink.astro';
+import GalleryGrid from '../components/GalleryGrid.astro';
+import Lightbox from '../components/Lightbox.astro';
+import { showcases, type Showcase } from '../lib/showcases';
+import { describeMedia, getGallery, ogImage, photoById } from '../lib/photos';
+
+export function getStaticPaths() {
+  return showcases.map((showcase) => ({ params: { showcase: showcase.slug }, props: { showcase } }));
+}
+
+const { showcase } = Astro.props as { showcase: Showcase };
+const gallery = getGallery(showcase.slug);
+const coverPhoto = gallery ? photoById(gallery.cover) : undefined;
+---
+
+<Base
+  title={showcase.title}
+  description={`${showcase.title} photography by Ryan Taylor, based in Denver, CO. ${showcase.blurb}`}
+  image={coverPhoto ? ogImage(coverPhoto) : undefined}
+>
+  <section class="showcase-head">
+    <div class="showcase-title">
+      <p class="eyebrow">
+        <BackLink href="/" label="Home" />
+        {gallery && (
+          <>
+            <span class="eyebrow-sep" aria-hidden="true">·</span>
+            {describeMedia(gallery.photos)}
+          </>
+        )}
+      </p>
+      <h1>{showcase.title}</h1>
+    </div>
+    <div class="showcase-info">
+      <div class="prose">
+        {showcase.intro.map((paragraph) => <p>{paragraph}</p>)}
+      </div>
+      <div class="showcase-cta">
+        <a class="cta-link" href="mailto:contact@ryantaylor.photos">
+          Get in touch
+        </a>
+        {showcase.booking && <p class="showcase-booking">{showcase.booking}</p>}
+      </div>
+    </div>
+  </section>
+
+  {
+    gallery ? (
+      <>
+        <GalleryGrid gallery={gallery} />
+        <Lightbox galleries={[{ slug: gallery.slug, title: gallery.title, photos: gallery.photos }]} />
+      </>
+    ) : (
+      <div class="empty">
+        <p>No photos here yet.</p>
+      </div>
+    )
+  }
+</Base>
