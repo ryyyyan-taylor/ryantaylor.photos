@@ -1,6 +1,6 @@
 import { createHash, randomBytes, pbkdf2Sync } from 'node:crypto';
 import { createReadStream, createWriteStream } from 'node:fs';
-import { readFile, writeFile, stat, rm } from 'node:fs/promises';
+import { readFile, readdir, writeFile, stat, rm } from 'node:fs/promises';
 import { join, extname, basename } from 'node:path';
 import { tmpdir } from 'node:os';
 import { spawn } from 'node:child_process';
@@ -78,6 +78,7 @@ try {
     previousGalleries.set(gallery.slug, gallery);
     for (const photo of gallery.photos ?? []) previous.set(photo.file, photo);
   }
+  if (old.headshot) previous.set(old.headshot.file, old.headshot);
 } catch {}
 
 try {
@@ -139,8 +140,10 @@ for (const rel of await galleryDirs(SRC_DIR)) {
     sectionTitle: names.length > 1 ? titleize(names[0]) : null,
     title,
     description: config?.description ?? '',
+    type: config?.type ?? null,
     order: config?.order ?? 999,
     cover: (coverFile ?? photos[0]).id,
+    featured: (config?.featured ?? []).map((f) => photos.find((p) => basename(p.file) === f)?.id).filter(Boolean),
     photos,
     unlisted: !!config?.unlisted,
     availableUntil: config?.availableUntil ?? null,
@@ -151,6 +154,15 @@ for (const rel of await galleryDirs(SRC_DIR)) {
 
 galleries.sort((a, b) => a.order - b.order || a.title.localeCompare(b.title));
 
+const headshotFile = (await readdir(SRC_DIR)).find(
+  (f) => basename(f, extname(f)).toLowerCase() === 'headshot' && IMAGE_EXT.has(extname(f).toLowerCase()),
+);
+const headshot = headshotFile
+  ? await processPhoto('site', 'site', SRC_DIR, { file: headshotFile, path: headshotFile, subsection: null }, {
+      photos: { [headshotFile]: { alt: 'Portrait of Ryan Taylor' } },
+    })
+  : null;
+
 if (!galleries.length && previous.size && !allowEmpty) {
   console.error(`Found no images under ${SRC_DIR}/, but the manifest currently holds ${previous.size}.`);
   console.error('Refusing to empty it — check PHOTOS_DIR. Pass --allow-empty if you meant it.');
@@ -160,19 +172,21 @@ if (!galleries.length && previous.size && !allowEmpty) {
 const manifest = {
   generatedAt: new Date().toISOString(),
   widths: WIDTHS,
+  headshot,
   galleries,
 };
 
 if (dryRun) {
   console.log(`\n[dry run] ${galleries.length} galleries, ${galleries.reduce((n, g) => n + g.photos.length, 0)} photos`);
   for (const g of galleries) console.log(`  ${g.slug.padEnd(28)} ${g.photos.length}`);
+  console.log(`  headshot: ${headshot ? headshot.file : 'none'}`);
 } else {
   await writeFile(MANIFEST, JSON.stringify(manifest, null, 2) + '\n');
   console.log(`\n${uploaded} uploaded, ${skipped} unchanged -> ${MANIFEST}`);
   console.log('Commit the manifest, then: npm run deploy');
 }
 
-if (prune) await pruneOrphans(galleries);
+if (prune) await pruneOrphans(headshot ? [...galleries, { photos: [headshot] }] : galleries);
 
 async function processPhoto(rel, slug, dir, { file, path: relPath, subsection }, config) {
   const path = join(dir, relPath);
