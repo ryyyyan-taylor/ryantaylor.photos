@@ -5,6 +5,7 @@ import {
   protectedGalleryPasswordHash,
   verifyGalleryPassword,
 } from './gallery-auth';
+import { legacyRedirect } from './legacy-redirects';
 
 const OWNER_EMAIL = 'ryan4125taylor@gmail.com';
 const SENDER = { email: 'bookings@ryantaylor.photos', name: 'Ryan Taylor Photography' };
@@ -37,6 +38,9 @@ export default {
     if (url.pathname === '/api/gallery-auth') {
       return handleGalleryAuth(request, env);
     }
+
+    const redirect = legacyRedirect(url);
+    if (redirect) return redirect;
 
     const gate = await gateProtectedGallery(request, env, url);
     if (gate) return gate;
