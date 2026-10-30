@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-29T23:21:28.985Z",
+  "generatedAt": "2026-10-30T17:52:11.727Z",
   "widths": [
     480,
     960,
@@ -723,35 +723,9 @@
           "videoMeta": null
         }
       ],
-      "unlisted": false,
       "availableUntil": null,
       "passwordHash": null,
-      "zips": [
-        {
-          "key": "small",
-          "label": "Small",
-          "path": "zip/archive/mckay-bike-park-small.zip",
-          "size": 3375036
-        },
-        {
-          "key": "medium",
-          "label": "Medium",
-          "path": "zip/archive/mckay-bike-park-medium.zip",
-          "size": 11603634
-        },
-        {
-          "key": "large",
-          "label": "Large",
-          "path": "zip/archive/mckay-bike-park-large.zip",
-          "size": 26454291
-        },
-        {
-          "key": "full",
-          "label": "Full quality",
-          "path": "zip/archive/mckay-bike-park-full.zip",
-          "size": 237478070
-        }
-      ]
+      "zips": null
     },
     {
       "slug": "events",
@@ -2272,35 +2246,9 @@
           "videoMeta": null
         }
       ],
-      "unlisted": false,
       "availableUntil": null,
       "passwordHash": null,
-      "zips": [
-        {
-          "key": "small",
-          "label": "Small",
-          "path": "zip/events-small.zip",
-          "size": 9623432
-        },
-        {
-          "key": "medium",
-          "label": "Medium",
-          "path": "zip/events-medium.zip",
-          "size": 29635625
-        },
-        {
-          "key": "large",
-          "label": "Large",
-          "path": "zip/events-large.zip",
-          "size": 64050472
-        },
-        {
-          "key": "full",
-          "label": "Full quality",
-          "path": "zip/events-full.zip",
-          "size": 617959225
-        }
-      ]
+      "zips": null
     },
     {
       "slug": "archive/fall-brawl",
@@ -7050,7 +6998,6 @@
           "videoMeta": null
         }
       ],
-      "unlisted": true,
       "availableUntil": null,
       "passwordHash": null,
       "zips": [
@@ -7119,17 +7066,9 @@
           }
         }
       ],
-      "unlisted": false,
       "availableUntil": null,
       "passwordHash": null,
-      "zips": [
-        {
-          "key": "video",
-          "label": "Video",
-          "path": "zip/archive/fpv-video.zip",
-          "size": 102843725
-        }
-      ]
+      "zips": null
     },
     {
       "slug": "archive/pre-rift-10-17-2026",
@@ -9063,7 +9002,6 @@
           "videoMeta": null
         }
       ],
-      "unlisted": true,
       "availableUntil": null,
       "passwordHash": null,
       "zips": [
@@ -10549,35 +10487,293 @@
           "videoMeta": null
         }
       ],
-      "unlisted": false,
       "availableUntil": null,
       "passwordHash": null,
-      "zips": [
+      "zips": null
+    },
+    {
+      "slug": "real-estate",
+      "section": null,
+      "sectionTitle": null,
+      "title": "Real Estate",
+      "description": "",
+      "type": null,
+      "order": 999,
+      "cover": "real-estate/img01239-fused",
+      "featured": [
+        "real-estate/img01244-fused",
+        "real-estate/img01294-fused",
+        "real-estate/img01274-fused"
+      ],
+      "photos": [
         {
-          "key": "small",
-          "label": "Small",
-          "path": "zip/product-small.zip",
-          "size": 9461956
+          "id": "real-estate/img01239-fused",
+          "file": "Real Estate/IMG01239_fused.jpg",
+          "stem": "p/real-estate/img01239-fused.9204d924",
+          "hash": "9204d924",
+          "width": 5150,
+          "height": 2930,
+          "widths": [
+            480,
+            960,
+            1440,
+            2048
+          ],
+          "lqip": "data:image/webp;base64,UklGRn4AAABXRUJQVlA4IHIAAADwAwCdASoYAA4APu1iqU2ppaQiMAgBMB2JYwCsACDRuHaGXUF3TAkAAP2sojJJXsXcofdelAmeBgQghLgSMgKCAGgWwhBYHsKzRovqC+dfc88d02slxRqtnM4t31k1olhSdEwpbNtStgJbpcodziEAAAA=",
+          "alt": "",
+          "caption": "",
+          "note": "",
+          "subsection": null,
+          "exif": null,
+          "kind": "photo",
+          "duration": null,
+          "videoSources": null,
+          "videoMeta": null
         },
         {
-          "key": "medium",
-          "label": "Medium",
-          "path": "zip/product-medium.zip",
-          "size": 28895319
+          "id": "real-estate/img01244-fused",
+          "file": "Real Estate/IMG01244_fused.jpg",
+          "stem": "p/real-estate/img01244-fused.7f189078",
+          "hash": "7f189078",
+          "width": 6024,
+          "height": 3363,
+          "widths": [
+            480,
+            960,
+            1440,
+            2048
+          ],
+          "lqip": "data:image/webp;base64,UklGRrIAAABXRUJQVlA4IKYAAABQBACdASoYAA0APu1iqU2ppaQiMAgBMB2JaACdDBAAMcGrJYNjvx8rd5gAAPA7BGdKxf24Tp27ElGc+JyP/DLNA+b0ohdn1h4clhjTLNfsCSDDEItGJqowFv5SP7zLwExpOVdfLhlFp3VKHorB+M3KaLtOQ5CVj+TCClk74Y8ol2vbxqfvmMepdOe6HPVD6kf8xKH+QrXDoxr1/V6Vy8ZbR/BYZAAA",
+          "alt": "",
+          "caption": "",
+          "note": "",
+          "subsection": null,
+          "exif": null,
+          "kind": "photo",
+          "duration": null,
+          "videoSources": null,
+          "videoMeta": null
         },
         {
-          "key": "large",
-          "label": "Large",
-          "path": "zip/product-large.zip",
-          "size": 58080483
+          "id": "real-estate/img01249-fused",
+          "file": "Real Estate/IMG01249_fused.jpg",
+          "stem": "p/real-estate/img01249-fused.5702bc27",
+          "hash": "5702bc27",
+          "width": 6024,
+          "height": 3363,
+          "widths": [
+            480,
+            960,
+            1440,
+            2048
+          ],
+          "lqip": "data:image/webp;base64,UklGRqAAAABXRUJQVlA4IJQAAAAwBACdASoYAA0APu1iqU2ppaOiMAgBMB2JZgCw7B9fFOvxv4St6XGPKAAAzgbsoq8Q6doemxp7PO6RXC1k8x+jWQvvWBgSVokCw+XEjfJ9jEWNtkkKrS8vxCp67adJp3XNrGLigkwVsWyD8vNWD/ezwJnWFxsxUgS3Lrt0lnuCu0giSf3EvkZAEtTTdgxppo4dgAAA",
+          "alt": "",
+          "caption": "",
+          "note": "",
+          "subsection": null,
+          "exif": null,
+          "kind": "photo",
+          "duration": null,
+          "videoSources": null,
+          "videoMeta": null
         },
         {
-          "key": "full",
-          "label": "Full quality",
-          "path": "zip/product-full.zip",
-          "size": 452041643
+          "id": "real-estate/img01254-fused",
+          "file": "Real Estate/IMG01254_fused.jpg",
+          "stem": "p/real-estate/img01254-fused.a1648201",
+          "hash": "a1648201",
+          "width": 6024,
+          "height": 4024,
+          "widths": [
+            480,
+            960,
+            1440,
+            2048
+          ],
+          "lqip": "data:image/webp;base64,UklGRpwAAABXRUJQVlA4IJAAAADwAwCdASoYABAAPu1iqU2ppaOiMAgBMB2JYwCdACKwb9gEHQ3Gky6AAP54Nlmf9lfg1T9CdzVAyg/gtHKXYJSoqibfqjs6i7JPQv0qHGsDI6f8fWaHI23CL0HKmkhwm/NWYjJPLbAjI2UfVt1t1kl8RWD0MbNTZea8LrFRS70Gd0M2cHny3B3DKGLMk53UoAA=",
+          "alt": "",
+          "caption": "",
+          "note": "",
+          "subsection": null,
+          "exif": null,
+          "kind": "photo",
+          "duration": null,
+          "videoSources": null,
+          "videoMeta": null
+        },
+        {
+          "id": "real-estate/img01259-fused",
+          "file": "Real Estate/IMG01259_fused.jpg",
+          "stem": "p/real-estate/img01259-fused.117e309d",
+          "hash": "117e309d",
+          "width": 6024,
+          "height": 4024,
+          "widths": [
+            480,
+            960,
+            1440,
+            2048
+          ],
+          "lqip": "data:image/webp;base64,UklGRpwAAABXRUJQVlA4IJAAAAAQBACdASoYABAAPu1iqU2ppaOiMAgBMB2JQBWABF0TUC5GkoiHTofyiAD6jGnL7zIP3fAs+eBIZdbHnVxyX0JeOa2DW1uDD0LwD8hnjGS6BParJ3At0rgGUdM4f5vBA865b3Wwte1zeH3m1IyZThB7lvnyTsOy6/aWdFXhV2vZmmITDB9xfRLreZsCXbGZgAA=",
+          "alt": "",
+          "caption": "",
+          "note": "",
+          "subsection": null,
+          "exif": null,
+          "kind": "photo",
+          "duration": null,
+          "videoSources": null,
+          "videoMeta": null
+        },
+        {
+          "id": "real-estate/img01264-fused",
+          "file": "Real Estate/IMG01264_fused.jpg",
+          "stem": "p/real-estate/img01264-fused.1645b67b",
+          "hash": "1645b67b",
+          "width": 6024,
+          "height": 2683,
+          "widths": [
+            480,
+            960,
+            1440,
+            2048
+          ],
+          "lqip": "data:image/webp;base64,UklGRogAAABXRUJQVlA4IHwAAAAQBACdASoYAAsAPu1iqk2ppaQiMAgBMB2JQBOgA0Td8GZcZCh7LjDcAAD+dY0JLoTNCtrbsPFm8ZIEloQm1el9J1TJeMCyGPEqa05PjwqSDjVkNHDvVv7Yw9vOHrdR7a1Tvo6W5rvoRCf/HzIs611zOdqy0RTaoaZMkgAA",
+          "alt": "",
+          "caption": "",
+          "note": "",
+          "subsection": null,
+          "exif": null,
+          "kind": "photo",
+          "duration": null,
+          "videoSources": null,
+          "videoMeta": null
+        },
+        {
+          "id": "real-estate/img01269-fused",
+          "file": "Real Estate/IMG01269_fused.jpg",
+          "stem": "p/real-estate/img01269-fused.3205d08e",
+          "hash": "3205d08e",
+          "width": 6024,
+          "height": 4024,
+          "widths": [
+            480,
+            960,
+            1440,
+            2048
+          ],
+          "lqip": "data:image/webp;base64,UklGRp4AAABXRUJQVlA4IJIAAABQBACdASoYABAAPu1iqU2ppaOiMAgBMB2JYwCw7CFTAf1VFmLBftGGcoqOAP4kpNcW1gXshjBk/JFJkPeSAc8j+pib6Jx/u5JBHpNsqz2QCYuIVc+Tc/h2AITey+r603WZXqfeFv3PMvFSkVr0elYpqVE23yxBx8W8GFCn8o+DjjiJ9qq0BpI2ZIAMITsGI0AAAA==",
+          "alt": "",
+          "caption": "",
+          "note": "",
+          "subsection": null,
+          "exif": null,
+          "kind": "photo",
+          "duration": null,
+          "videoSources": null,
+          "videoMeta": null
+        },
+        {
+          "id": "real-estate/img01274-fused",
+          "file": "Real Estate/IMG01274_fused.jpg",
+          "stem": "p/real-estate/img01274-fused.ef6b9d7d",
+          "hash": "ef6b9d7d",
+          "width": 6024,
+          "height": 4024,
+          "widths": [
+            480,
+            960,
+            1440,
+            2048
+          ],
+          "lqip": "data:image/webp;base64,UklGRp4AAABXRUJQVlA4IJIAAAAQBACdASoYABAAPu1iqU2ppaOiMAgBMB2JQBOgBH+jn0AS0SmnEVwm+gDNlCOkM63Jma2IimblAQetvVY1Qz3jYu9C0kED2BBcsA2To9LyhO7JwvvJ6R6HH5U4A0CKd/oZoxrqrJqSQzpDr6Oq1qhervRQ2TMNOqACksAYLU59zS/qac6CZkrXQVpTpz8cFEAAAA==",
+          "alt": "",
+          "caption": "",
+          "note": "",
+          "subsection": null,
+          "exif": null,
+          "kind": "photo",
+          "duration": null,
+          "videoSources": null,
+          "videoMeta": null
+        },
+        {
+          "id": "real-estate/img01284-fused",
+          "file": "Real Estate/IMG01284_fused.jpg",
+          "stem": "p/real-estate/img01284-fused.4eb18b47",
+          "hash": "4eb18b47",
+          "width": 6024,
+          "height": 4024,
+          "widths": [
+            480,
+            960,
+            1440,
+            2048
+          ],
+          "lqip": "data:image/webp;base64,UklGRoQAAABXRUJQVlA4IHgAAACwAwCdASoYABAAPu1iqU2ppaOiMAgBMB2JQBOgAzpYKrQ/YmKAAAD6j4iuwARGmfCoQ1O3in1P/+RMxJyMLyhDanKn863HP1VfHlDLF2gNXzSJbLdqMizWLvrqzD8UZ3gsdv0nor6NXlvsBLcUc00Y7Q0gHP4wAAA=",
+          "alt": "",
+          "caption": "",
+          "note": "",
+          "subsection": null,
+          "exif": null,
+          "kind": "photo",
+          "duration": null,
+          "videoSources": null,
+          "videoMeta": null
+        },
+        {
+          "id": "real-estate/img01289-fused",
+          "file": "Real Estate/IMG01289_fused.jpg",
+          "stem": "p/real-estate/img01289-fused.f96b87f7",
+          "hash": "f96b87f7",
+          "width": 6024,
+          "height": 4024,
+          "widths": [
+            480,
+            960,
+            1440,
+            2048
+          ],
+          "lqip": "data:image/webp;base64,UklGRoYAAABXRUJQVlA4IHoAAADQAwCdASoYABAAPu1iqU2ppaQiMAgBMB2JYgCdACDUyHRUxFebXwAAyjqneaSFCbAHi9jqyqUBGFgK5zJtaGbWbKMuP7ank63FFFH5g2tZatksySmZsZ87gOM/Z+7iXAYyynTBH+1csimGiuijN4Boxio1a+rrAdoAAA==",
+          "alt": "",
+          "caption": "",
+          "note": "",
+          "subsection": null,
+          "exif": null,
+          "kind": "photo",
+          "duration": null,
+          "videoSources": null,
+          "videoMeta": null
+        },
+        {
+          "id": "real-estate/img01294-fused",
+          "file": "Real Estate/IMG01294_fused.jpg",
+          "stem": "p/real-estate/img01294-fused.5301d581",
+          "hash": "5301d581",
+          "width": 5756,
+          "height": 3369,
+          "widths": [
+            480,
+            960,
+            1440,
+            2048
+          ],
+          "lqip": "data:image/webp;base64,UklGRqIAAABXRUJQVlA4IJYAAADwAwCdASoYAA4APu1iqU2ppaOiMAgBMB2JZgCsAB0u/TQhWqmb3pfAAPafQJ3qcv+UkjrC7FWGs3aW/JXIv3AGKQQPJ3yc/4lsbFvRL/gHgRU1J6FcDYr4y6rJYDDq7pevIDDqVosO/2A7L08XWYcg6Tmc9xUk6GMfwz+e8r+M6oM+lW6W1GX+aXtlH77WcXanvKkAAAA=",
+          "alt": "",
+          "caption": "",
+          "note": "",
+          "subsection": null,
+          "exif": null,
+          "kind": "photo",
+          "duration": null,
+          "videoSources": null,
+          "videoMeta": null
         }
-      ]
+      ],
+      "availableUntil": null,
+      "passwordHash": null,
+      "zips": null
     },
     {
       "slug": "archive/reality-fracture-prerelease",
@@ -13439,7 +13635,6 @@
           "videoMeta": null
         }
       ],
-      "unlisted": true,
       "availableUntil": null,
       "passwordHash": null,
       "zips": [
@@ -14444,35 +14639,9 @@
           "videoMeta": null
         }
       ],
-      "unlisted": false,
       "availableUntil": null,
       "passwordHash": null,
-      "zips": [
-        {
-          "key": "small",
-          "label": "Small",
-          "path": "zip/sports-small.zip",
-          "size": 5261919
-        },
-        {
-          "key": "medium",
-          "label": "Medium",
-          "path": "zip/sports-medium.zip",
-          "size": 17750929
-        },
-        {
-          "key": "large",
-          "label": "Large",
-          "path": "zip/sports-large.zip",
-          "size": 39336002
-        },
-        {
-          "key": "full",
-          "label": "Full quality",
-          "path": "zip/sports-full.zip",
-          "size": 352866572
-        }
-      ]
+      "zips": null
     },
     {
       "slug": "archive/summoner-skirmish-09-05-2026",
@@ -15894,90 +16063,6 @@
           "videoMeta": null
         },
         {
-          "id": "archive/summoner-skirmish-09-05-2026/img01112",
-          "file": "Archive/Summoner Skirmish 09-05-2026/IMG01112.MP4",
-          "stem": "p/archive/summoner-skirmish-09-05-2026/img01112.f667d406",
-          "hash": "f667d406",
-          "width": 3840,
-          "height": 2160,
-          "widths": [
-            480,
-            960,
-            1440,
-            2048
-          ],
-          "lqip": "data:image/webp;base64,UklGRr4AAABXRUJQVlA4ILIAAABwBACdASoYAA4APu1iqU2ppaOiMAgBMB2JaACdAYw6mCdFCGzvWxuhXgyhMAD+71oQZZQ/Um1UMlrsNlNlO/UDYpiph+OxpCSwet0bdC0Tb/cGkW9HwyZhLO9YuuIK8YYnwZOv+uYez8tgFD+oQB9quitK9vJDRrw/XY6DfZydrNblyITqoLIUazTEeDSFWGJwAKgRvc8zUAqLN0p18Y5zxMsvb71WbOeYO4nvhnoNMpAA",
-          "alt": "",
-          "caption": "",
-          "note": "",
-          "subsection": "Swiss",
-          "exif": null,
-          "kind": "video",
-          "duration": 18.02,
-          "videoSources": {
-            "mp4": "v/archive/summoner-skirmish-09-05-2026/img01112.f667d406.mp4"
-          },
-          "videoMeta": {
-            "fps": 23.98
-          }
-        },
-        {
-          "id": "archive/summoner-skirmish-09-05-2026/img01113",
-          "file": "Archive/Summoner Skirmish 09-05-2026/IMG01113.MP4",
-          "stem": "p/archive/summoner-skirmish-09-05-2026/img01113.8f9ac80a",
-          "hash": "8f9ac80a",
-          "width": 3840,
-          "height": 2160,
-          "widths": [
-            480,
-            960,
-            1440,
-            2048
-          ],
-          "lqip": "data:image/webp;base64,UklGRsgAAABXRUJQVlA4ILwAAABQBACdASoYAA4APu1iqU2ppaOiMAgBMB2JagCdAYxOiFbkX9THSybHzJdAAP6tZd8v88kClbxAtJs6visZ7ZTCbHtzcCmrdxSXadtdCz3vy4M69Z3TDYnez5cEQVYZI8JEXDI9CPOYR/7ri/Cs5xHNG6UJVrcLVO33xEXWA1CfUb5XJy9M7J/hARdVR/GF8yrcvlskBeiCF8sDAVgeBF/GDi1SUIoHSvsEdYvC0OQDzoNwwNcwtQCYppYAAA==",
-          "alt": "",
-          "caption": "",
-          "note": "",
-          "subsection": "Swiss",
-          "exif": null,
-          "kind": "video",
-          "duration": 28.53,
-          "videoSources": {
-            "mp4": "v/archive/summoner-skirmish-09-05-2026/img01113.8f9ac80a.mp4"
-          },
-          "videoMeta": {
-            "fps": 23.98
-          }
-        },
-        {
-          "id": "archive/summoner-skirmish-09-05-2026/img01114",
-          "file": "Archive/Summoner Skirmish 09-05-2026/IMG01114.MP4",
-          "stem": "p/archive/summoner-skirmish-09-05-2026/img01114.872b9e1f",
-          "hash": "872b9e1f",
-          "width": 3840,
-          "height": 2160,
-          "widths": [
-            480,
-            960,
-            1440,
-            2048
-          ],
-          "lqip": "data:image/webp;base64,UklGRtAAAABXRUJQVlA4IMQAAABwBACdASoYAA4APu1iqU2ppaOiMAgBMB2JZgCdMoAluhOZifiU19uo3CY/AAD+3JBU3nsCZNcfEMLCE7Ja5KTmx32+vezoWB7vF6xFAq5CdWoZhSHoh6P06Oem+E1bW/ysm2RBpw47t6WKO7Fa9Ok32TJpSZ7pG3Ev4jFty3UohG2/+OpV10g2TaxrhxnTVGjUUf0Y5lhTUtYuj/XWoiRNXvesolcgzuKZHXPyVK/Ll8hJ7PGaYzI5CKs4OTuTnEddgAAA",
-          "alt": "",
-          "caption": "",
-          "note": "",
-          "subsection": "Swiss",
-          "exif": null,
-          "kind": "video",
-          "duration": 66.07,
-          "videoSources": {
-            "mp4": "v/archive/summoner-skirmish-09-05-2026/img01114.872b9e1f.mp4"
-          },
-          "videoMeta": {
-            "fps": 23.98
-          }
-        },
-        {
           "id": "archive/summoner-skirmish-09-05-2026/img01118",
           "file": "Archive/Summoner Skirmish 09-05-2026/IMG01118.jpg",
           "stem": "p/archive/summoner-skirmish-09-05-2026/img01118.bfe30082",
@@ -16714,9 +16799,8 @@
           "videoMeta": null
         }
       ],
-      "unlisted": true,
       "availableUntil": null,
-      "passwordHash": "100000:7ea2b8cd52aec5fea78c1a666c9e5e50:492cbe0b73c995c24203954297c9558fd838a8b4a85eaeb51c7e3724b419cc16",
+      "passwordHash": "100000:1b1375c990d4ddacfc5d33a51f39f941:f3d47ba88cf9dee2f4b09338f78f1bd0402757de4df7385a4c261bdccf3aeb29",
       "zips": [
         {
           "key": "small",
@@ -16741,12 +16825,6 @@
           "label": "Full quality",
           "path": "zip/archive/summoner-skirmish-09-05-2026-full.zip",
           "size": 1135436669
-        },
-        {
-          "key": "video",
-          "label": "Video",
-          "path": "zip/archive/summoner-skirmish-09-05-2026-video.zip",
-          "size": 1375833101
         }
       ]
     },
@@ -17079,7 +17157,6 @@
           }
         }
       ],
-      "unlisted": true,
       "availableUntil": null,
       "passwordHash": null,
       "zips": [
@@ -17112,1968 +17189,6 @@
           "label": "Video",
           "path": "zip/archive/teg-interior-video.zip",
           "size": 1424611166
-        }
-      ]
-    },
-    {
-      "slug": "archive/total-escape-games",
-      "section": "archive",
-      "sectionTitle": "Archive",
-      "title": "Total Escape Games",
-      "description": "",
-      "type": null,
-      "order": 999,
-      "cover": "archive/total-escape-games/img02350",
-      "featured": [],
-      "photos": [
-        {
-          "id": "archive/total-escape-games/img00680",
-          "file": "Archive/Total Escape Games/IMG00680.jpg",
-          "stem": "p/archive/total-escape-games/img00680.c856a4a5",
-          "hash": "c856a4a5",
-          "width": 5333,
-          "height": 4000,
-          "widths": [
-            480,
-            960,
-            1440,
-            2048
-          ],
-          "lqip": "data:image/webp;base64,UklGRvoAAABXRUJQVlA4IO4AAADQBQCdASoYABIAPu1qrlCppaQiqAqpMB2JbACdMzRA2dGce4mRyGq34HDwIOyIzZOBIHN6COtAAPv9SPkgutzOQDjMrr+tWtAyfZTX1Kl+ncTFayLzITbjd+Y4L+sIpCqTD729tI6AhYcpL5VYbmQhWR3ljdR0316YII/GreGWVlMe6MuAe60cq92PhPcyQJR1kpcutMCHYxXdrC+OerdPBPdIBopvQV9tzANamtE7TsPtZk8hdTNUWpSkjY7Y8cT2jznaBopPjM45pOJyh4CWBp+F2QNclcGZbrzYsskhFAxeC7a7fNd67fMMAAAA",
-          "alt": "",
-          "caption": "",
-          "note": "",
-          "subsection": "Riftbound",
-          "exif": {
-            "camera": "Sony ILCE-6400",
-            "lens": "18-50mm F2.8 DC DN | Contemporary 021",
-            "focalLength": "47mm (70mm equiv.)",
-            "aperture": "f/2.8",
-            "shutterSpeed": "1/80s",
-            "iso": 1250,
-            "takenAt": "Sep 5, 2026"
-          },
-          "kind": "photo",
-          "duration": null,
-          "videoSources": null,
-          "videoMeta": null
-        },
-        {
-          "id": "archive/total-escape-games/img00700",
-          "file": "Archive/Total Escape Games/IMG00700.jpg",
-          "stem": "p/archive/total-escape-games/img00700.02908e17",
-          "hash": "02908e17",
-          "width": 5333,
-          "height": 4000,
-          "widths": [
-            480,
-            960,
-            1440,
-            2048
-          ],
-          "lqip": "data:image/webp;base64,UklGRuwAAABXRUJQVlA4IOAAAADQBQCdASoYABIAPu1sq1EppaOiqAqpMB2JbACdMyGvQA1wp/pGNlc7sWfq4CrVOTYqaSq0aPkAAP7pA7r4deHfaO4hxZW3Jr0iX4yP88b5d/BTSRPtFyrxzVyJ0S1dzK3wL3EJwUOGmw+V9b/FqB0M6n8Rqysu5HLILGgyzpMiR33Mpd/lJWGKeka0Wd58/r8HFLSaMLzJlNmlIDOFaLUL7A+ailQZA+YUnf8tHpSgO4rLEElOxQADr1+1rWVHSC6kqKUqMzJsiisYOJnvaOu4WYaoX+sS3jyu4N3NaoFYAA==",
-          "alt": "",
-          "caption": "",
-          "note": "",
-          "subsection": "Riftbound",
-          "exif": {
-            "camera": "Sony ILCE-6400",
-            "lens": "18-50mm F2.8 DC DN | Contemporary 021",
-            "focalLength": "41mm (61mm equiv.)",
-            "aperture": "f/2.8",
-            "shutterSpeed": "1/80s",
-            "iso": 2000,
-            "takenAt": "Sep 5, 2026"
-          },
-          "kind": "photo",
-          "duration": null,
-          "videoSources": null,
-          "videoMeta": null
-        },
-        {
-          "id": "archive/total-escape-games/img00745",
-          "file": "Archive/Total Escape Games/IMG00745.jpg",
-          "stem": "p/archive/total-escape-games/img00745.91f14fe3",
-          "hash": "91f14fe3",
-          "width": 5024,
-          "height": 3769,
-          "widths": [
-            480,
-            960,
-            1440,
-            2048
-          ],
-          "lqip": "data:image/webp;base64,UklGRuwAAABXRUJQVlA4IOAAAAAwBQCdASoYABIAPu1sq1EppaOiqAqpMB2JQBOja/h5UhCaRmtdwvzf6Pu5p5BIwW0hOAD8LCgFwFCQ30oZCTtHKuv70C4TiQscTBwNYvprB2b8q78cvqZigbzzpA3cnckODOXXeEb+kVCURg1MjHKT4VnD7qKEwPungp9K4jF1SqXzVv/Weh9RGrtd89btZUbDdfTVNsh14EPJwssBEEuQ8/gBuJ1uTQNQSw0JgH5rDy6NKeem0i5Ud3wpVDpcmBo3rrmSLAr4rpjgLSQe2Nny5WNhXVEZYLZC1nsyUPAAAA==",
-          "alt": "",
-          "caption": "",
-          "note": "",
-          "subsection": "Riftbound",
-          "exif": {
-            "camera": "Sony ILCE-6400",
-            "lens": "18-50mm F2.8 DC DN | Contemporary 021",
-            "focalLength": "42mm (63mm equiv.)",
-            "aperture": "f/2.8",
-            "shutterSpeed": "1/250s",
-            "iso": 5000,
-            "takenAt": "Sep 5, 2026"
-          },
-          "kind": "photo",
-          "duration": null,
-          "videoSources": null,
-          "videoMeta": null
-        },
-        {
-          "id": "archive/total-escape-games/img00806",
-          "file": "Archive/Total Escape Games/IMG00806.jpg",
-          "stem": "p/archive/total-escape-games/img00806.176a884b",
-          "hash": "176a884b",
-          "width": 4693,
-          "height": 3520,
-          "widths": [
-            480,
-            960,
-            1440,
-            2048
-          ],
-          "lqip": "data:image/webp;base64,UklGRuIAAABXRUJQVlA4INYAAABwBQCdASoYABIAPu1qrlCppaQiqAqpMB2JYgCpLUAKk2OBtpdc2W4Ebiz96tDBWpY7eDYAAP4KBdFgc/YgtX4TwE/yZ9E4tJX3HRiB6MnzqmlrcLUP+ObPs3htvctGnTPUaYqFIykXicj652SSo/xgwtiTpCwvObVpd8xt2uoUb/BDhjZNlvPMhxPwrfmZP3CWfNZTE+KMRH6DJB55mzwz8RT3Gr4PXbZqT9/JD6vqtGJ2YyrLMmuNF3vWvwI7k8yRtN5jdXRZB2A+2WKnrDaxLEAAAAAA",
-          "alt": "",
-          "caption": "",
-          "note": "",
-          "subsection": "Riftbound",
-          "exif": {
-            "camera": "Sony ILCE-6400",
-            "lens": "18-50mm F2.8 DC DN | Contemporary 021",
-            "focalLength": "31mm (46mm equiv.)",
-            "aperture": "f/2.8",
-            "shutterSpeed": "1/50s",
-            "iso": 640,
-            "takenAt": "Sep 5, 2026"
-          },
-          "kind": "photo",
-          "duration": null,
-          "videoSources": null,
-          "videoMeta": null
-        },
-        {
-          "id": "archive/total-escape-games/img00824",
-          "file": "Archive/Total Escape Games/IMG00824.jpg",
-          "stem": "p/archive/total-escape-games/img00824.ddc72262",
-          "hash": "ddc72262",
-          "width": 5332,
-          "height": 4000,
-          "widths": [
-            480,
-            960,
-            1440,
-            2048
-          ],
-          "lqip": "data:image/webp;base64,UklGRvIAAABXRUJQVlA4IOYAAACQBQCdASoYABIAPu1sqlEppaOiqAqpMB2JagCdMtD6gKpeK5y3KHOiTDusTXbPBUjQRm8vBAD+5QjO8ZasWUexxaqQ7VeAhlIX1eEeKswARjtr1OBvbLIZJk8tE5wexmQshdiGS3ooPiH01qWXU1I2SAkGz+EQr3umij6vhzbI5Ke2V1v4An9lYVcScIyE4Tquc0urJksCrdvAmMHafZ9wfqSoYm7RNq3Y4gC0knWAAeZbq19SkCm+ElJ4DKHcg/YaTdQA4JzPrFkyCEYhf5j4Fr/MfDh3jglLTSMbhXGkkae6IAAAAA==",
-          "alt": "",
-          "caption": "",
-          "note": "",
-          "subsection": "Riftbound",
-          "exif": {
-            "camera": "Sony ILCE-6400",
-            "lens": "18-50mm F2.8 DC DN | Contemporary 021",
-            "focalLength": "38mm (57mm equiv.)",
-            "aperture": "f/2.8",
-            "shutterSpeed": "1/60s",
-            "iso": 1000,
-            "takenAt": "Sep 5, 2026"
-          },
-          "kind": "photo",
-          "duration": null,
-          "videoSources": null,
-          "videoMeta": null
-        },
-        {
-          "id": "archive/total-escape-games/img00827",
-          "file": "Archive/Total Escape Games/IMG00827.jpg",
-          "stem": "p/archive/total-escape-games/img00827.38e9bb25",
-          "hash": "38e9bb25",
-          "width": 5332,
-          "height": 4000,
-          "widths": [
-            480,
-            960,
-            1440,
-            2048
-          ],
-          "lqip": "data:image/webp;base64,UklGRv4AAABXRUJQVlA4IPIAAACwBQCdASoYABIAPu1qr1CppiQiqAqpMB2JagC7MxlWADlSjNGWaRAZR1HSxAhcSefBDWTka0AA/rya5CJ9fBZUlGUCsKkTfCbeIewf5xXI1ANNA7AGwIPOjIECkxG+4BD9yy03VT9uyVBW+Tg3oVdYi2jOVuKDC7jJ5D+6Bnz+AdLVRjYSFYbRGWq0oPCBTm8tqOlCRtSI3apc5ZhwSbQTo5f7CYpMtbej9rAVJISU1MbVk8+xeHGAR79sNVTqbjMuCpDcLADYjuZoAxTFemhqVK4vT9NjnQhC8Uph0xLI4w5tAYtwrHBF2n8ZowgfMsQQAA==",
-          "alt": "",
-          "caption": "",
-          "note": "",
-          "subsection": "Riftbound",
-          "exif": {
-            "camera": "Sony ILCE-6400",
-            "lens": "18-50mm F2.8 DC DN | Contemporary 021",
-            "focalLength": "38mm (57mm equiv.)",
-            "aperture": "f/2.8",
-            "shutterSpeed": "1/60s",
-            "iso": 800,
-            "takenAt": "Sep 5, 2026"
-          },
-          "kind": "photo",
-          "duration": null,
-          "videoSources": null,
-          "videoMeta": null
-        },
-        {
-          "id": "archive/total-escape-games/img00858",
-          "file": "Archive/Total Escape Games/IMG00858.jpg",
-          "stem": "p/archive/total-escape-games/img00858.eef8bd30",
-          "hash": "eef8bd30",
-          "width": 4784,
-          "height": 3588,
-          "widths": [
-            480,
-            960,
-            1440,
-            2048
-          ],
-          "lqip": "data:image/webp;base64,UklGRt4AAABXRUJQVlA4INIAAABwBQCdASoYABIAPu1qrVCppaQiqAqpMB2JQBYj7IAeAfrh9Ke3nP00pHCFhfmZye0dqeLAAP7IBdKiAgqf0S4vW7O8vlWQrLyZJw27LfSolTf5xnpwb1bGY/P32PcuSZoGdog1e89M5m0l9JG64K3dFdhZF/PfO5jl3vfZClr7S9rGmcye17e1+GCY11iHPvWIfOeiUqf+C4uwC9nWhiC/zM8ZH9DNUZwSTeh1QYF2oqldBQqCvUBN49vgMVaaXFCIYiEGJ3vKqfJWSVQeJzYAAAA=",
-          "alt": "",
-          "caption": "",
-          "note": "",
-          "subsection": "Riftbound",
-          "exif": {
-            "camera": "Sony ILCE-6400",
-            "lens": "18-50mm F2.8 DC DN | Contemporary 021",
-            "focalLength": "38mm (57mm equiv.)",
-            "aperture": "f/2.8",
-            "shutterSpeed": "1/60s",
-            "iso": 1000,
-            "takenAt": "Sep 5, 2026"
-          },
-          "kind": "photo",
-          "duration": null,
-          "videoSources": null,
-          "videoMeta": null
-        },
-        {
-          "id": "archive/total-escape-games/img00873",
-          "file": "Archive/Total Escape Games/IMG00873.jpg",
-          "stem": "p/archive/total-escape-games/img00873.9018ca85",
-          "hash": "9018ca85",
-          "width": 5332,
-          "height": 4000,
-          "widths": [
-            480,
-            960,
-            1440,
-            2048
-          ],
-          "lqip": "data:image/webp;base64,UklGRhIBAABXRUJQVlA4IAYBAAAQBgCdASoYABIAPu1sqlEppaOiqAqpMB2JbACdMuIzNYZjlpEabfM6PaEa6o887tbFs/diN9ppZQAA/t4c2co4hhv3gguMroVm2cYA+fT6YQoPKu2+VJ81h+K+pWXA1joIj06Z6opgpY4b8ngxYWST5p3FoGtsh+OZ3aBio+Qkw75AeFmIR1Nl/Hgv0Q0LAHcBJb2DgK3fUqE+PHTDcUSB6IdexFwN7eiy1TXDnOQjRiOvEhfdjt12HrE0k3D4oitw+WqMhZHXut0cytwEjxIUFXCz1CM71gTHsyyl5hAE8Qb4jD9PvggaBJRbIdzHY8AVTN6rCiHSv6dpgTbmKbMHDJjxsAAA",
-          "alt": "",
-          "caption": "",
-          "note": "",
-          "subsection": "Riftbound",
-          "exif": {
-            "camera": "Sony ILCE-6400",
-            "lens": "18-50mm F2.8 DC DN | Contemporary 021",
-            "focalLength": "32mm (47mm equiv.)",
-            "aperture": "f/2.8",
-            "shutterSpeed": "1/50s",
-            "iso": 800,
-            "takenAt": "Sep 5, 2026"
-          },
-          "kind": "photo",
-          "duration": null,
-          "videoSources": null,
-          "videoMeta": null
-        },
-        {
-          "id": "archive/total-escape-games/img00965",
-          "file": "Archive/Total Escape Games/IMG00965.jpg",
-          "stem": "p/archive/total-escape-games/img00965.b7bc16c6",
-          "hash": "b7bc16c6",
-          "width": 6000,
-          "height": 4000,
-          "widths": [
-            480,
-            960,
-            1440,
-            2048
-          ],
-          "lqip": "data:image/webp;base64,UklGRtYAAABXRUJQVlA4IMoAAAAQBQCdASoYABAAPu1iqU2ppaOiMAgBMB2JbACdMoKP+HkZRK32kxPrTsHmJRL2TwVAAP69o/VTq3x7p00koo/Oz32DHURxkWUPJbrKoMepl2ohj1SCNzzq0zb3TObu40bR6j4SvpOm5W02UUYJx2SpV/L7AGaZXXjQR7qWnswGd7GN3cua2+w/3knqolS8ba4bTFji5Y6u24nnkOSO6cYNZXW/t59//NrteJerweLdWYAPS+8u5xVaKJY1yc12wF23Y2ARQUQOVAAA",
-          "alt": "",
-          "caption": "",
-          "note": "",
-          "subsection": "Riftbound",
-          "exif": {
-            "camera": "Sony ILCE-6400",
-            "lens": "18-50mm F2.8 DC DN | Contemporary 021",
-            "focalLength": "50mm (75mm equiv.)",
-            "aperture": "f/2.8",
-            "shutterSpeed": "1/80s",
-            "iso": 1600,
-            "takenAt": "Sep 5, 2026"
-          },
-          "kind": "photo",
-          "duration": null,
-          "videoSources": null,
-          "videoMeta": null
-        },
-        {
-          "id": "archive/total-escape-games/img00991",
-          "file": "Archive/Total Escape Games/IMG00991.jpg",
-          "stem": "p/archive/total-escape-games/img00991.e1facf6f",
-          "hash": "e1facf6f",
-          "width": 5333,
-          "height": 4000,
-          "widths": [
-            480,
-            960,
-            1440,
-            2048
-          ],
-          "lqip": "data:image/webp;base64,UklGRhYBAABXRUJQVlA4IAoBAADQBQCdASoYABIAPu1urlKppiQiqAgBMB2JZgCdMzL200jEnN2+kG2oXhHS2Cu60RJT+oFLo8oAAP66YxH0+rVDfVkiMyglxWnuUKfclSV1tM0GUEBuxsoewbXktajjKCayKtvREL+gnj7TwcURPNmZ77sHonULkuMLnoYA1Hlscm87/gKQDWAcLfaic5abgHjUqsvg9NeihWAXI8Y1fu/AxqbMFw8tUGCbBTdleKlryxpAtB9A41B5g88tXl5e/ioEDMYKPDlWz65JGaYD3b215tJqlRkOVLaHr5LFV+tVH00veLb6VpqTrvHD+f/yOK/lM/P/5HGAFqCfOrkYSXlMUKAmAG1BIAAAAA==",
-          "alt": "",
-          "caption": "",
-          "note": "",
-          "subsection": "Riftbound",
-          "exif": {
-            "camera": "Sony ILCE-6400",
-            "lens": "18-50mm F2.8 DC DN | Contemporary 021",
-            "focalLength": "50mm (75mm equiv.)",
-            "aperture": "f/5",
-            "shutterSpeed": "1/80s",
-            "iso": 5000,
-            "takenAt": "Sep 5, 2026"
-          },
-          "kind": "photo",
-          "duration": null,
-          "videoSources": null,
-          "videoMeta": null
-        },
-        {
-          "id": "archive/total-escape-games/img00993",
-          "file": "Archive/Total Escape Games/IMG00993.jpg",
-          "stem": "p/archive/total-escape-games/img00993.0942b7f0",
-          "hash": "0942b7f0",
-          "width": 6000,
-          "height": 3375,
-          "widths": [
-            480,
-            960,
-            1440,
-            2048
-          ],
-          "lqip": "data:image/webp;base64,UklGRsIAAABXRUJQVlA4ILYAAABQBACdASoYAA0APu1iqU2ppaQiMAgBMB2JQBYdsX/TcTlHinqCT39L2c6AAP6YKClgXSWLs9IkkQQMiUd+ZZWUOKM01qAqPUS5oPYgemshoa3VYdZKTd5Wuzrd3rdCuE//LpOmHG568yyxRB5qcl00SH6A/ku4vb95BXX8gj6KDu86vN28H097fziyOlB3Rh4fW1Hln8jBM7n0r/UtLH+MUANi7XeJvD4x74uz7wi/XuOtgLIAAA==",
-          "alt": "",
-          "caption": "",
-          "note": "",
-          "subsection": "Riftbound",
-          "exif": {
-            "camera": "Sony ILCE-6400",
-            "lens": "18-50mm F2.8 DC DN | Contemporary 021",
-            "focalLength": "46mm (69mm equiv.)",
-            "aperture": "f/5",
-            "shutterSpeed": "1/80s",
-            "iso": 3200,
-            "takenAt": "Sep 5, 2026"
-          },
-          "kind": "photo",
-          "duration": null,
-          "videoSources": null,
-          "videoMeta": null
-        },
-        {
-          "id": "archive/total-escape-games/img00998",
-          "file": "Archive/Total Escape Games/IMG00998.jpg",
-          "stem": "p/archive/total-escape-games/img00998.ad6e97c6",
-          "hash": "ad6e97c6",
-          "width": 5333,
-          "height": 4000,
-          "widths": [
-            480,
-            960,
-            1440,
-            2048
-          ],
-          "lqip": "data:image/webp;base64,UklGRhoBAABXRUJQVlA4IA4BAABwBgCdASoYABIAPu1ur1IppiQiqAgBMB2JbACdMoMqzcB//8NjFwWE42M+ZYj/5lUd2DJbwHrhdayxQ0AA/qs3NLVsVj5qVjrFQHeqLmVCwpNjeexpYhmPY4tmYYBwasmI+uaaXslw2FqyKQz76q/pObgjd+4JXlY03RhG51yjKwe9v4czn7dnJcmX5KsUdasL2+LFAsViulfTC2eJ+IGgukf113VKYDvYMN5Drgzeopb4bcmU1r67Mrewy/fmoMdqL4gWT9a1z72N5/1A1rVlAJMcCI4MF4nJvCAeBq4gQqk39eINODj9hpG2dLVVQPLgBI3Yzl8Zx2mkexWKa2f/fJ6O0DXV9vWvb7OAAAA=",
-          "alt": "",
-          "caption": "",
-          "note": "",
-          "subsection": "Riftbound",
-          "exif": {
-            "camera": "Sony ILCE-6400",
-            "lens": "18-50mm F2.8 DC DN | Contemporary 021",
-            "focalLength": "50mm (75mm equiv.)",
-            "aperture": "f/2.8",
-            "shutterSpeed": "1/80s",
-            "iso": 1000,
-            "takenAt": "Sep 5, 2026"
-          },
-          "kind": "photo",
-          "duration": null,
-          "videoSources": null,
-          "videoMeta": null
-        },
-        {
-          "id": "archive/total-escape-games/img01012",
-          "file": "Archive/Total Escape Games/IMG01012.jpg",
-          "stem": "p/archive/total-escape-games/img01012.0f15a24f",
-          "hash": "0f15a24f",
-          "width": 5333,
-          "height": 4000,
-          "widths": [
-            480,
-            960,
-            1440,
-            2048
-          ],
-          "lqip": "data:image/webp;base64,UklGRh4BAABXRUJQVlA4IBIBAACQBgCdASoYABIAPu1ur1IppiQiqAgBMB2JagCxHuEj/oxj+AF0A6z4+CYf4Ux4E77wPS5w1DULJmtXNZnIAP7sDIIv62MvG2el0V6MBVulSFZAgzYbzwxPTl0KMZ82yj/l7J9CklmIg3J2Wgwlf4G4ENR944ZsOo9VxR8IRx7FP38+mn+QJaT46/txNcMKwS7LwHVSW6Yu/WMM1/LtjNpRP0XcpYzayTEN16/o45PAdhbyUhSdhoph0kn4n8/HAtJXN4+fI4piCvCZUO6BoVP93i1jfW6/dRZNCCpkqMchTFEVMo1wiodd20pDh20pG65NvWOA/om4gmcsTjVxZDA/KU2GD2S62mjJvfl6UMm9uwAA",
-          "alt": "",
-          "caption": "",
-          "note": "",
-          "subsection": "Riftbound",
-          "exif": {
-            "camera": "Sony ILCE-6400",
-            "lens": "18-50mm F2.8 DC DN | Contemporary 021",
-            "focalLength": "50mm (75mm equiv.)",
-            "aperture": "f/2.8",
-            "shutterSpeed": "1/80s",
-            "iso": 1000,
-            "takenAt": "Sep 5, 2026"
-          },
-          "kind": "photo",
-          "duration": null,
-          "videoSources": null,
-          "videoMeta": null
-        },
-        {
-          "id": "archive/total-escape-games/img01031",
-          "file": "Archive/Total Escape Games/IMG01031.jpg",
-          "stem": "p/archive/total-escape-games/img01031.8140bb55",
-          "hash": "8140bb55",
-          "width": 4774,
-          "height": 3580,
-          "widths": [
-            480,
-            960,
-            1440,
-            2048
-          ],
-          "lqip": "data:image/webp;base64,UklGRuoAAABXRUJQVlA4IN4AAACwBQCdASoYABIAPu1oqVAppaOiqA1RMB2JYgC7IMggwwscla+BWY9iAIV3dYFVPQ76nRJ9b+AA/qpwwRfYOuTFLq/ulQw9wxoeknd9iraFpV05aRyYCmTspMWBGeD2PSt69K9ziFRai18sFVOL+JbZg7DuD51BkZStzvmwn9zIy3oJH1NboEq3GaCt+uWffWrZJlY6TjmZyWs99HldvX9Czc9AHTStxz7QDMidVIyQLHa1A5PvN5C2CMyR3LJUsXC1lUEHrMqOmZQC/rz0svESpZ0F7DkbHB6VRHFAAAA=",
-          "alt": "",
-          "caption": "",
-          "note": "",
-          "subsection": "Riftbound",
-          "exif": {
-            "camera": "Sony ILCE-6400",
-            "lens": "18-50mm F2.8 DC DN | Contemporary 021",
-            "focalLength": "50mm (75mm equiv.)",
-            "aperture": "f/2.8",
-            "shutterSpeed": "1/80s",
-            "iso": 1250,
-            "takenAt": "Sep 5, 2026"
-          },
-          "kind": "photo",
-          "duration": null,
-          "videoSources": null,
-          "videoMeta": null
-        },
-        {
-          "id": "archive/total-escape-games/img01055",
-          "file": "Archive/Total Escape Games/IMG01055.jpg",
-          "stem": "p/archive/total-escape-games/img01055.49dc653b",
-          "hash": "49dc653b",
-          "width": 4652,
-          "height": 3488,
-          "widths": [
-            480,
-            960,
-            1440,
-            2048
-          ],
-          "lqip": "data:image/webp;base64,UklGRu4AAABXRUJQVlA4IOIAAADQBQCdASoYABIAPu1or1AppaSiqAqpMB2JaACxDL/gzQyujUfYbq0wVMepXMSOO/aytFFM3kQAAP6bEWMUPZi6+Aoe7Z08wueUb2RaMJ1xr/Z4LF1iN6Fyb243I+F1r0fry+raeCef/NysaVPN3iS4F9sFDvqLScCswxV6kw6k39n4RJ29BQORJcfMnAICMeVf88mXhFjrE14B3FodaEmCf7LWW+p/z2eshzTbes24+L77RZ2VPv1Zb61fEshXJ91Kl1Rz6iJPgJFnMLrwZBHWn+rODTVmAAvDIAy2wSEDVAAA",
-          "alt": "",
-          "caption": "",
-          "note": "",
-          "subsection": "Riftbound",
-          "exif": {
-            "camera": "Sony ILCE-6400",
-            "lens": "18-50mm F2.8 DC DN | Contemporary 021",
-            "focalLength": "38mm (56mm equiv.)",
-            "aperture": "f/2.8",
-            "shutterSpeed": "1/60s",
-            "iso": 800,
-            "takenAt": "Sep 5, 2026"
-          },
-          "kind": "photo",
-          "duration": null,
-          "videoSources": null,
-          "videoMeta": null
-        },
-        {
-          "id": "archive/total-escape-games/img01109",
-          "file": "Archive/Total Escape Games/IMG01109.jpg",
-          "stem": "p/archive/total-escape-games/img01109.bb20321d",
-          "hash": "bb20321d",
-          "width": 5333,
-          "height": 4000,
-          "widths": [
-            480,
-            960,
-            1440,
-            2048
-          ],
-          "lqip": "data:image/webp;base64,UklGRg4BAABXRUJQVlA4IAIBAABwBQCdASoYABIAPu1ur1IppiQiqAgBMB2JYgCdIUPgvgn9GQrcJMhTR0v64jEHmAnUKIIAAP6p/5ljp3pl4DLe/KMRgxYBi3rW6H0OybtaDnhUj0z3/QEWtBHSU+RAW4hDE7VLDM51nq4vUEPZuoJS8x46WvRigD9WtFKJ28lnS6qZjWy4c4MoujXvZ2ysSrMD4pxsNi7DykUmi72r+q8o6xQAfaln7cAX9Jl9aBXBT87mOLMefT9mvWOjk7RYYK71E1yk9p1q43Zrrug76z+Xenks/l0ME89PaknA2s5v6ZyDWXXccVhGQobp0Zr0hPZ8vMt0wZntKQ9yFsbGIX0AAAA=",
-          "alt": "",
-          "caption": "",
-          "note": "",
-          "subsection": "Riftbound",
-          "exif": {
-            "camera": "Sony ILCE-6400",
-            "lens": "18-50mm F2.8 DC DN | Contemporary 021",
-            "focalLength": "25mm (37mm equiv.)",
-            "aperture": "f/3.2",
-            "shutterSpeed": "1/40s",
-            "iso": 1600,
-            "takenAt": "Sep 5, 2026"
-          },
-          "kind": "photo",
-          "duration": null,
-          "videoSources": null,
-          "videoMeta": null
-        },
-        {
-          "id": "archive/total-escape-games/img01110",
-          "file": "Archive/Total Escape Games/IMG01110.jpg",
-          "stem": "p/archive/total-escape-games/img01110.212ae7c7",
-          "hash": "212ae7c7",
-          "width": 5333,
-          "height": 4000,
-          "widths": [
-            480,
-            960,
-            1440,
-            2048
-          ],
-          "lqip": "data:image/webp;base64,UklGRuoAAABXRUJQVlA4IN4AAABwBQCdASoYABIAPu1srFEppaQiqAqpMB2JZAAu7MW0Ma75hytnAPrp0qVkgcfazAKvkMgAAPha+t99NjOcdjwmLcZwZT2txTT83FHhZ2VFCYd4RVUMOc85RekzVmi7VTscYqpMZB+QQ9VB6Bp2LRQRDqrj/eHnbD+Jv01p/C/irt7DcJjfzg+EFajaNmB4yzqCTYjXhGL1YvTavKmIeT/Fm1sFQIJCcEXCBIC0qPifuV0MFhgO2nsKcJ9rQhqxYTGImNCFQkS9d8xHxUiUPbi5ojrMwCsEaABY/sBWAAA=",
-          "alt": "",
-          "caption": "",
-          "note": "",
-          "subsection": "Riftbound",
-          "exif": {
-            "camera": "Sony ILCE-6400",
-            "lens": "18-50mm F2.8 DC DN | Contemporary 021",
-            "focalLength": "44mm (65mm equiv.)",
-            "aperture": "f/2.8",
-            "shutterSpeed": "1/80s",
-            "iso": 640,
-            "takenAt": "Sep 5, 2026"
-          },
-          "kind": "photo",
-          "duration": null,
-          "videoSources": null,
-          "videoMeta": null
-        },
-        {
-          "id": "archive/total-escape-games/img01140",
-          "file": "Archive/Total Escape Games/IMG01140.jpg",
-          "stem": "p/archive/total-escape-games/img01140.5e5a903d",
-          "hash": "5e5a903d",
-          "width": 5333,
-          "height": 4000,
-          "widths": [
-            480,
-            960,
-            1440,
-            2048
-          ],
-          "lqip": "data:image/webp;base64,UklGRsYAAABXRUJQVlA4ILoAAAAQBQCdASoYABIAPu1orlCppaQiqAqpMB2JZACpFWTBduJ9HM2DoKZI6K7VLJCui3wAAP7zJqZcGRcn1NvW3U7/zhGjcHliZPImfwuiGzy/V2zY+P09YVB3yoKW9O/SzJaaf5kFJ2P5JIHt8TVWxjyf43QBpjZwSTlTaKn05coETrWecpT/h3PFwtm6Joff9zOH2LAnNYAIOn4AT4SFlK/7Ro+1+4m0oZJA/y9TTIg28YFelMiP5I/NQAA=",
-          "alt": "",
-          "caption": "",
-          "note": "",
-          "subsection": "Riftbound",
-          "exif": {
-            "camera": "Sony ILCE-6400",
-            "lens": "18-50mm F2.8 DC DN | Contemporary 021",
-            "focalLength": "47mm (70mm equiv.)",
-            "aperture": "f/2.8",
-            "shutterSpeed": "1/80s",
-            "iso": 800,
-            "takenAt": "Sep 5, 2026"
-          },
-          "kind": "photo",
-          "duration": null,
-          "videoSources": null,
-          "videoMeta": null
-        },
-        {
-          "id": "archive/total-escape-games/img01144",
-          "file": "Archive/Total Escape Games/IMG01144.jpg",
-          "stem": "p/archive/total-escape-games/img01144.664176cb",
-          "hash": "664176cb",
-          "width": 5333,
-          "height": 4000,
-          "widths": [
-            480,
-            960,
-            1440,
-            2048
-          ],
-          "lqip": "data:image/webp;base64,UklGRuIAAABXRUJQVlA4INYAAABQBgCdASoYABIAPu1sq1EppaOiqAqpMB2JQBdmW5nMigAjwPfaPhyUkxuFQtF4Ce1eYeCT7HfSDiw6AAD+5l11CA68IsemKcC31rZhFDdkxP0CaOn7Z9ggKsW1yiDXqzYXSQWyjIk05OjpjQssDTJnsRH/LsdK9xG2hARArg1eOFHupM9Of8xgyfSevksnNZkoXhxKtyesQRafl1anCY6QZYkm5donmUfarDEATo4mOPX2m9V3QV1hB31cV0QCceTWfmDtbx3h/UiwS27TUOwvXVhW1oAA",
-          "alt": "",
-          "caption": "",
-          "note": "",
-          "subsection": "Riftbound",
-          "exif": {
-            "camera": "Sony ILCE-6400",
-            "lens": "18-50mm F2.8 DC DN | Contemporary 021",
-            "focalLength": "27mm (40mm equiv.)",
-            "aperture": "f/4",
-            "shutterSpeed": "1/50s",
-            "iso": 1250,
-            "takenAt": "Sep 5, 2026"
-          },
-          "kind": "photo",
-          "duration": null,
-          "videoSources": null,
-          "videoMeta": null
-        },
-        {
-          "id": "archive/total-escape-games/img01145",
-          "file": "Archive/Total Escape Games/IMG01145.jpg",
-          "stem": "p/archive/total-escape-games/img01145.612e3f66",
-          "hash": "612e3f66",
-          "width": 5333,
-          "height": 4000,
-          "widths": [
-            480,
-            960,
-            1440,
-            2048
-          ],
-          "lqip": "data:image/webp;base64,UklGRvAAAABXRUJQVlA4IOQAAAAQBQCdASoYABIAPu1qrVCppaQjqAqpMB2JaACdIIpJgC2NiXQMyBxaTWKCgOMSb3tAAP7veL2/uICwS+RvajQtqG9YZMdPCwSybSZEd4BX+xkDsIdYc+xqtiG+qs9hK1TJZOiSY+OmgcPOEUmJ6V9cttA2c+qo0aVad3d6YgyxUUq2ddUjnHEvAY89psC9/xwNjOdua4uPXfoizbdzHV9R+iJk5hLtqb/gC+MMT/8ztTDHNSkY9Q0aApWIicrj7aUy2xSXe5I80fa0m7jyQx3vze8ygcqEt1uC1xLwVrBnc3YAAAA=",
-          "alt": "",
-          "caption": "",
-          "note": "",
-          "subsection": "Riftbound",
-          "exif": {
-            "camera": "Sony ILCE-6400",
-            "lens": "18-50mm F2.8 DC DN | Contemporary 021",
-            "focalLength": "28mm (41mm equiv.)",
-            "aperture": "f/4",
-            "shutterSpeed": "1/50s",
-            "iso": 1250,
-            "takenAt": "Sep 5, 2026"
-          },
-          "kind": "photo",
-          "duration": null,
-          "videoSources": null,
-          "videoMeta": null
-        },
-        {
-          "id": "archive/total-escape-games/img01150",
-          "file": "Archive/Total Escape Games/IMG01150.jpg",
-          "stem": "p/archive/total-escape-games/img01150.0a647833",
-          "hash": "0a647833",
-          "width": 5333,
-          "height": 4000,
-          "widths": [
-            480,
-            960,
-            1440,
-            2048
-          ],
-          "lqip": "data:image/webp;base64,UklGRuoAAABXRUJQVlA4IN4AAAAQBgCdASoYABIAPu1sq1EppaOiqAqpMB2JQBWGZknb8/4gxwquV6/7dJy40HsGBUnsUxi1qmS1SyAA/okNgxHwWBWs7tlXjNlb9HiDfzHusfNFwarpExnV7UQkxt5DIYm8z4tUmy9+8yAH5sDOfGm4AF+HNBc3r0aPciK4wSN1qeazRgdo8Ho4UO5qoZoMgNWOjvIo+x1lE3E30tdCO/RaOBmTGl+C6Z2S2XEY5i8sPgHfPU0YV7JJDnHxePVw/xPNY/3N9rowDmgmztdPJlRZI3PtOyxqnn/EABA4AAA=",
-          "alt": "",
-          "caption": "",
-          "note": "",
-          "subsection": "Riftbound",
-          "exif": {
-            "camera": "Sony ILCE-6400",
-            "lens": "18-50mm F2.8 DC DN | Contemporary 021",
-            "focalLength": "27mm (40mm equiv.)",
-            "aperture": "f/2.8",
-            "shutterSpeed": "1/50s",
-            "iso": 640,
-            "takenAt": "Sep 5, 2026"
-          },
-          "kind": "photo",
-          "duration": null,
-          "videoSources": null,
-          "videoMeta": null
-        },
-        {
-          "id": "archive/total-escape-games/img01165",
-          "file": "Archive/Total Escape Games/IMG01165.jpg",
-          "stem": "p/archive/total-escape-games/img01165.6ec8a245",
-          "hash": "6ec8a245",
-          "width": 4000,
-          "height": 5333,
-          "widths": [
-            480,
-            960,
-            1440,
-            2048
-          ],
-          "lqip": "data:image/webp;base64,UklGRjABAABXRUJQVlA4ICQBAAAQBgCdASoYACAAPuleok2pJSMiMAwBIB0JbACdMzLxhsdXRArgp+84z2/6JSxA3rR1HUqeMpxyFUAA/p+DSfRoBCt4yd0YQGCq9nJZCSsnifGOcqxjtocu8CWrTjO24XzNYGdXq7n4uBvlIR4YtWo29Pt0lhwD7rmb3R1mG4jrKTk3+QXbgHSAQX1nJHJRJFJqXBRdyzLJfyQeu2g8uHA7OriKk2Xhnc/+in5Vlkj+U7D4wnVltjRRt//oOv481DcVVRXbmEvVaS6GyFtVZQDrmAi5CtayyvlIYXvoRNBJvuEaRd36M2J6cX97vuHeWJnTa+OdODbS/5JQwk5BnPgy5aL5FbhvunAqHexEBir/dZNfIiU3YMw4A5UTKt+gkfN24aQA",
-          "alt": "",
-          "caption": "",
-          "note": "",
-          "subsection": "Riftbound",
-          "exif": {
-            "camera": "Sony ILCE-6400",
-            "lens": "18-50mm F2.8 DC DN | Contemporary 021",
-            "focalLength": "50mm (75mm equiv.)",
-            "aperture": "f/2.8",
-            "shutterSpeed": "1/80s",
-            "iso": 2000,
-            "takenAt": "Sep 5, 2026"
-          },
-          "kind": "photo",
-          "duration": null,
-          "videoSources": null,
-          "videoMeta": null
-        },
-        {
-          "id": "archive/total-escape-games/img01180",
-          "file": "Archive/Total Escape Games/IMG01180.jpg",
-          "stem": "p/archive/total-escape-games/img01180.5550deb0",
-          "hash": "5550deb0",
-          "width": 5333,
-          "height": 4000,
-          "widths": [
-            480,
-            960,
-            1440,
-            2048
-          ],
-          "lqip": "data:image/webp;base64,UklGRvAAAABXRUJQVlA4IOQAAABwBQCdASoYABIAPu1qrVCppaQiqAqpMB2JZACdMt8BSUnMsMlckXPLIn6WWIOjUMPAYeKAAP7c1eV1AGBzI4iAuJvdQVAzDOukwZ1WlO/jUBldmSW+mvm+Um+Npp5WVDKbuiQVGItTuq8QEwP+8e5lUjmXCxWyHh1dJhYf7RO7sPoQ15allbURpku8bX/ZYmz1fPUukTAs6IYtCYiVGjAbLK4ZmEVoz8NxU6F7hglQ09KudezfBdiLCbi59a6dMVlp5NAFRLc0Kh0j7uM9I+6vu93YUGHGWKEfk6Ov6DSqyG8AAAA=",
-          "alt": "",
-          "caption": "",
-          "note": "",
-          "subsection": "Riftbound",
-          "exif": {
-            "camera": "Sony ILCE-6400",
-            "lens": "18-50mm F2.8 DC DN | Contemporary 021",
-            "focalLength": "46mm (69mm equiv.)",
-            "aperture": "f/2.8",
-            "shutterSpeed": "1/80s",
-            "iso": 800,
-            "takenAt": "Sep 5, 2026"
-          },
-          "kind": "photo",
-          "duration": null,
-          "videoSources": null,
-          "videoMeta": null
-        },
-        {
-          "id": "archive/total-escape-games/img01206",
-          "file": "Archive/Total Escape Games/IMG01206.jpg",
-          "stem": "p/archive/total-escape-games/img01206.d254d874",
-          "hash": "d254d874",
-          "width": 4000,
-          "height": 5332,
-          "widths": [
-            480,
-            960,
-            1440,
-            2048
-          ],
-          "lqip": "data:image/webp;base64,UklGRmIBAABXRUJQVlA4IFYBAABwBgCdASoYACAAPu1gp02ppSMiMAgBMB2JaAC7MoM6DrB7+EZRrboE7/qH+NCt1LOUzBk4X8dNKI533AAA/ucgv420vBlRruudJCZ2eeMNQgJB+5MkJj8r1322UDtM78YUsDKh6Zq6ri8j6vEfmKiT87IDm5pZFNQiBqrQm8/psA9RPn3y7ErOvpUzlNGIykQPr/gJ6vlFopy4U6BrL6M4s0EeyPTeKDJR95elbNaKhJhOVbh+HqoEh7WbUaqGX/W0YMt7RgSFqEGN9Rxfij35aUlPiZFX9NwTNpJXApnV9/DADgLNYZ26fVYEA56oAcFFIDvSbE/4XXhGzV9LREoMBUtt7hMpKjf4eCgREu6Vad2nJjirEcBxDdwGRaMmHSRfk+k/F1jkFmdlXcf268ZD+a6FsQFlfxjngsZ2CRg6jCFY2/IT7dbcCHIs21/jl+nMuWGvAAA=",
-          "alt": "",
-          "caption": "",
-          "note": "",
-          "subsection": "Riftbound",
-          "exif": {
-            "camera": "Sony ILCE-6400",
-            "lens": "18-50mm F2.8 DC DN | Contemporary 021",
-            "focalLength": "42mm (63mm equiv.)",
-            "aperture": "f/2.8",
-            "shutterSpeed": "1/80s",
-            "iso": 1250,
-            "takenAt": "Sep 5, 2026"
-          },
-          "kind": "photo",
-          "duration": null,
-          "videoSources": null,
-          "videoMeta": null
-        },
-        {
-          "id": "archive/total-escape-games/img01210",
-          "file": "Archive/Total Escape Games/IMG01210.jpg",
-          "stem": "p/archive/total-escape-games/img01210.58dd13f3",
-          "hash": "58dd13f3",
-          "width": 4638,
-          "height": 3479,
-          "widths": [
-            480,
-            960,
-            1440,
-            2048
-          ],
-          "lqip": "data:image/webp;base64,UklGRvIAAABXRUJQVlA4IOYAAACwBQCdASoYABIAPu1qrVCppaQiqAqpMB2JZgCdL3+rnUDIQeD2H9ULZDv3/QZVyn5GJQlCFkAA/u8Td2UG9N8JP9NDciBmXgn3PkLlwDGem5zNEhuXa3I4m9XYFs9cVIPWazcDAA2s1c9evds/ivDc2VZ8WZwdLfJMdpUp3tvhUoEZu2vSA6PkCxgFm58d28twGCjRJhBqZCmIRAzeQPb9pOZjmjG98Vjrbh/FEcUxo7BfSDdpZw56Rx11pESnbSSQqMgxYmRUeJ9rA35BPtgzI8C+G3Fv5tWogv4iguZ5ziWAzAAAAA==",
-          "alt": "",
-          "caption": "",
-          "note": "",
-          "subsection": "Riftbound",
-          "exif": {
-            "camera": "Sony ILCE-6400",
-            "lens": "18-50mm F2.8 DC DN | Contemporary 021",
-            "focalLength": "50mm (75mm equiv.)",
-            "aperture": "f/2.8",
-            "shutterSpeed": "1/80s",
-            "iso": 1000,
-            "takenAt": "Sep 5, 2026"
-          },
-          "kind": "photo",
-          "duration": null,
-          "videoSources": null,
-          "videoMeta": null
-        },
-        {
-          "id": "archive/total-escape-games/img01907",
-          "file": "Archive/Total Escape Games/IMG01907.jpg",
-          "stem": "p/archive/total-escape-games/img01907.51bba907",
-          "hash": "51bba907",
-          "width": 6000,
-          "height": 4000,
-          "widths": [
-            480,
-            960,
-            1440,
-            2048
-          ],
-          "lqip": "data:image/webp;base64,UklGRrIAAABXRUJQVlA4IKYAAAAwBACdASoYABAAPu1iqU2ppaOiMAgBMB2JYwCsAYvCnBbI1tllYCzD/AAA/vKz6gjNy/Sib5J4+z2LvJw/8FD5SSKReplPHA93fwTZRAmJ6c5O4LvnNjWOHjkkWlLrHdgDRtqpu7dTbmTjUIBZ3S+kvwxdredsb88Q33P26t6T5kWd8e99Xovu7Q5wBxR4yS0syv8tKXdbyPCQYnx+QmOHjY5NqngA",
-          "alt": "",
-          "caption": "",
-          "note": "",
-          "subsection": "Magic: the Gathering",
-          "exif": {
-            "camera": "Sony ILCE-6400",
-            "lens": "18-50mm F2.8 DC DN | Contemporary 021",
-            "focalLength": "48mm (72mm equiv.)",
-            "aperture": "f/4",
-            "shutterSpeed": "1/80s",
-            "iso": 1600,
-            "takenAt": "Sep 26, 2026"
-          },
-          "kind": "photo",
-          "duration": null,
-          "videoSources": null,
-          "videoMeta": null
-        },
-        {
-          "id": "archive/total-escape-games/img01913",
-          "file": "Archive/Total Escape Games/IMG01913.jpg",
-          "stem": "p/archive/total-escape-games/img01913.1469a444",
-          "hash": "1469a444",
-          "width": 6000,
-          "height": 3375,
-          "widths": [
-            480,
-            960,
-            1440,
-            2048
-          ],
-          "lqip": "data:image/webp;base64,UklGRqoAAABXRUJQVlA4IJ4AAADwAwCdASoYAA0APu1iqU2ppaOiMAgBMB2JZACdAB5NovpJ5n0afMIAAP5IBZJeNScZs3TCeK57EkBJxG48OuVULWDtjRhtAcJqv1teuFZDndMjILhTCgCGTMMuCEEN7fW/pJxO6YggZ3wq+SfGlbzcruRK9zcjlbDRKhcnokU732M3IgC2z7tSp59doU6XxZMbivunn4z1qrFUFFAAAA==",
-          "alt": "",
-          "caption": "",
-          "note": "",
-          "subsection": "Magic: the Gathering",
-          "exif": {
-            "camera": "Sony ILCE-6400",
-            "lens": "E 10-18mm F4 OSS",
-            "focalLength": "10mm (15mm equiv.)",
-            "aperture": "f/4",
-            "shutterSpeed": "1/30s",
-            "iso": 1000,
-            "takenAt": "Sep 26, 2026"
-          },
-          "kind": "photo",
-          "duration": null,
-          "videoSources": null,
-          "videoMeta": null
-        },
-        {
-          "id": "archive/total-escape-games/img01927",
-          "file": "Archive/Total Escape Games/IMG01927.jpg",
-          "stem": "p/archive/total-escape-games/img01927.89528ab0",
-          "hash": "89528ab0",
-          "width": 4985,
-          "height": 3323,
-          "widths": [
-            480,
-            960,
-            1440,
-            2048
-          ],
-          "lqip": "data:image/webp;base64,UklGRt4AAABXRUJQVlA4INIAAADwBACdASoYABAAPu1iqU2ppaOiMAgBMB2JbACdMoGv/jekcGyKGG3esNsAcHFOyPAA/ooZkqFRuM5z1sG4ml7Rd2hGC/UEq/nHFUsy53jqUBGFcsO90tzMRw6a7Zttn9lCHRcXTGzTRz8AywFXLwth15f4UevxRqrQZpG5Y5EIzoPh8avt8Ib/l1qRGvQknlnZm4BYXyQ1Yp+fMYvwv35U/k7b2AsV6zl87B/v9zcMPiuEWFf1i6E5U9AVLpufN7DIKLdDhIB/sws1DYwf5T0AAAA=",
-          "alt": "",
-          "caption": "",
-          "note": "",
-          "subsection": "Magic: the Gathering",
-          "exif": {
-            "camera": "Sony ILCE-6400",
-            "lens": "18-50mm F2.8 DC DN | Contemporary 021",
-            "focalLength": "50mm (75mm equiv.)",
-            "aperture": "f/2.8",
-            "shutterSpeed": "1/80s",
-            "iso": 1000,
-            "takenAt": "Sep 26, 2026"
-          },
-          "kind": "photo",
-          "duration": null,
-          "videoSources": null,
-          "videoMeta": null
-        },
-        {
-          "id": "archive/total-escape-games/img01964",
-          "file": "Archive/Total Escape Games/IMG01964.jpg",
-          "stem": "p/archive/total-escape-games/img01964.558b69d4",
-          "hash": "558b69d4",
-          "width": 5332,
-          "height": 4000,
-          "widths": [
-            480,
-            960,
-            1440,
-            2048
-          ],
-          "lqip": "data:image/webp;base64,UklGRu4AAABXRUJQVlA4IOIAAACQBQCdASoYABIAPu1sqlEppaOiqAqpMB2JagCdAywTpYWUGNAT+Ad1OVYNJ7PBn+imGaRZgADgMUrDOoJmyAr9W2CHOylsC7s+Pg6AsnTl/cj4j20jvxIqU37WJENd5iUeM2qv+/tntSEZ2p3EQFyH/aHAaUtz5boGsMvyLzpT6o1rdZbYbld9Q0gm7515idXPVgBD87zE6xwovMV7p27sDUU3Xl1etxb1qFnnzWu7YOdiPu9F8vPntBCYeCjrZIwZrpI4HMYBR0SHwC9wPOFC7UK1aQvFLpOtgw5swDZQQAAA",
-          "alt": "",
-          "caption": "",
-          "note": "",
-          "subsection": "Magic: the Gathering",
-          "exif": {
-            "camera": "Sony ILCE-6400",
-            "lens": "18-50mm F2.8 DC DN | Contemporary 021",
-            "focalLength": "39mm (58mm equiv.)",
-            "aperture": "f/4",
-            "shutterSpeed": "1/60s",
-            "iso": 2500,
-            "takenAt": "Sep 26, 2026"
-          },
-          "kind": "photo",
-          "duration": null,
-          "videoSources": null,
-          "videoMeta": null
-        },
-        {
-          "id": "archive/total-escape-games/img01992",
-          "file": "Archive/Total Escape Games/IMG01992.jpg",
-          "stem": "p/archive/total-escape-games/img01992.aebc9444",
-          "hash": "aebc9444",
-          "width": 6000,
-          "height": 3581,
-          "widths": [
-            480,
-            960,
-            1440,
-            2048
-          ],
-          "lqip": "data:image/webp;base64,UklGRswAAABXRUJQVlA4IMAAAACQBACdASoYAA4APu1iqU2ppaOiMAgBMB2JZgC7AdwLheb3j5gL362VmFvtxgAA+6Xjbhh5rFvTNOhaZ31hmAeEuOg10Eqyu84AoUop1v9OLFN5UmNWMsMvOl/aZjBnSJKSOrMvOS0q6OTwFWMjDZPOxcNWJx7W16rf/Sfypey6aDKRHT9JDgNu57uUDLd1IZeLKhrmqCY48j7iIov1NCN+Jhon7MMLNYMycE18i9fIaX4zbBFwk92O81PWr+aagAA=",
-          "alt": "",
-          "caption": "",
-          "note": "",
-          "subsection": "Magic: the Gathering",
-          "exif": {
-            "camera": "Sony ILCE-6400",
-            "lens": "18-50mm F2.8 DC DN | Contemporary 021",
-            "focalLength": "33mm (49mm equiv.)",
-            "aperture": "f/4",
-            "shutterSpeed": "1/60s",
-            "iso": 1250,
-            "takenAt": "Sep 26, 2026"
-          },
-          "kind": "photo",
-          "duration": null,
-          "videoSources": null,
-          "videoMeta": null
-        },
-        {
-          "id": "archive/total-escape-games/img01993",
-          "file": "Archive/Total Escape Games/IMG01993.jpg",
-          "stem": "p/archive/total-escape-games/img01993.0aadff22",
-          "hash": "0aadff22",
-          "width": 5333,
-          "height": 4000,
-          "widths": [
-            480,
-            960,
-            1440,
-            2048
-          ],
-          "lqip": "data:image/webp;base64,UklGRuIAAABXRUJQVlA4INYAAADQBACdASoYABIAPu1or1CppaQiqAqpMB2JZACdAYyoQc9QPWcqjYd8C3pW4UMWwADOPnQdXX1mWG5U09VZ4jji4jZ/NH0eRXKf3KCGKirJ2Em+kaPlc9ke5Xh/FEIM+EBR2KiScTVTLhdNLVu3czrNAtTQP2wYQ4hVfNH7iWx7aEWwiEi4slXsPnVGnA11Yd8/OOAugY2NwF0KoghD6dBINKBvnNpJgQLTwItubupAIPajWcKajVn33HYDeOr6H65j/ZiroXzw3xlgdQcplAsSXzoMBKgA",
-          "alt": "",
-          "caption": "",
-          "note": "",
-          "subsection": "Magic: the Gathering",
-          "exif": {
-            "camera": "Sony ILCE-6400",
-            "lens": "18-50mm F2.8 DC DN | Contemporary 021",
-            "focalLength": "50mm (75mm equiv.)",
-            "aperture": "f/4",
-            "shutterSpeed": "1/80s",
-            "iso": 1600,
-            "takenAt": "Sep 26, 2026"
-          },
-          "kind": "photo",
-          "duration": null,
-          "videoSources": null,
-          "videoMeta": null
-        },
-        {
-          "id": "archive/total-escape-games/img01995",
-          "file": "Archive/Total Escape Games/IMG01995.jpg",
-          "stem": "p/archive/total-escape-games/img01995.5fce9a31",
-          "hash": "5fce9a31",
-          "width": 6000,
-          "height": 3375,
-          "widths": [
-            480,
-            960,
-            1440,
-            2048
-          ],
-          "lqip": "data:image/webp;base64,UklGRrQAAABXRUJQVlA4IKgAAABQBACdASoYAA0APu1iqU2ppaQiMAgBMB2JZgCdAYvM3oLi2CdUIl+eOgzQAP222m8vhbX3P8Agyz8IfGQanNAt5GmPwNU1d3QigweZuMZz4fhNS6qsivyh4kTN/n7sqj3g99fFb/LFUTE1djoZc7wyTfYraP3lLG2iZO5Q85muYPpr75cXAlecURW34D/TYtupedMS4CMSfX4/j4HNhf6rKWQ23ZiAAAA=",
-          "alt": "",
-          "caption": "",
-          "note": "",
-          "subsection": "Magic: the Gathering",
-          "exif": {
-            "camera": "Sony ILCE-6400",
-            "lens": "E 10-18mm F4 OSS",
-            "focalLength": "16mm (24mm equiv.)",
-            "aperture": "f/4",
-            "shutterSpeed": "1/30s",
-            "iso": 640,
-            "takenAt": "Sep 26, 2026"
-          },
-          "kind": "photo",
-          "duration": null,
-          "videoSources": null,
-          "videoMeta": null
-        },
-        {
-          "id": "archive/total-escape-games/img01996",
-          "file": "Archive/Total Escape Games/IMG01996.jpg",
-          "stem": "p/archive/total-escape-games/img01996.b9bf6d54",
-          "hash": "b9bf6d54",
-          "width": 6000,
-          "height": 2936,
-          "widths": [
-            480,
-            960,
-            1440,
-            2048
-          ],
-          "lqip": "data:image/webp;base64,UklGRq4AAABXRUJQVlA4IKIAAADwAwCdASoYAAwAPu1iqU2ppaOiMAgBMB2JZACdAYyeR63hCQs1xgAAAP6smRXsXvHa4A2wK4mEgY9VVG1xyQ3v6jYAdi3Gn0YPd1F1LS78QMcpX3L8edvWjpK2FA9vA8KN9oUGMuAWs/sPY4dbe5NxMKJyn+Cm4VnD3q/IHr+/+yilv9yHszYATaiX20entf1E7xh84AF5F0pXXdzr+PgAAAA=",
-          "alt": "",
-          "caption": "",
-          "note": "",
-          "subsection": "Magic: the Gathering",
-          "exif": {
-            "camera": "Sony ILCE-6400",
-            "lens": "E 10-18mm F4 OSS",
-            "focalLength": "11mm (16mm equiv.)",
-            "aperture": "f/4",
-            "shutterSpeed": "1/30s",
-            "iso": 640,
-            "takenAt": "Sep 26, 2026"
-          },
-          "kind": "photo",
-          "duration": null,
-          "videoSources": null,
-          "videoMeta": null
-        },
-        {
-          "id": "archive/total-escape-games/img02006",
-          "file": "Archive/Total Escape Games/IMG02006.jpg",
-          "stem": "p/archive/total-escape-games/img02006.1345ded7",
-          "hash": "1345ded7",
-          "width": 5332,
-          "height": 4000,
-          "widths": [
-            480,
-            960,
-            1440,
-            2048
-          ],
-          "lqip": "data:image/webp;base64,UklGRtgAAABXRUJQVlA4IMwAAABwBQCdASoYABIAPu1qrlCppaQiqAqpMB2JbACdMt4EIf+cQAJ1Hx0xC5YGxx5F18yx2d/AAPsfR6AFV1lsPtVe8tSUvbWhBl7VHURByHlRwdbD9iLkpBw8y4qivCn0ATaIjcNF9F3tnNIwofeSmVnkQHLc9vn2cajRl2VJBY7PQ74TA09LuhD9+Z6ovuyZJ7U2/Qe+GRPjLh86RVVr83gYG9OraOdHeSa+FKugnuwJfMSvA/TBsEiy8LXZm92g61ThkqmikmDyX1SikAA=",
-          "alt": "",
-          "caption": "",
-          "note": "",
-          "subsection": "Magic: the Gathering",
-          "exif": {
-            "camera": "Sony ILCE-6400",
-            "lens": "18-50mm F2.8 DC DN | Contemporary 021",
-            "focalLength": "50mm (75mm equiv.)",
-            "aperture": "f/2.8",
-            "shutterSpeed": "1/80s",
-            "iso": 1600,
-            "takenAt": "Sep 26, 2026"
-          },
-          "kind": "photo",
-          "duration": null,
-          "videoSources": null,
-          "videoMeta": null
-        },
-        {
-          "id": "archive/total-escape-games/img02046",
-          "file": "Archive/Total Escape Games/IMG02046.jpg",
-          "stem": "p/archive/total-escape-games/img02046.998fd2bc",
-          "hash": "998fd2bc",
-          "width": 6000,
-          "height": 4000,
-          "widths": [
-            480,
-            960,
-            1440,
-            2048
-          ],
-          "lqip": "data:image/webp;base64,UklGRtYAAABXRUJQVlA4IMoAAABwBQCdASoYABAAPu1iqU2ppaOiMAgBMB2JZgCdMoEUXzACVjGK3asB7+oSuxcaSzpmn91cAP7ATsh+lMy7jm7esxGUFxonYlOQ10uLJWrVsNm8CpaOHH15BonZoRpQqIPN3sH5wjqqrDeLnSl6uEgnuv1bdFnZRoGrxgsvqCTRUq8RubtxK5o2VrIsWSD9zS/vPduA4mTj3PPYch2wHSewmSbVWfewc/vGyHdFCa1TU3QTaYnBw9GduGuUjo66Qb+Yhamf8mjAAAAA",
-          "alt": "",
-          "caption": "",
-          "note": "",
-          "subsection": "Magic: the Gathering",
-          "exif": {
-            "camera": "Sony ILCE-6400",
-            "lens": "18-50mm F2.8 DC DN | Contemporary 021",
-            "focalLength": "43mm (64mm equiv.)",
-            "aperture": "f/4",
-            "shutterSpeed": "1/80s",
-            "iso": 1000,
-            "takenAt": "Sep 26, 2026"
-          },
-          "kind": "photo",
-          "duration": null,
-          "videoSources": null,
-          "videoMeta": null
-        },
-        {
-          "id": "archive/total-escape-games/img02062",
-          "file": "Archive/Total Escape Games/IMG02062.jpg",
-          "stem": "p/archive/total-escape-games/img02062.593b02e6",
-          "hash": "593b02e6",
-          "width": 5000,
-          "height": 4000,
-          "widths": [
-            480,
-            960,
-            1440,
-            2048
-          ],
-          "lqip": "data:image/webp;base64,UklGRhABAABXRUJQVlA4IAQBAAAwBgCdASoYABMAPu1ur1IppiQiqAgBMB2JbACdMoMluKAVQHuuIkYb8J2AIv/S0OMPGiikZYrsEmmAAP6lRObo3cJlwoDhYZdR9iqqwvZO6okpPt6dWTaXr3DylpP28Hi/rXSK4BhqQEwbD0jKksed6xVXbJN7njlZBu84Kgj04AfvZiMuU6hUeKip/9xNzCXpjskk5n+I24iLHNXBpi+ZnnCDPTmwZ72XJ5lIOGf3rQhnxLwikJO2XNXaa0RJVdOdC7Y552da5N6DBD3vipQK5FPyfUXpy7n2BJs56xptBNAeMZufoasmD1qNhs59yxlfP5SJMd0rpYKQVYL5OBEr+AAAAA==",
-          "alt": "",
-          "caption": "",
-          "note": "",
-          "subsection": "Magic: the Gathering",
-          "exif": {
-            "camera": "Sony ILCE-6400",
-            "lens": "18-50mm F2.8 DC DN | Contemporary 021",
-            "focalLength": "36mm (54mm equiv.)",
-            "aperture": "f/2.8",
-            "shutterSpeed": "1/60s",
-            "iso": 1000,
-            "takenAt": "Sep 26, 2026"
-          },
-          "kind": "photo",
-          "duration": null,
-          "videoSources": null,
-          "videoMeta": null
-        },
-        {
-          "id": "archive/total-escape-games/img02100",
-          "file": "Archive/Total Escape Games/IMG02100.jpg",
-          "stem": "p/archive/total-escape-games/img02100.62b8c3ca",
-          "hash": "62b8c3ca",
-          "width": 6000,
-          "height": 3375,
-          "widths": [
-            480,
-            960,
-            1440,
-            2048
-          ],
-          "lqip": "data:image/webp;base64,UklGRs4AAABXRUJQVlA4IMIAAACwBACdASoYAA0APu1iqU2ppaOiMAgBMB2JZACdMoEUdkRwJQMD8e4Td19qRtYAAP3Gv61x3gWi8cH6oyHPEkeI4KHcRtBz/vwJMhyGm9N6eys/6FyRgg+dIIFqkpakFw8Vzuqt//43nKTGzz3dT+HoB6GOSUz7a9Fa8qs6/u6/qTkiXtCK8vDX1Gny0WW3IvxXJHh59zPR432Q7nE9HfpRHI78WGNmDzV+nGDCfQLpcCKYPN66VgGpLDIxkz8t7QAAAA==",
-          "alt": "",
-          "caption": "",
-          "note": "",
-          "subsection": "Magic: the Gathering",
-          "exif": {
-            "camera": "Sony ILCE-6400",
-            "lens": "18-50mm F2.8 DC DN | Contemporary 021",
-            "focalLength": "36mm (53mm equiv.)",
-            "aperture": "f/4",
-            "shutterSpeed": "1/60s",
-            "iso": 1250,
-            "takenAt": "Sep 26, 2026"
-          },
-          "kind": "photo",
-          "duration": null,
-          "videoSources": null,
-          "videoMeta": null
-        },
-        {
-          "id": "archive/total-escape-games/img02112",
-          "file": "Archive/Total Escape Games/IMG02112.jpg",
-          "stem": "p/archive/total-escape-games/img02112.e669af0d",
-          "hash": "e669af0d",
-          "width": 5408,
-          "height": 3605,
-          "widths": [
-            480,
-            960,
-            1440,
-            2048
-          ],
-          "lqip": "data:image/webp;base64,UklGRtgAAABXRUJQVlA4IMwAAAAwBQCdASoYABAAPu1iqU2ppaOiMAgBMB2JbACdMoMYA+gaysyDddx8sPbE4+FB0GFCAAD+TmLV9ZYse190d4wcVbezU7ZZ8KC0mqrrmMjZJ1k9ejs77Gc6XGkI+W2naemM04azDS1RPWZifZ7EAXoC2HYI9lyvxo9qQRkSHN5RxuQQ0l5yozcGf0QyR9m5lvrbHGQ4yZxxdMbUYLynoj16BHZM6dQmF4XQlPlFAZhC1dNroHotbewVejkr5uej7//3PdIujDNb4SZfgAA=",
-          "alt": "",
-          "caption": "",
-          "note": "",
-          "subsection": "Magic: the Gathering",
-          "exif": {
-            "camera": "Sony ILCE-6400",
-            "lens": "18-50mm F2.8 DC DN | Contemporary 021",
-            "focalLength": "32mm (48mm equiv.)",
-            "aperture": "f/4",
-            "shutterSpeed": "1/50s",
-            "iso": 1600,
-            "takenAt": "Sep 26, 2026"
-          },
-          "kind": "photo",
-          "duration": null,
-          "videoSources": null,
-          "videoMeta": null
-        },
-        {
-          "id": "archive/total-escape-games/img02153",
-          "file": "Archive/Total Escape Games/IMG02153.jpg",
-          "stem": "p/archive/total-escape-games/img02153.68ea97bc",
-          "hash": "68ea97bc",
-          "width": 4659,
-          "height": 3493,
-          "widths": [
-            480,
-            960,
-            1440,
-            2048
-          ],
-          "lqip": "data:image/webp;base64,UklGRvgAAABXRUJQVlA4IOwAAADwBQCdASoYABIAPu1ur1IppiQiqAgBMB2JYgC1CKvI1KAA5rBC0pwDpkVSf2ocEpdUzgKNgDI0AAD+x4NZ0rFe3p6COygC7FTfxJ6OzeGe6ktA83bgshI9+JWmR+VBANsvL6IoZ4bi6M/3t7HllaJoxhyPei2gEgvfzFB6EGiHHCY1Df8fkG/PZ+tGu6jHbkyYLQqF1bHX4zJz18rTu4P0q8EMfp4ffsufXI09V4qZq/KLgGBVEgV1YZIjxaWCTzOxa64VZpMvpboQStaFmhnefvLWUOeiWSMDMF7GpAodwPE1jxkZzdd273AAAA==",
-          "alt": "",
-          "caption": "",
-          "note": "",
-          "subsection": "Magic: the Gathering",
-          "exif": {
-            "camera": "Sony ILCE-6400",
-            "lens": "18-50mm F2.8 DC DN | Contemporary 021",
-            "focalLength": "44mm (65mm equiv.)",
-            "aperture": "f/4",
-            "shutterSpeed": "1/80s",
-            "iso": 1250,
-            "takenAt": "Sep 27, 2026"
-          },
-          "kind": "photo",
-          "duration": null,
-          "videoSources": null,
-          "videoMeta": null
-        },
-        {
-          "id": "archive/total-escape-games/img02163",
-          "file": "Archive/Total Escape Games/IMG02163.jpg",
-          "stem": "p/archive/total-escape-games/img02163.56ab97ef",
-          "hash": "56ab97ef",
-          "width": 4697,
-          "height": 3522,
-          "widths": [
-            480,
-            960,
-            1440,
-            2048
-          ],
-          "lqip": "data:image/webp;base64,UklGRggBAABXRUJQVlA4IPwAAACwBgCdASoYABIAPu1qrlCppaQiqAqpMB2JbAC7M1o1Vfj6YAXQDrRD4HaZ1XDR3UIjle+4D9wgPglr9LVUAAD+S64SiALTN8bmBYp2Z6ChIul0iLKIo+K8YB58FNZz7Gd0nce5lDzRCUU5Sz35WGUVRH3Q+OL+91zS4QclsnUjZWIjoXAdrloZFEPa5B0+u24BFcEOFg0vZaCPaMuazIPLN1xgj3TND7mPp/yv02wkng0majVBbmdaDRC0M/E5DfMNwFn7ThbQ4KNBRRnMTdWop8avHmyCcL++ZJJqOjElqvnfbvs7FrdnQv0Ev/xM01rGMYURuQcJ6PdAAAA=",
-          "alt": "",
-          "caption": "",
-          "note": "",
-          "subsection": "Magic: the Gathering",
-          "exif": {
-            "camera": "Sony ILCE-6400",
-            "lens": "18-50mm F2.8 DC DN | Contemporary 021",
-            "focalLength": "33mm (49mm equiv.)",
-            "aperture": "f/4",
-            "shutterSpeed": "1/60s",
-            "iso": 1600,
-            "takenAt": "Sep 27, 2026"
-          },
-          "kind": "photo",
-          "duration": null,
-          "videoSources": null,
-          "videoMeta": null
-        },
-        {
-          "id": "archive/total-escape-games/img02187",
-          "file": "Archive/Total Escape Games/IMG02187.jpg",
-          "stem": "p/archive/total-escape-games/img02187.f5e71671",
-          "hash": "f5e71671",
-          "width": 4767,
-          "height": 3574,
-          "widths": [
-            480,
-            960,
-            1440,
-            2048
-          ],
-          "lqip": "data:image/webp;base64,UklGRg4BAABXRUJQVlA4IAIBAAAwBgCdASoYABIAPu1qr1CppaQiqAqpMB2JbACdMoMuzRVFOQ5cgv5lvx506rW1OthXneQDuGL5R4LAAP2fyK52SzbREZBhQ2w160QtNPyLLU5eB0Vqxn58h39ajnt9F9jnuN7wlrSOU05SmlD8wassWyHQm5geCk+/2KhC98GHHjbPeaNfaR3oj7PSjJ2P/0+XhPdikRKjxcOblY4zi0c+wP5CRtJPM443sqeSK09BcKof03TFQaYO5V9DqC4EkYhgmJsdXNqdYSxMmD5VfQoLHsQ5q459k2EhS3zV/wl9Cg0hAXhordVvx9QrlV4DXo+bxjt8NOz0ETToteGRLobOAAA=",
-          "alt": "",
-          "caption": "",
-          "note": "",
-          "subsection": "Magic: the Gathering",
-          "exif": {
-            "camera": "Sony ILCE-6400",
-            "lens": "18-50mm F2.8 DC DN | Contemporary 021",
-            "focalLength": "41mm (61mm equiv.)",
-            "aperture": "f/4",
-            "shutterSpeed": "1/80s",
-            "iso": 1600,
-            "takenAt": "Sep 27, 2026"
-          },
-          "kind": "photo",
-          "duration": null,
-          "videoSources": null,
-          "videoMeta": null
-        },
-        {
-          "id": "archive/total-escape-games/img02194",
-          "file": "Archive/Total Escape Games/IMG02194.jpg",
-          "stem": "p/archive/total-escape-games/img02194.36541154",
-          "hash": "36541154",
-          "width": 6000,
-          "height": 4000,
-          "widths": [
-            480,
-            960,
-            1440,
-            2048
-          ],
-          "lqip": "data:image/webp;base64,UklGRq4AAABXRUJQVlA4IKIAAABwBACdASoYABAAPu1iqU2ppaOiMAgBMB2JaACdAYwS7W0ifh+Ht/qwUmnfAAD+7AvjlAN/FHpX83HtR1qg1SiJY7QMWY5VAo3uXz248r6bOU8xEQLP900fDRD6GJ2umJJlaMqQzC6M3khf9P37mRt525DbllyHFwWk7bZKXd8yeWTOXPi0K0hjR3QuQSJ6nOdsJ4xPvgZuNq7jk4kFekVXAAA=",
-          "alt": "",
-          "caption": "",
-          "note": "",
-          "subsection": "Magic: the Gathering",
-          "exif": {
-            "camera": "Sony ILCE-6400",
-            "lens": "18-50mm F2.8 DC DN | Contemporary 021",
-            "focalLength": "37mm (55mm equiv.)",
-            "aperture": "f/4",
-            "shutterSpeed": "1/60s",
-            "iso": 1000,
-            "takenAt": "Sep 27, 2026"
-          },
-          "kind": "photo",
-          "duration": null,
-          "videoSources": null,
-          "videoMeta": null
-        },
-        {
-          "id": "archive/total-escape-games/img02196",
-          "file": "Archive/Total Escape Games/IMG02196.jpg",
-          "stem": "p/archive/total-escape-games/img02196.b7d01add",
-          "hash": "b7d01add",
-          "width": 5414,
-          "height": 3609,
-          "widths": [
-            480,
-            960,
-            1440,
-            2048
-          ],
-          "lqip": "data:image/webp;base64,UklGRsQAAABXRUJQVlA4ILgAAAAQBQCdASoYABAAPu1iqU2ppaOiMAgBMB2JagCdIMmJ/ngB3AuCxWRTw2XkRzIJruLAAMtmkPGWkw9CJEJMxZKvyt/4gmIFwiENdYpqo6VjKRLF3VIgp6ZcPh0fSbf9NqW1QaM05roTYMeW3fjkWCGOzL4RbQdLTpYSJ6+h59znJ4KQ9Bhh0FNVy97vj84YzAwxzeKB007ShWPH6VWdtdp+LnieCiQcK8qCWTpudvnGOgNnkwflgAAA",
-          "alt": "",
-          "caption": "",
-          "note": "",
-          "subsection": "Magic: the Gathering",
-          "exif": {
-            "camera": "Sony ILCE-6400",
-            "lens": "18-50mm F2.8 DC DN | Contemporary 021",
-            "focalLength": "32mm (48mm equiv.)",
-            "aperture": "f/4",
-            "shutterSpeed": "1/50s",
-            "iso": 2000,
-            "takenAt": "Sep 27, 2026"
-          },
-          "kind": "photo",
-          "duration": null,
-          "videoSources": null,
-          "videoMeta": null
-        },
-        {
-          "id": "archive/total-escape-games/img02201",
-          "file": "Archive/Total Escape Games/IMG02201.jpg",
-          "stem": "p/archive/total-escape-games/img02201.7c365ab2",
-          "hash": "7c365ab2",
-          "width": 5420,
-          "height": 3613,
-          "widths": [
-            480,
-            960,
-            1440,
-            2048
-          ],
-          "lqip": "data:image/webp;base64,UklGRuwAAABXRUJQVlA4IOAAAAAQBQCdASoYABAAPu1iqU2ppaOiMAgBMB2JbACdMoEUxleB7yTakL9TRfkL4ZelysAAAP5GNKvqj1yoVZIe7IxKFPJm477ltspK69HIiGy6HMq5JXDlZlAXb7vvobMT1NF0sjYAIR0SxCwWS7repI4GtC8tYL576DnDIssyamx4KpyekcV+3jSeJO2k7aetRqyaduNXkT+bItpgqc/CwdsMHPibjMLFL/vT4oBeb7Ar19jqKyNDUX/xklCeipbaPZebGkEAdF0mYRufcdTX5T23zru+7AjLuiv/qliCs+fgAA==",
-          "alt": "",
-          "caption": "",
-          "note": "",
-          "subsection": "Magic: the Gathering",
-          "exif": {
-            "camera": "Sony ILCE-6400",
-            "lens": "18-50mm F2.8 DC DN | Contemporary 021",
-            "focalLength": "32mm (47mm equiv.)",
-            "aperture": "f/4",
-            "shutterSpeed": "1/50s",
-            "iso": 1250,
-            "takenAt": "Sep 27, 2026"
-          },
-          "kind": "photo",
-          "duration": null,
-          "videoSources": null,
-          "videoMeta": null
-        },
-        {
-          "id": "archive/total-escape-games/img02207",
-          "file": "Archive/Total Escape Games/IMG02207.jpg",
-          "stem": "p/archive/total-escape-games/img02207.4a83829c",
-          "hash": "4a83829c",
-          "width": 4637,
-          "height": 3478,
-          "widths": [
-            480,
-            960,
-            1440,
-            2048
-          ],
-          "lqip": "data:image/webp;base64,UklGRuYAAABXRUJQVlA4INoAAADQBQCdASoYABIAPu1ur1IppiQiqAgBMB2JZACsGZ/EF4F4Z9lxdKr+ceQ9K5BlPFHE9l1dxXgwAP5y7UiLYo+b01p9+OM4DUWCAwJy8AQQuUMv0hmKvpbTXzfVLCqoM1mgLxxKVu9tCT8+/OK/m+asRNhPmSlmU6VVsl8LwUVcJdMexcrNtuZ9xPJ0lLfq3JAk93TPJHJ5onzsCrAajmdgPVfhL+s6iUNxJ2uZ13eLBr91RbOGYfi5AmJkNQHNQn7togUkb6sDmpA0Ph26trE+BhmJaJCBOWTgAA==",
-          "alt": "",
-          "caption": "",
-          "note": "",
-          "subsection": "Magic: the Gathering",
-          "exif": {
-            "camera": "Sony ILCE-6400",
-            "lens": "18-50mm F2.8 DC DN | Contemporary 021",
-            "focalLength": "44mm (66mm equiv.)",
-            "aperture": "f/4",
-            "shutterSpeed": "1/80s",
-            "iso": 2500,
-            "takenAt": "Sep 27, 2026"
-          },
-          "kind": "photo",
-          "duration": null,
-          "videoSources": null,
-          "videoMeta": null
-        },
-        {
-          "id": "archive/total-escape-games/img02209",
-          "file": "Archive/Total Escape Games/IMG02209.jpg",
-          "stem": "p/archive/total-escape-games/img02209.579579ee",
-          "hash": "579579ee",
-          "width": 5007,
-          "height": 3826,
-          "widths": [
-            480,
-            960,
-            1440,
-            2048
-          ],
-          "lqip": "data:image/webp;base64,UklGRvoAAABXRUJQVlA4IO4AAABwBQCdASoYABIAPu1sq1EppaOiqAqpMB2JQBWAO4FwTk1XriN9Vy/PDVwfjLqNl3X4bQsAAP7SGgZh60XZPVYgx76ZiSmWKD6vrs4gLIrTVKPfgxnBsUf+F73gdXLMxcSIkkSp/4CsvAdUp4w+NJX/N3+hP7q6ZxX4oA8SNJI3ITp78JLot8CPHVPkNFUS9iLloAxd9AkhWlJ7oCpAjbyo27urgi6ewbScbfn9uaUf8Gl0EdU8IhC7zefpTYOQKj/CxOsVvZlH0/Y8I3ZEoLQRNs6xV51DOHGSKHzeYV9nFaFGBlwYv2dX9rMJYQAA",
-          "alt": "",
-          "caption": "",
-          "note": "",
-          "subsection": "Magic: the Gathering",
-          "exif": {
-            "camera": "Sony ILCE-6400",
-            "lens": "18-50mm F2.8 DC DN | Contemporary 021",
-            "focalLength": "25mm (38mm equiv.)",
-            "aperture": "f/4",
-            "shutterSpeed": "1/40s",
-            "iso": 1250,
-            "takenAt": "Sep 27, 2026"
-          },
-          "kind": "photo",
-          "duration": null,
-          "videoSources": null,
-          "videoMeta": null
-        },
-        {
-          "id": "archive/total-escape-games/img02220",
-          "file": "Archive/Total Escape Games/IMG02220.jpg",
-          "stem": "p/archive/total-escape-games/img02220.b773162e",
-          "hash": "b773162e",
-          "width": 5264,
-          "height": 3743,
-          "widths": [
-            480,
-            960,
-            1440,
-            2048
-          ],
-          "lqip": "data:image/webp;base64,UklGRt4AAABXRUJQVlA4INIAAADQBQCdASoYABEAPu1qrVCppaQiqAqpMB2JZACdMzOIFzgbgAd/ZbaX1gBDFBW6AFvLOeFvqMtAAP5OoP0flZFGwhpNHTJy/Vw70ZMUONeMGcM4uCVX6rIeRB7+vvv99lTlnkAJd/0H3gvWuc9jNFUxIz2eKPgiDoJ2chMFzfCtvhNnliXH3aK1YAz95RRj3gpF9Nsu8fjGEGjpWjqQu/fBsPWHA0ZCiRysa747F/EJ7HyHCRluAi/CQBWpYC7J8AN3Y21Vn5JNDhHdifX6NsIAAAA=",
-          "alt": "",
-          "caption": "",
-          "note": "",
-          "subsection": "Magic: the Gathering",
-          "exif": {
-            "camera": "Sony ILCE-6400",
-            "lens": "18-50mm F2.8 DC DN | Contemporary 021",
-            "focalLength": "37mm (55mm equiv.)",
-            "aperture": "f/4",
-            "shutterSpeed": "1/60s",
-            "iso": 1000,
-            "takenAt": "Sep 27, 2026"
-          },
-          "kind": "photo",
-          "duration": null,
-          "videoSources": null,
-          "videoMeta": null
-        },
-        {
-          "id": "archive/total-escape-games/img02228",
-          "file": "Archive/Total Escape Games/IMG02228.jpg",
-          "stem": "p/archive/total-escape-games/img02228.c1372c72",
-          "hash": "c1372c72",
-          "width": 5333,
-          "height": 4000,
-          "widths": [
-            480,
-            960,
-            1440,
-            2048
-          ],
-          "lqip": "data:image/webp;base64,UklGRtQAAABXRUJQVlA4IMgAAADQBQCdASoYABIAPu1srFEppaQiqAqpMB2JZADDT1AtqMA9L4L+xqwdcQhpOKMpkAb89Yj/e3QAAP7sTk5L7hp+VFlSvRDWJ9x+w18DMWRb4Izv8/RUNSsjL7Y1otmUB58gytHTKGfIQYBekaes7wLXc0xY0+Yb6JFGqiNpWTnQT3HYhmpMOSG3UoMY+tPWLfhFhgZZxxLzbeRGmi+STpx6lDfcBbVVnWPOBOCfdW3Dkh8reb9CVeRuYkrrARgzkPFTkN9IboAAAA==",
-          "alt": "",
-          "caption": "",
-          "note": "",
-          "subsection": "Magic: the Gathering",
-          "exif": {
-            "camera": "Sony ILCE-6400",
-            "lens": "18-50mm F2.8 DC DN | Contemporary 021",
-            "focalLength": "50mm (75mm equiv.)",
-            "aperture": "f/4",
-            "shutterSpeed": "1/80s",
-            "iso": 2500,
-            "takenAt": "Sep 27, 2026"
-          },
-          "kind": "photo",
-          "duration": null,
-          "videoSources": null,
-          "videoMeta": null
-        },
-        {
-          "id": "archive/total-escape-games/img02229",
-          "file": "Archive/Total Escape Games/IMG02229.jpg",
-          "stem": "p/archive/total-escape-games/img02229.1b63fe85",
-          "hash": "1b63fe85",
-          "width": 5333,
-          "height": 4000,
-          "widths": [
-            480,
-            960,
-            1440,
-            2048
-          ],
-          "lqip": "data:image/webp;base64,UklGRg4BAABXRUJQVlA4IAIBAADwBQCdASoYABIAPu1srlIppaQiqAgBMB2JYgC1CUxDghANaAPguNMryJcvO9ILvDpkSAT5PyeToAD2oxSgQUrzMNnRwYV3afS8F8xMDwmwryW9z/izc3RG3sIEvU5SG0pEVCCvtAcuO6czU59qwiNDnEAVkVnH9KtUeTkQoei6G9LFa49xbsUkStjdLX3D4S48s9pYXl33jclCLwg1RmvdhdoMzKsq/4hqcM4OO3giuTVFOkkTZnrh322AUIPGl7JNoPngEE37yfNAL4sRbey28xLmwBXh1SJduODwzLBrfaehg9VdqVbmiBi0sQwEhVma5gsVr/0LJWFZgKqVjSsAAAA=",
-          "alt": "",
-          "caption": "",
-          "note": "",
-          "subsection": "Magic: the Gathering",
-          "exif": {
-            "camera": "Sony ILCE-6400",
-            "lens": "18-50mm F2.8 DC DN | Contemporary 021",
-            "focalLength": "40mm (60mm equiv.)",
-            "aperture": "f/4",
-            "shutterSpeed": "1/80s",
-            "iso": 2500,
-            "takenAt": "Sep 27, 2026"
-          },
-          "kind": "photo",
-          "duration": null,
-          "videoSources": null,
-          "videoMeta": null
-        },
-        {
-          "id": "archive/total-escape-games/img02238",
-          "file": "Archive/Total Escape Games/IMG02238.jpg",
-          "stem": "p/archive/total-escape-games/img02238.df8d55a8",
-          "hash": "df8d55a8",
-          "width": 6000,
-          "height": 3640,
-          "widths": [
-            480,
-            960,
-            1440,
-            2048
-          ],
-          "lqip": "data:image/webp;base64,UklGRtQAAABXRUJQVlA4IMgAAABQBACdASoYAA8APu1iqU2ppaOiMAgBMB2JbACdOUAKlPRWZYIJp7QhzZcAAP6IjjNWC1P8pqb08kcqkVr5Tt/USicds6jlWPHILbQlq0idbjRm8dAEsLQY/DzSAiTvqpPVM3WNryhGnx8zLieHG2ZK2rScmLp22dCtznm+vq3SQveWhPDZQLHOlMC99PMwPbmZIYJTHHoEHE7m5ymh0z3Wb55ZIokBuzNOT7vM8bb49ZTRoCviABikbmc4uTXPMtlbQH2BpJ+AAA==",
-          "alt": "",
-          "caption": "",
-          "note": "",
-          "subsection": "Magic: the Gathering",
-          "exif": {
-            "camera": "Sony ILCE-6400",
-            "lens": "18-50mm F2.8 DC DN | Contemporary 021",
-            "focalLength": "29mm (43mm equiv.)",
-            "aperture": "f/4",
-            "shutterSpeed": "1/50s",
-            "iso": 1000,
-            "takenAt": "Sep 27, 2026"
-          },
-          "kind": "photo",
-          "duration": null,
-          "videoSources": null,
-          "videoMeta": null
-        },
-        {
-          "id": "archive/total-escape-games/img02249",
-          "file": "Archive/Total Escape Games/IMG02249.jpg",
-          "stem": "p/archive/total-escape-games/img02249.e1449145",
-          "hash": "e1449145",
-          "width": 6000,
-          "height": 3999,
-          "widths": [
-            480,
-            960,
-            1440,
-            2048
-          ],
-          "lqip": "data:image/webp;base64,UklGRtIAAABXRUJQVlA4IMYAAADQBACdASoYABAAPu1iqU2ppaOiMAgBMB2JbACdMoBOOhANZiWXl+EY2nqiTLaXAAD+zfyMN8N4jQ0AOLsX4PNfbDjbNl4N25I2BD+rqPfGe7+2efEjl8UX4o0BKLTOGrF+vJHPxyaiaJigp0vKLPq7Y+oYOEU3j5in7DwsloUU9+fMZyyuEsyeaaL8Xhbi56luuYUKNvMByaS+mnEf5sEuvtIw7cIOGFjIryVWCy38nSfs8xMW1bIe8fD5QDdryJ0mAdwgAAA=",
-          "alt": "",
-          "caption": "",
-          "note": "",
-          "subsection": "Magic: the Gathering",
-          "exif": {
-            "camera": "Sony ILCE-6400",
-            "lens": "18-50mm F2.8 DC DN | Contemporary 021",
-            "focalLength": "45mm (67mm equiv.)",
-            "aperture": "f/4",
-            "shutterSpeed": "1/80s",
-            "iso": 2000,
-            "takenAt": "Sep 27, 2026"
-          },
-          "kind": "photo",
-          "duration": null,
-          "videoSources": null,
-          "videoMeta": null
-        },
-        {
-          "id": "archive/total-escape-games/img02257",
-          "file": "Archive/Total Escape Games/IMG02257.jpg",
-          "stem": "p/archive/total-escape-games/img02257.f90f5a4a",
-          "hash": "f90f5a4a",
-          "width": 6000,
-          "height": 4000,
-          "widths": [
-            480,
-            960,
-            1440,
-            2048
-          ],
-          "lqip": "data:image/webp;base64,UklGRs4AAABXRUJQVlA4IMIAAABwBACdASoYABAAPu1iqU2ppaOiMAgBMB2JZgCdAYwIwO98lyrzMoEHp/yMAAD+rTSWwhrG59QO2PBIJW0a0bxWUjUpJ1+4H/K9aHs500Zbs+q4FRfAIbcVKIYQJ0OZvw/+BUlLih5QHcLCo1A+qajRkb8kFhIfIfOGeqjQJ+/RBR+40eg5WpqhnXeS13i+iIyx4gKCjVwXXqAla+F8Xkyn1sv4HIgHjLpTEmJ+o8xg/5OyIsLabblR097LsrXmHQAAAA==",
-          "alt": "",
-          "caption": "",
-          "note": "",
-          "subsection": "Magic: the Gathering",
-          "exif": {
-            "camera": "Sony ILCE-6400",
-            "lens": "18-50mm F2.8 DC DN | Contemporary 021",
-            "focalLength": "33mm (49mm equiv.)",
-            "aperture": "f/4",
-            "shutterSpeed": "1/60s",
-            "iso": 800,
-            "takenAt": "Sep 27, 2026"
-          },
-          "kind": "photo",
-          "duration": null,
-          "videoSources": null,
-          "videoMeta": null
-        },
-        {
-          "id": "archive/total-escape-games/img02318",
-          "file": "Archive/Total Escape Games/IMG02318.jpg",
-          "stem": "p/archive/total-escape-games/img02318.82c3349a",
-          "hash": "82c3349a",
-          "width": 4970,
-          "height": 3313,
-          "widths": [
-            480,
-            960,
-            1440,
-            2048
-          ],
-          "lqip": "data:image/webp;base64,UklGRsQAAABXRUJQVlA4ILgAAABQBACdASoYABAAPu1iqU2ppaOiMAgBMB2JbACdMoEUeAR5IFNjZUoTY2nAAP288Vbv6d0BdnYpdL3esjT9g/Kc4fOWtpPF2b3OuYnKMvZNaNWi6hIOg5jpuozlp9tIhsZ8AJeOaKMh9xtzQG8Ur6X0x+A3YB45kHRe/N8Tp19AnQYnrGsMKv30opqf4J0mm6TXc3luzMu0hkbN7/5ppjjSOIBkGi5YiSUnvfnH2ZXUAoBZsAGREAAA",
-          "alt": "",
-          "caption": "",
-          "note": "",
-          "subsection": "Magic: the Gathering",
-          "exif": {
-            "camera": "Sony ILCE-6400",
-            "lens": "18-50mm F2.8 DC DN | Contemporary 021",
-            "focalLength": "50mm (75mm equiv.)",
-            "aperture": "f/4",
-            "shutterSpeed": "1/80s",
-            "iso": 1600,
-            "takenAt": "Sep 27, 2026"
-          },
-          "kind": "photo",
-          "duration": null,
-          "videoSources": null,
-          "videoMeta": null
-        },
-        {
-          "id": "archive/total-escape-games/img02328",
-          "file": "Archive/Total Escape Games/IMG02328.jpg",
-          "stem": "p/archive/total-escape-games/img02328.3fb0b9de",
-          "hash": "3fb0b9de",
-          "width": 6000,
-          "height": 4000,
-          "widths": [
-            480,
-            960,
-            1440,
-            2048
-          ],
-          "lqip": "data:image/webp;base64,UklGRtIAAABXRUJQVlA4IMYAAABQBACdASoYABAAPu1iqU2ppaOiMAgBMB2JbACdAagNn4Kvz3T/G8lw7qwAAP51SMARrKPpb73yxzbKoOaBqEngLL97H0fN8YDt0hi2ddMs3d9/wJI/wqsceifnCpLjonfqDI1iIzDoNoetTEEcsXSWqihrItwsohSLXo6pPzh2/p1x1KlJ81MF9OD2G37h9AnqOjyET+MSmKwV2sXgPsTkYS9M3QmbE248/VdCDJ0SKQEzfpszp5fb91sX7vz6pXWklWKgAAA=",
-          "alt": "",
-          "caption": "",
-          "note": "",
-          "subsection": "Magic: the Gathering",
-          "exif": {
-            "camera": "Sony ILCE-6400",
-            "lens": "18-50mm F2.8 DC DN | Contemporary 021",
-            "focalLength": "36mm (54mm equiv.)",
-            "aperture": "f/4",
-            "shutterSpeed": "1/60s",
-            "iso": 2000,
-            "takenAt": "Sep 27, 2026"
-          },
-          "kind": "photo",
-          "duration": null,
-          "videoSources": null,
-          "videoMeta": null
-        },
-        {
-          "id": "archive/total-escape-games/img02343",
-          "file": "Archive/Total Escape Games/IMG02343.jpg",
-          "stem": "p/archive/total-escape-games/img02343.aa62fae2",
-          "hash": "aa62fae2",
-          "width": 6000,
-          "height": 4000,
-          "widths": [
-            480,
-            960,
-            1440,
-            2048
-          ],
-          "lqip": "data:image/webp;base64,UklGRuoAAABXRUJQVlA4IN4AAAAwBQCdASoYABAAPu1iqU2ppaOiMAgBMB2JbACdMoR3IsCrqxYAA+6rV/SITkGhMUpggAD9pjd8q+2w3TQ64BLsFsfvOyiKBpL9GL8h9R7pO3J/vhn7L66iNpXrK9AP62N+p8usTLIpTTWme7ORoHdXGVhusVYZCy4gPxD73aFFZQsjtsU4Fo62j05JcjhT6Ou+db5BCH+42H9kC6bW7ApiAaXQy6k3tyoExXaQvlbM0cfb80V4Lpb4HR/11VLNsYlornadvf0fegEHSP4ONyhN1uhHE+xM24bFv+gAAAA=",
-          "alt": "",
-          "caption": "",
-          "note": "",
-          "subsection": "Magic: the Gathering",
-          "exif": {
-            "camera": "Sony ILCE-6400",
-            "lens": "18-50mm F2.8 DC DN | Contemporary 021",
-            "focalLength": "37mm (55mm equiv.)",
-            "aperture": "f/4",
-            "shutterSpeed": "1/60s",
-            "iso": 2000,
-            "takenAt": "Sep 27, 2026"
-          },
-          "kind": "photo",
-          "duration": null,
-          "videoSources": null,
-          "videoMeta": null
-        },
-        {
-          "id": "archive/total-escape-games/img02350",
-          "file": "Archive/Total Escape Games/IMG02350.jpg",
-          "stem": "p/archive/total-escape-games/img02350.15a888fc",
-          "hash": "15a888fc",
-          "width": 6000,
-          "height": 4000,
-          "widths": [
-            480,
-            960,
-            1440,
-            2048
-          ],
-          "lqip": "data:image/webp;base64,UklGRsoAAABXRUJQVlA4IL4AAADQBACdASoYABAAPu1iqU2ppaOiMAgBMB2JbACdMoMYAEuWDT69+dP6trkrn5U8AAD+0Od5P61YZezaSPAJhy22NeNrSdPtkr1IztFt7gp4SQ+qvqjjHe+YFUv/JpS0K11kWIa2fM5bURsLh95plodo1E4j61gcAxuOvlxqnYdUjFyPXjVQuixNdYahDGLA8533hQhJTCa+dD1Su61lsT5XAgRipoiqvW7AR8978BbRr3vWZ0sVfx+LuUXv+HAA",
-          "alt": "",
-          "caption": "",
-          "note": "",
-          "subsection": "Magic: the Gathering",
-          "exif": {
-            "camera": "Sony ILCE-6400",
-            "lens": "18-50mm F2.8 DC DN | Contemporary 021",
-            "focalLength": "50mm (75mm equiv.)",
-            "aperture": "f/2.8",
-            "shutterSpeed": "1/80s",
-            "iso": 800,
-            "takenAt": "Sep 27, 2026"
-          },
-          "kind": "photo",
-          "duration": null,
-          "videoSources": null,
-          "videoMeta": null
-        },
-        {
-          "id": "archive/total-escape-games/img02351",
-          "file": "Archive/Total Escape Games/IMG02351.jpg",
-          "stem": "p/archive/total-escape-games/img02351.12849b96",
-          "hash": "12849b96",
-          "width": 5333,
-          "height": 4000,
-          "widths": [
-            480,
-            960,
-            1440,
-            2048
-          ],
-          "lqip": "data:image/webp;base64,UklGRugAAABXRUJQVlA4INwAAACQBQCdASoYABIAPu1wsFKppiSiqAgBMB2JZgCdIQSBO6Ws7VA5rH0eLxunj0dLnN0nLH6DAADMBNOPo/q2EMTlOltC+GwBvAQHtG1nx072u32jRlq8D4/+A72DTpCeP1/PaqHOPZwQogGmhsY/IjcRcqVC2QY1BfoeZRLgDQfozRXNyg4OvdyxdPPv3ocP2X8nkjpCmuC04UFsnSUyan5GO3l+1HSUUDBWHxA4/kQtmrlOXaAs8e5KokvPe/k3EKSl7+TZBY5nohnLOtuAtBSb52b7nzNHNxOyJuAA",
-          "alt": "",
-          "caption": "",
-          "note": "",
-          "subsection": "Magic: the Gathering",
-          "exif": {
-            "camera": "Sony ILCE-6400",
-            "lens": "18-50mm F2.8 DC DN | Contemporary 021",
-            "focalLength": "35mm (52mm equiv.)",
-            "aperture": "f/2.8",
-            "shutterSpeed": "1/60s",
-            "iso": 500,
-            "takenAt": "Sep 27, 2026"
-          },
-          "kind": "photo",
-          "duration": null,
-          "videoSources": null,
-          "videoMeta": null
-        },
-        {
-          "id": "archive/total-escape-games/img02364",
-          "file": "Archive/Total Escape Games/IMG02364.jpg",
-          "stem": "p/archive/total-escape-games/img02364.d268c880",
-          "hash": "d268c880",
-          "width": 6000,
-          "height": 4000,
-          "widths": [
-            480,
-            960,
-            1440,
-            2048
-          ],
-          "lqip": "data:image/webp;base64,UklGRs4AAABXRUJQVlA4IMIAAACQBACdASoYABAAPu1iqU2ppaQiMAgBMB2JbACdMoGv/i18EPJZpNerHb1CyAAA9r2QFFQIrQIqdLqfp88A2yjNj2WS+raLtAbrrwjY7TnVgHd2fLYrXdAF4qbnBFMtrqncbw08FOqoGe0OqaSgHI+R0DCmW55W1QpaRLIhH07HpO7Vt1bMblxW4KtXyZ93keWe7jnp/4OXy24DuTgi8SwD/VTulioOtCQytoL51RmrmXvB04CLOh/8Fmr9J2nsLwAAAA==",
-          "alt": "",
-          "caption": "",
-          "note": "",
-          "subsection": "Magic: the Gathering",
-          "exif": {
-            "camera": "Sony ILCE-6400",
-            "lens": "18-50mm F2.8 DC DN | Contemporary 021",
-            "focalLength": "29mm (43mm equiv.)",
-            "aperture": "f/4",
-            "shutterSpeed": "1/50s",
-            "iso": 1250,
-            "takenAt": "Sep 27, 2026"
-          },
-          "kind": "photo",
-          "duration": null,
-          "videoSources": null,
-          "videoMeta": null
-        },
-        {
-          "id": "archive/total-escape-games/img02383",
-          "file": "Archive/Total Escape Games/IMG02383.jpg",
-          "stem": "p/archive/total-escape-games/img02383.aeca6cf2",
-          "hash": "aeca6cf2",
-          "width": 6000,
-          "height": 4000,
-          "widths": [
-            480,
-            960,
-            1440,
-            2048
-          ],
-          "lqip": "data:image/webp;base64,UklGRuYAAABXRUJQVlA4INoAAACwBACdASoYABAAPu1iqU2ppaOiMAgBMB2JZgCdAYvWlFOh1TA8WaxrI7+WmvtAAP6i+V5AQ2jriFT4ILn5Ajd2AHH0p3foofgSJxUS3/VXOZ6IV/uHga2E7UKhM0/MbeZ17J3SbzHhHkRcVPwSNDSV5HHTNokHHqM9D4kDr4dFd6eRatDx5zgPb6pauTj/OSN5bW8W3SMFg/+JNlGwo+ezfPOe8Vv7f5otFehDdG/FSnR+cd7IAfELm7LN7maY0qxF3nDu/WDJaDFBvZJLeoBOpYtsy5FwFSfAAA==",
-          "alt": "",
-          "caption": "",
-          "note": "",
-          "subsection": "Magic: the Gathering",
-          "exif": {
-            "camera": "Sony ILCE-6400",
-            "lens": "18-50mm F2.8 DC DN | Contemporary 021",
-            "focalLength": "34mm (51mm equiv.)",
-            "aperture": "f/4",
-            "shutterSpeed": "1/60s",
-            "iso": 1600,
-            "takenAt": "Sep 27, 2026"
-          },
-          "kind": "photo",
-          "duration": null,
-          "videoSources": null,
-          "videoMeta": null
-        },
-        {
-          "id": "archive/total-escape-games/img02411",
-          "file": "Archive/Total Escape Games/IMG02411.jpg",
-          "stem": "p/archive/total-escape-games/img02411.b6e2c73a",
-          "hash": "b6e2c73a",
-          "width": 6000,
-          "height": 4000,
-          "widths": [
-            480,
-            960,
-            1440,
-            2048
-          ],
-          "lqip": "data:image/webp;base64,UklGRtAAAABXRUJQVlA4IMQAAADQBACdASoYABAAPu1iqU2ppaOiMAgBMB2JbACdMoAvQTO4xFzn8qJwZdD0aRZFUAD+6ZrrfjqQ4cbkdMnctLM4w2SV9tz4IcYo45hGnqtTFO3essCG6NuWnwIwHVBHudaTQRv+25OOyZKn4+mjtscZ+w99PurTkzII48RwiiDmeRHH+v5HTZ/aQFW9O+MJ75XDc2kSlQ5So5dbJy9iTDJMzTpyhmQM8iOkbdNkOIYfLpsZr6HIK+eB7jwlOKi8MxAugAAA",
-          "alt": "",
-          "caption": "",
-          "note": "",
-          "subsection": "Magic: the Gathering",
-          "exif": {
-            "camera": "Sony ILCE-6400",
-            "lens": "18-50mm F2.8 DC DN | Contemporary 021",
-            "focalLength": "50mm (75mm equiv.)",
-            "aperture": "f/4",
-            "shutterSpeed": "1/80s",
-            "iso": 2500,
-            "takenAt": "Sep 27, 2026"
-          },
-          "kind": "photo",
-          "duration": null,
-          "videoSources": null,
-          "videoMeta": null
-        }
-      ],
-      "unlisted": false,
-      "availableUntil": null,
-      "passwordHash": null,
-      "zips": [
-        {
-          "key": "small",
-          "label": "Small",
-          "path": "zip/archive/total-escape-games-small.zip",
-          "size": 11645340
-        },
-        {
-          "key": "medium",
-          "label": "Medium",
-          "path": "zip/archive/total-escape-games-medium.zip",
-          "size": 37902443
-        },
-        {
-          "key": "large",
-          "label": "Large",
-          "path": "zip/archive/total-escape-games-large.zip",
-          "size": 90723863
-        },
-        {
-          "key": "full",
-          "label": "Full quality",
-          "path": "zip/archive/total-escape-games-full.zip",
-          "size": 1058194505
         }
       ]
     },
@@ -19377,35 +17492,9 @@
           "videoMeta": null
         }
       ],
-      "unlisted": false,
       "availableUntil": null,
       "passwordHash": null,
-      "zips": [
-        {
-          "key": "small",
-          "label": "Small",
-          "path": "zip/archive/valmont-bike-park-small.zip",
-          "size": 1886905
-        },
-        {
-          "key": "medium",
-          "label": "Medium",
-          "path": "zip/archive/valmont-bike-park-medium.zip",
-          "size": 6147317
-        },
-        {
-          "key": "large",
-          "label": "Large",
-          "path": "zip/archive/valmont-bike-park-large.zip",
-          "size": 12881733
-        },
-        {
-          "key": "full",
-          "label": "Full quality",
-          "path": "zip/archive/valmont-bike-park-full.zip",
-          "size": 115388524
-        }
-      ]
+      "zips": null
     }
   ]
 }
