@@ -43,7 +43,7 @@ const availableUntil = gallery.availableUntil
   title={gallery.title}
   description={gallery.description || `${gallery.title} — photography by Ryan Taylor.`}
   image={locked ? undefined : coverPhoto ? ogImage(coverPhoto) : undefined}
-  noindex={locked || gallery.unlisted}
+  noindex={locked || !!gallery.passwordHash}
   locked={locked}
 >
   <section class="page-head">

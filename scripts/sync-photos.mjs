@@ -145,7 +145,6 @@ for (const rel of await galleryDirs(SRC_DIR)) {
     cover: (coverFile ?? photos[0]).id,
     featured: (config?.featured ?? []).map((f) => photos.find((p) => basename(p.file) === f)?.id).filter(Boolean),
     photos,
-    unlisted: !!config?.unlisted,
     availableUntil: config?.availableUntil ?? null,
     passwordHash,
     zips,

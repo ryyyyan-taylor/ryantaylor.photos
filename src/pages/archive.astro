@@ -2,9 +2,9 @@
 import Base from '../layouts/Base.astro';
 import BackLink from '../components/BackLink.astro';
 import GalleryCard from '../components/GalleryCard.astro';
-import { listedGalleries, ogImage, photoById } from '../lib/photos';
+import { galleries, ogImage, photoById } from '../lib/photos';
 
-const archive = listedGalleries.filter((g) => g.section === 'archive');
+const archive = galleries.filter((g) => g.section === 'archive');
 const coverPhoto = archive[0] ? photoById(archive[0].cover) : undefined;
 ---
 

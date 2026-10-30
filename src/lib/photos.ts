@@ -66,26 +66,20 @@ export interface Gallery {
   // gallery.json `featured`: photo ids picked for a showcase's home page row.
   featured?: string[];
   photos: Photo[];
-  // Unlisted galleries still get their own page (for direct client links)
-  // but are left out of the archive page and the sitemap.
-  unlisted: boolean;
   availableUntil: string | null;
   // Set from gallery.json's `password`; enforced by the Worker (see
   // worker/gallery-auth.ts), not by anything at build time — the page still
-  // builds normally, it's the Worker deciding whether to serve it.
+  // builds normally, it's the Worker deciding whether to serve it. Protected
+  // galleries stay on the archive page but are left out of the sitemap.
   passwordHash: string | null;
   zips: GalleryZip[] | null;
 }
 
 export const IMG_BASE = (import.meta.env.PUBLIC_IMG_BASE ?? 'https://img.ryantaylor.photos').replace(/\/$/, '');
 
-// The full set, including unlisted galleries — [...gallery].astro builds a
+// The full set, including protected galleries — [...gallery].astro builds a
 // page for every one of these so a direct client link still works.
 export const galleries = manifest.galleries as Gallery[];
-
-// Everything that should actually appear somewhere a visitor can browse to:
-// the archive page and the sitemap.
-export const listedGalleries = galleries.filter((g) => !g.unlisted);
 
 export const headshot = (manifest as { headshot?: Photo | null }).headshot ?? null;
 

@@ -51,7 +51,7 @@ function renderGalleryList() {
     item.innerHTML = `
       ${thumb}
       <span class="name">${escapeHtml(g.title)}</span>
-      ${g.unlisted ? '<span class="badge">unlisted</span>' : ''}
+      ${g.protected ? '<span class="badge">password</span>' : ''}
     `;
     item.addEventListener('click', () => selectGallery(g.id));
     root.appendChild(item);
@@ -87,10 +87,6 @@ function renderEditor() {
         <label>Order</label>
         <input id="f-order" type="number" value="${g.order}" style="width:5rem">
       </div>
-      <div class="field checkbox">
-        <input id="f-unlisted" type="checkbox" ${g.unlisted ? 'checked' : ''}>
-        <label for="f-unlisted">Unlisted</label>
-      </div>
     </div>
     <div class="field-row">
       <div class="field grow">
@@ -123,7 +119,7 @@ function renderEditor() {
 
   renderPhotoGrid();
 
-  for (const id of ['f-title', 'f-type', 'f-order', 'f-unlisted', 'f-description', 'f-available', 'f-password']) {
+  for (const id of ['f-title', 'f-type', 'f-order', 'f-description', 'f-available', 'f-password']) {
     $('#' + id).addEventListener('input', markDirty);
   }
   $('#save-gallery').addEventListener('click', saveGallery);
@@ -265,8 +261,6 @@ async function saveGallery() {
 
   const order = Number($('#f-order').value);
   if (Number.isFinite(order) && order !== 999) payload.order = order;
-
-  if ($('#f-unlisted').checked) payload.unlisted = true;
 
   const availableUntil = $('#f-available').value.trim();
   if (availableUntil) payload.availableUntil = availableUntil;

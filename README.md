@@ -48,7 +48,7 @@ publishes at `/sports/mckay-bike-park/` and is titled "McKay Bike Park".
 `npm run admin` starts a local-only web app at `http://localhost:5050` (change the port with
 `ADMIN_PORT`) for managing the library without touching JSON or the CLI by hand:
 
-- Browse galleries, edit every `gallery.json` field (title, description, type, order, unlisted,
+- Browse galleries, edit every `gallery.json` field (title, description, type, order,
   availableUntil, password) through a form.
 - View, reorder (drag and drop), and set the cover among a gallery's photos and videos; edit each
   photo's alt/caption/note (subsections are shown read-only; they come from folders).
