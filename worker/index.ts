@@ -6,6 +6,7 @@ import {
   verifyGalleryPassword,
 } from './gallery-auth';
 import { legacyRedirect } from './legacy-redirects';
+import { showcases } from '../src/lib/showcases';
 
 const OWNER_EMAIL = 'ryan4125taylor@gmail.com';
 const SENDER = { email: 'bookings@ryantaylor.photos', name: 'Ryan Taylor Photography' };
@@ -13,6 +14,7 @@ const REQUIRED_FIELDS = ['clientName', 'clientEmail', 'project', 'date', 'startT
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const DATE_RE = /^\d{4}-\d{2}-\d{2}$/;
 const TIME_RE = /^\d{2}:\d{2}$/;
+const CONTACT_TOPICS = new Map([...showcases.map((s) => [s.slug, s.title] as const), ['other', 'Something else']]);
 
 interface GalleryEnv extends Env {
   GALLERY_AUTH_SECRET: string;
@@ -37,6 +39,10 @@ export default {
 
     if (url.pathname === '/api/gallery-auth') {
       return handleGalleryAuth(request, env);
+    }
+
+    if (url.pathname === '/api/contact') {
+      return handleContact(request, env);
     }
 
     const redirect = legacyRedirect(url);
@@ -80,6 +86,49 @@ async function handleGalleryAuth(request: Request, env: GalleryEnv): Promise<Res
   const headers = new Headers({ Location: `/${slug}/` });
   headers.append('Set-Cookie', await issueSessionCookie(slug, env.GALLERY_AUTH_SECRET));
   return new Response(null, { status: 303, headers });
+}
+
+// Always delivers to OWNER_EMAIL only, so the form can't be used to mail
+// anyone else. JS submits ask for JSON; a plain form post gets redirected to
+// a #sent/#error anchor the page styles with :target.
+async function handleContact(request: Request, env: Env): Promise<Response> {
+  if (request.method !== 'POST') {
+    return new Response('Method Not Allowed', { status: 405 });
+  }
+
+  const wantsJson = request.headers.get('Accept')?.includes('application/json');
+  const reply = (ok: boolean) =>
+    wantsJson
+      ? jsonResponse({ status: ok ? 'sent' : 'error' }, ok ? 200 : 400)
+      : Response.redirect(new URL(`/contact/#${ok ? 'sent' : 'error'}`, request.url), 303);
+
+  const form = await request.formData().catch(() => null);
+  const field = (key: string, max: number) => (form?.get(key)?.toString().trim() ?? '').slice(0, max);
+
+  // Honeypot: hidden from people, filled in by bots. Pretend it worked.
+  if (field('website', 200)) return reply(true);
+
+  const name = field('name', 100);
+  const email = field('email', 200);
+  const message = field('message', 5000);
+  const topic = CONTACT_TOPICS.get(field('topic', 50)) ?? 'Something else';
+  const date = field('date', 10);
+  if (!name || !EMAIL_RE.test(email) || !message || (date && !DATE_RE.test(date))) return reply(false);
+
+  const lines = [`Name: ${name}`, `Email: ${email}`, `Topic: ${topic}`, ...(date ? [`Date: ${date}`] : []), '', message];
+  try {
+    await env.EMAIL.send({
+      to: OWNER_EMAIL,
+      from: SENDER,
+      replyTo: email,
+      subject: `Inquiry: ${topic} from ${name}`,
+      text: lines.join('\n'),
+    });
+    return reply(true);
+  } catch (err) {
+    console.error('contact email failed', err);
+    return wantsJson ? jsonResponse({ status: 'error' }, 502) : reply(false);
+  }
 }
 
 async function handleApi(request: Request, env: Env, url: URL): Promise<Response> {

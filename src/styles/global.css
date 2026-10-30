@@ -117,6 +117,7 @@ h3 {
 .site-nav {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   gap: clamp(1rem, 3vw, 2rem);
   font-size: 0.85rem;
   letter-spacing: 0.09em;
@@ -134,6 +135,22 @@ h3 {
 
 .site-nav a:hover {
   color: var(--fg);
+}
+
+.site-nav .nav-cta {
+  padding: 0.55rem 0.9rem;
+  margin-block: -0.55rem;
+  border: 1px solid rgba(224, 164, 88, 0.45);
+  color: var(--accent);
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.site-nav .nav-cta:hover,
+.site-nav .nav-cta:focus-visible,
+.site-nav .nav-cta[aria-current="page"] {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+  color: var(--accent);
 }
 
 .site-nav a[aria-current="page"] {
@@ -1097,49 +1114,48 @@ h3 {
   }
 }
 
-.confirmation-form {
+:is(.confirmation-form, .contact-form) {
   display: grid;
   gap: 1.25rem;
   margin-top: clamp(1.5rem, 4vw, 2.5rem);
 }
 
-.confirmation-form .field {
+:is(.confirmation-form, .contact-form) .field {
   display: grid;
   gap: 0.4rem;
 }
 
-.confirmation-form .field-row {
+:is(.confirmation-form, .contact-form) .field-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1.25rem;
 }
 
-.confirmation-form .field-row--3 {
+:is(.confirmation-form, .contact-form) .field-row--3 {
   grid-template-columns: 1fr 1fr 1fr;
 }
 
 @media (max-width: 40rem) {
-  .confirmation-form .field-row,
-  .confirmation-form .field-row--3 {
+  :is(.confirmation-form, .contact-form) .field-row,
+  :is(.confirmation-form, .contact-form) .field-row--3 {
     grid-template-columns: 1fr;
   }
 }
 
-.confirmation-form .field-hint {
+:is(.confirmation-form, .contact-form) .field-hint {
   margin-top: -0.6rem;
   font-size: 0.78rem;
   color: var(--muted);
 }
 
-.confirmation-form label {
+:is(.confirmation-form, .contact-form) label {
   font-size: 0.78rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--muted);
 }
 
-.confirmation-form input,
-.confirmation-form textarea {
+:is(.confirmation-form, .contact-form) :is(input, textarea, select) {
   border: 1px solid var(--line);
   background: var(--bg);
   color: var(--fg);
@@ -1148,15 +1164,95 @@ h3 {
   padding: 0.6rem 0.7rem;
 }
 
-.confirmation-form textarea {
+:is(.confirmation-form, .contact-form) textarea {
   resize: vertical;
   min-height: 8rem;
 }
 
-.confirmation-form input:focus-visible,
-.confirmation-form textarea:focus-visible {
+:is(.confirmation-form, .contact-form) :is(input, textarea, select):focus-visible {
   outline: 1px solid var(--accent);
   outline-offset: 1px;
+}
+
+.contact-page {
+  display: grid;
+  gap: clamp(1.5rem, 4vw, 3rem);
+}
+
+@media (min-width: 56rem) {
+  .contact-page {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr);
+    align-items: start;
+  }
+}
+
+.contact-intro {
+  display: grid;
+  gap: 1rem;
+}
+
+.contact-intro h1 {
+  font-size: clamp(2.6rem, 8vw, 4.5rem);
+}
+
+.contact-details {
+  display: grid;
+  gap: 1rem;
+  margin: 0.5rem 0 0;
+}
+
+.contact-details dt {
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.contact-details dd {
+  margin: 0.2rem 0 0;
+  font-size: 1.05rem;
+}
+
+.contact-details a:hover {
+  color: var(--accent);
+}
+
+.contact-form {
+  margin-top: 0;
+}
+
+.contact-trap {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.form-status {
+  display: none;
+  margin: 0;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--line);
+}
+
+.form-status:target,
+.form-status.is-shown {
+  display: block;
+}
+
+.form-status--ok {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+
+.form-status--error {
+  border-color: var(--danger);
+  color: var(--danger);
+}
+
+.form-status a {
+  text-decoration: underline;
 }
 
 .form-actions {

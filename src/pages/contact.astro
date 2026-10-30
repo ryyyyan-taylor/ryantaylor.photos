@@ -1,0 +1,102 @@
+---
+import Base from '../layouts/Base.astro';
+import BackLink from '../components/BackLink.astro';
+import { showcases } from '../lib/showcases';
+
+const EMAIL = 'contact@ryantaylor.photos';
+const INSTAGRAM = 'ryyyyan_taylor';
+---
+
+<Base title="Contact" description="Get in touch with Ryan Taylor, a photographer based in Denver, CO.">
+  <section class="contact-page">
+    <div class="contact-intro">
+      <p class="eyebrow"><BackLink href="/" label="Home" /></p>
+      <h1>Get in touch</h1>
+      <p class="lede">Tell me a little about what you have in mind and I'll get back to you, usually within a day or two.</p>
+      <dl class="contact-details">
+        <div>
+          <dt>Email</dt>
+          <dd><a href={`mailto:${EMAIL}`}>{EMAIL}</a></dd>
+        </div>
+        <div>
+          <dt>Instagram</dt>
+          <dd><a href={`https://www.instagram.com/${INSTAGRAM}/`} rel="noopener">@{INSTAGRAM}</a></dd>
+        </div>
+      </dl>
+    </div>
+
+    <form id="contact-form" class="contact-form" method="post" action="/api/contact">
+      <div class="field-row">
+        <div class="field">
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" autocomplete="name" maxlength="100" required />
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" autocomplete="email" maxlength="200" required />
+        </div>
+      </div>
+      <div class="field-row">
+        <div class="field">
+          <label for="topic">What's it for?</label>
+          <select id="topic" name="topic">
+            {showcases.map((s) => <option value={s.slug}>{s.title}</option>)}
+            <option value="other">Something else</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="date">Date (if known)</label>
+          <input id="date" name="date" type="date" />
+        </div>
+      </div>
+      <div class="field">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" maxlength="5000" required></textarea>
+      </div>
+      <div class="contact-trap" aria-hidden="true">
+        <label for="website">Website</label>
+        <input id="website" name="website" type="text" tabindex="-1" autocomplete="off" />
+      </div>
+      <div class="form-actions">
+        <button class="btn" type="submit">Send message</button>
+      </div>
+      <p id="sent" class="form-status form-status--ok" role="status">Thanks! Your message is on its way. I'll be in touch soon.</p>
+      <p id="error" class="form-status form-status--error" role="alert">
+        Something went wrong sending that. Please try again, or email me directly at <a href={`mailto:${EMAIL}`}>{EMAIL}</a>.
+      </p>
+    </form>
+  </section>
+</Base>
+
+<script>
+  const form = document.getElementById('contact-form') as HTMLFormElement;
+  const button = form.querySelector('button[type="submit"]') as HTMLButtonElement;
+  const sent = document.getElementById('sent')!;
+  const error = document.getElementById('error')!;
+
+  const type = new URLSearchParams(location.search).get('type');
+  const topic = form.elements.namedItem('topic') as HTMLSelectElement;
+  if (type && [...topic.options].some((o) => o.value === type)) topic.value = type;
+
+  function show(status: HTMLElement | null) {
+    for (const el of [sent, error]) el.classList.toggle('is-shown', el === status);
+  }
+
+  form.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    show(null);
+    button.disabled = true;
+    button.textContent = 'Sending…';
+    try {
+      const res = await fetch(form.action, { method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' } });
+      if (!res.ok) throw new Error(String(res.status));
+      form.reset();
+      show(sent);
+    } catch {
+      show(error);
+    } finally {
+      button.disabled = false;
+      button.textContent = 'Send message';
+    }
+  });
+</script>

@@ -38,7 +38,7 @@ const coverPhoto = gallery ? photoById(gallery.cover) : undefined;
         {showcase.intro.map((paragraph) => <p>{paragraph}</p>)}
       </div>
       <div class="showcase-cta">
-        <a class="cta-link" href="mailto:contact@ryantaylor.photos">
+        <a class="cta-link" href={`/contact/?type=${showcase.slug}`}>
           Get in touch
         </a>
         {showcase.booking && <p class="showcase-booking">{showcase.booking}</p>}
