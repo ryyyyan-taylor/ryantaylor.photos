@@ -44,6 +44,7 @@ include only what you want to override. Copy `gallery.example.json` as a startin
 | `photos` | none | Per-file `alt`, `caption`, and `note`, keyed by exact filename. |
 | `photoOrder` | none | Filenames in display order (see below). Overrides the default filename sort. |
 | `type` | none | A category like `"events"` or `"sports"`. Used to filter the archive page. |
+| `zip` | `true` | `false` skips the "Download all" zips for this gallery (and prune then removes any built before). Showcase pages never show them, so showcases should set this. |
 | `availableUntil` | none | `"YYYY-MM-DD"`. Purely a note shown on the page ("available to view through ...") — nothing is actually enforced or deleted automatically. |
 | `password` | none | Plaintext, here only. `photos:sync` hashes it (PBKDF2) into `photos.json` and never writes the plaintext anywhere. The Worker gates the page at request time — visiting the URL shows a password prompt instead of the gallery until it's entered (see `worker/gallery-auth.ts`). Protected galleries still appear on the archive page (title and cover) but are kept out of the sitemap. Removing the field and re-syncing removes protection. |
 
@@ -65,7 +66,7 @@ Files you list come first, in that order; anything in the gallery you don't ment
 afterward in its normal filename-sorted position — so you only need to list the photos you're
 actually reordering, not the whole gallery.
 
-Every gallery also gets a "Download all" menu with zips for its photos — Small (1024px), Medium
+Every gallery also gets (unless `"zip": false`) a "Download all" menu with zips for its photos — Small (1024px), Medium
 (2048px), Large (3200px), and Full quality (untouched originals) — built automatically by
 `photos:sync` and rebuilt whenever the gallery's files change. A gallery with any videos also gets
 a Video zip (the untouched originals) instead of duplicating them into every photo tier. Nothing to

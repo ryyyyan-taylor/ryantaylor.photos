@@ -126,9 +126,10 @@ for (const rel of await galleryDirs(SRC_DIR)) {
   // files in the gallery changed (additions/removals don't bump `uploaded`
   // on their own — a straight count/membership diff catches those too).
   const filesChanged = prevFiles.size !== currFiles.length || currFiles.some((f) => !prevFiles.has(f));
-  const shouldRebuildZip = !dryRun && (uploaded > beforeUploaded || filesChanged || force || !prevGallery?.zips);
+  const wantsZip = config?.zip !== false;
+  const shouldRebuildZip = wantsZip && !dryRun && (uploaded > beforeUploaded || filesChanged || force || !prevGallery?.zips);
 
-  let zips = prevGallery?.zips ?? null;
+  let zips = wantsZip ? prevGallery?.zips ?? null : null;
   if (shouldRebuildZip) {
     zips = await buildZip(dir, slug, title, photos, new Map(files.map((f) => [f.file, f.path])));
     console.log(`  zip: ${slug} (${zips.map((z) => `${z.key}=${formatBytes(z.size)}`).join(', ')})`);

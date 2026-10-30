@@ -87,6 +87,10 @@ function renderEditor() {
         <label>Order</label>
         <input id="f-order" type="number" value="${g.order}" style="width:5rem">
       </div>
+      <div class="field checkbox">
+        <input id="f-zip" type="checkbox" ${g.zip ? 'checked' : ''}>
+        <label for="f-zip">Download zips</label>
+      </div>
     </div>
     <div class="field-row">
       <div class="field grow">
@@ -119,7 +123,7 @@ function renderEditor() {
 
   renderPhotoGrid();
 
-  for (const id of ['f-title', 'f-type', 'f-order', 'f-description', 'f-available', 'f-password']) {
+  for (const id of ['f-title', 'f-type', 'f-order', 'f-description', 'f-available', 'f-password', 'f-zip']) {
     $('#' + id).addEventListener('input', markDirty);
   }
   $('#save-gallery').addEventListener('click', saveGallery);
@@ -261,6 +265,8 @@ async function saveGallery() {
 
   const order = Number($('#f-order').value);
   if (Number.isFinite(order) && order !== 999) payload.order = order;
+
+  if (!$('#f-zip').checked) payload.zip = false;
 
   const availableUntil = $('#f-available').value.trim();
   if (availableUntil) payload.availableUntil = availableUntil;
