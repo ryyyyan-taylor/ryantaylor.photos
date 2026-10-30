@@ -30,6 +30,17 @@ export const showcases: Showcase[] = [
     booking: 'Booking rider and athlete sessions, local races, and club events around Denver.',
   },
   {
+    slug: 'real-estate',
+    title: 'Real Estate',
+    blurb: 'Bright, true-to-life interiors that show a space the way it feels in person.',
+    intro: [
+      "Interiors are all about light. For Total Escape Games, I photographed their store from the sales floor and display counters to the open play area, fighting harsh game store lighting.",
+      "I'm looking for some real estate and interior work. Reach out if you've got homes and rentals headed to listing, short-term rentals refreshing their photos, or a local business you want to look great online.",
+      'You get an edited set of wide, evenly lit photos, with downloads sized for listings, print, social media, and web.',
+    ],
+    booking: 'Booking home, rental, and commercial interior shoots around Denver.',
+  },
+  {
     slug: 'product',
     title: 'Detail & Product',
     blurb: 'Close-up work for products, artwork, and painted miniatures.',
