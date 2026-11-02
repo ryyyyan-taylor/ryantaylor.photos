@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-30T17:52:11.727Z",
+  "generatedAt": "2026-11-02T00:32:10.849Z",
   "widths": [
     480,
     960,
@@ -838,70 +838,6 @@
           "videoMeta": null
         },
         {
-          "id": "events/img00965",
-          "file": "Events/IMG00965.jpg",
-          "stem": "p/events/img00965.b7bc16c6",
-          "hash": "b7bc16c6",
-          "width": 6000,
-          "height": 4000,
-          "widths": [
-            480,
-            960,
-            1440,
-            2048
-          ],
-          "lqip": "data:image/webp;base64,UklGRtYAAABXRUJQVlA4IMoAAAAQBQCdASoYABAAPu1iqU2ppaOiMAgBMB2JbACdMoKP+HkZRK32kxPrTsHmJRL2TwVAAP69o/VTq3x7p00koo/Oz32DHURxkWUPJbrKoMepl2ohj1SCNzzq0zb3TObu40bR6j4SvpOm5W02UUYJx2SpV/L7AGaZXXjQR7qWnswGd7GN3cua2+w/3knqolS8ba4bTFji5Y6u24nnkOSO6cYNZXW/t59//NrteJerweLdWYAPS+8u5xVaKJY1yc12wF23Y2ARQUQOVAAA",
-          "alt": "",
-          "caption": "",
-          "note": "",
-          "subsection": null,
-          "exif": {
-            "camera": "Sony ILCE-6400",
-            "lens": "18-50mm F2.8 DC DN | Contemporary 021",
-            "focalLength": "50mm (75mm equiv.)",
-            "aperture": "f/2.8",
-            "shutterSpeed": "1/80s",
-            "iso": 1600,
-            "takenAt": "Sep 5, 2026"
-          },
-          "kind": "photo",
-          "duration": null,
-          "videoSources": null,
-          "videoMeta": null
-        },
-        {
-          "id": "events/img01031",
-          "file": "Events/IMG01031.jpg",
-          "stem": "p/events/img01031.8140bb55",
-          "hash": "8140bb55",
-          "width": 4774,
-          "height": 3580,
-          "widths": [
-            480,
-            960,
-            1440,
-            2048
-          ],
-          "lqip": "data:image/webp;base64,UklGRuoAAABXRUJQVlA4IN4AAACwBQCdASoYABIAPu1oqVAppaOiqA1RMB2JYgC7IMggwwscla+BWY9iAIV3dYFVPQ76nRJ9b+AA/qpwwRfYOuTFLq/ulQw9wxoeknd9iraFpV05aRyYCmTspMWBGeD2PSt69K9ziFRai18sFVOL+JbZg7DuD51BkZStzvmwn9zIy3oJH1NboEq3GaCt+uWffWrZJlY6TjmZyWs99HldvX9Czc9AHTStxz7QDMidVIyQLHa1A5PvN5C2CMyR3LJUsXC1lUEHrMqOmZQC/rz0svESpZ0F7DkbHB6VRHFAAAA=",
-          "alt": "",
-          "caption": "",
-          "note": "",
-          "subsection": null,
-          "exif": {
-            "camera": "Sony ILCE-6400",
-            "lens": "18-50mm F2.8 DC DN | Contemporary 021",
-            "focalLength": "50mm (75mm equiv.)",
-            "aperture": "f/2.8",
-            "shutterSpeed": "1/80s",
-            "iso": 1250,
-            "takenAt": "Sep 5, 2026"
-          },
-          "kind": "photo",
-          "duration": null,
-          "videoSources": null,
-          "videoMeta": null
-        },
-        {
           "id": "events/img01110",
           "file": "Events/IMG01110.jpg",
           "stem": "p/events/img01110.212ae7c7",
@@ -926,38 +862,6 @@
             "aperture": "f/2.8",
             "shutterSpeed": "1/80s",
             "iso": 640,
-            "takenAt": "Sep 5, 2026"
-          },
-          "kind": "photo",
-          "duration": null,
-          "videoSources": null,
-          "videoMeta": null
-        },
-        {
-          "id": "events/img01140",
-          "file": "Events/IMG01140.jpg",
-          "stem": "p/events/img01140.5e5a903d",
-          "hash": "5e5a903d",
-          "width": 5333,
-          "height": 4000,
-          "widths": [
-            480,
-            960,
-            1440,
-            2048
-          ],
-          "lqip": "data:image/webp;base64,UklGRsYAAABXRUJQVlA4ILoAAAAQBQCdASoYABIAPu1orlCppaQiqAqpMB2JZACpFWTBduJ9HM2DoKZI6K7VLJCui3wAAP7zJqZcGRcn1NvW3U7/zhGjcHliZPImfwuiGzy/V2zY+P09YVB3yoKW9O/SzJaaf5kFJ2P5JIHt8TVWxjyf43QBpjZwSTlTaKn05coETrWecpT/h3PFwtm6Joff9zOH2LAnNYAIOn4AT4SFlK/7Ro+1+4m0oZJA/y9TTIg28YFelMiP5I/NQAA=",
-          "alt": "",
-          "caption": "",
-          "note": "",
-          "subsection": null,
-          "exif": {
-            "camera": "Sony ILCE-6400",
-            "lens": "18-50mm F2.8 DC DN | Contemporary 021",
-            "focalLength": "47mm (70mm equiv.)",
-            "aperture": "f/2.8",
-            "shutterSpeed": "1/80s",
-            "iso": 800,
             "takenAt": "Sep 5, 2026"
           },
           "kind": "photo",
@@ -1254,38 +1158,6 @@
           "videoMeta": null
         },
         {
-          "id": "events/img02163",
-          "file": "Events/IMG02163.jpg",
-          "stem": "p/events/img02163.56ab97ef",
-          "hash": "56ab97ef",
-          "width": 4697,
-          "height": 3522,
-          "widths": [
-            480,
-            960,
-            1440,
-            2048
-          ],
-          "lqip": "data:image/webp;base64,UklGRggBAABXRUJQVlA4IPwAAACwBgCdASoYABIAPu1qrlCppaQiqAqpMB2JbAC7M1o1Vfj6YAXQDrRD4HaZ1XDR3UIjle+4D9wgPglr9LVUAAD+S64SiALTN8bmBYp2Z6ChIul0iLKIo+K8YB58FNZz7Gd0nce5lDzRCUU5Sz35WGUVRH3Q+OL+91zS4QclsnUjZWIjoXAdrloZFEPa5B0+u24BFcEOFg0vZaCPaMuazIPLN1xgj3TND7mPp/yv02wkng0majVBbmdaDRC0M/E5DfMNwFn7ThbQ4KNBRRnMTdWop8avHmyCcL++ZJJqOjElqvnfbvs7FrdnQv0Ev/xM01rGMYURuQcJ6PdAAAA=",
-          "alt": "",
-          "caption": "",
-          "note": "",
-          "subsection": null,
-          "exif": {
-            "camera": "Sony ILCE-6400",
-            "lens": "18-50mm F2.8 DC DN | Contemporary 021",
-            "focalLength": "33mm (49mm equiv.)",
-            "aperture": "f/4",
-            "shutterSpeed": "1/60s",
-            "iso": 1600,
-            "takenAt": "Sep 27, 2026"
-          },
-          "kind": "photo",
-          "duration": null,
-          "videoSources": null,
-          "videoMeta": null
-        },
-        {
           "id": "events/img02187",
           "file": "Events/IMG02187.jpg",
           "stem": "p/events/img02187.f5e71671",
@@ -1502,38 +1374,6 @@
             "aperture": "f/4",
             "shutterSpeed": "1/60s",
             "iso": 1600,
-            "takenAt": "Sep 27, 2026"
-          },
-          "kind": "photo",
-          "duration": null,
-          "videoSources": null,
-          "videoMeta": null
-        },
-        {
-          "id": "events/img02411",
-          "file": "Events/IMG02411.jpg",
-          "stem": "p/events/img02411.b6e2c73a",
-          "hash": "b6e2c73a",
-          "width": 6000,
-          "height": 4000,
-          "widths": [
-            480,
-            960,
-            1440,
-            2048
-          ],
-          "lqip": "data:image/webp;base64,UklGRtAAAABXRUJQVlA4IMQAAADQBACdASoYABAAPu1iqU2ppaOiMAgBMB2JbACdMoAvQTO4xFzn8qJwZdD0aRZFUAD+6ZrrfjqQ4cbkdMnctLM4w2SV9tz4IcYo45hGnqtTFO3essCG6NuWnwIwHVBHudaTQRv+25OOyZKn4+mjtscZ+w99PurTkzII48RwiiDmeRHH+v5HTZ/aQFW9O+MJ75XDc2kSlQ5So5dbJy9iTDJMzTpyhmQM8iOkbdNkOIYfLpsZr6HIK+eB7jwlOKi8MxAugAAA",
-          "alt": "",
-          "caption": "",
-          "note": "",
-          "subsection": null,
-          "exif": {
-            "camera": "Sony ILCE-6400",
-            "lens": "18-50mm F2.8 DC DN | Contemporary 021",
-            "focalLength": "50mm (75mm equiv.)",
-            "aperture": "f/4",
-            "shutterSpeed": "1/80s",
-            "iso": 2500,
             "takenAt": "Sep 27, 2026"
           },
           "kind": "photo",
@@ -16800,7 +16640,7 @@
         }
       ],
       "availableUntil": null,
-      "passwordHash": "100000:1b1375c990d4ddacfc5d33a51f39f941:f3d47ba88cf9dee2f4b09338f78f1bd0402757de4df7385a4c261bdccf3aeb29",
+      "passwordHash": "100000:e43be19cacf6d4df8d9c959c4a82e4f3:59891c4bd1ab40d487dbfee4cf8cd0636d910255800512ff4818fb80b994d48b",
       "zips": [
         {
           "key": "small",
