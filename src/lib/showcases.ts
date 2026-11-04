@@ -19,6 +19,17 @@ export const showcases: Showcase[] = [
     booking: 'Booking tournaments, conventions, game-store events, and private events in the Denver area.',
   },
   {
+    slug: 'product',
+    title: 'Detail & Product',
+    blurb: 'Close-up work for products, artwork, and painted miniatures.',
+    intro: [
+      "Some of my favorite recent work has been the smallest: macro and detail shots of hand-painted miniatures at local tournaments, from brushwork and weathering to full armies.",
+      "I'm now taking on product and detail work for artists and small brands, stores showcasing new arrivals, or wargamers showing off their favorite models.",
+      'You get an edited high-detail photo set, with downloads sized for print, social media, and web.',
+    ],
+    booking: 'Booking miniature, product, and detail shoots around Denver.',
+  },
+  {
     slug: 'sports',
     title: 'Sports',
     blurb: 'Riders, athletes, and action around the Front Range.',
@@ -39,17 +50,6 @@ export const showcases: Showcase[] = [
       'You get an edited set of wide, evenly lit photos, with downloads sized for listings, print, social media, and web.',
     ],
     booking: 'Booking home, rental, and commercial interior shoots around Denver.',
-  },
-  {
-    slug: 'product',
-    title: 'Detail & Product',
-    blurb: 'Close-up work for products, artwork, and painted miniatures.',
-    intro: [
-      "Some of my favorite recent work has been the smallest: macro and detail shots of hand-painted miniatures at local tournaments, from brushwork and weathering to full armies.",
-      "I'm now taking on product and detail work for artists and small brands, stores showcasing new arrivals, or wargamers showing off their favorite models.",
-      'You get an edited high-detail photo set, with downloads sized for print, social media, and web.',
-    ],
-    booking: 'Booking miniature, product, and detail shoots around Denver.',
   },
   // {
   //   slug: 'folder-name',
