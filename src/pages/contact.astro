@@ -82,13 +82,23 @@ const INSTAGRAM = 'ryyyyan_taylor';
     for (const el of [sent, error]) el.classList.toggle('is-shown', el === status);
   }
 
+  function landing(): string {
+    try {
+      return sessionStorage.getItem('landing') ?? '';
+    } catch {
+      return '';
+    }
+  }
+
   form.addEventListener('submit', async (event) => {
     event.preventDefault();
     show(null);
     button.disabled = true;
     button.textContent = 'Sending…';
     try {
-      const res = await fetch(form.action, { method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' } });
+      const body = new FormData(form);
+      body.set('landing', landing());
+      const res = await fetch(form.action, { method: 'POST', body, headers: { Accept: 'application/json' } });
       if (!res.ok) throw new Error(String(res.status));
       form.reset();
       show(sent);

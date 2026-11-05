@@ -126,6 +126,19 @@ const nav = [
 
     <slot name="overlay" />
 
+    <script>
+      // First page of the visit, kept for this tab only and sent nowhere
+      // unless the contact form is submitted.
+      try {
+        if (!sessionStorage.getItem('landing')) {
+          const params = new URLSearchParams(location.search);
+          const utm = [...params].filter(([k]) => k.startsWith('utm_'));
+          const referrer = document.referrer && new URL(document.referrer).host !== location.host ? new URL(document.referrer).host : '';
+          sessionStorage.setItem('landing', JSON.stringify({ path: location.pathname, referrer, utm: Object.fromEntries(utm) }));
+        }
+      } catch {}
+    </script>
+
     {
       heroReveal && (
         <script>
