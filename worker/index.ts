@@ -5,6 +5,7 @@ import {
   protectedGalleryPasswordHash,
   verifyGalleryPassword,
 } from './gallery-auth';
+import { verifyAccessJwt } from './access';
 import { legacyRedirect } from './legacy-redirects';
 import { showcases } from '../src/lib/showcases';
 
@@ -132,10 +133,11 @@ async function handleContact(request: Request, env: Env): Promise<Response> {
 }
 
 async function handleApi(request: Request, env: Env, url: URL): Promise<Response> {
-  // Access is the real gate on /utils/*; this is a cheap backstop in case
-  // that dashboard config is ever missing, so a hole there 403s instead of
+  // Access is the real gate on /utils/*; verifying its JWT here means a
+  // missing Access app or a hostname Access doesn't cover 403s instead of
   // turning this into an open relay for the sending domain.
-  if (!request.headers.get('Cf-Access-Jwt-Assertion')) {
+  const jwt = request.headers.get('Cf-Access-Jwt-Assertion') ?? '';
+  if (!(await verifyAccessJwt(jwt, env.ACCESS_TEAM_DOMAIN, env.ACCESS_AUD))) {
     return new Response('Forbidden', { status: 403 });
   }
 

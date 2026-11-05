@@ -2,9 +2,15 @@
   "$schema": "./node_modules/wrangler/config-schema.json",
   "name": "ryantaylor-photos",
   "compatibility_date": "2026-08-18",
-  // After adding the custom domain in the dashboard once, you can manage it here instead:
-  // "routes": [{ "pattern": "ryantaylor.photos", "custom_domain": true }],
+  // The custom domain is managed in infra/workers.tf. workers.dev is off because
+  // Access only sits in front of ryantaylor.photos, not the workers.dev hostname.
+  "workers_dev": false,
+  "preview_urls": false,
   "main": "./worker/index.ts",
+  "vars": {
+    "ACCESS_TEAM_DOMAIN": "https://ryantaylor.cloudflareaccess.com",
+    "ACCESS_AUD": "67f11def30e6f6788a81acc494ff5c898237361a8265e7040a56bf16a15d0866"
+  },
   "assets": {
     "directory": "./dist",
     "binding": "ASSETS",
