@@ -24,7 +24,6 @@ const NPM_ACTIONS = {
   sync: ['run', 'photos:sync'],
   'prune-check': ['run', 'photos:prune:check'],
   prune: ['run', 'photos:prune'],
-  deploy: ['run', 'deploy'],
 };
 
 let running = null; // name of the in-flight action, or null
