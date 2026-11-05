@@ -17,7 +17,7 @@ so a clean clone with no photos still builds.
 
     npm run photos:sync
     git add src/data/photos.json && git commit -m "feat(photos): add iceland"
-    npm run deploy
+    git push    # GitHub Actions builds and deploys
 
 Files sort by filename, so number them to control order. Unchanged files are skipped on re-runs
 (`--force` re-encodes everything). Deleting a local file removes it from the site on the next sync;
@@ -52,8 +52,9 @@ publishes at `/sports/mckay-bike-park/` and is titled "McKay Bike Park".
   availableUntil, password) through a form.
 - View, reorder (drag and drop), and set the cover among a gallery's photos and videos; edit each
   photo's alt/caption/note (subsections are shown read-only; they come from folders).
-- Buttons for `photos:check`, `photos:sync`, `photos:prune:check`, `photos:prune`, and `deploy`,
-  streaming live command output; a commit button stages and commits `src/data/photos.json`.
+- Buttons for `photos:check`, `photos:sync`, `photos:prune:check`, and `photos:prune`, streaming
+  live command output; a commit button stages and commits `src/data/photos.json`, and push sends it
+  to `main`, which deploys.
 
 It only ever writes `gallery.json` files under `PHOTOS_DIR` and shells out to the same npm scripts
 listed below — nothing it does bypasses them. Meant to run on the same machine as the photo library;
@@ -89,4 +90,17 @@ falls back to the default in `src/lib/photos.ts`. If the image domain ever chang
 | `npm run photos:prune` | delete R2 objects no longer in the manifest |
 | `npm run build` | build to `dist/` |
 | `npm run preview` | serve `dist/` through Wrangler, as Workers will |
-| `npm run deploy` | build and deploy |
+| `npm run deploy` | build and deploy by hand (normally CI does this on push to `main`) |
+
+## CI/CD
+
+GitHub Actions, in `.github/workflows/`:
+
+- `ci.yml` — every PR and push: `npm ci && npm run build`, plus `terraform fmt`/`validate`.
+- `deploy.yml` — push to `main` (skipping `infra/` and Markdown-only changes): `npm run deploy`,
+  in the `production` environment with a Workers-only token (`CLOUDFLARE_DEPLOY_TOKEN`).
+- `terraform.yml` — PRs touching `infra/` get the plan as a comment; on merge, `apply` waits for
+  approval in the `infrastructure` environment.
+
+Photo sync stays local — it reads originals from `PHOTOS_DIR` — so the flow is sync, commit
+`photos.json`, push.
