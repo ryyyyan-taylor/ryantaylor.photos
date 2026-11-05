@@ -96,9 +96,9 @@ falls back to the default in `src/lib/photos.ts`. If the image domain ever chang
 
 GitHub Actions, in `.github/workflows/`:
 
-- `ci.yml` — every PR and push: `npm ci && npm run build`, plus `terraform fmt`/`validate`.
-- `deploy.yml` — push to `main` (skipping `infra/` and Markdown-only changes): `npm run deploy`,
-  in the `production` environment with a Workers-only token (`CLOUDFLARE_DEPLOY_TOKEN`).
+- `ci.yml` — every PR and push runs typecheck + Worker tests, Playwright smoke tests, Lighthouse
+  budgets, and `terraform fmt`/`validate`. On `main`, a `deploy` job runs only once all of those
+  pass, in the `production` environment with a Workers-only token (`CLOUDFLARE_DEPLOY_TOKEN`).
 - `terraform.yml` — PRs touching `infra/` get the plan as a comment; on merge, `apply` waits for
   approval in the `infrastructure` environment.
 
@@ -107,6 +107,19 @@ Photo sync stays local — it reads originals from `PHOTOS_DIR` — so the flow 
 
 `drift.yml` runs `terraform plan` nightly and fails (GitHub emails you) if the live config no longer
 matches `infra/`.
+
+## Testing
+
+| | |
+|---|---|
+| `npm run typecheck` | `wrangler types` + `tsc --noEmit` |
+| `npm test` | Worker unit + integration tests (Vitest in the Workers runtime via `@cloudflare/vitest-plugin`) — needs `npm run build` first for the assets binding |
+| `npm run test:e2e` | Playwright smoke tests (desktop + mobile) against `wrangler dev` serving `dist/`; email is simulated |
+| `npm run lighthouse` | Lighthouse CI against the same local server; budgets in `lighthouserc.json` (set `CHROME_PATH` locally) |
+
+Worker tests cover Access JWT verification, gallery passwords and session cookies, legacy
+redirects, the contact handler (validation, honeypot, owner-only delivery, failure → KV + alert),
+the `/utils/api` gate, and the health check's alert/recovery logic.
 
 ## Observability
 
