@@ -4,7 +4,7 @@ interface AccessJwk extends JsonWebKey {
 
 const decoder = new TextDecoder();
 
-function fromBase64Url(input: string): Uint8Array {
+function fromBase64Url(input: string): Uint8Array<ArrayBuffer> {
   return Uint8Array.from(atob(input.replace(/-/g, '+').replace(/_/g, '/')), (c) => c.charCodeAt(0));
 }
 
