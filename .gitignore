@@ -12,3 +12,8 @@ worker-configuration.d.ts
 photos/*
 !photos/README.md
 !photos/gallery.example.json
+
+infra/.terraform/
+*.tfstate
+*.tfstate.*
+*.tfvars
