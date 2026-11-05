@@ -13,7 +13,7 @@
     "photos:prune": "node --env-file-if-exists=.env scripts/sync-photos.mjs --prune",
     "admin": "node --env-file-if-exists=.env admin/server.mjs",
     "test": "vitest run",
-    "typecheck": "wrangler types && tsc --noEmit",
+    "typecheck": "astro sync && wrangler types && tsc --noEmit",
     "test:e2e": "playwright test",
     "lighthouse": "npx -y @lhci/cli@0.16.0 autorun"
   },
