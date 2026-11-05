@@ -11,7 +11,11 @@
     "photos:check": "node --env-file-if-exists=.env scripts/sync-photos.mjs --dry-run",
     "photos:prune:check": "node --env-file-if-exists=.env scripts/sync-photos.mjs --dry-run --prune",
     "photos:prune": "node --env-file-if-exists=.env scripts/sync-photos.mjs --prune",
-    "admin": "node --env-file-if-exists=.env admin/server.mjs"
+    "admin": "node --env-file-if-exists=.env admin/server.mjs",
+    "test": "vitest run",
+    "typecheck": "wrangler types && tsc --noEmit",
+    "test:e2e": "playwright test",
+    "lighthouse": "npx -y @lhci/cli@0.16.0 autorun"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.3",
@@ -19,9 +23,13 @@
   },
   "devDependencies": {
     "@aws-sdk/client-s3": "^3.1112.0",
+    "@cloudflare/vitest-plugin": "^1.4.9",
+    "@playwright/test": "^1.64.1",
     "archiver": "^7.0.1",
     "exif-reader": "^2.0.3",
     "sharp": "^0.35.3",
+    "typescript": "~5.9.3",
+    "vitest": "^4.1.12",
     "wrangler": "^4.124.0"
   },
   "allowScripts": {
