@@ -53,7 +53,7 @@ const coverPhoto = blocks.find((b) => b.photos.length)?.photos[0];
           <h2 id={`feature-${block.slug}`}>{block.title}</h2>
           <p class="lede">{block.blurb}</p>
           <a class="cta-link" href={`/${block.slug}/`}>
-            Learn more
+            Learn more<span class="visually-hidden"> about {block.title}</span>
           </a>
         </div>
         <div class="feature-photos" data-count={block.photos.length || MAX_FEATURED}>
