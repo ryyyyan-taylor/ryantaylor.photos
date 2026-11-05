@@ -1391,3 +1391,56 @@ h3 {
   font-size: 0.85rem;
   margin: -0.4rem 0 0;
 }
+
+.stats {
+  display: grid;
+  gap: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+.stats h2 {
+  font-size: 1rem;
+  font-weight: 500;
+  margin: 0 0 0.75rem;
+}
+
+.stats-status {
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.stats-status[data-state='error'] {
+  color: var(--danger);
+  overflow-wrap: anywhere;
+}
+
+.stats-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+  font-variant-numeric: tabular-nums;
+  margin-bottom: 1rem;
+}
+
+.stats-table th,
+.stats-table td {
+  text-align: left;
+  padding: 0.4rem 0.75rem 0.4rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.stats-table th {
+  color: var(--muted);
+  font-weight: 400;
+}
+
+.stats-inquiry {
+  white-space: pre-wrap;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  padding: 1rem;
+  font-size: 0.85rem;
+}
+
+.stats [data-section] {
+  overflow-x: auto;
+}

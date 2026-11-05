@@ -1,0 +1,205 @@
+---
+import Base from '../../layouts/Base.astro';
+import BackLink from '../../components/BackLink.astro';
+import { galleries } from '../../lib/photos';
+
+const media = galleries.flatMap((g) => g.photos);
+const build = {
+  commit: process.env.GITHUB_SHA?.slice(0, 7) ?? 'local',
+  builtAt: new Date().toISOString(),
+  galleries: galleries.length,
+  photos: media.filter((p) => p.kind !== 'video').length,
+  videos: media.filter((p) => p.kind === 'video').length,
+};
+---
+
+<Base title="Site Stats" description="Health, traffic and events." noindex>
+  <div class="legal-page">
+    <section class="page-head">
+      <p class="eyebrow">
+        <BackLink href="/utils/" label="Utilities" />
+      </p>
+      <h1>Site Stats</h1>
+      <p class="lede">
+        Build <code>{build.commit}</code> at {build.builtAt.slice(0, 16).replace('T', ' ')} UTC · {build.galleries} galleries,
+        {build.photos} photos, {build.videos} videos.
+      </p>
+    </section>
+
+    <p id="stats-status" class="stats-status">Loading…</p>
+    <div id="stats" class="stats" hidden>
+      <section><h2>Health</h2><div data-section="health"></div></section>
+      <section><h2>Uptime (7d)</h2><div data-section="uptime"></div></section>
+      <section><h2>Failed inquiries</h2><div data-section="failedInquiries"></div></section>
+      <section><h2>Events (7d)</h2><div data-section="events"></div></section>
+      <section><h2>Requests (24h)</h2><div data-section="requests"></div></section>
+      <section><h2>Edge (7d)</h2><div data-section="zone"></div></section>
+      <section><h2>Visitors (7d)</h2><div data-section="rum"></div></section>
+    </div>
+  </div>
+</Base>
+
+<script>
+  type Row = Record<string, unknown>;
+  type Section<T> = T | { error: string };
+
+  interface CheckState {
+    failingSince: number | null;
+    lastStatus: number | null;
+    lastMs: number;
+    lastRun: number;
+  }
+
+  interface ZoneDay {
+    dimensions: { date: string };
+    sum: { requests: number; cachedRequests: number; bytes: number; cachedBytes: number };
+  }
+
+  interface Rum {
+    pages: { count: number; dimensions: { requestPath: string } }[];
+    referrers: { count: number; dimensions: { refererHost: string } }[];
+    vitals: {
+      quantiles: {
+        largestContentfulPaintP75: number;
+        interactionToNextPaintP75: number;
+        cumulativeLayoutShiftP75: number;
+      };
+    }[];
+  }
+
+  interface Stats {
+    health: Section<Record<string, CheckState>>;
+    uptime: Section<Row[]>;
+    failedInquiries: Section<{ at: string; text: string }[]>;
+    events: Section<Row[]>;
+    requests: Section<Row[]>;
+    zone: Section<{ viewer: { zones: { httpRequests1dGroups: ZoneDay[] }[] } }>;
+    rum: Section<{ viewer: { accounts: Rum[] } }>;
+  }
+
+  const isError = (s: unknown): s is { error: string } => typeof s === 'object' && s !== null && 'error' in s;
+  const pct = (n: number) => `${(n * 100).toFixed(1)}%`;
+  const ms = (n: unknown) => `${Math.round(Number(n))} ms`;
+  const mb = (n: number) => `${(n / 1e6).toFixed(1)} MB`;
+  const ago = (t: number) => `${Math.round((Date.now() - t) / 60000)} min ago`;
+
+  function table(headers: string[], rows: (string | number)[][]): HTMLElement {
+    if (!rows.length) return text('No data yet.');
+    const el = document.createElement('table');
+    el.className = 'stats-table';
+    const head = el.createTHead().insertRow();
+    for (const h of headers) head.insertCell().outerHTML = `<th>${h}</th>`;
+    const body = el.createTBody();
+    for (const row of rows) {
+      const tr = body.insertRow();
+      for (const cell of row) tr.insertCell().textContent = String(cell);
+    }
+    return el;
+  }
+
+  function text(message: string, state?: 'error'): HTMLElement {
+    const p = document.createElement('p');
+    p.className = 'stats-status';
+    p.textContent = message;
+    if (state) p.dataset.state = state;
+    return p;
+  }
+
+  const renderers: { [K in keyof Stats]: (data: Exclude<Stats[K], { error: string }>) => HTMLElement } = {
+    health: (checks) =>
+      table(
+        ['Check', 'State', 'Last status', 'Latency', 'Checked'],
+        Object.entries(checks).map(([name, c]) => [
+          name,
+          c.failingSince ? `down since ${new Date(c.failingSince).toLocaleString()}` : 'up',
+          c.lastStatus ?? 'timeout',
+          ms(c.lastMs),
+          ago(c.lastRun),
+        ]),
+      ),
+    uptime: (rows) => {
+      const byCheck = new Map<string, { up: number; total: number; p95: number }>();
+      for (const r of rows) {
+        const entry = byCheck.get(String(r.check)) ?? { up: 0, total: 0, p95: 0 };
+        const count = Number(r.count);
+        entry.total += count;
+        if (r.result === 'up') {
+          entry.up += count;
+          entry.p95 = Number(r.p95_ms);
+        }
+        byCheck.set(String(r.check), entry);
+      }
+      return table(
+        ['Check', 'Uptime', 'p95 latency'],
+        [...byCheck].map(([name, e]) => [name, pct(e.up / e.total), ms(e.p95)]),
+      );
+    },
+    failedInquiries: (items) => {
+      if (!items.length) return text('None — every inquiry was delivered.');
+      const wrap = document.createElement('div');
+      for (const item of items) {
+        const pre = document.createElement('pre');
+        pre.className = 'stats-inquiry';
+        pre.textContent = `${item.at}\n\n${item.text}`;
+        wrap.append(pre);
+      }
+      return wrap;
+    },
+    events: (rows) => table(['Event', 'Outcome', 'Count'], rows.map((r) => [String(r.event), String(r.outcome), Number(r.count)])),
+    requests: (rows) =>
+      table(
+        ['Route', 'Status', 'Count', 'p95 worker time'],
+        rows.map((r) => [String(r.route), String(r.status), Number(r.count), ms(r.p95_ms)]),
+      ),
+    zone: (data) => {
+      const days = data.viewer.zones[0]?.httpRequests1dGroups ?? [];
+      return table(
+        ['Date', 'Requests', 'Cached', 'Bandwidth', 'Cached bandwidth'],
+        days.map((d) => [
+          d.dimensions.date,
+          d.sum.requests,
+          pct(d.sum.cachedRequests / (d.sum.requests || 1)),
+          mb(d.sum.bytes),
+          pct(d.sum.cachedBytes / (d.sum.bytes || 1)),
+        ]),
+      );
+    },
+    rum: (data) => {
+      const account = data.viewer.accounts[0];
+      const wrap = document.createElement('div');
+      const vitals = account?.vitals[0]?.quantiles;
+      if (vitals) {
+        wrap.append(
+          table(
+            ['LCP p75', 'INP p75', 'CLS p75'],
+            [[ms(vitals.largestContentfulPaintP75 / 1000), ms(vitals.interactionToNextPaintP75 / 1000), vitals.cumulativeLayoutShiftP75.toFixed(3)]],
+          ),
+        );
+      }
+      wrap.append(table(['Top pages', 'Views'], (account?.pages ?? []).map((p) => [p.dimensions.requestPath, p.count])));
+      wrap.append(
+        table(['Referrers', 'Views'], (account?.referrers ?? []).map((r) => [r.dimensions.refererHost || '(direct)', r.count])),
+      );
+      return wrap;
+    },
+  };
+
+  const statusEl = document.getElementById('stats-status')!;
+  const root = document.getElementById('stats')!;
+
+  try {
+    const response = await fetch('/utils/api/stats');
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+    const stats = (await response.json()) as Stats;
+    for (const key of Object.keys(renderers) as (keyof Stats)[]) {
+      const slot = root.querySelector(`[data-section="${key}"]`)!;
+      const data = stats[key];
+      slot.replaceChildren(isError(data) ? text(data.error, 'error') : renderers[key](data as never));
+    }
+    statusEl.remove();
+    root.hidden = false;
+  } catch (err) {
+    statusEl.textContent = `Couldn't load stats: ${err instanceof Error ? err.message : err}`;
+    statusEl.dataset.state = 'error';
+  }
+</script>

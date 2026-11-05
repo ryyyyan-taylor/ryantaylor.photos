@@ -104,3 +104,24 @@ GitHub Actions, in `.github/workflows/`:
 
 Photo sync stays local — it reads originals from `PHOTOS_DIR` — so the flow is sync, commit
 `photos.json`, push.
+
+`drift.yml` runs `terraform plan` nightly and fails (GitHub emails you) if the live config no longer
+matches `infra/`.
+
+## Observability
+
+- **Logs** — Workers Logs is on; business events are logged as structured objects
+  (`{ event, outcome, detail }`): `contact`, `contact_source`, `gallery_unlock`, `confirmation`,
+  `access_denied`, `health`.
+- **Metrics** — the same events, plus every request's route/status/worker time, go to the
+  `ryantaylor_photos_events` Analytics Engine dataset (`worker/telemetry.ts`).
+- **Health checks** — a 5-minute cron (`worker/health.ts`) probes the home page, an image, and the
+  `/utils/` Access redirect, keeping state in the `MONITOR` KV namespace. A check failing for 10
+  minutes emails an alert; recovery emails again.
+- **Email failures** — a failed contact or booking email alerts too. A failed inquiry is also saved
+  to KV for 30 days, since the alert may fail for the same reason.
+- **Stats** — `/utils/stats/` (behind Access) shows health, uptime, events, request latency, edge
+  cache, and Web Analytics pages/referrers/Core Web Vitals. The Worker queries these with the
+  read-only `STATS_API_TOKEN` secret.
+- **Lead source** — the first page of a visit, plus any `utm_*` tags and external referrer, is kept
+  in `sessionStorage` and attached to contact form submissions.

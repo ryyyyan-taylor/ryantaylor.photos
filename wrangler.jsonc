@@ -9,7 +9,11 @@
   "main": "./worker/index.ts",
   "vars": {
     "ACCESS_TEAM_DOMAIN": "https://ryantaylor.cloudflareaccess.com",
-    "ACCESS_AUD": "67f11def30e6f6788a81acc494ff5c898237361a8265e7040a56bf16a15d0866"
+    "ACCESS_AUD": "67f11def30e6f6788a81acc494ff5c898237361a8265e7040a56bf16a15d0866",
+    "CF_ACCOUNT_ID": "ef762a2c4ac0f98eefb7dae78f871eb9",
+    "CF_ZONE_ID": "3ada9533fc70bd5f4cfffd9e5aab1fa6",
+    // Web Analytics is auto-installed by Cloudflare (dashboard-managed; no API token permission exists for it).
+    "WEB_ANALYTICS_SITE_TAG": "d16833f6e8e443cfab531ff102a441a4"
   },
   "assets": {
     "directory": "./dist",
@@ -22,6 +26,20 @@
     // lock screen — see worker/gallery-auth.ts.
     "run_worker_first": true
   },
+  "triggers": {
+    "crons": ["*/5 * * * *"]
+  },
+  // Namespace is managed in infra/kv.tf (`terraform output monitor_kv_id`).
+  "kv_namespaces": [
+    { "binding": "MONITOR", "id": "3ca2a27fb0784070971893d2578a59fb" }
+  ],
+  "observability": {
+    "enabled": true,
+    "head_sampling_rate": 1
+  },
+  "analytics_engine_datasets": [
+    { "binding": "METRICS", "dataset": "ryantaylor_photos_events" }
+  ],
   "send_email": [
     { "name": "EMAIL", "allowed_sender_addresses": ["bookings@ryantaylor.photos"] }
   ]
