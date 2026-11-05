@@ -17,3 +17,7 @@ infra/.terraform/
 *.tfstate
 *.tfstate.*
 *.tfvars
+
+test-results/
+playwright-report/
+.lighthouseci/
