@@ -2,7 +2,7 @@ import { expect, test } from '@playwright/test';
 import manifest from '../../src/data/photos.json' with { type: 'json' };
 
 const publicGallery = manifest.galleries.find((g) => !g.passwordHash && g.photos.some((p) => p.kind === 'photo'))!;
-const lockedGallery = manifest.galleries.find((g) => g.passwordHash)!;
+const lockedGallery = manifest.galleries.find((g) => g.passwordHash);
 
 test('home page renders the hero and featured photos', async ({ page }) => {
   await page.goto('/');
@@ -27,7 +27,8 @@ test('gallery lightbox opens, navigates and closes', async ({ page }) => {
 });
 
 test('protected gallery shows the lock screen and rejects a wrong password', async ({ page }) => {
-  const response = await page.goto(`/${lockedGallery.slug}/`);
+  test.skip(!lockedGallery, 'no protected gallery in the manifest');
+  const response = await page.goto(`/${lockedGallery!.slug}/`);
   expect(response?.status()).toBe(401);
   await expect(page.locator('.tile img[src*="img."]')).toHaveCount(0);
   await page.getByPlaceholder('Password').fill('definitely-wrong');
