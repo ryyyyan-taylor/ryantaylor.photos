@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-13T18:02:38.443Z",
+  "generatedAt": "2026-11-13T18:35:45.078Z",
   "widths": [
     480,
     960,
@@ -45,7 +45,10 @@
       "sectionTitle": "Archive",
       "title": "McKay Bike Park",
       "description": "Dirt jump park in Broomfield, CO. Summer 2026",
-      "type": null,
+      "tags": [
+        "mountain-biking",
+        "sports"
+      ],
       "order": 10,
       "cover": "archive/mckay-bike-park/img00480",
       "featured": [],
@@ -733,7 +736,7 @@
       "sectionTitle": null,
       "title": "Events",
       "description": "",
-      "type": null,
+      "tags": [],
       "order": 999,
       "cover": "events/img00827",
       "featured": [
@@ -1745,7 +1748,11 @@
       "sectionTitle": "Archive",
       "title": "Fall Brawl",
       "description": "",
-      "type": null,
+      "tags": [
+        "events",
+        "macro",
+        "warhammer"
+      ],
       "order": 999,
       "cover": "archive/fall-brawl/img07170",
       "featured": [],
@@ -6522,7 +6529,7 @@
       "sectionTitle": "Archive",
       "title": "FPV",
       "description": "",
-      "type": null,
+      "tags": [],
       "order": 999,
       "cover": "archive/fpv/new-tune",
       "featured": [],
@@ -6565,7 +6572,11 @@
       "sectionTitle": "Archive",
       "title": "Pre Rift 10 17 2026",
       "description": "",
-      "type": null,
+      "tags": [
+        "events",
+        "riftbound",
+        "trading-card-games"
+      ],
       "order": 999,
       "cover": "archive/pre-rift-10-17-2026/img06221",
       "featured": [],
@@ -8526,7 +8537,7 @@
       "sectionTitle": null,
       "title": "Product",
       "description": "",
-      "type": null,
+      "tags": [],
       "order": 999,
       "cover": "product/img06693",
       "featured": [
@@ -9986,7 +9997,7 @@
       "sectionTitle": null,
       "title": "Real Estate",
       "description": "",
-      "type": null,
+      "tags": [],
       "order": 999,
       "cover": "real-estate/img01239-fused",
       "featured": [
@@ -10270,7 +10281,11 @@
       "sectionTitle": "Archive",
       "title": "Reality Fracture Prerelease",
       "description": "",
-      "type": null,
+      "tags": [
+        "events",
+        "magic-the-gathering",
+        "trading-card-games"
+      ],
       "order": 999,
       "cover": "archive/reality-fracture-prerelease/img02100",
       "featured": [],
@@ -13159,7 +13174,7 @@
       "sectionTitle": null,
       "title": "Sports",
       "description": "",
-      "type": null,
+      "tags": [],
       "order": 999,
       "cover": "sports/img00055",
       "featured": [
@@ -14138,7 +14153,11 @@
       "sectionTitle": "Archive",
       "title": "Star Trek Prerelease",
       "description": "",
-      "type": null,
+      "tags": [
+        "events",
+        "magic-the-gathering",
+        "trading-card-games"
+      ],
       "order": 999,
       "cover": "archive/star-trek-prerelease/img07624",
       "featured": [],
@@ -16227,7 +16246,11 @@
       "sectionTitle": "Archive",
       "title": "Summoner Skirmish Sept. 5th 2026",
       "description": "",
-      "type": null,
+      "tags": [
+        "events",
+        "riftbound",
+        "trading-card-games"
+      ],
       "order": 999,
       "cover": "archive/summoner-skirmish-09-05-2026/img00665",
       "featured": [],
@@ -18412,7 +18435,9 @@
       "sectionTitle": "Archive",
       "title": "TEG Interior",
       "description": "",
-      "type": null,
+      "tags": [
+        "real-estate"
+      ],
       "order": 999,
       "cover": "archive/teg-interior/img01239-fused",
       "featured": [],
@@ -18776,7 +18801,10 @@
       "sectionTitle": "Archive",
       "title": "Valmont Bike Park",
       "description": "Mountain Bike Park in Boulder, CO. Summer 2026",
-      "type": null,
+      "tags": [
+        "mountain-biking",
+        "sports"
+      ],
       "order": 999,
       "cover": "archive/valmont-bike-park/img01702",
       "featured": [],
