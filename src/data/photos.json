@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-11T22:24:58.331Z",
+  "generatedAt": "2026-11-13T18:02:38.443Z",
   "widths": [
     480,
     960,
@@ -738,7 +738,8 @@
       "cover": "events/img00827",
       "featured": [
         "events/img01993",
-        "events/img01110"
+        "events/img07317",
+        "events/img02187"
       ],
       "photos": [
         {
@@ -767,134 +768,6 @@
             "shutterSpeed": "1/60s",
             "iso": 800,
             "takenAt": "Sep 5, 2026"
-          },
-          "kind": "photo",
-          "duration": null,
-          "videoSources": null,
-          "videoMeta": null
-        },
-        {
-          "id": "events/img00858",
-          "file": "Events/IMG00858.jpg",
-          "stem": "p/events/img00858.eef8bd30",
-          "hash": "eef8bd30",
-          "width": 4784,
-          "height": 3588,
-          "widths": [
-            480,
-            960,
-            1440,
-            2048
-          ],
-          "lqip": "data:image/webp;base64,UklGRt4AAABXRUJQVlA4INIAAABwBQCdASoYABIAPu1qrVCppaQiqAqpMB2JQBYj7IAeAfrh9Ke3nP00pHCFhfmZye0dqeLAAP7IBdKiAgqf0S4vW7O8vlWQrLyZJw27LfSolTf5xnpwb1bGY/P32PcuSZoGdog1e89M5m0l9JG64K3dFdhZF/PfO5jl3vfZClr7S9rGmcye17e1+GCY11iHPvWIfOeiUqf+C4uwC9nWhiC/zM8ZH9DNUZwSTeh1QYF2oqldBQqCvUBN49vgMVaaXFCIYiEGJ3vKqfJWSVQeJzYAAAA=",
-          "alt": "",
-          "caption": "",
-          "note": "",
-          "subsection": null,
-          "exif": {
-            "camera": "Sony ILCE-6400",
-            "lens": "18-50mm F2.8 DC DN | Contemporary 021",
-            "focalLength": "38mm (57mm equiv.)",
-            "aperture": "f/2.8",
-            "shutterSpeed": "1/60s",
-            "iso": 1000,
-            "takenAt": "Sep 5, 2026"
-          },
-          "kind": "photo",
-          "duration": null,
-          "videoSources": null,
-          "videoMeta": null
-        },
-        {
-          "id": "events/img00873",
-          "file": "Events/IMG00873.jpg",
-          "stem": "p/events/img00873.9018ca85",
-          "hash": "9018ca85",
-          "width": 5332,
-          "height": 4000,
-          "widths": [
-            480,
-            960,
-            1440,
-            2048
-          ],
-          "lqip": "data:image/webp;base64,UklGRhIBAABXRUJQVlA4IAYBAAAQBgCdASoYABIAPu1sqlEppaOiqAqpMB2JbACdMuIzNYZjlpEabfM6PaEa6o887tbFs/diN9ppZQAA/t4c2co4hhv3gguMroVm2cYA+fT6YQoPKu2+VJ81h+K+pWXA1joIj06Z6opgpY4b8ngxYWST5p3FoGtsh+OZ3aBio+Qkw75AeFmIR1Nl/Hgv0Q0LAHcBJb2DgK3fUqE+PHTDcUSB6IdexFwN7eiy1TXDnOQjRiOvEhfdjt12HrE0k3D4oitw+WqMhZHXut0cytwEjxIUFXCz1CM71gTHsyyl5hAE8Qb4jD9PvggaBJRbIdzHY8AVTN6rCiHSv6dpgTbmKbMHDJjxsAAA",
-          "alt": "",
-          "caption": "",
-          "note": "",
-          "subsection": null,
-          "exif": {
-            "camera": "Sony ILCE-6400",
-            "lens": "18-50mm F2.8 DC DN | Contemporary 021",
-            "focalLength": "32mm (47mm equiv.)",
-            "aperture": "f/2.8",
-            "shutterSpeed": "1/50s",
-            "iso": 800,
-            "takenAt": "Sep 5, 2026"
-          },
-          "kind": "photo",
-          "duration": null,
-          "videoSources": null,
-          "videoMeta": null
-        },
-        {
-          "id": "events/img01110",
-          "file": "Events/IMG01110.jpg",
-          "stem": "p/events/img01110.212ae7c7",
-          "hash": "212ae7c7",
-          "width": 5333,
-          "height": 4000,
-          "widths": [
-            480,
-            960,
-            1440,
-            2048
-          ],
-          "lqip": "data:image/webp;base64,UklGRuoAAABXRUJQVlA4IN4AAABwBQCdASoYABIAPu1srFEppaQiqAqpMB2JZAAu7MW0Ma75hytnAPrp0qVkgcfazAKvkMgAAPha+t99NjOcdjwmLcZwZT2txTT83FHhZ2VFCYd4RVUMOc85RekzVmi7VTscYqpMZB+QQ9VB6Bp2LRQRDqrj/eHnbD+Jv01p/C/irt7DcJjfzg+EFajaNmB4yzqCTYjXhGL1YvTavKmIeT/Fm1sFQIJCcEXCBIC0qPifuV0MFhgO2nsKcJ9rQhqxYTGImNCFQkS9d8xHxUiUPbi5ojrMwCsEaABY/sBWAAA=",
-          "alt": "",
-          "caption": "",
-          "note": "",
-          "subsection": null,
-          "exif": {
-            "camera": "Sony ILCE-6400",
-            "lens": "18-50mm F2.8 DC DN | Contemporary 021",
-            "focalLength": "44mm (65mm equiv.)",
-            "aperture": "f/2.8",
-            "shutterSpeed": "1/80s",
-            "iso": 640,
-            "takenAt": "Sep 5, 2026"
-          },
-          "kind": "photo",
-          "duration": null,
-          "videoSources": null,
-          "videoMeta": null
-        },
-        {
-          "id": "events/img01907",
-          "file": "Events/IMG01907.jpg",
-          "stem": "p/events/img01907.51bba907",
-          "hash": "51bba907",
-          "width": 6000,
-          "height": 4000,
-          "widths": [
-            480,
-            960,
-            1440,
-            2048
-          ],
-          "lqip": "data:image/webp;base64,UklGRrIAAABXRUJQVlA4IKYAAAAwBACdASoYABAAPu1iqU2ppaOiMAgBMB2JYwCsAYvCnBbI1tllYCzD/AAA/vKz6gjNy/Sib5J4+z2LvJw/8FD5SSKReplPHA93fwTZRAmJ6c5O4LvnNjWOHjkkWlLrHdgDRtqpu7dTbmTjUIBZ3S+kvwxdredsb88Q33P26t6T5kWd8e99Xovu7Q5wBxR4yS0syv8tKXdbyPCQYnx+QmOHjY5NqngA",
-          "alt": "",
-          "caption": "",
-          "note": "",
-          "subsection": null,
-          "exif": {
-            "camera": "Sony ILCE-6400",
-            "lens": "18-50mm F2.8 DC DN | Contemporary 021",
-            "focalLength": "48mm (72mm equiv.)",
-            "aperture": "f/4",
-            "shutterSpeed": "1/80s",
-            "iso": 1600,
-            "takenAt": "Sep 26, 2026"
           },
           "kind": "photo",
           "duration": null,
@@ -1022,38 +895,6 @@
             "aperture": "f/2.8",
             "shutterSpeed": "1/80s",
             "iso": 1600,
-            "takenAt": "Sep 26, 2026"
-          },
-          "kind": "photo",
-          "duration": null,
-          "videoSources": null,
-          "videoMeta": null
-        },
-        {
-          "id": "events/img02046",
-          "file": "Events/IMG02046.jpg",
-          "stem": "p/events/img02046.998fd2bc",
-          "hash": "998fd2bc",
-          "width": 6000,
-          "height": 4000,
-          "widths": [
-            480,
-            960,
-            1440,
-            2048
-          ],
-          "lqip": "data:image/webp;base64,UklGRtYAAABXRUJQVlA4IMoAAABwBQCdASoYABAAPu1iqU2ppaOiMAgBMB2JZgCdMoEUXzACVjGK3asB7+oSuxcaSzpmn91cAP7ATsh+lMy7jm7esxGUFxonYlOQ10uLJWrVsNm8CpaOHH15BonZoRpQqIPN3sH5wjqqrDeLnSl6uEgnuv1bdFnZRoGrxgsvqCTRUq8RubtxK5o2VrIsWSD9zS/vPduA4mTj3PPYch2wHSewmSbVWfewc/vGyHdFCa1TU3QTaYnBw9GduGuUjo66Qb+Yhamf8mjAAAAA",
-          "alt": "",
-          "caption": "",
-          "note": "",
-          "subsection": null,
-          "exif": {
-            "camera": "Sony ILCE-6400",
-            "lens": "18-50mm F2.8 DC DN | Contemporary 021",
-            "focalLength": "43mm (64mm equiv.)",
-            "aperture": "f/4",
-            "shutterSpeed": "1/80s",
-            "iso": 1000,
             "takenAt": "Sep 26, 2026"
           },
           "kind": "photo",
@@ -1286,38 +1127,6 @@
           "videoMeta": null
         },
         {
-          "id": "events/img02207",
-          "file": "Events/IMG02207.jpg",
-          "stem": "p/events/img02207.4a83829c",
-          "hash": "4a83829c",
-          "width": 4637,
-          "height": 3478,
-          "widths": [
-            480,
-            960,
-            1440,
-            2048
-          ],
-          "lqip": "data:image/webp;base64,UklGRuYAAABXRUJQVlA4INoAAADQBQCdASoYABIAPu1ur1IppiQiqAgBMB2JZACsGZ/EF4F4Z9lxdKr+ceQ9K5BlPFHE9l1dxXgwAP5y7UiLYo+b01p9+OM4DUWCAwJy8AQQuUMv0hmKvpbTXzfVLCqoM1mgLxxKVu9tCT8+/OK/m+asRNhPmSlmU6VVsl8LwUVcJdMexcrNtuZ9xPJ0lLfq3JAk93TPJHJ5onzsCrAajmdgPVfhL+s6iUNxJ2uZ13eLBr91RbOGYfi5AmJkNQHNQn7togUkb6sDmpA0Ph26trE+BhmJaJCBOWTgAA==",
-          "alt": "",
-          "caption": "",
-          "note": "",
-          "subsection": null,
-          "exif": {
-            "camera": "Sony ILCE-6400",
-            "lens": "18-50mm F2.8 DC DN | Contemporary 021",
-            "focalLength": "44mm (66mm equiv.)",
-            "aperture": "f/4",
-            "shutterSpeed": "1/80s",
-            "iso": 2500,
-            "takenAt": "Sep 27, 2026"
-          },
-          "kind": "photo",
-          "duration": null,
-          "videoSources": null,
-          "videoMeta": null
-        },
-        {
           "id": "events/img02209",
           "file": "Events/IMG02209.jpg",
           "stem": "p/events/img02209.579579ee",
@@ -1446,102 +1255,6 @@
           "videoMeta": null
         },
         {
-          "id": "events/img06710",
-          "file": "Events/IMG06710.jpg",
-          "stem": "p/events/img06710.3d62571a",
-          "hash": "3d62571a",
-          "width": 6000,
-          "height": 4000,
-          "widths": [
-            480,
-            960,
-            1440,
-            2048
-          ],
-          "lqip": "data:image/webp;base64,UklGRr4AAABXRUJQVlA4ILIAAACQBACdASoYABAAPu1iqU2ppaOiMAgBMB2JYgC7AywYYJn0TgSuOKtT+f9koZgA/qoN6dEDpjZhlWC8U5o+XhSd96dm7xCQ9+BhUjEO9dYgvVy2SEi2exHk0disX1fZAX6ONLRJ2uJ9Y4m029qbM6TCzSUPhWPxie0sBq9WAJbtjckYfIno1U6FQzi/4bIHoEPwf5ORFRZ4Y+UIp2FPjetaksHz7J4kIugxJ5xltUscAAAA",
-          "alt": "",
-          "caption": "",
-          "note": "",
-          "subsection": null,
-          "exif": {
-            "camera": "Sony ILCE-6400",
-            "lens": "E 17-70mm F2.8 B070",
-            "focalLength": "27mm (40mm equiv.)",
-            "aperture": "f/4",
-            "shutterSpeed": "1/50s",
-            "iso": 2000,
-            "takenAt": "Oct 24, 2026"
-          },
-          "kind": "photo",
-          "duration": null,
-          "videoSources": null,
-          "videoMeta": null
-        },
-        {
-          "id": "events/img06713",
-          "file": "Events/IMG06713.jpg",
-          "stem": "p/events/img06713.4ab488af",
-          "hash": "4ab488af",
-          "width": 6000,
-          "height": 4000,
-          "widths": [
-            480,
-            960,
-            1440,
-            2048
-          ],
-          "lqip": "data:image/webp;base64,UklGRs4AAABXRUJQVlA4IMIAAACwBACdASoYABAAPu1iqU2ppaOiMAgBMB2JbACdMoAloxgQ7+q/vTSFGN1EVqqoAPawk2bDsvJjqiMuyrwB5jZltboOITL+JPdWdAvzGua5jvq6vz6wXBoKIncT50o6YlZgDf3C0OtezpOExtTCn+tyxjF43gJjVwD0IsOOowmHZGb1Gn6ce7f5czPIZZ2FRehKXDcLq59OOdmIT4Eowl8z0iM9/EEwlotvE1fnPDo9ymhE1RHxgVWBeryKmwCNgLbYAA==",
-          "alt": "",
-          "caption": "",
-          "note": "",
-          "subsection": null,
-          "exif": {
-            "camera": "Sony ILCE-6400",
-            "lens": "E 17-70mm F2.8 B070",
-            "focalLength": "40mm (60mm equiv.)",
-            "aperture": "f/4",
-            "shutterSpeed": "1/80s",
-            "iso": 3200,
-            "takenAt": "Oct 24, 2026"
-          },
-          "kind": "photo",
-          "duration": null,
-          "videoSources": null,
-          "videoMeta": null
-        },
-        {
-          "id": "events/img06714",
-          "file": "Events/IMG06714.jpg",
-          "stem": "p/events/img06714.4d8096ca",
-          "hash": "4d8096ca",
-          "width": 6000,
-          "height": 3483,
-          "widths": [
-            480,
-            960,
-            1440,
-            2048
-          ],
-          "lqip": "data:image/webp;base64,UklGRsYAAABXRUJQVlA4ILoAAAAQBACdASoYAA4APu1iqU2ppaOiMAgBMB2JYgCw7Yw6xkef4IXHU+JU8AD+8v4XysfNiyf0J73MmxH/MydFCYkxpqSNm8uFgj5qk0uZ20BYpklBpiGvtPl5B0r/vVavLr7lyjxk/Z95vB0i4HcyfQnvo0D/ocumwOoUCXGvHW90Bt2JIRLpaAAZ6YiGYDt+21rTSk4o2/ldO+UVNFXybsAYzOBXN9IlEyxtAkj2DkiujZ0ITK5M0eo2AAA=",
-          "alt": "",
-          "caption": "",
-          "note": "",
-          "subsection": null,
-          "exif": {
-            "camera": "Sony ILCE-6400",
-            "lens": "E 17-70mm F2.8 B070",
-            "focalLength": "35mm (52mm equiv.)",
-            "aperture": "f/4",
-            "shutterSpeed": "1/60s",
-            "iso": 2000,
-            "takenAt": "Oct 24, 2026"
-          },
-          "kind": "photo",
-          "duration": null,
-          "videoSources": null,
-          "videoMeta": null
-        },
-        {
           "id": "events/img06732",
           "file": "Events/IMG06732.jpg",
           "stem": "p/events/img06732.1bab3628",
@@ -1638,102 +1351,6 @@
           "videoMeta": null
         },
         {
-          "id": "events/img06757",
-          "file": "Events/IMG06757.jpg",
-          "stem": "p/events/img06757.0044ea25",
-          "hash": "0044ea25",
-          "width": 5000,
-          "height": 4000,
-          "widths": [
-            480,
-            960,
-            1440,
-            2048
-          ],
-          "lqip": "data:image/webp;base64,UklGRvQAAABXRUJQVlA4IOgAAADwBQCdASoYABMAPu1mqk8ppaOiKA1RMB2JagCdL3WrgPekQZIsnUctTRRtiSHBFIXYiNLYSEwKAAD+TGMoyhs9ZibozWf1z4MTr17mjH7U3swUjVOb7rCCebEPm6LrPWJM0wsw82+KhVyUw56JGQoIdZO1d35EKylStL3F7BIG7aiJp7xUXtoElOQ3JzCkENpLJLR/A2OW4uSCvNyon8KNglsQWwS741N2Tlu6rsdO+/qoFETV+hQyNewYbUh2VZ9uS62aX319pca9MSjt1ff0F3hlLYAMn+LWdFX4iTJnBgz649DhYAAA",
-          "alt": "",
-          "caption": "",
-          "note": "",
-          "subsection": null,
-          "exif": {
-            "camera": "Sony ILCE-6400",
-            "lens": "FE 90mm F2.8 Macro G OSS",
-            "focalLength": "90mm (135mm equiv.)",
-            "aperture": "f/4",
-            "shutterSpeed": "1/160s",
-            "iso": 8000,
-            "takenAt": "Oct 24, 2026"
-          },
-          "kind": "photo",
-          "duration": null,
-          "videoSources": null,
-          "videoMeta": null
-        },
-        {
-          "id": "events/img06763",
-          "file": "Events/IMG06763.jpg",
-          "stem": "p/events/img06763.60fcb278",
-          "hash": "60fcb278",
-          "width": 4853,
-          "height": 3235,
-          "widths": [
-            480,
-            960,
-            1440,
-            2048
-          ],
-          "lqip": "data:image/webp;base64,UklGRsAAAABXRUJQVlA4ILQAAACQBACdASoYABAAPu1iqU2ppaOiMAgBMB2JZACsMoR4GdDEpS2DCoOJZ+i/G0AA/qJM3me8YgGB0OwjCswyPfaqzZOZG4fe8chyUxF6fWO8483N+g+yb7xxgds/g4dyT3eaeA5pe3cdrB6efIKFzXxf/4NPKzJPpQWM2tzf3eqtF9tXbT/sT0sD0iLKZR7H/ccHPkhrpGZ24WNNK/uESIYNfmY77TrPV6/h/PqB4LjsBPEEQAA=",
-          "alt": "",
-          "caption": "",
-          "note": "",
-          "subsection": null,
-          "exif": {
-            "camera": "Sony ILCE-6400",
-            "lens": "E 17-70mm F2.8 B070",
-            "focalLength": "47mm (70mm equiv.)",
-            "aperture": "f/4",
-            "shutterSpeed": "1/60s",
-            "iso": 2500,
-            "takenAt": "Oct 24, 2026"
-          },
-          "kind": "photo",
-          "duration": null,
-          "videoSources": null,
-          "videoMeta": null
-        },
-        {
-          "id": "events/img06775",
-          "file": "Events/IMG06775.jpg",
-          "stem": "p/events/img06775.1f8f6410",
-          "hash": "1f8f6410",
-          "width": 5191,
-          "height": 3083,
-          "widths": [
-            480,
-            960,
-            1440,
-            2048
-          ],
-          "lqip": "data:image/webp;base64,UklGRrwAAABXRUJQVlA4ILAAAAAwBQCdASoYAA4APu1iqU2ppaOiMAgBMB2JZgCsMoGv/qUD4AIL/HxwkUVIyCFaWKwjQAD7yOVpwBgigdJ7r1FRLolIGlrlG3mOdsqIpmlf+3n9RWIr6ysWCa8DQIjjMVQeM6Ovb9qJ2/OoNnONwHsbGZ93jMCzf0kjZxtEHOQbjz8rNHkNqgM+pPB9U7/+snY32qzd+3EaioeqPHbmz/f7al1HEsA6Adfgj9R/AUAAAA==",
-          "alt": "",
-          "caption": "",
-          "note": "",
-          "subsection": null,
-          "exif": {
-            "camera": "Sony ILCE-6400",
-            "lens": "E 17-70mm F2.8 B070",
-            "focalLength": "65mm (97mm equiv.)",
-            "aperture": "f/4",
-            "shutterSpeed": "1/100s",
-            "iso": 4000,
-            "takenAt": "Oct 24, 2026"
-          },
-          "kind": "photo",
-          "duration": null,
-          "videoSources": null,
-          "videoMeta": null
-        },
-        {
           "id": "events/img06777",
           "file": "Events/IMG06777.jpg",
           "stem": "p/events/img06777.223cdfaa",
@@ -1758,38 +1375,6 @@
             "aperture": "f/4",
             "shutterSpeed": "1/125s",
             "iso": 5000,
-            "takenAt": "Oct 24, 2026"
-          },
-          "kind": "photo",
-          "duration": null,
-          "videoSources": null,
-          "videoMeta": null
-        },
-        {
-          "id": "events/img06784",
-          "file": "Events/IMG06784.jpg",
-          "stem": "p/events/img06784.0be8f63c",
-          "hash": "0be8f63c",
-          "width": 4584,
-          "height": 3304,
-          "widths": [
-            480,
-            960,
-            1440,
-            2048
-          ],
-          "lqip": "data:image/webp;base64,UklGRrgAAABXRUJQVlA4IKwAAACwBACdASoYABEAPu1ur1KppiQiqAgBMB2JYwC7DiMwFiagSVI77iZJBq3yUIhgAP6abGa9HBdoNr1j6fPzjylAmLqF4x8iRP+IFR4b8d8NrsDqRqU9L+DLlZ9J0rurTsMqhynXZKrUWHT9ZNfnDSvURLupPCZ1Moi+AdPn9ORPNvAGtWxZrYnO4Tm8XUgwvgL3VSRnTa3cabD5EI/U2jvp+Hhe/zerdz8CAAAA",
-          "alt": "",
-          "caption": "",
-          "note": "",
-          "subsection": null,
-          "exif": {
-            "camera": "Sony ILCE-6400",
-            "lens": "E 17-70mm F2.8 B070",
-            "focalLength": "32mm (48mm equiv.)",
-            "aperture": "f/4",
-            "shutterSpeed": "1/50s",
-            "iso": 2000,
             "takenAt": "Oct 24, 2026"
           },
           "kind": "photo",
@@ -1862,38 +1447,6 @@
           "videoMeta": null
         },
         {
-          "id": "events/img06825",
-          "file": "Events/IMG06825.jpg",
-          "stem": "p/events/img06825.3161eb75",
-          "hash": "3161eb75",
-          "width": 6000,
-          "height": 4000,
-          "widths": [
-            480,
-            960,
-            1440,
-            2048
-          ],
-          "lqip": "data:image/webp;base64,UklGRrAAAABXRUJQVlA4IKQAAAAwBACdASoYABAAPu1iqU2ppaOiMAgBMB2JYgCw7Bmi1n4WP6h8tL5ONMAA/tDafDS3/gCdY/lWa2fVkJwDN0QzJ5YfWBYApoqxsH8TMY67M9XhyvFSahCSRrWSSIIzOPPPezOWkIVfpDnr9bXgtPZ2l2RaMBJjsex80g2kfIiCu/Y70+6qLb2ExEib/vWv6A4Dh7iAEazDHUK/p9MN9ysRMGgAAA==",
-          "alt": "",
-          "caption": "",
-          "note": "",
-          "subsection": null,
-          "exif": {
-            "camera": "Sony ILCE-6400",
-            "lens": "E 17-70mm F2.8 B070",
-            "focalLength": "70mm (105mm equiv.)",
-            "aperture": "f/4",
-            "shutterSpeed": "1/125s",
-            "iso": 6400,
-            "takenAt": "Oct 24, 2026"
-          },
-          "kind": "photo",
-          "duration": null,
-          "videoSources": null,
-          "videoMeta": null
-        },
-        {
           "id": "events/img06959",
           "file": "Events/IMG06959.jpg",
           "stem": "p/events/img06959.74f175ee",
@@ -1918,38 +1471,6 @@
             "aperture": "f/4",
             "shutterSpeed": "1/40s",
             "iso": 1600,
-            "takenAt": "Oct 24, 2026"
-          },
-          "kind": "photo",
-          "duration": null,
-          "videoSources": null,
-          "videoMeta": null
-        },
-        {
-          "id": "events/img06964",
-          "file": "Events/IMG06964.jpg",
-          "stem": "p/events/img06964.a39392bf",
-          "hash": "a39392bf",
-          "width": 5540,
-          "height": 3831,
-          "widths": [
-            480,
-            960,
-            1440,
-            2048
-          ],
-          "lqip": "data:image/webp;base64,UklGRuIAAABXRUJQVlA4INYAAADQBQCdASoYABEAPu1sq1EppaOiqAqpMB2JQBOmWn/I2ATpARwbFaaYdXoHvbZj6aKSOWf1gAoAAP4w9QYeMkvs9n7hXbbSf74iNBPnoiVHoAcldJ6XcCMlsJkUjodumDT0BJ0dPtDmABCdMXA6oELJkMqoAjFomojmGBZaG/acFT6DAj+D/FlANUAnpiw2cye2G1WiXvnF6MzmHWB7Ygtm7g3XkcQ1hubi8YSS7cR/xL54WJFXmMd7bp79yXCOFhjTCUi6beLp7dmSJPf33wpNDY1sPAAA",
-          "alt": "",
-          "caption": "",
-          "note": "",
-          "subsection": null,
-          "exif": {
-            "camera": "Sony ILCE-6400",
-            "lens": "E 17-70mm F2.8 B070",
-            "focalLength": "17mm (25mm equiv.)",
-            "aperture": "f/4",
-            "shutterSpeed": "1/30s",
-            "iso": 1250,
             "takenAt": "Oct 24, 2026"
           },
           "kind": "photo",
@@ -2079,6 +1600,134 @@
             "shutterSpeed": "1/50s",
             "iso": 1250,
             "takenAt": "Oct 24, 2026"
+          },
+          "kind": "photo",
+          "duration": null,
+          "videoSources": null,
+          "videoMeta": null
+        },
+        {
+          "id": "events/img07317",
+          "file": "Events/IMG07317.jpg",
+          "stem": "p/events/img07317.cdcce604",
+          "hash": "cdcce604",
+          "width": 6000,
+          "height": 4000,
+          "widths": [
+            480,
+            960,
+            1440,
+            2048
+          ],
+          "lqip": "data:image/webp;base64,UklGRtoAAABXRUJQVlA4IM4AAAAQBQCdASoYABAAPu1iqU2ppaOiMAgBMB2JbACdMoGvt2PQWIHuiRARYBeDn9rUh6RYAPwNlxPp6xXcK7axd7cw5gXFgHh+aoJEG0WZnDK76RtuIeU9onbMhlOR0+5RKmgKadpHkNGJF67takTEskOkg89GC4KPT9toRQemiQSiOFHkgkKsznk7s/izMYNz08gCYRX8jP0x9EJakbVelryGOH9AeuxH1vzWHrdogepmMdE6WFoTIzcTz4HHFfjtOzH1nH7ocLh3BU2FR30AAA==",
+          "alt": "",
+          "caption": "",
+          "note": "",
+          "subsection": null,
+          "exif": {
+            "camera": "Sony ILCE-6400",
+            "lens": "E 17-70mm F2.8 B070",
+            "focalLength": "31mm (46mm equiv.)",
+            "aperture": "f/4",
+            "shutterSpeed": "1/50s",
+            "iso": 1600,
+            "takenAt": "Nov 7, 2026"
+          },
+          "kind": "photo",
+          "duration": null,
+          "videoSources": null,
+          "videoMeta": null
+        },
+        {
+          "id": "events/img07589",
+          "file": "Events/IMG07589.jpg",
+          "stem": "p/events/img07589.b9515e05",
+          "hash": "b9515e05",
+          "width": 6000,
+          "height": 4000,
+          "widths": [
+            480,
+            960,
+            1440,
+            2048
+          ],
+          "lqip": "data:image/webp;base64,UklGRsgAAABXRUJQVlA4ILwAAAAwBACdASoYABAAPu1iqU2ppaOiMAgBMB2JYgCdEf/gJ+OeOIuCNP/G5sAA/Ts1VbzYu3z2Hh1V5UVXCCFkKn2QEzxsJVDvbC7YbqIsDZ+L8Apzr6M+eKXLYnNpzfJXJlInLKITKj5zAlT28v6z81U8q49M7jZHicWWkc8PYrT27H/W+lXBCNrfNaQCJ6gu/IiU6ba/wdzoVVIZvnllhdNKFHb6U4b99eoR0G/nuJAemcTV9Forw3afPgAAAA==",
+          "alt": "",
+          "caption": "",
+          "note": "",
+          "subsection": null,
+          "exif": {
+            "camera": "Sony ILCE-6400",
+            "lens": "E 17-70mm F2.8 B070",
+            "focalLength": "17mm (25mm equiv.)",
+            "aperture": "f/4",
+            "shutterSpeed": "1/30s",
+            "iso": 1250,
+            "takenAt": "Nov 8, 2026"
+          },
+          "kind": "photo",
+          "duration": null,
+          "videoSources": null,
+          "videoMeta": null
+        },
+        {
+          "id": "events/img07615",
+          "file": "Events/IMG07615.jpg",
+          "stem": "p/events/img07615.d70a655b",
+          "hash": "d70a655b",
+          "width": 4300,
+          "height": 3440,
+          "widths": [
+            480,
+            960,
+            1440,
+            2048
+          ],
+          "lqip": "data:image/webp;base64,UklGRg4BAABXRUJQVlA4IAIBAABQBgCdASoYABMAPu1qrFEppaQiqAqpMB2JagCdMxMBZ1HH0C6QDvKYpd28249GjVNah7+rqgDrp2LmAAD+wYDNh7QrKC06eJeDcQGvyEK169g+7tVsu6VXdqwEf9Xox4MkoJvLXbowm4bTjejjItdgLPcfL3MZ8uaFDw9yiEXdf91K+m5MkH0ULTkfbPcZSVrCts8oppybIztteDBVnr7TwjPV5bw8VJxj2md+l2nB4Q0fo8nk/x+5BTgr5kI0qeaBXCvZyWOmIOI2SLgseeOIsEICuVzMsL5ep+fDNKsG3WbiBruHfcTNC6XaB/hWup9QiALM6cqhsXuWkgBAnwlSCgA=",
+          "alt": "",
+          "caption": "",
+          "note": "",
+          "subsection": null,
+          "exif": {
+            "camera": "Sony ILCE-6400",
+            "lens": "E 17-70mm F2.8 B070",
+            "focalLength": "27mm (40mm equiv.)",
+            "aperture": "f/4",
+            "shutterSpeed": "1/50s",
+            "iso": 2000,
+            "takenAt": "Nov 8, 2026"
+          },
+          "kind": "photo",
+          "duration": null,
+          "videoSources": null,
+          "videoMeta": null
+        },
+        {
+          "id": "events/img07624",
+          "file": "Events/IMG07624.jpg",
+          "stem": "p/events/img07624.68dc6bea",
+          "hash": "68dc6bea",
+          "width": 5333,
+          "height": 4000,
+          "widths": [
+            480,
+            960,
+            1440,
+            2048
+          ],
+          "lqip": "data:image/webp;base64,UklGRvgAAABXRUJQVlA4IOwAAADQBQCdASoYABIAPu1srFEppaQiqAqpMB2JZgCpJzL73+ga1IjV9JVDFsvh8i0b3A7bhVCZb3roAPz2NTqrYQ+0XvHx3y/ngtxKIE+82SWaZ6WuxPv0QYURxPWeEitOgzrEVSAXdzMj4xEgGiAxWxvLz1zOJn/mxL24tqlW1Q3ncdAutWQBgndp05/pf/x72x83Kem1jcGDNt8nc0rd/5HZ14w4SqIn1C3tTrBLdbksn+d9da0vfr8NGYLfZOU6PgzPDw/qEUNZWfV8FZ9TH+V24E8tMIEiJehO9sDiMEKobDb7VwyEpR6Kp1gAAA==",
+          "alt": "",
+          "caption": "",
+          "note": "",
+          "subsection": null,
+          "exif": {
+            "camera": "Sony ILCE-6400",
+            "lens": "E 17-70mm F2.8 B070",
+            "focalLength": "35mm (52mm equiv.)",
+            "aperture": "f/4",
+            "shutterSpeed": "1/60s",
+            "iso": 3200,
+            "takenAt": "Nov 8, 2026"
           },
           "kind": "photo",
           "duration": null,
@@ -6918,7 +6567,7 @@
       "description": "",
       "type": null,
       "order": 999,
-      "cover": "archive/pre-rift-10-17-2026/img06589",
+      "cover": "archive/pre-rift-10-17-2026/img06221",
       "featured": [],
       "photos": [
         {
