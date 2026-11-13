@@ -553,6 +553,64 @@ h3 {
   grid-template-columns: repeat(auto-fill, minmax(min(100%, 17rem), 1fr));
 }
 
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+.chips button {
+  padding: 0.35rem 0.9rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: none;
+  font: inherit;
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  cursor: pointer;
+}
+
+.chips button:hover {
+  color: var(--fg);
+  border-color: var(--fg);
+}
+
+.chips button[aria-pressed="true"] {
+  background: var(--fg);
+  border-color: var(--fg);
+  color: var(--bg);
+}
+
+.chip-count {
+  margin-left: 0.2rem;
+  opacity: 0.6;
+}
+
+.gallery-card {
+  transition: opacity 0.22s ease, transform 0.32s cubic-bezier(0.2, 0.6, 0.2, 1);
+}
+
+.card-fading {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.card-entering {
+  opacity: 0;
+}
+
+.card-hidden {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gallery-card {
+    transition: none;
+  }
+}
+
 .gallery-card figure {
   margin: 0;
 }

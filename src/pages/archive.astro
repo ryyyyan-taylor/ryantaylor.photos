@@ -6,6 +6,11 @@ import { galleries, ogImage, photoById } from '../lib/photos';
 
 const archive = galleries.filter((g) => g.section === 'archive');
 const coverPhoto = archive[0] ? photoById(archive[0].cover) : undefined;
+
+const tagCounts = new Map<string, number>();
+for (const tag of archive.flatMap((g) => g.tags ?? [])) tagCounts.set(tag, (tagCounts.get(tag) ?? 0) + 1);
+const tags = [...tagCounts].sort(([a], [b]) => a.localeCompare(b));
+const tagLabel = (tag: string) => tag.replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase());
 ---
 
 <Base
@@ -23,6 +28,21 @@ const coverPhoto = archive[0] ? photoById(archive[0].cover) : undefined;
   </section>
 
   {
+    tags.length > 0 && (
+      <div class="chips" role="group" aria-label="Filter by tag">
+        <button type="button" data-tag="" aria-pressed="true">
+          All
+        </button>
+        {tags.map(([tag, count]) => (
+          <button type="button" data-tag={tag} aria-pressed="false">
+            {tagLabel(tag)} <span class="chip-count">{count}</span>
+          </button>
+        ))}
+      </div>
+    )
+  }
+
+  {
     archive.length ? (
       <div class="gallery-index">
         {archive.map((gallery, i) => <GalleryCard gallery={gallery} eager={i < 2} />)}
@@ -34,3 +54,110 @@ const coverPhoto = archive[0] ? photoById(archive[0].cover) : undefined;
     )
   }
 </Base>
+
+<script>
+  // Any-of filter over the gallery cards, mirrored to ?tags=a,b. Animated with
+  // a FLIP: fade out what's leaving, reflow, then slide survivors from their
+  // old position to the new one.
+  const chips = document.querySelector('.chips');
+  const grid = document.querySelector('.gallery-index');
+
+  if (chips && grid) {
+    const cards = [...grid.querySelectorAll<HTMLElement>('.gallery-card')];
+    const buttons = [...chips.querySelectorAll<HTMLButtonElement>('button')];
+    const known = new Set(buttons.map((b) => b.dataset.tag).filter(Boolean));
+    const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const FADE_MS = 220;
+
+    let active = new Set<string>();
+    let pendingTimeout: number | null = null;
+
+    const shouldShow = (card: HTMLElement) =>
+      !active.size || (card.dataset.tags ?? '').split(' ').some((t) => active.has(t));
+
+    const render = (animate: boolean) => {
+      buttons.forEach((b) => {
+        const tag = b.dataset.tag!;
+        b.setAttribute('aria-pressed', String(tag ? active.has(tag) : !active.size));
+      });
+
+      if (pendingTimeout !== null) {
+        // A previous filter's fade-out was still in flight — drop its
+        // transient state so this run starts from a clean baseline.
+        window.clearTimeout(pendingTimeout);
+        pendingTimeout = null;
+        cards.forEach((c) => {
+          c.classList.remove('card-fading', 'card-entering');
+          c.style.transition = '';
+          c.style.transform = '';
+        });
+      }
+
+      const staying = cards.filter((c) => shouldShow(c) && !c.classList.contains('card-hidden'));
+      const hiding = cards.filter((c) => !shouldShow(c) && !c.classList.contains('card-hidden'));
+      const showing = cards.filter((c) => shouldShow(c) && c.classList.contains('card-hidden'));
+
+      if (!animate || reduceMotion) {
+        hiding.forEach((c) => c.classList.add('card-hidden'));
+        showing.forEach((c) => c.classList.remove('card-hidden'));
+        return;
+      }
+
+      const firstRects = new Map(staying.map((c) => [c, c.getBoundingClientRect()] as const));
+      hiding.forEach((c) => c.classList.add('card-fading'));
+
+      pendingTimeout = window.setTimeout(() => {
+        pendingTimeout = null;
+        hiding.forEach((c) => c.classList.add('card-hidden'));
+        showing.forEach((c) => {
+          c.classList.remove('card-hidden');
+          c.classList.add('card-entering');
+        });
+
+        void (grid as HTMLElement).offsetHeight;
+
+        staying.forEach((card) => {
+          const first = firstRects.get(card);
+          if (!first) return;
+          const last = card.getBoundingClientRect();
+          const dx = first.left - last.left;
+          const dy = first.top - last.top;
+          if (!dx && !dy) return;
+          card.style.transition = 'none';
+          card.style.transform = `translate(${dx}px, ${dy}px)`;
+        });
+
+        requestAnimationFrame(() => {
+          staying.forEach((card) => {
+            card.style.transition = '';
+            card.style.transform = '';
+          });
+          showing.forEach((c) => c.classList.remove('card-entering'));
+          hiding.forEach((c) => c.classList.remove('card-fading'));
+        });
+      }, FADE_MS);
+    };
+
+    const syncUrl = () => {
+      const url = new URL(location.href);
+      if (active.size) url.searchParams.set('tags', [...active].join(','));
+      else url.searchParams.delete('tags');
+      history.replaceState(null, '', url.toString().replace(/%2C/g, ','));
+    };
+
+    buttons.forEach((b) =>
+      b.addEventListener('click', () => {
+        const tag = b.dataset.tag!;
+        if (!tag) active.clear();
+        else if (active.has(tag)) active.delete(tag);
+        else active.add(tag);
+        syncUrl();
+        render(true);
+      }),
+    );
+
+    const initial = new URLSearchParams(location.search).get('tags')?.split(',') ?? [];
+    active = new Set(initial.filter((t) => known.has(t)));
+    if (active.size) render(false);
+  }
+</script>

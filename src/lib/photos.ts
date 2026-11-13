@@ -58,9 +58,9 @@ export interface Gallery {
   sectionTitle: string | null;
   title: string;
   description: string;
-  // gallery.json `type` (e.g. "events"), for filtering the archive. Optional
-  // like `subsection`: absent from manifests synced before it existed.
-  type?: string | null;
+  // gallery.json `tags`, slugified (e.g. "trading-cards"), for filtering the
+  // archive. Optional like `subsection`: absent from manifests synced before it existed.
+  tags?: string[];
   order: number;
   cover: string;
   // gallery.json `featured`: photo ids picked for a showcase's home page row.

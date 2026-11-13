@@ -154,7 +154,7 @@ async function getGallery(res, id) {
     title: config?.title ?? '',
     defaultTitle: titleize(id.split('/').at(-1)),
     description: config?.description ?? '',
-    type: config?.type ?? '',
+    tags: config?.tags ?? [],
     order: config?.order ?? 999,
     availableUntil: config?.availableUntil ?? '',
     zip: config?.zip !== false,

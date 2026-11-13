@@ -80,8 +80,8 @@ function renderEditor() {
         <input id="f-title" type="text" placeholder="${escapeHtml(g.defaultTitle)}" value="${escapeHtml(g.title)}">
       </div>
       <div class="field">
-        <label>Type</label>
-        <input id="f-type" type="text" placeholder="e.g. events" value="${escapeHtml(g.type)}">
+        <label>Tags</label>
+        <input id="f-tags" type="text" placeholder="e.g. events, sports" value="${escapeHtml(g.tags.join(', '))}">
       </div>
       <div class="field">
         <label>Order</label>
@@ -123,7 +123,7 @@ function renderEditor() {
 
   renderPhotoGrid();
 
-  for (const id of ['f-title', 'f-type', 'f-order', 'f-description', 'f-available', 'f-password', 'f-zip']) {
+  for (const id of ['f-title', 'f-tags', 'f-order', 'f-description', 'f-available', 'f-password', 'f-zip']) {
     $('#' + id).addEventListener('input', markDirty);
   }
   $('#save-gallery').addEventListener('click', saveGallery);
@@ -260,8 +260,8 @@ async function saveGallery() {
   const description = $('#f-description').value.trim();
   if (description) payload.description = description;
 
-  const type = $('#f-type').value.trim().toLowerCase();
-  if (type) payload.type = type;
+  const tags = [...new Set($('#f-tags').value.split(',').map((t) => t.trim().toLowerCase()).filter(Boolean))];
+  if (tags.length) payload.tags = tags;
 
   const order = Number($('#f-order').value);
   if (Number.isFinite(order) && order !== 999) payload.order = order;

@@ -141,7 +141,7 @@ for (const rel of await galleryDirs(SRC_DIR)) {
     sectionTitle: names.length > 1 ? titleize(names[0]) : null,
     title,
     description: config?.description ?? '',
-    type: config?.type ?? null,
+    tags: [...new Set((config?.tags ?? []).map(slugify).filter(Boolean))].sort(),
     order: config?.order ?? 999,
     cover: (coverFile ?? photos[0]).id,
     featured: (config?.featured ?? []).map((f) => photos.find((p) => basename(p.file) === f)?.id).filter(Boolean),
